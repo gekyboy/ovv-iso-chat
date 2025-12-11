@@ -57,6 +57,9 @@ test_r26_benchmark.py
 test_ui.py
 report_extraction.py
 
+# UI legacy (solo Chainlit)
+templates/
+
 # ============================================================================
 # DATA - Escludi contenuti runtime, mantieni struttura
 # ============================================================================
