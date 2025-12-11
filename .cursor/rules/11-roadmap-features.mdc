@@ -16,19 +16,20 @@ alwaysApply: false
 
 | Totale Originali | Completati | Obsoleti | Nuovi (Future) |
 |------------------|------------|----------|----------------|
-| 25 | **24** | **1** | **9** |
+| 25 | **24** | **1** | **10** |
 
-**Tutti i 24 progetti originali completati! + 9 nuove feature in coda.**
+**Tutti i 24 progetti originali completati! + 10 nuove feature in coda.**
 
 ---
 
 ## 🚀 PROGETTI FUTURI (Nuove Idee)
 
-> Quando aggiungi un nuovo progetto, usa il prossimo ID disponibile: **F10**
+> Quando aggiungi un nuovo progetto, usa il prossimo ID disponibile: **F11**
 
 | ID | Progetto | Difficoltà | Descrizione | Priorità |
 |----|----------|------------|-------------|----------|
 | F01 | Citazioni con Titolo | 🟢 Facile | Mostrare titolo documento nelle fonti (es. "MR-09_02 - Safety Checklist") | Alta |
+| **F10** | **Pulsanti Feedback 👍👎** | 🟢 **Facile** | **Aggiungere pulsanti pollice su/giù a ogni risposta RAG (codice esiste, manca UI)** | **Alta** |
 | F02 | Memoria Conversazione | 🟡 Media | Mantenere contesto tra domande successive nella stessa sessione | Media |
 | F03 | TeachAssistant Potenziato (R16.1) | 🔴 Complessa | Wizard interattivo passo-passo per compilazione moduli con pre-fill contestuale | Alta |
 | F04 | ImplicitLearner Integration | 🔴 Complessa | Integrare segnali impliciti (copy, click, dwell) in Chainlit o UI alternativa | Alta |
@@ -436,6 +437,66 @@ def switch_model(self, model_name: str):
 
 ---
 
+## 🎯 F10: PULSANTI FEEDBACK 👍👎
+
+> Aggiungere pulsanti pollice su/giù a ogni risposta RAG per valutazione utente
+
+### Problema
+Il sistema di feedback Bayesian **esiste e funziona** (`src/memory/store.py`), i callback Chainlit sono pronti (`on_feedback_positive`, `on_feedback_negative`), ma i **pulsanti non vengono mostrati** nelle risposte RAG!
+
+**Codice esistente (inutilizzato):**
+- `@cl.action_callback("feedback_positive")` → riga 2914
+- `@cl.action_callback("feedback_negative")` → riga 2920
+- `process_feedback()` → aggiorna Bayesian boost
+- `record_response_feedback()` → registra per source
+
+**Problema alla riga 2830:**
+```python
+msg = cl.Message(
+    content=answer,
+    actions=tool_actions if tool_actions else None  # ❌ Manca feedback!
+)
+```
+
+### Soluzione
+Aggiungere le action `feedback_positive` e `feedback_negative` al messaggio di risposta:
+
+```python
+# Dopo riga 2809 (dove si popolano tool_actions)
+feedback_actions = [
+    cl.Action(
+        name="feedback_positive",
+        payload={},
+        label="👍 Utile"
+    ),
+    cl.Action(
+        name="feedback_negative",
+        payload={},
+        label="👎 Non utile"
+    )
+]
+
+# Combina con tool_actions
+all_actions = (tool_actions or []) + feedback_actions
+
+# Riga 2830: usa all_actions
+msg = cl.Message(
+    content=answer,
+    elements=elements if elements else None,
+    actions=all_actions,  # ✅ Include feedback!
+    metadata={...}
+)
+```
+
+### File
+| Azione | File |
+|--------|------|
+| Modificare | `app_chainlit.py` - Aggiungere feedback_actions a handle_query() |
+
+### Tempo: 30min | Prerequisiti: Nessuno (codice già pronto)
+
+---
+
 ## 📝 COME AGGIUNGERE NUOVI PROGETTI
 
 Quando vuoi proporre un nuovo progetto:
@@ -486,7 +547,8 @@ Quando vuoi proporre un nuovo progetto:
 | 2025-12-10 | Audit README vs implementazione: identificate discrepanze e risolte |
 | 2025-12-10 | Versioni allineate a v3.9.1, GraphRAG disabilitato (non integrato) |
 | 2025-12-10 | Aggiunto F09 (Selettore Modello LLM Dinamico) |
+| 2025-12-11 | Aggiunto F10 (Pulsanti Feedback 👍👎 - codice esiste, manca UI) |
 
 ---
 
-*Prossimo ID disponibile: **F10***
+*Prossimo ID disponibile: **F11***
