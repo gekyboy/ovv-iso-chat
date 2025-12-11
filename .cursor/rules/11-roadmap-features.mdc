@@ -29,7 +29,7 @@ alwaysApply: false
 | ID | Progetto | Difficoltà | Descrizione | Priorità |
 |----|----------|------------|-------------|----------|
 | F01 | Citazioni con Titolo | 🟢 Facile | Mostrare titolo documento nelle fonti (es. "MR-09_02 - Safety Checklist") | Alta |
-| **F10** | **Pulsanti Feedback 👍👎** | 🟢 **Facile** | **Aggiungere pulsanti pollice su/giù a ogni risposta RAG (codice esiste, manca UI)** | **Alta** |
+| ✅ F10 | ✅ Pulsanti Feedback 👍👎 | 🟢 Facile | ✅ **COMPLETATO** - SQLite Data Layer + pulsanti 👍👎 su risposte RAG | Alta |
 | F02 | Memoria Conversazione | 🟡 Media | Mantenere contesto tra domande successive nella stessa sessione | Media |
 | F03 | TeachAssistant Potenziato (R16.1) | 🔴 Complessa | Wizard interattivo passo-passo per compilazione moduli con pre-fill contestuale | Alta |
 | F04 | ImplicitLearner Integration | 🔴 Complessa | Integrare segnali impliciti (copy, click, dwell) in Chainlit o UI alternativa | Alta |
@@ -548,6 +548,7 @@ Quando vuoi proporre un nuovo progetto:
 | 2025-12-10 | Versioni allineate a v3.9.1, GraphRAG disabilitato (non integrato) |
 | 2025-12-10 | Aggiunto F09 (Selettore Modello LLM Dinamico) |
 | 2025-12-11 | Aggiunto F10 (Pulsanti Feedback 👍👎 - codice esiste, manca UI) |
+| 2025-12-11 | **COMPLETATO F10** - SQLite Data Layer + pulsanti feedback implementati |
 
 ---
 
