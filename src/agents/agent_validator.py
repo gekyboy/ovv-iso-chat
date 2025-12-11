@@ -21,6 +21,7 @@ from typing import Dict, Any, Set, Tuple, List
 from dataclasses import dataclass
 from enum import Enum
 
+from src.agents.state import emit_status
 from src.integration.citation_extractor import extract_cited_docs, normalize_doc_id
 
 logger = logging.getLogger(__name__)
@@ -286,6 +287,9 @@ class ValidatorAgent:
         Returns:
             Aggiornamenti allo stato con risultato validazione
         """
+        # F11: Emetti stato iniziale
+        emit_status(state, "validator")
+        
         start = time.time()
         
         response = state.get("answer", "")
@@ -313,6 +317,14 @@ class ValidatorAgent:
             "validation_details": validation.details,
             "agent_trace": state.get("agent_trace", []) + [f"validator:{latency:.0f}ms:{validation.result.value}"]
         }
+        
+        # F11: Aggiorna stato con esito validazione
+        if validation.is_valid:
+            cited_count = len(validation.invalid_citations) if hasattr(validation, 'invalid_citations') else 0
+            emit_status(state, "validator", f"✓")
+        else:
+            # F11: Mostra messaggio retry per 5 secondi per farlo vedere all'utente
+            emit_status(state, "retry", "", delay_seconds=5)
         
         # Se richiede rigenerazione, prepara feedback
         if not validation.is_valid and validation.action == "REGENERATE":

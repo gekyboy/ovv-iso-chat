@@ -5,8 +5,55 @@ Definisce la struttura dati che fluisce attraverso il grafo LangGraph
 Ogni agente legge e scrive su questo stato condiviso.
 """
 
-from typing import TypedDict, List, Optional, Literal, Annotated, Any
+from typing import TypedDict, List, Optional, Literal, Annotated, Any, Callable
 from operator import add
+import logging
+import time
+
+logger = logging.getLogger(__name__)
+
+
+# ==================== F11: Status Phases ====================
+RAG_PHASES = {
+    "glossary": ("🤔", "Leggo la domanda..."),
+    "analyzer": ("🧠", "Capisco cosa cerchi..."),
+    "retriever": ("📚", "Cerco nei documenti..."),
+    "context": ("📄", "Preparo il contesto..."),
+    "generator": ("✍️", "Scrivo la risposta..."),
+    "validator": ("🔍", "Verifico le fonti..."),
+    "retry": ("🤨", "Non mi convince... riscrivo!"),
+    "direct": ("📖", "Conosco già la risposta!"),
+}
+
+
+def emit_status(state: dict, phase: str, extra_info: str = "", delay_seconds: float = 0) -> None:
+    """
+    Emette un aggiornamento di stato se il callback è presente.
+    
+    Args:
+        state: AgentState corrente
+        phase: Nome della fase ("glossary", "analyzer", etc.)
+        extra_info: Info aggiuntiva opzionale (es. "8 trovati")
+        delay_seconds: Delay in secondi DOPO aver emesso (per far vedere il messaggio)
+                       Se 0, usa delay minimo di 0.8s per dare tempo all'utente di leggere
+    """
+    # Delay minimo per dare tempo all'utente di vedere ogni fase
+    MIN_DISPLAY_TIME = 0.8  # secondi
+    
+    callback = state.get("status_callback")
+    if callback:
+        emoji, message = RAG_PHASES.get(phase, ("⏳", "Elaborazione..."))
+        if extra_info:
+            message = f"{message} ({extra_info})"
+        full_message = f"{emoji} {message}"
+        try:
+            callback(phase, full_message)
+        except Exception as e:
+            logger.debug(f"Status callback error: {e}")
+    
+    # Delay per far vedere il messaggio (usa delay_seconds se specificato, altrimenti minimo)
+    actual_delay = delay_seconds if delay_seconds > 0 else MIN_DISPLAY_TIME
+    time.sleep(actual_delay)
 
 
 class RetrievedDocument(TypedDict):
@@ -84,11 +131,15 @@ class AgentState(TypedDict):
     errors: List[str]
     latency_ms: float
     agent_trace: List[str]  # Per debug: ["glossary:45ms", "analyzer:12ms", ...]
+    
+    # ==================== F11: STATUS CALLBACK ====================
+    status_callback: Optional[Callable[[str, str], None]]  # (phase, message) -> None
 
 
 def create_initial_state(
     query: str,
-    user_id: str = "default"
+    user_id: str = "default",
+    status_callback: Optional[Callable[[str, str], None]] = None
 ) -> AgentState:
     """
     Crea lo stato iniziale per una nuova query.
@@ -96,6 +147,7 @@ def create_initial_state(
     Args:
         query: Domanda utente
         user_id: ID utente per memoria
+        status_callback: Callback (phase, message) per aggiornare UI (F11)
         
     Returns:
         AgentState inizializzato con valori default
@@ -147,6 +199,9 @@ def create_initial_state(
         # Metadata
         errors=[],
         latency_ms=0.0,
-        agent_trace=[]
+        agent_trace=[],
+        
+        # F11: Status callback
+        status_callback=status_callback
     )
 

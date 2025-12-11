@@ -6,7 +6,7 @@ Pattern: Supervisor con routing dinamico
 Flow: glossary → analyzer → [retriever | direct_answer] → context → generator → END
 """
 
-from typing import Literal, Dict, Any, Optional
+from typing import Literal, Dict, Any, Optional, Callable
 from datetime import datetime
 import logging
 
@@ -476,7 +476,8 @@ class MultiAgentPipeline:
         use_glossary: bool = True,
         use_memory: bool = True,
         use_reranking: bool = True,
-        inject_glossary_context: bool = True
+        inject_glossary_context: bool = True,
+        status_callback: Optional[Callable[[str, str], None]] = None
     ) -> MultiAgentResponse:
         """
         Esegue query attraverso pipeline multi-agent.
@@ -488,14 +489,15 @@ class MultiAgentPipeline:
             use_memory: Parametro legacy (gestito da AnalyzerAgent)
             use_reranking: Parametro legacy (sempre True per multi-agent)
             inject_glossary_context: Parametro legacy (gestito da GlossaryAgent)
+            status_callback: Callback (phase, message) per aggiornamenti UI (F11)
             
         Returns:
             MultiAgentResponse compatibile con RAGResponse
         """
         start = datetime.now()
         
-        # Crea stato iniziale
-        initial_state = create_initial_state(question, user_id)
+        # Crea stato iniziale con callback per aggiornamenti UI (F11)
+        initial_state = create_initial_state(question, user_id, status_callback)
         
         try:
             # Esegui grafo

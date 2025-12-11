@@ -12,6 +12,8 @@ from typing import Dict, Any, List, Tuple, Set
 import time
 import logging
 
+from src.agents.state import emit_status
+
 logger = logging.getLogger(__name__)
 
 # Lazy import per evitare circular imports
@@ -306,6 +308,9 @@ class ContextAgent:
         Returns:
             Aggiornamenti allo stato con contesto compresso
         """
+        # F11: Emetti stato
+        emit_status(state, "context")
+        
         start = time.time()
         
         docs = state.get("retrieved_docs", [])

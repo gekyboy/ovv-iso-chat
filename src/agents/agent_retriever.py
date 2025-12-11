@@ -5,62 +5,19 @@ Responsabilità:
 - Dual search (documenti + glossario R22)
 - Reranking L1 (FlashRank) + L2 (keyword overlap)
 - Deduplicazione risultati
-- NUOVO: Semantic filtering per incident_category (R27)
 
 Ottimizzazione VRAM: 
 - Embedding già caricato (condiviso)
 - Reranker su CPU
 """
 
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List
 import time
 import logging
 
-logger = logging.getLogger(__name__)
+from src.agents.state import emit_status
 
-# R27: Pattern per rilevare intent incidente
-INCIDENT_PATTERNS = {
-    "real_injury": [
-        "ho avuto un infortunio",
-        "mi sono fatto male",
-        "infortunio sul lavoro",
-        "lesione",
-        "ferito",
-        "incidente con lesione",
-        "sono stato ferito",
-        "infortunio grave",
-        "infortunio lieve",
-        "medicazione",
-        "ospedale"
-    ],
-    "near_miss": [
-        "near miss",
-        "mancato infortunio",
-        "quasi incidente",
-        "per poco",
-        "poteva andare male",
-        "senza lesioni",
-        "condizione pericolosa",
-        "unsafe condition",
-        "azione pericolosa",
-        "unsafe act"
-    ],
-    "non_conformity": [
-        "non conformità",
-        "NC",
-        "prodotto difettoso",
-        "scarto",
-        "reclamo cliente",
-        "problema qualità"
-    ],
-    "kaizen": [
-        "kaizen",
-        "miglioramento",
-        "ottimizzazione",
-        "proposta miglioramento",
-        "riduzione sprechi"
-    ]
-}
+logger = logging.getLogger(__name__)
 
 
 class RetrieverAgent:
@@ -94,79 +51,6 @@ class RetrieverAgent:
             from src.integration.rag_pipeline import RAGPipeline
             self._pipeline = RAGPipeline(config_path=self.config_path)
         return self._pipeline
-    
-    def _detect_incident_intent(self, query: str) -> Optional[str]:
-        """
-        R27: Rileva se query riguarda un tipo specifico di incidente.
-        
-        Args:
-            query: Query utente
-            
-        Returns:
-            Categoria incidente (real_injury, near_miss, etc.) o None
-        """
-        query_lower = query.lower()
-        
-        for category, patterns in INCIDENT_PATTERNS.items():
-            for pattern in patterns:
-                if pattern.lower() in query_lower:
-                    logger.info(f"[R27] Intent rilevato: {category} (pattern: '{pattern}')")
-                    return category
-        
-        return None
-    
-    def _apply_category_boost(
-        self, 
-        docs: List[Dict[str, Any]], 
-        target_category: str,
-        boost_factor: float = 1.5
-    ) -> List[Dict[str, Any]]:
-        """
-        R27: Applica boost ai documenti con categoria matching.
-        
-        Args:
-            docs: Lista documenti recuperati
-            target_category: Categoria da boostare (es. "real_injury")
-            boost_factor: Fattore di moltiplicazione score
-            
-        Returns:
-            Lista documenti con score aggiornati
-        """
-        boosted_count = 0
-        penalized_count = 0
-        
-        for doc in docs:
-            doc_category = doc.get("metadata", {}).get("incident_category", "")
-            not_for = doc.get("metadata", {}).get("not_for", [])
-            
-            if doc_category == target_category:
-                # Boost documenti con categoria corretta
-                current_score = doc.get("rerank_score") or doc.get("score", 0)
-                doc["rerank_score"] = current_score * boost_factor
-                doc["category_boosted"] = True
-                boosted_count += 1
-                
-            elif doc_category and doc_category != target_category:
-                # Penalizza documenti con categoria sbagliata
-                # Ma solo se hanno una categoria definita (non penalizzare PS/IL generici)
-                current_score = doc.get("rerank_score") or doc.get("score", 0)
-                doc["rerank_score"] = current_score * 0.7  # Penalità 30%
-                doc["category_penalized"] = True
-                penalized_count += 1
-        
-        if boosted_count > 0 or penalized_count > 0:
-            logger.info(
-                f"[R27] Category boost: {boosted_count} boostati, "
-                f"{penalized_count} penalizzati per '{target_category}'"
-            )
-        
-        # Riordina per nuovo score
-        docs.sort(
-            key=lambda x: x.get("rerank_score") or x.get("score", 0),
-            reverse=True
-        )
-        
-        return docs
     
     def _retrieve_for_query(self, query: str) -> List[Dict[str, Any]]:
         """
@@ -211,7 +95,6 @@ class RetrieverAgent:
     def __call__(self, state: Dict[str, Any]) -> Dict[str, Any]:
         """
         Esegue retrieval per tutte le sub-query.
-        Include R27: Semantic filtering per incident_category.
         
         Args:
             state: Stato corrente del grafo
@@ -219,36 +102,28 @@ class RetrieverAgent:
         Returns:
             Aggiornamenti allo stato con documenti recuperati
         """
-        start = time.time()
+        # F11: Emetti stato
+        emit_status(state, "retriever")
         
-        # R27: Rileva intent incidente dalla query originale
-        original_query = state.get("original_query", "")
-        incident_intent = self._detect_incident_intent(original_query)
+        start = time.time()
         
         # Ottieni sub-query o usa query espansa
         sub_queries = state.get("sub_queries", [])
         if not sub_queries:
-            sub_queries = [state.get("expanded_query") or original_query]
+            sub_queries = [state.get("expanded_query") or state.get("original_query", "")]
         
         all_docs = []
-        seen_texts = set()  # Dedup per TESTO, non per doc_id (permette sezioni diverse)
+        seen_ids = set()
         
         for query in sub_queries:
             try:
                 docs = self._retrieve_for_query(query)
                 for doc in docs:
-                    # Dedup per contenuto, non per doc_id
-                    # Così sezioni diverse dello stesso doc passano (es. 5.2 e 5.3 rifiuti)
-                    text_key = doc["text"][:100]  # Primi 100 char come chiave
-                    if text_key not in seen_texts:
+                    if doc["doc_id"] not in seen_ids:
                         all_docs.append(doc)
-                        seen_texts.add(text_key)
+                        seen_ids.add(doc["doc_id"])
             except Exception as e:
                 logger.warning(f"Errore retrieval per '{query[:30]}...': {e}")
-        
-        # R27: Applica category boost se intent rilevato
-        if incident_intent:
-            all_docs = self._apply_category_boost(all_docs, incident_intent)
         
         # Ordina per rerank_score
         all_docs.sort(
@@ -265,20 +140,17 @@ class RetrieverAgent:
         stats = {
             "total_docs": len(all_docs),
             "sub_queries": len(sub_queries),
-            "glossary_docs": sum(1 for d in all_docs if d.get("source_type") == "glossary"),
-            "incident_intent": incident_intent,
-            "category_boosted": sum(1 for d in all_docs if d.get("category_boosted"))
+            "glossary_docs": sum(1 for d in all_docs if d.get("source_type") == "glossary")
         }
         
         logger.info(
             f"RetrieverAgent: {len(all_docs)} docs from {len(sub_queries)} queries, "
-            f"glossary={stats['glossary_docs']}, intent={incident_intent}"
+            f"glossary={stats['glossary_docs']}"
         )
         
         return {
             "retrieved_docs": all_docs,
             "retrieval_scores": stats,
-            "incident_intent": incident_intent,  # R27: Passa intent allo state
             "agent_trace": state.get("agent_trace", []) + [f"retriever:{latency:.0f}ms"]
         }
 

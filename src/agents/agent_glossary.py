@@ -12,6 +12,8 @@ from typing import Dict, Any
 import time
 import logging
 
+from src.agents.state import emit_status
+
 logger = logging.getLogger(__name__)
 
 
@@ -52,6 +54,9 @@ class GlossaryAgent:
         Returns:
             Aggiornamenti allo stato (expanded_query, acronyms_found, glossary_context)
         """
+        # F11: Emetti stato
+        emit_status(state, "glossary")
+        
         start = time.time()
         
         query = state.get("original_query", "")

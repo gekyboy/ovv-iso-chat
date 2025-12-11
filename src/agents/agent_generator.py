@@ -15,6 +15,8 @@ import re
 import time
 import logging
 
+from src.agents.state import emit_status
+
 logger = logging.getLogger(__name__)
 
 
@@ -275,6 +277,9 @@ class GeneratorAgent:
         Returns:
             Aggiornamenti allo stato con risposta e citazioni
         """
+        # F11: Emetti stato
+        emit_status(state, "generator")
+        
         start = time.time()
         
         # Costruisci prompt

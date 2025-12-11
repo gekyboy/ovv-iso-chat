@@ -288,3 +288,4 @@ if __name__ == "__main__":
     # Esegui test base (salta slow)
     pytest.main([__file__, "-v", "-m", "not slow"])
 
+

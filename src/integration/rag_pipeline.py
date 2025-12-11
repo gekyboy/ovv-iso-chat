@@ -477,7 +477,7 @@ class RAGPipeline:
             from qdrant_client.models import NamedVector
             
             qdrant_config = self.config.get("qdrant", {})
-            collection = qdrant_config.get("collection_name", "iso_sgi_docs_v31")
+            collection = qdrant_config.get("collection", "iso_sgi_docs_v31")
             
             results = self.indexer.qdrant_client.search(
                 collection_name=collection,

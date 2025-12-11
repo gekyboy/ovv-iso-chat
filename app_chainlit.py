@@ -53,6 +53,21 @@ from src.analytics.collectors.conversation_logger import (
     InteractionStatus
 )
 
+# ═══════════════════════════════════════════════════════════════
+# F10-B: DATA LAYER NATIVO PER FEEDBACK 👍👎
+# Registra SQLite data layer per persistenza conversazioni e feedback
+# ═══════════════════════════════════════════════════════════════
+try:
+    import chainlit.data as cl_data
+    from src.data.chainlit_data_layer import get_data_layer
+    cl_data._data_layer = get_data_layer()
+    logger = logging.getLogger(__name__)
+    logger.info("[F10] SQLite Data Layer registered for Chainlit")
+except Exception as e:
+    # Fallback: continua senza data layer (feedback manuale funziona comunque)
+    import logging as _log
+    _log.getLogger(__name__).warning(f"[F10] Data layer not available: {e}")
+
 # Singleton UserStore
 _user_store = None
 
@@ -687,23 +702,31 @@ async def on_chat_start():
         cl.user_session.set("conv_session_id", conv_session.id)
         logger.info(f"[R28] Conversation session started: {conv_session.id}")
         
-        # Messaggio benvenuto
+        # Messaggio benvenuto con pulsanti cliccabili
         role_emoji = {"admin": "👑", "engineer": "🔧", "user": "👤"}.get(role_str, "👤")
+        
+        # Pulsanti comandi rapidi
+        quick_actions = [
+            cl.Action(name="cmd_status", payload={}, label="📊 Status"),
+            cl.Action(name="cmd_glossario", payload={}, label="📚 Glossario"),
+            cl.Action(name="cmd_documenti", payload={}, label="📂 Documenti"),
+            cl.Action(name="cmd_help", payload={}, label="❓ Aiuto"),
+        ]
         
         await cl.Message(
             content=f"Benvenuto **{display_name}**! {role_emoji} Ruolo: `{role_str}`\n\n"
-                    f"Chiedimi qualsiasi cosa sui documenti ISO (PS, IL, MR, TOOLS).\n\n"
-                    f"Usa `/status` per info sistema, `/glossario` per cercare acronimi, `/documenti` per gestire cartella."
+                    f"Chiedimi qualsiasi cosa sui documenti ISO (PS, IL, MR, TOOLS).",
+            actions=quick_actions
         ).send()
         
-        # F10: Mostra status cartella documenti all'avvio
+        # F10: Path manager disponibile ma non mostriamo status all'avvio
+        # (L'utente può usare /documenti per gestire la cartella)
         from src.ingestion.path_manager import get_path_manager
         try:
             manager = get_path_manager()
             if manager.show_startup_selector():
                 await show_path_selector()
-            else:
-                await show_path_status_brief()
+            # Rimossa riga "📂 Documenti: input_docs (150 file)" - non utile all'utente
         except Exception as e:
             logger.warning(f"Errore path manager all'avvio: {e}")
         
@@ -732,6 +755,33 @@ async def on_message(message: cl.Message):
         return
     
     content = message.content.strip()
+    
+    # F10: Check se stiamo aspettando input path (da pulsante "Cambia Cartella")
+    if cl.user_session.get("waiting_for_path_input"):
+        cl.user_session.set("waiting_for_path_input", False)
+        
+        from src.ingestion.path_manager import get_path_manager
+        
+        new_path = content
+        manager = get_path_manager()
+        result = manager.set_path(new_path)
+        
+        if result.valid:
+            msg = f"✅ **Cartella impostata!**\n\n"
+            msg += f"📍 `{result.path}`\n\n"
+            msg += f"📊 **Documenti trovati**: {result.pdf_count}\n"
+            msg += f"  - PS: {result.ps_count}\n"
+            msg += f"  - IL: {result.il_count}\n"
+            msg += f"  - MR: {result.mr_count}\n"
+            msg += f"  - TOOLS: {result.tools_count}\n"
+            await cl.Message(content=msg, author="Sistema").send()
+        else:
+            await cl.Message(
+                content=f"❌ **Percorso non valido**\n\n{result.error}\n\n"
+                        f"Riprova con `/documenti` e poi clicca 'Cambia Cartella'.",
+                author="Sistema"
+            ).send()
+        return
     
     # Gestisci comandi speciali
     if content.startswith("/"):
@@ -992,6 +1042,72 @@ async def on_select_recent_path(action: cl.Action):
         ).send()
 
 
+@cl.action_callback("cmd_documenti_recenti")
+async def on_cmd_documenti_recenti(action: cl.Action):
+    """Mostra path recenti (cliccabile)"""
+    from src.ingestion.path_manager import get_path_manager
+    
+    manager = get_path_manager()
+    recents = manager.get_recent_paths(limit=10)
+    
+    if not recents:
+        await cl.Message(
+            content="📋 Nessun path recente salvato.",
+            author="Sistema"
+        ).send()
+        return
+    
+    content = "📋 **Path recenti**:\n\n"
+    actions = []
+    
+    for i, r in enumerate(recents, 1):
+        date_str = r.last_used.strftime("%d/%m/%Y %H:%M")
+        label = f" - {r.label}" if r.label else ""
+        content += f"{i}. `{r.path}`{label}\n"
+        content += f"   _{r.pdf_count} PDF, ultimo uso: {date_str}_\n\n"
+        
+        # Aggiungi pulsante per selezionare questo path
+        actions.append(cl.Action(
+            name="select_recent_path",
+            payload={"path": r.path, "index": i},
+            label=f"📁 Usa #{i}"
+        ))
+    
+    await cl.Message(
+        content=content,
+        author="Sistema",
+        actions=actions[:5]  # Max 5 pulsanti
+    ).send()
+
+
+@cl.action_callback("cmd_documenti_reset")
+async def on_cmd_documenti_reset(action: cl.Action):
+    """Reset a default (cliccabile)"""
+    from src.ingestion.path_manager import get_path_manager
+    
+    manager = get_path_manager()
+    manager.reset_to_default()
+    
+    await cl.Message(
+        content=f"✅ Path resettato a default: `{manager.get_default_path()}`",
+        author="Sistema"
+    ).send()
+
+
+@cl.action_callback("cmd_documenti_cambia")
+async def on_cmd_documenti_cambia(action: cl.Action):
+    """Richiede inserimento nuovo path"""
+    await cl.Message(
+        content="📝 **Inserisci il percorso della cartella documenti:**\n\n"
+                "Esempio: `D:\\Documenti\\ISO` o `C:\\Users\\Mario\\Documents\\PDF`\n\n"
+                "_Digita il percorso e premi Invio._",
+        author="Sistema"
+    ).send()
+    
+    # Imposta flag per intercettare prossimo messaggio come path
+    cl.user_session.set("waiting_for_path_input", True)
+
+
 async def handle_documenti_command(content: str, user: User):
     """
     F10: Gestisce comando /documenti per gestione cartella documenti.
@@ -1013,20 +1129,38 @@ async def handle_documenti_command(content: str, user: User):
     # Verifica permessi per modifiche
     can_modify = user.role.value in ["admin", "engineer"]
     
-    # /documenti - Mostra status
+    # /documenti - Mostra status con pulsanti cliccabili
     if not subcommand:
         status_msg = manager.format_status_message()
         
-        # Aggiungi comandi disponibili
-        status_msg += "\n📋 **Comandi disponibili**:\n"
-        status_msg += "- `/documenti` → Stato attuale\n"
-        status_msg += "- `/documenti recenti` → Path usati di recente\n"
+        # Crea azioni cliccabili
+        actions = [
+            cl.Action(
+                name="cmd_documenti_recenti",
+                payload={},
+                label="📋 Path Recenti"
+            )
+        ]
         
         if can_modify:
-            status_msg += "- `/documenti <percorso>` → Cambia cartella\n"
-            status_msg += "- `/documenti reset` → Torna a default\n"
+            actions.extend([
+                cl.Action(
+                    name="cmd_documenti_reset",
+                    payload={},
+                    label="🔄 Reset Default"
+                ),
+                cl.Action(
+                    name="cmd_documenti_cambia",
+                    payload={},
+                    label="📂 Cambia Cartella"
+                )
+            ])
         
-        await cl.Message(content=status_msg, author="Sistema").send()
+        await cl.Message(
+            content=status_msg,
+            author="Sistema",
+            actions=actions
+        ).send()
         return
     
     # /documenti recenti - Mostra path recenti
@@ -2422,31 +2556,51 @@ async def handle_query(query: str, user: User, namespace: str):
         # Esegui query RAG (glossary integrato nel pipeline)
         logger.info("[handle_query] Esecuzione pipeline.query...")
         
-        # Task per aggiornare messaggio periodicamente (mantiene connessione WebSocket)
+        # F11: Task per aggiornare messaggio con fasi RAG in tempo reale
         import asyncio
+        import queue
+        import functools
+        
         keep_alive_task = None
         stop_keep_alive = asyncio.Event()
+        status_queue = queue.Queue()  # Coda thread-safe per le fasi
         
-        async def keep_connection_alive():
-            """Invia aggiornamenti ogni 10 secondi per mantenere connessione"""
-            dots = 1
+        async def update_status_display():
+            """Controlla coda fasi e aggiorna UI - gira nel loop asyncio principale"""
+            last_msg = ""
             while not stop_keep_alive.is_set():
                 try:
-                    await asyncio.sleep(10)
-                    if not stop_keep_alive.is_set():
-                        dots = (dots % 3) + 1
-                        thinking_msg.content = f"⏳ Elaborazione in corso{'.' * dots}"
-                        await thinking_msg.update()
-                except Exception:
-                    break
+                    # Controlla coda ogni 100ms
+                    await asyncio.sleep(0.1)
+                    
+                    # Processa tutti i messaggi in coda
+                    while not status_queue.empty():
+                        try:
+                            msg = status_queue.get_nowait()
+                            if msg != last_msg:
+                                thinking_msg.content = msg
+                                await thinking_msg.update()
+                                last_msg = msg
+                                logger.debug(f"[F11] UI aggiornata: {msg}")
+                        except queue.Empty:
+                            break
+                except Exception as e:
+                    logger.debug(f"[F11] Update error: {e}")
         
-        # Avvia task keep-alive
-        keep_alive_task = asyncio.create_task(keep_connection_alive())
+        # Avvia task per aggiornare UI
+        keep_alive_task = asyncio.create_task(update_status_display())
+        
+        def status_callback(phase: str, message: str):
+            """Callback thread-safe - mette messaggio in coda"""
+            logger.info(f"[F11] {message}")
+            status_queue.put(message)
         
         try:
             # Esegui pipeline in thread per non bloccare event loop
+            # F11: Passa callback per aggiornamenti status
             response = await asyncio.get_event_loop().run_in_executor(
-                None, pipeline.query, reformulated
+                None, 
+                functools.partial(pipeline.query, reformulated, status_callback=status_callback)
             )
         finally:
             # Ferma task keep-alive
@@ -2457,6 +2611,9 @@ async def handle_query(query: str, user: User, namespace: str):
                     await keep_alive_task
                 except asyncio.CancelledError:
                     pass
+            
+            # F11: Cleanup (niente da fare con approccio semplificato)
+            pass
         
         logger.info(f"[handle_query] Risposta ricevuta: {len(response.answer)} chars, {len(response.sources)} sources")
         
@@ -2568,17 +2725,39 @@ async def handle_query(query: str, user: User, namespace: str):
                 )
         
         # ═══════════════════════════════════════════════════════════════
+        # F10: PULSANTI FEEDBACK 👍👎
+        # Aggiungi pulsanti per valutare la risposta
+        # ═══════════════════════════════════════════════════════════════
+        feedback_actions = [
+            cl.Action(
+                name="feedback_positive",
+                payload={"query": query[:200]},  # Limita lunghezza payload
+                label="👍 Utile",
+                tooltip="Questa risposta è stata utile"
+            ),
+            cl.Action(
+                name="feedback_negative",
+                payload={"query": query[:200]},
+                label="👎 Non utile",
+                tooltip="Questa risposta non è stata utile"
+            )
+        ]
+        
+        # Combina tool_actions + feedback_actions
+        all_actions = tool_actions + feedback_actions
+        
+        # ═══════════════════════════════════════════════════════════════
         
         # 5. Aggiungi latency
         answer += f"\n\n⏱️ *{response.latency_ms:.0f}ms*"
         
         # Invia messaggio con elementi cliccabili e actions
-        logger.info(f"[handle_query] Invio messaggio ({len(answer)} chars, {len(elements)} elements, {len(tool_actions)} actions)...")
+        logger.info(f"[handle_query] Invio messaggio ({len(answer)} chars, {len(elements)} elements, {len(all_actions)} actions)...")
         
         msg = cl.Message(
             content=answer,
             elements=elements if elements else None,
-            actions=tool_actions if tool_actions else None,
+            actions=all_actions if all_actions else None,
             metadata={
                 "query": query,
                 "sources": [s.doc_id for s in cited_sources],

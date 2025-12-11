@@ -4,7 +4,7 @@
 
 > 🆕 **v3.9.1**: **PDF Consultabili & Citazioni Leggibili** - I PDF si aprono in sidebar, le citazioni mostrano titoli italiani tra virgolette, fonti separate da glossario!
 
-> 📂 **Nuovo in v3.9.1**: Comando `/documenti` per gestire la cartella documenti direttamente dalla chat (F10)!
+> 📂 **Nuovo in v3.9.1**: Comando `/documenti` per gestire la cartella documenti con **pulsanti cliccabili** (F10)!
 
 ## Indice
 
@@ -85,7 +85,7 @@ Immagina di avere centinaia di documenti aziendali: procedure, istruzioni, modul
 | 📚 **Cercare nel glossario** | `/glossario WCM` |
 | 📤 **Proporre per tutti** | `/propose fact CDL significa Centro Di Lavoro` |
 | 📊 **Vedere lo stato** | `/status` |
-| 📂 **Vedere cartella documenti** | `/documenti` |
+| 📂 **Vedere cartella documenti** | `/documenti` (con pulsanti cliccabili!) |
 | 👍👎 **Dare feedback** | Clicca i pulsanti dopo ogni risposta |
 
 ### 🟡 Ingegnere (`engineer`)
@@ -136,8 +136,19 @@ Qual è la differenza tra NC e AC?
 ```
 
 ### Comandi Admin/Engineer
+
+**📂 Gestione Cartella Documenti (F10)** - Con pulsanti cliccabili!
 ```
-/documenti D:\MieiPDF                        → Cambia cartella documenti (F10)
+/documenti                                   → Mostra stato + pulsanti interattivi
+```
+Pulsanti disponibili dopo `/documenti`:
+- 📋 **Path Recenti** → Mostra e seleziona path usati
+- 🔄 **Reset Default** → Torna alla cartella config.yaml
+- 📂 **Cambia Cartella** → Inserisci nuovo percorso
+
+Oppure usa i comandi testuali:
+```
+/documenti D:\MieiPDF                        → Cambia cartella documenti
 /documenti recenti                           → Mostra path usati di recente
 /documenti reset                             → Torna alla cartella di default
 ```

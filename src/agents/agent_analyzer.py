@@ -13,6 +13,8 @@ import re
 import time
 import logging
 
+from src.agents.state import emit_status
+
 logger = logging.getLogger(__name__)
 
 
@@ -301,6 +303,9 @@ SOTTO-QUERY (una per riga):"""
         Returns:
             Aggiornamenti allo stato
         """
+        # F11: Emetti stato
+        emit_status(state, "analyzer")
+        
         start = time.time()
         
         # Usa query espansa se disponibile
