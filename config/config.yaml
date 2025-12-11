@@ -1,5 +1,5 @@
 # ============================================================================
-# OVV ISO Chat - Configurazione v3.9.2
+# OVV ISO Chat - Configurazione v3.9.3
 # ============================================================================
 # Stack Modelli:
 #   - Embedding: BAAI/bge-m3 (1024 dim, multilingual, CUDA batch=16)

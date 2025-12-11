@@ -1,10 +1,10 @@
-# 🏭 OVV ISO Chat v3.9.2
+# 🏭 OVV ISO Chat v3.9.3
 
 > Il tuo assistente **discorsivo e proattivo** per i documenti ISO aziendali. Chiedi quello che ti serve, lui trova la risposta nei documenti, te la spiega in dettaglio e ti suggerisce **moduli e strumenti correlati**.
 
-> 🆕 **v3.9.2**: **Feedback Buttons 👍👎 + SQLite Data Layer** - Ora puoi valutare ogni risposta con pollice su/giù! I feedback vengono salvati in database per analytics e miglioramento continuo.
+> 🆕 **v3.9.3**: **FlagEmbedding Hybrid Search** - Embedding nativo BAAI con supporto completo Dense + Sparse vectors per retrieval migliorato!
 
-> 📂 **Nuovo in v3.9.1**: Comando `/documenti` per gestire la cartella documenti con **pulsanti cliccabili**!
+> 👍 **v3.9.2**: Feedback 👍👎 su ogni risposta + fasi RAG live (🤔→🧠→📚→📄→✍️→🔍)
 
 ## Indice
 
@@ -367,6 +367,18 @@ Ogni risposta mostra le **fonti consultate** in modo chiaro e organizzato (v3.9.
 - 📝 Emergency Work Order
 ```
 
+**Novità v3.9.2:**
+- **👍👎 Feedback Buttons**: Dopo ogni risposta, clicca pollice su/giù per valutarla
+- **📊 Fasi RAG in tempo reale**: Vedi cosa sta facendo il sistema mentre elabora:
+  - 🤔 Leggo la domanda...
+  - 🧠 Capisco cosa cerchi...
+  - 📚 Cerco nei documenti...
+  - 📄 Preparo il contesto...
+  - ✍️ Scrivo la risposta...
+  - 🔍 Verifico le fonti...
+  - 🤨 Non mi convince... riscrivo! (se serve retry)
+- **🗄️ SQLite Data Layer**: Persistenza nativa per conversazioni e feedback
+
 **Novità v3.9.1:**
 - **Titoli leggibili nel testo**: Le citazioni nel testo mostrano il titolo italiano tra virgolette (es. `"Gestione della sicurezza"`) invece del codice tecnico (es. `PS-06_01`)
 - **Nome completo nel footer**: Include `doc_id_Rev.XX_Titolo italiano`
@@ -687,8 +699,10 @@ Chunk Text: "La gestione dei rifiuti pericolosi richiede..."
                                            "gestione": 0.5}
 ```
 
-- **Dense Vector**: Cattura il significato semantico globale
-- **Sparse Vector**: Cattura le parole chiave importanti (BM25-style)
+- **Dense Vector**: Cattura il significato semantico globale (1024 dimensioni)
+- **Sparse Vector**: Cattura le parole chiave importanti (BM25-style lexical weights)
+
+> 📦 **Nota v3.9.3**: Ora usa **FlagEmbedding** (libreria nativa BAAI) invece di SentenceTransformers per supporto hybrid completo. Se FlagEmbedding non è installato, il sistema usa SentenceTransformers come fallback (solo dense).
 
 ### 4. Indicizzazione in Qdrant
 
@@ -1677,6 +1691,23 @@ Permettere all'utente di scegliere il modello LLM direttamente dalla UI:
 # 📜 Appendici
 
 ## 📜 Storico Versioni
+
+### v3.9.3 (Dicembre 2025) - "FlagEmbedding Hybrid Search"
+- 🔍 **FlagEmbedding Nativo** - Sostituisce SentenceTransformers come fallback
+  - Libreria ufficiale BAAI per BGE-M3 con supporto completo
+  - **Dense + Sparse vectors** per hybrid search reale
+  - Migliore retrieval su query tecniche (codici documento, acronimi)
+- 📊 **Embedding Hybrid Completo**:
+  - Dense Vector: 1024 dimensioni (significato semantico)
+  - Sparse Vector: BM25-style lexical weights (keyword matching)
+  - Fusione automatica per retrieval ottimale
+- 🔄 **Re-indicizzazione Pulita** - 2787 chunks con nuovi embedding
+  - Collection: `iso_sgi_docs_v31` (status GREEN)
+  - VRAM: ~1100 MB durante embedding
+- 🐛 **Bug Fix**: Corretto `collection_name` → `collection` in rag_pipeline.py
+- 📁 **Dipendenze aggiornate**:
+  - `FlagEmbedding>=1.2.0` installato
+  - `ir-datasets`, `sentencepiece` come dipendenze transitive
 
 ### v3.9.2 (Dicembre 2025) - "Feedback Buttons & Data Layer"
 - 👍👎 **Pulsanti Feedback su ogni risposta** - Valuta le risposte con pollice su/giù

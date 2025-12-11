@@ -1,5 +1,5 @@
 """
-OVV ISO Chat v3.9.2 - Chainlit UI
+OVV ISO Chat v3.9.3 - Chainlit UI
 Chat interface per RAG su documenti ISO-SGI
 
 Features:
