@@ -1,0 +1,963 @@
+{
+  "acronyms": {
+    "_comment_section_1": "=== SISTEMA DOCUMENTALE ISO ===",
+    "PS": {
+      "full": "Procedura di Sistema",
+      "description": "Documenti che descrivono i processi aziendali principali secondo ISO, inclusi pianificazione, controlli operativi e miglioramento continuo"
+    },
+    "IL": {
+      "full": "Istruzione di Lavoro",
+      "description": "Documenti operativi con istruzioni dettagliate per attività specifiche, come gestione manutenzione, taratura strumenti o controlli"
+    },
+    "MR": {
+      "full": "Modulo di Registrazione",
+      "description": "Template per registrazione dati e attività, utilizzati per non conformità, kaizen, report e schede operative"
+    },
+    "SGI": {
+      "full": "Sistema di Gestione Integrato",
+      "description": "Sistema che integra ISO 9001 (qualità), 14001 (ambiente) e 45001 (sicurezza) per il miglioramento continuo delle performance aziendali"
+    },
+    "SGQ": {
+      "full": "Sistema di Gestione Qualità",
+      "description": "Sistema documentato per gestire qualità secondo ISO 9001, include MQ, PS, IL, MR"
+    },
+    "MQ": {
+      "full": "Manuale Qualità",
+      "description": "Documento che descrive il sistema di gestione qualità aziendale (non più obbligatorio da ISO 9001:2015)"
+    },
+    "PQ": {
+      "full": "Piano Qualità",
+      "description": "Documento che specifica procedure e risorse per un progetto/prodotto specifico"
+    },
+    "ISO": {
+      "full": "International Organization for Standardization",
+      "description": "Ente internazionale di standardizzazione che definisce norme per sistemi di gestione"
+    },
+    "UNI EN ISO": {
+      "full": "Norme UNI EN ISO",
+      "description": "Standard italiani (UNI), europei (EN) e internazionali (ISO) per sistemi di gestione"
+    },
+    "_comment_section_2": "=== REQUISITI E CICLI ISO ===",
+    "PDCA": {
+      "full": "Plan-Do-Check-Act",
+      "description": "Ciclo di Deming, fondamento del miglioramento continuo ISO: Pianificare, Fare, Verificare, Agire"
+    },
+    "CAPA": {
+      "full": "Corrective And Preventive Actions",
+      "description": "Azioni correttive (eliminare causa NC) e preventive (prevenire potenziali NC), requisito chiave ISO"
+    },
+    "AC": {
+      "ambiguous": true,
+      "definitions": [
+        {
+          "context": "qualità",
+          "full": "Azione Correttiva",
+          "description": "Azione intrapresa per eliminare la causa di una non conformità rilevata e prevenirne la ricorrenza"
+        },
+        {
+          "context": "climatizzazione",
+          "full": "Aria Condizionata",
+          "description": "Sistema di climatizzazione degli ambienti"
+        }
+      ],
+      "default_context": "qualità"
+    },
+    "AP": {
+      "full": "Azione Preventiva",
+      "description": "Azione intrapresa per eliminare la causa di una potenziale non conformità (concetto legacy pre-ISO 2015)"
+    },
+    "NC": {
+      "ambiguous": true,
+      "definitions": [
+        {
+          "context": "qualità",
+          "full": "Non Conformità",
+          "description": "Mancato soddisfacimento di un requisito, classificata in tipi A (grave), B (media), C (poco rilevante)"
+        },
+        {
+          "context": "contabilità",
+          "full": "Nota di Credito",
+          "description": "Documento contabile per storno o rettifica fattura emessa"
+        }
+      ],
+      "default_context": "qualità"
+    },
+    "FNC": {
+      "full": "Foglio Non Conformità",
+      "description": "Documento per registrare e gestire le non conformità riscontrate in prodotti, processi o sistemi"
+    },
+    "VII": {
+      "full": "Verifiche Ispettive Interne",
+      "description": "Audit interni per verificare conformità del sistema di gestione ai requisiti ISO"
+    },
+    "Audit": {
+      "full": "Verifica Ispettiva",
+      "description": "Processo sistematico e documentato per verificare conformità a requisiti specificati"
+    },
+    "Riesame Direzione": {
+      "full": "Management Review",
+      "description": "Riesame periodico del sistema di gestione da parte dell'alta direzione per valutarne efficacia"
+    },
+    "KPI": {
+      "full": "Key Performance Indicator",
+      "description": "Indicatori chiave di prestazione per monitorare processi e obiettivi"
+    },
+    "_comment_section_3": "=== QUALITÀ E PROCESSO ===",
+    "FMEA": {
+      "full": "Failure Mode and Effects Analysis",
+      "description": "Analisi preventiva dei modi di guasto e dei loro effetti per identificare rischi nel processo"
+    },
+    "PFMEA": {
+      "full": "Process FMEA",
+      "description": "FMEA applicata al processo produttivo per identificare rischi nelle fasi di lavorazione"
+    },
+    "DFMEA": {
+      "full": "Design FMEA",
+      "description": "FMEA applicata alla progettazione prodotto per identificare rischi nel design"
+    },
+    "RPN": {
+      "full": "Risk Priority Number",
+      "description": "Indice di priorità rischio in FMEA, calcolato come Severity × Occurrence × Detection"
+    },
+    "RCA": {
+      "full": "Root Cause Analysis",
+      "description": "Analisi della causa radice di un problema per identificarne l'origine"
+    },
+    "APQP": {
+      "full": "Advanced Product Quality Planning",
+      "description": "Pianificazione avanzata della qualità del prodotto, processo strutturato per sviluppo prodotti"
+    },
+    "PPAP": {
+      "full": "Production Part Approval Process",
+      "description": "Processo di approvazione parti di produzione per validare prodotti prima della serie"
+    },
+    "ISIR": {
+      "full": "Initial Sample Inspection Report",
+      "description": "Rapporto di ispezione iniziale campione per ottenere benestare dal cliente"
+    },
+    "QFD": {
+      "full": "Quality Function Deployment",
+      "description": "Dispiegamento funzione qualità - traduce requisiti cliente in specifiche tecniche"
+    },
+    "TQM": {
+      "full": "Total Quality Management",
+      "description": "Gestione totale della qualità - approccio sistemico al miglioramento di tutta l'organizzazione"
+    },
+    "AQL": {
+      "full": "Acceptable Quality Limit",
+      "description": "Limite di qualità accettabile usato nei piani di campionamento per controlli qualità"
+    },
+    "IQC": {
+      "full": "Incoming Quality Control",
+      "description": "Controllo qualità in accettazione materiali in ingresso"
+    },
+    "Poka Yoke": {
+      "full": "Poka Yoke",
+      "description": "Sistema a prova di errore per prevenire difetti nel processo produttivo"
+    },
+    "GdL": {
+      "full": "Gruppo di Lavoro",
+      "description": "Team interfunzionale per analisi come FMEA o problem solving"
+    },
+    "Vendor Rating": {
+      "full": "Valutazione Fornitori",
+      "description": "Sistema periodico per valutare performance dei fornitori basato su criteri statici e dinamici"
+    },
+    "RO": {
+      "full": "Richiesta d'Offerta",
+      "description": "Documento per richiedere o inviare offerte per prodotti o attrezzature"
+    },
+    "RI": {
+      "full": "Richiesta di Investimento",
+      "description": "Documento per richiedere investimenti per attrezzature, macchinari o modifiche"
+    },
+    "ODA": {
+      "full": "Ordine di Acquisto",
+      "description": "Documento per ordinare materiali o servizi da fornitori"
+    },
+    "ODL": {
+      "full": "Ordine di Lavoro",
+      "description": "Documento che autorizza e traccia un'attività di lavoro specifica"
+    },
+    "_comment_section_4": "=== CAPACITÀ PROCESSO E STATISTICI ===",
+    "SPC": {
+      "full": "Statistical Process Control",
+      "description": "Controllo statistico di processo per monitorare e migliorare la qualità tramite carte di controllo"
+    },
+    "MSA": {
+      "full": "Measurement System Analysis",
+      "description": "Analisi del sistema di misurazione per valutare accuratezza e precisione degli strumenti"
+    },
+    "GRR": {
+      "full": "Gage Repeatability & Reproducibility",
+      "description": "Studio R&R per validare sistema di misura (ripetibilità e riproducibilità)"
+    },
+    "Cp": {
+      "full": "Process Capability",
+      "description": "Indice di capacità processo che misura la dispersione rispetto ai limiti di specifica"
+    },
+    "Cpk": {
+      "full": "Process Capability Index",
+      "description": "Indice di capacità processo centrato, considera anche lo scostamento dalla media"
+    },
+    "Ppk": {
+      "full": "Process Performance Index",
+      "description": "Indice di performance processo con variazione totale (lungo periodo)"
+    },
+    "PPM": {
+      "full": "Parts Per Million",
+      "description": "Misura di difettosità, numero di parti difettose per milione prodotte"
+    },
+    "UCL": {
+      "full": "Upper Control Limit",
+      "description": "Limite di controllo superiore nelle carte di controllo SPC"
+    },
+    "LCL": {
+      "full": "Lower Control Limit",
+      "description": "Limite di controllo inferiore nelle carte di controllo SPC"
+    },
+    "USL": {
+      "full": "Upper Specification Limit",
+      "description": "Limite di specifica superiore definito dal cliente/progetto"
+    },
+    "LSL": {
+      "full": "Lower Specification Limit",
+      "description": "Limite di specifica inferiore definito dal cliente/progetto"
+    },
+    "_comment_section_5": "=== CARATTERISTICHE PRODOTTO ===",
+    "CC": {
+      "full": "Caratteristica Critica",
+      "description": "Caratteristica che influenza sicurezza o conformità normativa, richiede controllo al 100%"
+    },
+    "SC": {
+      "full": "Caratteristica Significativa",
+      "description": "Caratteristica importante per funzionalità o assemblaggio, richiede controllo statistico"
+    },
+    "KC": {
+      "full": "Key Characteristic",
+      "description": "Caratteristica chiave del prodotto (termine IATF/automotive)"
+    },
+    "CTQ": {
+      "full": "Critical To Quality",
+      "description": "Caratteristica critica per la qualità dal punto di vista del cliente (Six Sigma)"
+    },
+    "_comment_section_6": "=== WCM - WORLD CLASS MANUFACTURING ===",
+    "WCM": {
+      "full": "World Class Manufacturing",
+      "description": "Metodologia di eccellenza produttiva che include pillar come PM, WO, LCS, QC, FI"
+    },
+    "PM Pillar": {
+      "full": "Professional Maintenance Pillar",
+      "description": "Pillar WCM per manutenzione professionale, focalizzato su prevenzione guasti e affidabilità"
+    },
+    "AM Pillar": {
+      "full": "Autonomous Maintenance Pillar",
+      "description": "Pillar WCM per manutenzione autonoma eseguita dagli operatori di linea"
+    },
+    "WO Pillar": {
+      "full": "Workplace Organization Pillar",
+      "description": "Pillar WCM per organizzazione posto di lavoro, integrando 5S e analisi sprechi"
+    },
+    "LCS Pillar": {
+      "full": "Logistics & Customer Service Pillar",
+      "description": "Pillar WCM per ottimizzazione logistica e servizio cliente"
+    },
+    "QC Pillar": {
+      "full": "Quality Control Pillar",
+      "description": "Pillar WCM per controllo qualità e zero difetti"
+    },
+    "QC": {
+      "ambiguous": true,
+      "definitions": [
+        {
+          "context": "qualità",
+          "full": "Quality Control",
+          "description": "Controllo qualità - Attività di verifica conformità prodotti a specifiche"
+        },
+        {
+          "context": "produzione",
+          "full": "Quick Change",
+          "description": "Cambio rapido attrezzature (SMED) per ridurre tempi di setup"
+        }
+      ],
+      "default_context": "qualità"
+    },
+    "FI Pillar": {
+      "full": "Focused Improvement Pillar",
+      "description": "Pillar WCM per miglioramento focalizzato su perdite specifiche"
+    },
+    "EEM Pillar": {
+      "full": "Early Equipment Management Pillar",
+      "description": "Pillar WCM per gestione anticipata attrezzature in fase di progettazione"
+    },
+    "PD Pillar": {
+      "full": "People Development Pillar",
+      "description": "Pillar WCM per sviluppo competenze del personale"
+    },
+    "S Pillar": {
+      "full": "Safety Pillar",
+      "description": "Pillar WCM per sicurezza e zero infortuni"
+    },
+    "ENV Pillar": {
+      "full": "Environment Pillar",
+      "description": "Pillar WCM per gestione ambientale e zero impatto"
+    },
+    "_comment_section_7": "=== KAIZEN E MIGLIORAMENTO CONTINUO ===",
+    "Kaizen": {
+      "full": "Miglioramento Continuo",
+      "description": "Approccio giapponese per miglioramenti incrementali nei processi, con template Major, Standard e Quick"
+    },
+    "Major Kaizen": {
+      "full": "Major Kaizen",
+      "description": "Progetto Kaizen maggiore con durata >3 mesi, miglioramenti strutturali cross-funzionali"
+    },
+    "Standard Kaizen": {
+      "full": "Standard Kaizen",
+      "description": "Progetto Kaizen standard con durata 1-3 mesi, ottimizzazioni di processo medie"
+    },
+    "Quick Kaizen": {
+      "full": "Quick Kaizen",
+      "description": "Kaizen rapido con durata <1 mese, fix immediati e low-cost"
+    },
+    "Hoshin Kanri": {
+      "full": "Hoshin Kanri",
+      "description": "Metodo di pianificazione strategica per allineare obiettivi aziendali con azioni operative"
+    },
+    "X Matrix": {
+      "full": "X-Matrix",
+      "description": "Strumento Hoshin Kanri che allinea obiettivi strategici con azioni, responsabili e metriche"
+    },
+    "Ishikawa": {
+      "full": "Diagramma di Ishikawa",
+      "description": "Diagramma a lisca di pesce per analisi causa radice, categorizzato in 4M o 6M"
+    },
+    "4M": {
+      "full": "Man, Machine, Material, Method",
+      "description": "Categorie del diagramma Ishikawa: Uomo, Macchina, Materiale, Metodo"
+    },
+    "5 Whys": {
+      "full": "Tecnica dei 5 Perché",
+      "description": "Metodo iterativo per identificare la causa radice chiedendo 'Perché?' ripetutamente"
+    },
+    "5W1H": {
+      "full": "What, Who, When, Where, Why, How",
+      "description": "Framework per raccogliere informazioni complete: Cosa, Chi, Quando, Dove, Perché, Come"
+    },
+    "5QFZD-4MD": {
+      "full": "5Q-Fenomeno-Zero-Defect + 4M-Dove",
+      "description": "Strumento WCM avanzato per analisi qualitativa difetti integrato con 4M"
+    },
+    "QM Matrix": {
+      "full": "Quality Management Matrix",
+      "description": "Matrice per correlare difetti con cause nel pillar Quality Control"
+    },
+    "SIPOC": {
+      "full": "Suppliers-Inputs-Process-Outputs-Customers",
+      "description": "Mappa di alto livello del processo: Fornitori, Input, Processo, Output, Clienti"
+    },
+    "DMAIC": {
+      "full": "Define-Measure-Analyze-Improve-Control",
+      "description": "Ciclo di miglioramento Six Sigma: Definire, Misurare, Analizzare, Migliorare, Controllare"
+    },
+    "_comment_section_8": "=== 5S E LEAN ===",
+    "5S": {
+      "full": "Metodo 5S",
+      "description": "Metodologia lean per organizzazione posto di lavoro: Seiri, Seiton, Seiso, Seiketsu, Shitsuke"
+    },
+    "Seiri": {
+      "full": "Seiri (Separare)",
+      "description": "1° S: Separare ciò che è necessario da ciò che non lo è"
+    },
+    "Seiton": {
+      "full": "Seiton (Sistemare)",
+      "description": "2° S: Sistemare gli oggetti in modo ordinato e accessibile"
+    },
+    "Seiso": {
+      "full": "Seiso (Splendere)",
+      "description": "3° S: Pulire l'area di lavoro e identificare anomalie"
+    },
+    "Seiketsu": {
+      "full": "Seiketsu (Standardizzare)",
+      "description": "4° S: Standardizzare le pratiche per mantenere l'ordine"
+    },
+    "Shitsuke": {
+      "full": "Shitsuke (Sostenere)",
+      "description": "5° S: Sostenere le abitudini attraverso disciplina e audit"
+    },
+    "MUDA": {
+      "full": "Sprechi",
+      "description": "Attività che consumano risorse senza aggiungere valore: 7 sprechi di Ohno"
+    },
+    "MURA": {
+      "full": "Irregolarità",
+      "description": "Variabilità o inconsistenze nei processi che portano a inefficienze"
+    },
+    "MURI": {
+      "full": "Sovraccarico",
+      "description": "Eccessivo sforzo su persone, macchine o processi"
+    },
+    "VSM": {
+      "full": "Value Stream Mapping",
+      "description": "Mappatura del flusso di valore per identificare sprechi e ottimizzare il processo"
+    },
+    "VAA": {
+      "full": "Value Added Activities",
+      "description": "Attività che aggiungono valore al prodotto dal punto di vista del cliente"
+    },
+    "NVAA": {
+      "full": "Non Value Added Activities",
+      "description": "Attività che non aggiungono valore e possono essere eliminate o ridotte"
+    },
+    "NVA": {
+      "full": "Non Value Added",
+      "description": "Abbreviazione per attività senza valore aggiunto (sprechi)"
+    },
+    "Takt Time": {
+      "full": "Takt Time",
+      "description": "Ritmo di produzione allineato alla domanda cliente (tempo disponibile / domanda)"
+    },
+    "Lead Time": {
+      "full": "Lead Time",
+      "description": "Tempo totale di attraversamento dal ricevimento ordine alla consegna"
+    },
+    "Cycle Time": {
+      "full": "Cycle Time",
+      "description": "Tempo ciclo di una singola operazione o stazione"
+    },
+    "SMED": {
+      "full": "Single Minute Exchange of Die",
+      "description": "Metodologia per ridurre i tempi di setup/cambio formato sotto i 10 minuti"
+    },
+    "Kanban": {
+      "full": "Sistema Kanban",
+      "description": "Sistema pull visivo per gestione flusso materiali e segnalazione riordino"
+    },
+    "JIT": {
+      "full": "Just In Time",
+      "description": "Produzione sincronizzata con la domanda, minimizzando scorte"
+    },
+    "Gemba": {
+      "full": "Gemba",
+      "description": "Luogo reale dove si crea valore, dove avviene il lavoro effettivo"
+    },
+    "Andon": {
+      "full": "Sistema Andon",
+      "description": "Sistema di segnalazione visiva per comunicare stato linea e anomalie"
+    },
+    "Jidoka": {
+      "full": "Jidoka",
+      "description": "Automazione con tocco umano: fermata automatica su anomalia"
+    },
+    "Heijunka": {
+      "full": "Heijunka",
+      "description": "Livellamento della produzione per bilanciare mix e volumi"
+    },
+    "_comment_section_9": "=== MANUTENZIONE ===",
+    "TPM": {
+      "full": "Total Productive Maintenance",
+      "description": "Manutenzione produttiva totale con coinvolgimento di tutti i livelli"
+    },
+    "AM": {
+      "full": "Autonomous Maintenance",
+      "description": "Manutenzione autonoma eseguita dagli operatori di produzione"
+    },
+    "PM": {
+      "ambiguous": true,
+      "definitions": [
+        {
+          "context": "manutenzione",
+          "full": "Professional Maintenance",
+          "description": "Pillar WCM per manutenzione professionale eseguita da manutentori specializzati"
+        },
+        {
+          "context": "pianificazione",
+          "full": "Preventive Maintenance",
+          "description": "Manutenzione preventiva programmata per prevenire guasti"
+        },
+        {
+          "context": "gestione",
+          "full": "Project Manager",
+          "description": "Responsabile della gestione e coordinamento di un progetto"
+        }
+      ],
+      "default_context": "manutenzione"
+    },
+    "CM": {
+      "full": "Corrective Maintenance",
+      "description": "Manutenzione correttiva a guasto avvenuto"
+    },
+    "BM": {
+      "full": "Breakdown Maintenance",
+      "description": "Manutenzione a rottura, intervento non pianificato"
+    },
+    "CBM": {
+      "full": "Condition Based Maintenance",
+      "description": "Manutenzione basata su condizione/predittiva tramite monitoraggio"
+    },
+    "RCM": {
+      "full": "Reliability Centered Maintenance",
+      "description": "Manutenzione centrata sull'affidabilità per ottimizzare strategie manutentive"
+    },
+    "OEE": {
+      "full": "Overall Equipment Effectiveness",
+      "description": "Efficienza globale impianto = Disponibilità × Performance × Qualità"
+    },
+    "MTBF": {
+      "full": "Mean Time Between Failures",
+      "description": "Tempo medio tra guasti, indicatore di affidabilità"
+    },
+    "MTTR": {
+      "full": "Mean Time To Repair",
+      "description": "Tempo medio di riparazione, indicatore di manutenibilità"
+    },
+    "EWO": {
+      "full": "Emergency Work Order",
+      "description": "Ordine di lavoro per emergenze su guasti, anomalie ambientali o di sicurezza"
+    },
+    "SMP": {
+      "full": "Standard Maintenance Procedure",
+      "description": "Procedura standard di manutenzione professionale"
+    },
+    "ASMP": {
+      "full": "Autonomous Standard Maintenance Procedure",
+      "description": "Procedura standard di manutenzione autonoma per operatori"
+    },
+    "_comment_section_10": "=== FORMAZIONE E COMPETENZE ===",
+    "SOP": {
+      "full": "Standard Operating Procedure",
+      "description": "Procedura operativa standard per garantire consistenza nelle attività"
+    },
+    "OPL": {
+      "full": "One Point Lesson",
+      "description": "Lezione breve e focalizzata per addestramento rapido su un singolo argomento"
+    },
+    "JES": {
+      "full": "Job Element Sheet",
+      "description": "Scheda che descrive elementi di un lavoro per standardizzazione e formazione"
+    },
+    "TWTTP": {
+      "full": "The Way To Teach People",
+      "description": "Metodo strutturato per l'addestramento del personale"
+    },
+    "HERCA": {
+      "full": "Human Error Root Cause Analysis",
+      "description": "Analisi causa radice errori umani, integrata con TWTTP"
+    },
+    "S-Matrix": {
+      "full": "Skill Matrix",
+      "description": "Matrice competenze che mappa abilità degli operatori per postazione"
+    },
+    "_comment_section_11": "=== SICUREZZA E AMBIENTE ===",
+    "DVR": {
+      "full": "Documento di Valutazione dei Rischi",
+      "description": "Documento obbligatorio per valutazione rischi salute e sicurezza (D.Lgs. 81/08)"
+    },
+    "RSPP": {
+      "full": "Responsabile del Servizio di Prevenzione e Protezione",
+      "description": "Responsabile per la sicurezza sul lavoro, nominato dal Datore di Lavoro"
+    },
+    "ASPP": {
+      "full": "Addetto al Servizio di Prevenzione e Protezione",
+      "description": "Collaboratore del RSPP per la gestione della sicurezza"
+    },
+    "RLS": {
+      "full": "Rappresentante dei Lavoratori per la Sicurezza",
+      "description": "Rappresentante eletto dai lavoratori per la sicurezza"
+    },
+    "MC": {
+      "full": "Medico Competente",
+      "description": "Medico per sorveglianza sanitaria dei lavoratori"
+    },
+    "DL": {
+      "full": "Datore di Lavoro",
+      "description": "Figura giuridica responsabile della sicurezza in azienda"
+    },
+    "SSL": {
+      "full": "Salute e Sicurezza sul Lavoro",
+      "description": "Sistema per gestire salute e sicurezza dei lavoratori"
+    },
+    "DPI": {
+      "full": "Dispositivi di Protezione Individuale",
+      "description": "Dispositivi per sicurezza personale (guanti, occhiali, scarpe, etc.)"
+    },
+    "Near Miss": {
+      "full": "Near Miss",
+      "description": "Evento che poteva causare infortunio ma non l'ha fatto, registrato per prevenzione"
+    },
+    "Unsafe Condition": {
+      "full": "Condizione Non Sicura",
+      "description": "Condizione pericolosa nel posto di lavoro da correggere"
+    },
+    "SMAT": {
+      "full": "Safety Management Audit Tool",
+      "description": "Strumento per audit di gestione della sicurezza"
+    },
+    "AUA": {
+      "full": "Autorizzazione Unica Ambientale",
+      "description": "Autorizzazione per gestione emissioni e scarichi ambientali"
+    },
+    "CER": {
+      "full": "Catalogo Europeo dei Rifiuti",
+      "description": "Codice per classificare rifiuti in base a pericolosità e origine"
+    },
+    "FIR": {
+      "full": "Formulario Identificazione Rifiuti",
+      "description": "Documento per tracciabilità rifiuti durante trasporto e smaltimento"
+    },
+    "MUD": {
+      "full": "Modello Unico di Dichiarazione Ambientale",
+      "description": "Dichiarazione annuale sui rifiuti prodotti"
+    },
+    "RENTRI": {
+      "full": "Registro Elettronico Nazionale Tracciabilità Rifiuti",
+      "description": "Sistema digitale per registrazione carichi/scarichi rifiuti"
+    },
+    "C.O.T.": {
+      "full": "Composti Organici Totali",
+      "description": "Composti organici emessi in atmosfera, soggetti a limiti"
+    },
+    "NUE": {
+      "full": "Numero Unico Emergenze",
+      "description": "Numero 112 per emergenze"
+    },
+    "SUAP": {
+      "full": "Sportello Unico per le Attività Produttive",
+      "description": "Ente per comunicazioni e autorizzazioni ambientali"
+    },
+    "D.Lgs.": {
+      "full": "Decreto Legislativo",
+      "description": "Normativa italiana, es. D.Lgs. 81/08 per sicurezza, 152/06 per ambiente"
+    },
+    "_comment_section_12": "=== CND - CONTROLLI NON DISTRUTTIVI ===",
+    "CND": {
+      "full": "Controlli Non Distruttivi",
+      "description": "Metodi di ispezione che non danneggiano il pezzo (VT, PT, MT, UT, RT)"
+    },
+    "NDT": {
+      "full": "Non Destructive Testing",
+      "description": "Equivalente inglese di CND"
+    },
+    "VT": {
+      "full": "Visual Testing",
+      "description": "Controllo visivo secondo EN ISO 5817"
+    },
+    "PT": {
+      "full": "Penetrant Testing",
+      "description": "Controllo con liquidi penetranti per difetti superficiali"
+    },
+    "MT": {
+      "full": "Magnetic Testing",
+      "description": "Controllo magnetoscopico per materiali ferromagnetici"
+    },
+    "UT": {
+      "full": "Ultrasonic Testing",
+      "description": "Controllo ultrasuoni per difetti interni"
+    },
+    "RT": {
+      "full": "Radiographic Testing",
+      "description": "Controllo radiografico (raggi X o gamma)"
+    },
+    "_comment_section_13": "=== SALDATURA ===",
+    "WPS": {
+      "full": "Welding Procedure Specification",
+      "description": "Specifica di procedura di saldatura qualificata"
+    },
+    "PQR": {
+      "full": "Procedure Qualification Record",
+      "description": "Registro di qualifica della procedura di saldatura"
+    },
+    "WPQR": {
+      "full": "Welder Performance Qualification Record",
+      "description": "Registro di qualifica delle prestazioni del saldatore"
+    },
+    "TIG": {
+      "full": "Tungsten Inert Gas (GTAW)",
+      "description": "Saldatura ad arco con elettrodo di tungsteno e gas inerte"
+    },
+    "MIG": {
+      "full": "Metal Inert Gas (GMAW)",
+      "description": "Saldatura ad arco con filo continuo e gas inerte"
+    },
+    "MAG": {
+      "full": "Metal Active Gas",
+      "description": "Variante MIG con gas attivo (CO2 o miscele) per migliorare penetrazione"
+    },
+    "SMAW": {
+      "full": "Shielded Metal Arc Welding",
+      "description": "Saldatura ad elettrodo rivestito"
+    },
+    "RSW": {
+      "full": "Resistance Spot Welding",
+      "description": "Saldatura a punti per resistenza elettrica"
+    },
+    "RPW": {
+      "full": "Resistance Projection Welding",
+      "description": "Saldatura a proiezione per resistenza"
+    },
+    "HAZ": {
+      "full": "Heat Affected Zone",
+      "description": "Zona termicamente alterata adiacente al cordone di saldatura"
+    },
+    "ZTA": {
+      "full": "Zona Termicamente Alterata",
+      "description": "Equivalente italiano di HAZ, zona del materiale base alterata dal calore di saldatura"
+    },
+    "_comment_section_14": "=== DUREZZA E MATERIALI ===",
+    "HV": {
+      "full": "Durezza Vickers",
+      "description": "Metodo di misurazione durezza con indentatore piramidale"
+    },
+    "HRC": {
+      "full": "Durezza Rockwell C",
+      "description": "Scala di durezza per materiali duri, indentatore conico"
+    },
+    "HRB": {
+      "full": "Durezza Rockwell B",
+      "description": "Scala di durezza per materiali morbidi, indentatore sferico"
+    },
+    "HB": {
+      "full": "Durezza Brinell",
+      "description": "Metodo di misurazione durezza con sfera indentatrice"
+    },
+    "TT": {
+      "full": "Trattamenti Termici",
+      "description": "Processi termici su materiali: tempra, rinvenimento, ricottura, etc."
+    },
+    "HSS": {
+      "full": "High Speed Steel",
+      "description": "Acciaio rapido per utensili da taglio"
+    },
+    "_comment_section_15": "=== TARATURA E MISURA ===",
+    "SIT": {
+      "full": "Servizio Italiano Taratura",
+      "description": "Servizio nazionale per taratura strumenti di misura riferibili"
+    },
+    "Taratura": {
+      "full": "Calibrazione",
+      "description": "Verifica e regolazione strumenti rispetto a campioni di riferimento"
+    },
+    "CMM": {
+      "full": "Coordinate Measuring Machine",
+      "description": "Macchina di misura a coordinate per controllo dimensionale 3D"
+    },
+    "_comment_section_16": "=== PRODUZIONE E ENGINEERING ===",
+    "CAD": {
+      "full": "Computer Aided Design",
+      "description": "Progettazione assistita da computer"
+    },
+    "CAM": {
+      "full": "Computer Aided Manufacturing",
+      "description": "Produzione assistita da computer per generare programmi macchina"
+    },
+    "CNC": {
+      "full": "Computer Numerical Control",
+      "description": "Sistema di controllo numerico per macchine utensili"
+    },
+    "Nesting": {
+      "full": "Nesting",
+      "description": "Ottimizzazione disposizione pezzi su lamiera per minimizzare sfridi"
+    },
+    "BOM": {
+      "full": "Bill of Materials",
+      "description": "Distinta base - lista componenti e materiali per un prodotto"
+    },
+    "PN": {
+      "full": "Part Number",
+      "description": "Codice identificativo univoco di un componente o prodotto"
+    },
+    "CDL": {
+      "ambiguous": true,
+      "definitions": [
+        {
+          "context": "produzione",
+          "full": "Centro Di Lavoro",
+          "description": "Macchina utensile CNC multiasse per lavorazioni meccaniche complesse (fresatura, foratura, maschiatura)"
+        },
+        {
+          "context": "processo",
+          "full": "Ciclo Di Lavoro",
+          "description": "Sequenza di operazioni e fasi per realizzare un prodotto o componente"
+        }
+      ],
+      "default_context": "produzione"
+    },
+    "RAL": {
+      "full": "Codice Colore RAL",
+      "description": "Standard europeo per codifica colori (es. RAL 9005 nero)"
+    },
+    "NOK": {
+      "full": "Non Conforme / Non OK",
+      "description": "Esito negativo di un controllo, richiede azione correttiva"
+    },
+    "PFEP": {
+      "full": "Plan For Every Part",
+      "description": "Piano logistico dettagliato per ogni codice articolo"
+    },
+    "_comment_section_17": "=== SISTEMI INFORMATIVI ===",
+    "ERP": {
+      "full": "Enterprise Resource Planning",
+      "description": "Sistema gestionale integrato aziendale (SAP, Oracle, etc.)"
+    },
+    "MES": {
+      "full": "Manufacturing Execution System",
+      "description": "Sistema di esecuzione e controllo produzione in tempo reale"
+    },
+    "PLM": {
+      "full": "Product Lifecycle Management",
+      "description": "Gestione del ciclo di vita del prodotto dalla progettazione allo smaltimento"
+    },
+    "PDM": {
+      "full": "Product Data Management",
+      "description": "Gestione dati di prodotto (disegni, specifiche, revisioni)"
+    },
+    "SCADA": {
+      "full": "Supervisory Control And Data Acquisition",
+      "description": "Sistema di supervisione e acquisizione dati per processi industriali"
+    },
+    "HMI": {
+      "full": "Human Machine Interface",
+      "description": "Interfaccia uomo-macchina (pannelli operatore)"
+    },
+    "_comment_section_18": "=== LOGISTICA ===",
+    "WIP": {
+      "full": "Work In Progress",
+      "description": "Materiali e prodotti in corso di lavorazione"
+    },
+    "FIFO": {
+      "full": "First In First Out",
+      "description": "Gestione scorte: primo entrato, primo uscito"
+    },
+    "MRP": {
+      "full": "Material Requirements Planning",
+      "description": "Pianificazione fabbisogni materiali"
+    },
+    "SCM": {
+      "full": "Supply Chain Management",
+      "description": "Gestione della catena di fornitura"
+    },
+    "Milk Run": {
+      "full": "Milk Run",
+      "description": "Giro programmato di raccolta/consegna materiali"
+    },
+    "Supermarket": {
+      "full": "Supermarket",
+      "description": "Area di stoccaggio intermedia per alimentazione linee"
+    },
+    "_comment_section_19": "=== TIPI DI PRODUZIONE ===",
+    "MTO": {
+      "full": "Make To Order",
+      "description": "Produzione su commessa/ordine cliente"
+    },
+    "MTS": {
+      "full": "Make To Stock",
+      "description": "Produzione a magazzino su previsione"
+    },
+    "ETO": {
+      "full": "Engineer To Order",
+      "description": "Progettazione e produzione su commessa"
+    },
+    "_comment_section_20": "=== NORMATIVE EUROPEE ===",
+    "CE": {
+      "full": "Conformité Européenne",
+      "description": "Marcatura di conformità europea per prodotti"
+    },
+    "RoHS": {
+      "full": "Restriction of Hazardous Substances",
+      "description": "Direttiva UE su restrizione sostanze pericolose in elettronica"
+    },
+    "REACH": {
+      "full": "Registration, Evaluation, Authorization, Restriction of Chemicals",
+      "description": "Regolamento UE su sostanze chimiche"
+    },
+    "Direttiva Macchine": {
+      "full": "Direttiva 2006/42/CE",
+      "description": "Normativa europea sulla sicurezza delle macchine"
+    },
+    "_comment_section_21": "=== RUOLI AZIENDALI ===",
+    "RGQ": {
+      "full": "Responsabile Gestione Qualità",
+      "description": "Responsabile del sistema di gestione qualità ISO 9001"
+    },
+    "RSGA": {
+      "full": "Responsabile Sistema Gestione Ambientale",
+      "description": "Responsabile del sistema ISO 14001"
+    },
+    "RSGSL": {
+      "full": "Responsabile Sistema Gestione Sicurezza Lavoro",
+      "description": "Responsabile del sistema ISO 45001"
+    },
+    "DT": {
+      "full": "Direzione Tecnica",
+      "description": "Responsabile ufficio tecnico/ingegneria"
+    },
+    "DP": {
+      "full": "Direzione Produzione",
+      "description": "Responsabile della produzione"
+    },
+    "AD": {
+      "full": "Amministratore Delegato",
+      "description": "Vertice aziendale con poteri esecutivi"
+    },
+    "SPP": {
+      "full": "Servizio di Prevenzione e Protezione",
+      "description": "Servizio aziendale per la sicurezza, gestito da RSPP e ASPP"
+    },
+    "Team Leader": {
+      "full": "Capo Squadra / Capo Turno",
+      "description": "Responsabile operativo di linea o turno produttivo"
+    },
+    "_comment_section_22": "=== STRUMENTI WCM SPECIFICI OVV ===",
+    "WO Spaghetti Chart": {
+      "full": "Diagramma Spaghetti",
+      "description": "Mappa dei flussi e movimenti per identificare inefficienze nel layout"
+    },
+    "WO Analisi NVAA": {
+      "full": "Analisi Non Value Added Activities",
+      "description": "Analisi delle attività manuali senza valore aggiunto nel pillar WO"
+    },
+    "LCS Analisi Flusso": {
+      "full": "Analisi Flusso Materiali",
+      "description": "Mappatura dei flussi logistici nel pillar LCS"
+    },
+    "PM Checklist": {
+      "full": "Checklist Professional Maintenance",
+      "description": "Lista di controllo per manutenzione professionale in pillar PM"
+    },
+    "TT Registro Cartellini": {
+      "full": "Registro Cartellini Trouble Ticket",
+      "description": "Registro per tracciamento ticket di problemi o anomalie"
+    },
+    "Deviation Permit": {
+      "full": "Permesso di Deviazione",
+      "description": "Autorizzazione temporanea a derogare da specifiche per cliente o fornitore"
+    },
+    "DDT": {
+      "full": "Documento Di Trasporto",
+      "description": "Proposto da admin, approvato da admin"
+    }
+  },
+  "iso_standards": {
+    "9001": "Sistema di Gestione Qualità - Requisiti",
+    "14001": "Sistema di Gestione Ambientale - Requisiti",
+    "45001": "Sistema di Gestione Salute e Sicurezza sul Lavoro",
+    "3834": "Requisiti di qualità per la saldatura per fusione dei materiali metallici",
+    "9606": "Prove di qualifica dei saldatori",
+    "5817": "Saldatura - Livelli di qualità delle imperfezioni",
+    "17025": "Requisiti per la competenza dei laboratori di prova e taratura",
+    "19011": "Linee guida per audit di sistemi di gestione",
+    "31000": "Gestione del rischio - Principi e linee guida"
+  },
+  "chapters": {
+    "4": "Contesto dell'organizzazione - Comprensione dell'organizzazione, parti interessate, campo di applicazione",
+    "5": "Leadership - Impegno della direzione, politica, ruoli e responsabilità",
+    "6": "Pianificazione - Rischi e opportunità, obiettivi, pianificazione delle modifiche",
+    "7": "Supporto - Risorse, competenza, consapevolezza, comunicazione, informazioni documentate",
+    "8": "Attività operative - Pianificazione, requisiti, progettazione, fornitori, produzione, rilascio, NC",
+    "9": "Valutazione delle prestazioni - Monitoraggio, audit interni, riesame di direzione",
+    "10": "Miglioramento - Non conformità, azioni correttive, miglioramento continuo"
+  },
+  "_metadata": {
+    "last_updated": "2025-12-08T02:47:16.753749",
+    "total_acronyms": 211
+  }
+}

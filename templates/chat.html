@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: #16213e;
+            padding: 1rem 2rem;
+            border-bottom: 2px solid #e94560;
+        }
+        header h1 {
+            color: #e94560;
+            font-size: 1.5rem;
+        }
+        header span {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 1rem;
+        }
+        #chat-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            background: #0f0f23;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            min-height: 400px;
+        }
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            max-width: 85%;
+        }
+        .message.user {
+            background: #e94560;
+            margin-left: auto;
+            text-align: right;
+        }
+        .message.bot {
+            background: #16213e;
+            border: 1px solid #333;
+        }
+        .message.system {
+            background: #2d2d44;
+            border-left: 3px solid #e94560;
+            font-size: 0.9rem;
+        }
+        .message pre {
+            background: #0a0a15;
+            padding: 0.5rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+        .sources {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #333;
+        }
+        .elapsed {
+            font-size: 0.75rem;
+            color: #666;
+        }
+        #input-area {
+            display: flex;
+            gap: 0.5rem;
+        }
+        #message-input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background: #16213e;
+            color: #eee;
+            font-size: 1rem;
+        }
+        #message-input:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+        button {
+            padding: 1rem 2rem;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #ff6b6b;
+        }
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+        .quick-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .quick-btn {
+            padding: 0.5rem 1rem;
+            background: #2d2d44;
+            border: 1px solid #444;
+            font-size: 0.85rem;
+        }
+        .quick-btn:hover {
+            background: #3d3d54;
+        }
+        /* Disambiguazione */
+        .disamb-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .disamb-btn {
+            padding: 0.8rem;
+            background: #2d2d44;
+            border: 1px solid #e94560;
+            text-align: left;
+        }
+        .disamb-btn:hover {
+            background: #e94560;
+        }
+        .loading {
+            display: inline-block;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔬 OVV ISO Chat - Test UI</h1>
+        <span>UI minimale per test automatizzati (Playwright compatibile)</span>
+    </header>
+    
+    <main>
+        <div class="quick-buttons">
+            <button class="quick-btn" onclick="sendCommand('/status')">/status</button>
+            <button class="quick-btn" onclick="sendCommand('/glossario NC')">/glossario NC</button>
+            <button class="quick-btn" onclick="sendCommand('/glossario WCM')">/glossario WCM</button>
+            <button class="quick-btn" onclick="sendCommand('/memoria')">/memoria</button>
+            <button class="quick-btn" onclick="showHistory()">📜 History</button>
+            <button class="quick-btn" onclick="clearHistory()">🗑️ Clear</button>
+        </div>
+        <div id="history-indicator" style="font-size: 0.8rem; color: #666; margin-bottom: 0.5rem;">
+            📝 History: <span id="history-count">0</span> messaggi
+        </div>
+        
+        <div id="chat-area">
+            <div class="message system">
+                <strong>🤖 Sistema pronto!</strong><br>
+                Questa è la UI di test. Le risposte sono IDENTICHE a Chainlit.<br>
+                Usa i pulsanti rapidi o scrivi nel campo sotto.
+            </div>
+        </div>
+        
+        <form id="chat-form" onsubmit="sendMessage(event)">
+            <div id="input-area">
+                <input type="text" id="message-input" name="message" 
+                       placeholder="Scrivi qui il messaggio..." 
+                       autocomplete="off" required>
+                <button type="submit" id="send-btn">Invia</button>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        const chatArea = document.getElementById('chat-area');
+        const messageInput = document.getElementById('message-input');
+        const sendBtn = document.getElementById('send-btn');
+        
+        // Stato per disambiguazione
+        let pendingDisambiguation = null;
+        
+        function addMessage(content, type = 'bot') {
+            const div = document.createElement('div');
+            div.className = `message ${type}`;
+            div.innerHTML = content;
+            chatArea.appendChild(div);
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+        
+        function setLoading(loading) {
+            sendBtn.disabled = loading;
+            sendBtn.textContent = loading ? '⏳...' : 'Invia';
+        }
+        
+        async function sendCommand(cmd) {
+            messageInput.value = cmd;
+            await sendMessage(new Event('submit'));
+        }
+        
+        async function sendMessage(e) {
+            e.preventDefault();
+            const message = messageInput.value.trim();
+            if (!message) return;
+            
+            addMessage(message, 'user');
+            messageInput.value = '';
+            setLoading(true);
+            
+            try {
+                // Gestisci comandi speciali
+                if (message.startsWith('/status')) {
+                    await handleStatus();
+                } else if (message.startsWith('/glossario')) {
+                    const term = message.replace('/glossario', '').trim();
+                    await handleGlossario(term);
+                } else if (message.startsWith('/memoria')) {
+                    await handleMemoria();
+                } else {
+                    await handleQuery(message);
+                }
+            } catch (err) {
+                addMessage(`❌ Errore: ${err.message}`, 'system');
+            }
+            
+            setLoading(false);
+        }
+        
+        async function handleStatus() {
+            const res = await fetch('/api/status', { method: 'POST' });
+            const data = await res.json();
+            
+            addMessage(`
+                <strong>📊 Status Sistema</strong><br>
+                <pre>
+GPU: ${data.gpu}
+VRAM: ${data.vram}
+Glossario: ${data.glossary_count} acronimi
+Memoria: ${data.memory_count} items
+Pipeline: ${data.pipeline}
+                </pre>
+            `, 'bot');
+        }
+        
+        async function handleGlossario(term) {
+            const formData = new FormData();
+            formData.append('term', term);
+            
+            const res = await fetch('/api/glossario', { method: 'POST', body: formData });
+            const data = await res.json();
+            
+            if (data.type === 'stats') {
+                addMessage(`📚 <strong>Glossario:</strong> ${data.count} acronimi caricati`, 'bot');
+            } else if (data.type === 'found') {
+                let html = `<strong>${data.acronym}</strong>: ${data.full}`;
+                if (data.description) {
+                    html += `<br><em>${data.description}</em>`;
+                }
+                if (data.ambiguous) {
+                    html += `<br><span style="color:#e94560">⚠️ Acronimo ambiguo</span>`;
+                }
+                addMessage(html, 'bot');
+            } else {
+                addMessage(`❌ Acronimo "${term}" non trovato`, 'system');
+            }
+        }
+        
+        async function handleMemoria() {
+            const res = await fetch('/api/memoria', { method: 'POST' });
+            const data = await res.json();
+            
+            if (data.error) {
+                addMessage(`❌ ${data.error}`, 'system');
+                return;
+            }
+            
+            let html = `<strong>🧠 Memoria</strong><br>`;
+            html += `Totale: ${data.count} items<br>`;
+            if (data.stats) {
+                html += `<pre>${JSON.stringify(data.stats, null, 2)}</pre>`;
+            }
+            addMessage(html, 'bot');
+        }
+        
+        // handleQuery definita sotto con supporto history
+        
+        async function selectDisambiguation(context, full) {
+            if (!pendingDisambiguation) return;
+            
+            setLoading(true);
+            addMessage(`✅ Scelto: <strong>${full}</strong>`, 'user');
+            
+            const formData = new FormData();
+            formData.append('acronym', pendingDisambiguation.acronym);
+            formData.append('context', context);
+            formData.append('full', full);
+            formData.append('original_query', pendingDisambiguation.original_query);
+            
+            try {
+                const res = await fetch('/api/disambiguate', { method: 'POST', body: formData });
+                const data = await res.json();
+                
+                let html = data.answer.replace(/\n/g, '<br>');
+                
+                if (data.disambiguation_applied) {
+                    html = `<small style="color:#e94560">✅ ${data.disambiguation_applied}</small><br><br>` + html;
+                }
+                
+                if (data.sources && data.sources.length > 0) {
+                    // Separa PDF da glossario (post-disambiguazione)
+                    const pdfSources = data.sources.filter(s => !s.is_glossary);
+                    const glossarySources = data.sources.filter(s => s.is_glossary);
+                    
+                    if (pdfSources.length > 0) {
+                        html += `<div class="sources">📄 Fonti: `;
+                        html += pdfSources.map(s => s.display_name || s.doc_id).join(', ');
+                        html += `</div>`;
+                    }
+                    if (glossarySources.length > 0) {
+                        html += `<div class="sources" style="margin-top:0.3rem;">📖 Glossario: `;
+                        html += glossarySources.map(s => s.display_name || s.title).join(', ');
+                        html += `</div>`;
+                    }
+                }
+                
+                // R15: Suggerimenti tool (dopo disambiguazione)
+                if (data.tool_suggestions && data.tool_suggestions.length > 0) {
+                    html += `<div class="tool-suggestions" style="margin-top:0.5rem;padding:0.5rem;background:#1a1a2e;border-radius:4px;border-left:3px solid #e94560;">`;
+                    html += `<strong>🛠️ Moduli suggeriti:</strong><br>`;
+                    data.tool_suggestions.forEach(t => {
+                        html += `<div style="margin-top:0.3rem;">📌 <strong>${t.name}</strong> (${t.doc_id})<br>`;
+                        html += `<small style="color:#888;">${t.suggest_when}</small></div>`;
+                    });
+                    html += `</div>`;
+                }
+                
+                html += `<div class="elapsed">⏱️ ${data.elapsed_ms}ms</div>`;
+                addMessage(html, 'bot');
+            } catch (err) {
+                addMessage(`❌ Errore: ${err.message}`, 'system');
+            }
+            
+            pendingDisambiguation = null;
+            setLoading(false);
+        }
+        
+        // Mostra history corrente
+        async function showHistory() {
+            try {
+                const res = await fetch('/api/history');
+                const data = await res.json();
+                
+                if (data.history && data.history.length > 0) {
+                    let html = `<strong>📜 History (${data.history.length} messaggi)</strong><br>`;
+                    data.history.forEach((msg, i) => {
+                        const role = msg.role === 'user' ? '👤' : '🤖';
+                        const content = msg.content.substring(0, 80) + (msg.content.length > 80 ? '...' : '');
+                        html += `${role} ${content}<br>`;
+                    });
+                    addMessage(html, 'system');
+                } else {
+                    addMessage('📜 History vuota', 'system');
+                }
+            } catch (err) {
+                addMessage(`❌ Errore: ${err.message}`, 'system');
+            }
+        }
+        
+        // Pulisci history
+        async function clearHistory() {
+            try {
+                await fetch('/api/clear_history', { method: 'POST' });
+                updateHistoryCount(0);
+                addMessage('🗑️ History cancellata', 'system');
+            } catch (err) {
+                addMessage(`❌ Errore: ${err.message}`, 'system');
+            }
+        }
+        
+        // Aggiorna contatore history
+        function updateHistoryCount(count) {
+            document.getElementById('history-count').textContent = count;
+        }
+        
+        // Query handler con supporto history
+        async function handleQuery(message) {
+            const formData = new FormData();
+            formData.append('message', message);
+            
+            const res = await fetch('/api/query', { method: 'POST', body: formData });
+            const data = await res.json();
+            
+            // Aggiorna history count
+            if (data.history_length !== undefined) {
+                updateHistoryCount(data.history_length);
+            }
+            
+            if (data.type === 'disambiguation') {
+                pendingDisambiguation = {
+                    acronym: data.acronym,
+                    original_query: data.original_query
+                };
+                
+                let html = `<strong>🔤 "${data.acronym}" può significare:</strong>`;
+                if (data.was_reformulated) {
+                    html = `<small style="color:#888">🔄 ${data.reformulation_note}</small><br>` + html;
+                }
+                html += `<div class="disamb-options">`;
+                data.meanings.forEach((m, i) => {
+                    html += `<button class="disamb-btn" onclick="selectDisambiguation('${m.context}', '${m.full}')">
+                        <strong>${i+1}. ${m.full}</strong><br>
+                        <small>${m.description || m.context}</small>
+                    </button>`;
+                });
+                html += `</div>`;
+                addMessage(html, 'bot');
+            } else if (data.type === 'answer') {
+                let html = data.answer.replace(/\n/g, '<br>');
+                
+                // Mostra se query è stata riformulata
+                if (data.was_reformulated) {
+                    html = `<small style="color:#888">🔄 Query riformulata: "${data.reformulated_query}"</small><br><br>` + html;
+                }
+                
+                if (data.disambiguation_applied) {
+                    html = `<small style="color:#e94560">✅ ${data.disambiguation_applied}</small><br><br>` + html;
+                }
+                
+                if (data.sources && data.sources.length > 0) {
+                    // Separa PDF da glossario
+                    const pdfSources = data.sources.filter(s => !s.is_glossary);
+                    const glossarySources = data.sources.filter(s => s.is_glossary);
+                    
+                    if (pdfSources.length > 0) {
+                        html += `<div class="sources">📄 Fonti: `;
+                        html += pdfSources.map(s => s.display_name || s.doc_id).join(', ');
+                        html += `</div>`;
+                    }
+                    if (glossarySources.length > 0) {
+                        html += `<div class="sources" style="margin-top:0.3rem;">📖 Glossario: `;
+                        html += glossarySources.map(s => s.display_name || s.title).join(', ');
+                        html += `</div>`;
+                    }
+                }
+                
+                // R15: Suggerimenti tool
+                if (data.tool_suggestions && data.tool_suggestions.length > 0) {
+                    html += `<div class="tool-suggestions" style="margin-top:0.5rem;padding:0.5rem;background:#1a1a2e;border-radius:4px;border-left:3px solid #e94560;">`;
+                    html += `<strong>🛠️ Moduli suggeriti:</strong><br>`;
+                    data.tool_suggestions.forEach(t => {
+                        html += `<div style="margin-top:0.3rem;">📌 <strong>${t.name}</strong> (${t.doc_id})<br>`;
+                        html += `<small style="color:#888;">${t.suggest_when}</small></div>`;
+                    });
+                    html += `</div>`;
+                }
+                
+                html += `<div class="elapsed">⏱️ ${data.elapsed_ms}ms</div>`;
+                addMessage(html, 'bot');
+            } else if (data.error) {
+                addMessage(`❌ ${data.error}`, 'system');
+            }
+        };
+        
+        // Focus input all'avvio
+        messageInput.focus();
+    </script>
+</body>
+</html>
+

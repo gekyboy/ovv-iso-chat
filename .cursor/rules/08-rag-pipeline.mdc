@@ -1,0 +1,71 @@
+---
+description: Regole per RAG pipeline con rerank CPU
+globs:
+  - "ovv-iso-chat/src/integration/**"
+alwaysApply: false
+---
+
+# 🔄 RAG Pipeline Rules
+
+## Pipeline Flow
+
+```
+Query → Glossary → Retrieve(40) → Rerank L1(15) → Rerank L2(8) → Memory → Generate
+```
+
+## Vincoli VRAM
+
+- **Reranker**: SEMPRE su CPU (FlashRank + Qwen3 GGUF)
+- **Embedding**: CUDA batch=32 (fallback 8)
+- **LLM**: CUDA gpu_layers=35
+- **Target**: < 5.5GB VRAM totale
+
+## Retrieval Settings
+
+| Fase | Top-K | Componente |
+|------|-------|------------|
+| Retrieve | 40 | Qdrant hybrid |
+| Rerank L1 | 15 | FlashRank CPU |
+| Rerank L2 | 8 | Qwen3 GGUF CPU |
+
+## Test End-to-End
+
+Prima di commit, verifica:
+
+```bash
+# Test chat base
+python -m src.main chat "Come gestire rifiuti pericolosi?"
+
+# Test con sources
+python -m src.main chat "Cosa dice PS-06_01?" --show-sources
+
+# Test teach
+python -m src.main teach MR-10_01 --mode compile
+
+# Verifica VRAM
+nvidia-smi
+```
+
+## Glossary Integration
+
+- Espandi acronimi: "PS" → "PS (Procedura di Sistema)"
+- Fuzzy match: threshold 0.6
+- Query rewrite automatico
+
+## Memory Injection
+
+- Inject PRIMA della generazione
+- Max 5 memorie per contesto
+- Priorità: corrections > preferences > facts
+
+## Error Handling
+
+Se retrieval fallisce:
+1. Verifica Qdrant: `docker ps`
+2. Verifica collection: `python -m src.main status`
+3. Re-indicizza se necessario: `python -m src.main ingest --recreate`
+
+Se LLM fallisce:
+1. Verifica Ollama: `ollama serve`
+2. Verifica modello: `ollama list`
+3. Pull se mancante: `ollama pull qwen3:8b-instruct-q4_K_M`

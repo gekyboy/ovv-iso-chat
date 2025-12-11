@@ -1,0 +1,492 @@
+---
+description: Roadmap funzionalità future OVV ISO Chat - consultare prima di nuovi sviluppi
+globs: ["ovv-iso-chat/**"]
+alwaysApply: false
+---
+
+# 🗺️ ROADMAP FUNZIONALITÀ FUTURE
+
+> **Ultimo aggiornamento:** 8 Dicembre 2025
+> 
+> 📁 Progetti completati e obsoleti → `11b-roadmap-completed.mdc`
+
+---
+
+## 🎉 STATO: ROADMAP COMPLETATA!
+
+| Totale Originali | Completati | Obsoleti | Nuovi (Future) |
+|------------------|------------|----------|----------------|
+| 25 | **24** | **1** | **9** |
+
+**Tutti i 24 progetti originali completati! + 9 nuove feature in coda.**
+
+---
+
+## 🚀 PROGETTI FUTURI (Nuove Idee)
+
+> Quando aggiungi un nuovo progetto, usa il prossimo ID disponibile: **F10**
+
+| ID | Progetto | Difficoltà | Descrizione | Priorità |
+|----|----------|------------|-------------|----------|
+| F01 | Citazioni con Titolo | 🟢 Facile | Mostrare titolo documento nelle fonti (es. "MR-09_02 - Safety Checklist") | Alta |
+| F02 | Memoria Conversazione | 🟡 Media | Mantenere contesto tra domande successive nella stessa sessione | Media |
+| F03 | TeachAssistant Potenziato (R16.1) | 🔴 Complessa | Wizard interattivo passo-passo per compilazione moduli con pre-fill contestuale | Alta |
+| F04 | ImplicitLearner Integration | 🔴 Complessa | Integrare segnali impliciti (copy, click, dwell) in Chainlit o UI alternativa | Alta |
+| F05 | GraphRAG Integration | 🔴 Complessa | Integrare Knowledge Graph (R25) nell'orchestrator per retrieval basato su relazioni | Media |
+| F06 | UnifiedChunker | 🟡 Media | Chunker unificato PS/IL + MR/TOOLS per ingestion robusta ed esportabile | Alta |
+| F07 | Mesop UI Alternative | 🔴 Complessa | Valutare/migrare a Google Mesop per supporto eventi copy/scroll/dwell | Media |
+| F08 | Valutazione Qwen3 8B | 🟡 Media | Benchmark e valutazione passaggio da Llama 3.1 a Qwen3 8B per migliore italiano | Bassa |
+| F09 | Selettore Modello LLM Dinamico | 🟡 Media | Permettere selezione Llama/Qwen dalla UI durante la conversazione | Alta |
+
+---
+
+## 🎯 F01: CITAZIONI CON TITOLO DESCRITTIVO
+
+> Le fonti devono mostrare il titolo del documento, non solo il codice
+
+### Problema
+Attualmente le citazioni mostrano solo il codice: `Fonti: PS-08_08:0, MR-09_02:0`
+L'utente non sa a cosa si riferiscono senza aprirli.
+
+### Soluzione
+Modificare il formato citazioni per includere il titolo:
+`Fonti: PS-08_08 - Controllo output non conformi, MR-09_02 - Safety Checklist`
+
+### File
+| Azione | File |
+|--------|------|
+| Modificare | `src/agents/agent_generator.py` |
+| Modificare | `test_ui.py` (formattazione response) |
+| Modificare | `templates/chat.html` |
+
+### Tempo: 2h | Prerequisiti: Nessuno
+
+---
+
+## 🎯 F02: MEMORIA CONVERSAZIONE (Session Context)
+
+> Mantenere il contesto delle domande precedenti nella stessa sessione
+
+### Problema
+Ogni query è indipendente. Se chiedo "Come gestire le NC?" e poi "Quali moduli?", 
+la seconda domanda non sa che mi riferisco alle NC.
+
+### Soluzione
+1. Mantenere cronologia messaggi per sessione
+2. Passare ultimi N messaggi come contesto al LLM
+3. Implementare query reformulation con history
+
+### File
+| Azione | File |
+|--------|------|
+| Creare | `src/integration/session_memory.py` |
+| Modificare | `test_ui.py` (session tracking) |
+| Modificare | `src/agents/agent_generator.py` (context injection) |
+
+### Tempo: 4h | Prerequisiti: Nessuno
+
+---
+
+## 🎯 F03: TEACHASSISTANT POTENZIATO (R16.1)
+
+> Trasformare TeachAssistant da "spiegazione statica" a "wizard interattivo per compilazione"
+
+### Problema
+L'attuale R16 TeachAssistant fornisce solo spiegazioni statiche sui campi dei moduli MR/TOOLS.
+L'utente deve comunque compilare manualmente il form senza guida step-by-step.
+Non c'è pre-compilazione basata sul contesto della conversazione.
+
+### Soluzione
+Potenziare R16 con:
+
+**A) Guida Passo-Passo (`StepByStepWizard`)**
+```
+Utente: "Devo compilare MR-06_01"
+Bot: "STEP 1/8 - DATA E ORA: Quando è avvenuto l'infortunio?"
+[Attendi risposta...]
+Bot: "STEP 2/8 - REPARTO: In quale reparto/CDL?"
+...
+```
+
+**B) Pre-Compilazione Contestuale (`ContextualPreFiller`)**
+```
+Utente: "Ho avuto un infortunio ieri in saldatura, mi sono tagliato"
+Bot: "Basandomi su quello che mi hai detto:
+- Data: ieri (specifica)
+- Reparto: Saldatura ✓
+- Lesione: Taglio ✓
+Vuoi procedere campo per campo?"
+```
+
+**C) Validazione Input (`FieldValidator`)**
+- Validazione formato data (GG/MM/AAAA)
+- Validazione enum (reparti, gravità)
+- Suggerimenti per correzione
+
+### Nuove Classi da Creare
+
+| Classe | Descrizione |
+|--------|-------------|
+| `StepByStepWizard` | State machine per wizard interattivo |
+| `ContextualPreFiller` | Estrae contesto da conversazione e pre-compila |
+| `FieldValidator` | Valida input utente per ogni campo |
+
+### Estensioni `tools_mapping.json`
+
+```json
+{
+  "MR-06_01": {
+    "wizard_enabled": true,
+    "fields": [
+      {
+        "name": "Data Evento",
+        "step_order": 1,
+        "required": true,
+        "validation": {"type": "date", "max_future_days": 0},
+        "prefill_from": ["data", "quando", "ieri"],
+        "example": "15/12/2025"
+      }
+    ],
+    "wizard_prompts": {
+      "start": "Iniziamo la compilazione...",
+      "complete": "✅ Tutti i campi compilati!"
+    }
+  }
+}
+```
+
+### Nuovi Comandi
+
+| Comando | Descrizione |
+|---------|-------------|
+| `/wizard <doc_id>` | Avvia wizard interattivo |
+| `/prefill <doc_id>` | Mostra form pre-compilato da contesto |
+| `/wizard_status` | Mostra stato wizard corrente |
+| `/wizard_cancel` | Annulla wizard in corso |
+
+### File
+| Azione | File |
+|--------|------|
+| Modificare | `src/integration/teach_assistant.py` - Aggiungere classi wizard |
+| Modificare | `config/tools_mapping.json` - Estendere con wizard_enabled, validation |
+| Modificare | `app_chainlit.py` - Aggiungere callbacks wizard |
+| Modificare | `test_ui.py` - Supporto wizard UI |
+
+### Tempo: 10h | Prerequisiti: F01-Synthetic Chunks completato ✅
+
+---
+
+## 🎯 F04: IMPLICITLEARNER INTEGRATION
+
+> Integrare il sistema di apprendimento implicito (R08-R10) nell'UI
+
+### Problema
+Il codice per l'apprendimento implicito esiste in `src/learning/` ma:
+- I segnali (copy, click fonte, scroll, dwell time) NON sono tracciati in `app_chainlit.py`
+- Chainlit non supporta nativamente questi eventi
+- Il README promette feature che non funzionano
+
+### Soluzione
+1. **Opzione A**: Integrare `LearningHooks` in Chainlit (parziale - solo click fonti)
+2. **Opzione B**: Migrare a UI alternativa (Mesop, FastAPI+HTML custom - vedi F07)
+
+### Segnali da Tracciare
+
+| Segnale | Chainlit | Mesop | FastAPI+HTML |
+|---------|----------|-------|--------------|
+| Click fonte | ✅ Possibile | ✅ Nativo | ✅ Nativo |
+| Copia testo | ❌ No | ✅ Nativo | ✅ Nativo |
+| Scroll | ❌ No | ✅ Nativo | ✅ Nativo |
+| Dwell time | ⚠️ Approssimato | ✅ Nativo | ✅ Nativo |
+
+### File
+| Azione | File |
+|--------|------|
+| Modificare | `app_chainlit.py` - Import LearningHooks, callbacks |
+| Modificare | `src/learning/hooks.py` - Adattare per Chainlit |
+| Valutare | Migrazione UI se Chainlit troppo limitato |
+
+### Tempo: 4-8h | Prerequisiti: Decisione su F07
+
+---
+
+## 🎯 F05: GRAPHRAG INTEGRATION
+
+> Integrare Knowledge Graph (R25) nell'orchestrator per retrieval basato su relazioni
+
+### Problema
+GraphRAG (R25) è:
+- ✅ Codice esistente in `src/graph/` (builder, retriever, entity/relation extraction)
+- ✅ Configurato in `config.yaml`
+- ❌ NON integrato nell'orchestrator (`agent_graph.py` mai importato)
+- ❌ NON documentato nel README
+
+### Soluzione
+1. Costruire il knowledge graph dai documenti esistenti
+2. Integrare `GraphAgent` nel LangGraph orchestrator
+3. Usare retrieval ibrido: vector + graph per query su relazioni
+
+### Casi d'uso GraphRAG
+
+| Query | Vector-only | Con GraphRAG |
+|-------|-------------|--------------|
+| "Documenti correlati a PS-06_01" | ⚠️ Semantico | ✅ Relazioni esplicite |
+| "Chi approva le NC?" | ⚠️ Potrebbe mancare | ✅ Entità + relazioni |
+| "Workflow completo gestione rifiuti" | ⚠️ Chunks sparsi | ✅ Path nel grafo |
+
+### File
+| Azione | File |
+|--------|------|
+| Creare | Script per build graph da chunks esistenti |
+| Modificare | `src/agents/orchestrator.py` - Aggiungere nodo graph |
+| Modificare | `src/agents/agent_retriever.py` - Merge vector + graph results |
+| Modificare | `config/config.yaml` - Abilitare graphrag |
+| Aggiornare | README con documentazione GraphRAG |
+
+### Tempo: 8-12h | Prerequisiti: Nessuno
+
+---
+
+## 🎯 F06: UNIFIED CHUNKER
+
+> Chunker unificato per ingestion robusta ed esportabile
+
+### Problema
+Attualmente ci sono DUE chunker separati:
+- `ISOChunker` → PS/IL (gerarchico) + MR/TOOLS (light, da PDF vuoti)
+- `SyntheticChunker` → MR/TOOLS (da metadata JSON, semanticamente ricchi)
+
+La logica di scelta è nello **script** (`reindex_with_enrichment.py`), non nel modulo.
+Questo rende il progetto fragile e difficile da esportare.
+
+### Soluzione
+Creare `UnifiedChunker` che:
+1. Legge `synthetic_chunk_types` da config (es. `["MR", "TOOLS"]`)
+2. Delega automaticamente al chunker appropriato per tipo documento
+3. Espone API unica: `chunk_documents()` fa tutto
+
+```python
+from src.ingestion import UnifiedChunker
+chunker = UnifiedChunker()
+chunks = chunker.chunk_documents(documents)  # Tutto automatico!
+```
+
+### File
+| Azione | File |
+|--------|------|
+| Creare | `src/ingestion/unified_chunker.py` |
+| Modificare | `src/ingestion/__init__.py` - Export UnifiedChunker |
+| Modificare | `scripts/reindex_with_enrichment.py` - Usa UnifiedChunker |
+| Creare | `tests/test_unified_chunker.py` |
+
+### Tempo: 3-4h | Prerequisiti: Nessuno
+
+---
+
+## 🎯 F07: MESOP UI ALTERNATIVE
+
+> Valutare migrazione da Chainlit a Google Mesop per supporto eventi avanzati
+
+### Problema
+Chainlit:
+- ✅ Bella UI, facile da usare
+- ❌ Nessun evento `oncopy`, `onscroll`, `onvisibilitychange`
+- ❌ Difficile customizzazione profonda
+- ❌ WebSocket issues con alcuni browser
+
+### Soluzione
+Valutare **Google Mesop** come alternativa:
+- Framework Python per UI web
+- Supporto eventi DOM nativi
+- Stile declarativo simile a Flutter
+- Ottimo per RAG/LLM apps
+
+### Fasi Valutazione
+
+1. **POC** (2h): Creare chat minima con Mesop
+2. **Feature Parity** (8h): Replicare funzionalità Chainlit essenziali
+3. **Migration** (16h): Portare tutta l'UI
+
+### File
+| Azione | File |
+|--------|------|
+| Creare | `app_mesop.py` - Nuova UI Mesop |
+| Creare | `src/ui/mesop_handlers.py` - Handlers per eventi |
+| Valutare | Mantenere Chainlit + Mesop in parallelo? |
+
+### Tempo: 2h POC, 8-16h migrazione | Prerequisiti: F04 (decisione)
+
+---
+
+## 🎯 F08: VALUTAZIONE QWEN3 8B
+
+> Benchmark e valutazione passaggio da Llama 3.1 a Qwen3 8B
+
+### Problema
+Attualmente usiamo `llama3.1:8b-instruct-q4_K_M`. 
+Qwen3 8B potrebbe offrire:
+- Migliore supporto italiano (119 lingue)
+- Architettura MoE più efficiente
+- Modalità "thinking" per ragionamento complesso
+
+### Soluzione
+1. Creare benchmark con query tipiche
+2. Testare Qwen3 con stesse query
+3. Confrontare: qualità, latenza, VRAM, coerenza
+
+### Metriche da Confrontare
+
+| Metrica | Come misurare |
+|---------|---------------|
+| Qualità risposte | Valutazione manuale 1-5 su 20 query |
+| Latenza | ms per risposta (media 50 query) |
+| VRAM | nvidia-smi durante inference |
+| Coerenza citazioni | % citazioni valide vs hallucinate |
+| Italiano | Correttezza grammaticale, termini tecnici |
+
+### File
+| Azione | File |
+|--------|------|
+| Creare | `benchmarks/benchmark_llm_comparison.py` |
+| Creare | `benchmarks/test_queries.json` - Query di test |
+| Modificare | `config/config.yaml` - Se Qwen3 vince |
+| Modificare | `src/memory/llm_agent.py` - Allineare default |
+
+### Tempo: 4h benchmark, 1h migrazione | Prerequisiti: Nessuno
+
+---
+
+## 🎯 F09: SELETTORE MODELLO LLM DINAMICO
+
+> Permettere all'utente di scegliere Llama 3.1 o Qwen3 dalla UI, anche durante la conversazione
+
+### Problema
+Attualmente il modello LLM è hardcoded nella config. L'utente non può:
+- Scegliere il modello preferito
+- Cambiare modello durante la conversazione
+- Confrontare risposte tra modelli diversi
+
+### Soluzione
+Implementare selezione dinamica del modello LLM tramite:
+
+**A) Chat Settings (Icona ⚙️)**
+```
+⚙️ IMPOSTAZIONI CHAT
+├── 🤖 Modello LLM
+│   ├── Llama 3.1 8B (Predefinito)
+│   └── Qwen3 8B (Migliore italiano)
+```
+
+**B) Comando `/model`**
+```
+/model              → Mostra modello attuale
+/model llama        → Passa a Llama 3.1
+/model qwen         → Passa a Qwen3
+```
+
+**C) Bottoni nella Risposta**
+```
+📚 Fonti: PS-06_01
+⏱️ 2847ms | 🤖 Llama 3.1
+[🔄 Cambia modello]
+```
+
+### Implementazione
+
+**1. Config modelli disponibili:**
+```yaml
+llm:
+  available_models:
+    - name: "llama3.1:8b-instruct-q4_K_M"
+      display_name: "Llama 3.1 8B"
+      default: true
+    - name: "qwen3:8b-instruct-q4_K_M"
+      display_name: "Qwen3 8B"
+```
+
+**2. Chainlit Chat Settings:**
+```python
+@cl.on_settings_update
+async def on_settings_update(settings):
+    selected_model = settings.get("model")
+    cl.user_session.set("selected_model", selected_model)
+```
+
+**3. Switch modello runtime:**
+```python
+# src/memory/llm_agent.py
+def switch_model(self, model_name: str):
+    self.model_name = model_name
+    self._llm = None  # Reset per lazy reload
+```
+
+### Prerequisiti
+- Entrambi i modelli installati in Ollama
+- VRAM sufficiente (~3.5GB per modello, uno alla volta)
+
+### File
+| Azione | File |
+|--------|------|
+| Modificare | `config/config.yaml` - Sezione `available_models` |
+| Modificare | `app_chainlit.py` - `@cl.on_settings_update` |
+| Modificare | `src/memory/llm_agent.py` - Metodo `switch_model()` |
+| Modificare | `src/integration/rag_pipeline.py` - Supporto `model_override` |
+
+### Tempo: 3-4h | Prerequisiti: F08 (modelli testati)
+
+---
+
+## 📝 COME AGGIUNGERE NUOVI PROGETTI
+
+Quando vuoi proporre un nuovo progetto:
+
+1. **Assegna ID progressivo**: F01, F02, F03...
+2. **Compila la tabella** con: nome, difficoltà, descrizione breve
+3. **Aggiungi sezione dettagliata** sotto con:
+   - Problema da risolvere
+   - Soluzione proposta
+   - File da modificare/creare
+   - Tempo stimato
+   - Prerequisiti
+
+### Template Sezione Progetto
+
+```markdown
+## 🎯 FXX: NOME PROGETTO
+
+> Breve descrizione
+
+### Problema
+[Cosa risolve]
+
+### Soluzione
+[Come lo risolve]
+
+### File
+| Azione | File |
+|--------|------|
+| Creare | `path/file.py` |
+| Modificare | `path/altro.py` |
+
+### Tempo: Xh | Prerequisiti: FYY ✅
+```
+
+---
+
+## 📜 STORIA
+
+| Data | Evento |
+|------|--------|
+| 2025-12-07 | Creazione roadmap con 25 progetti |
+| 2025-12-08 | **🎉 Completati 24/25 progetti** |
+| 2025-12-08 | R12 marcato obsoleto (superato da R25) |
+| 2025-12-08 | Roadmap ristrutturata per nuovi progetti |
+| 2025-12-09 | Aggiunti F01 (Citazioni con titolo) e F02 (Memoria conversazione) |
+| 2025-12-10 | Aggiunti F04-F08 (ImplicitLearner, GraphRAG, UnifiedChunker, Mesop, Qwen3) |
+| 2025-12-10 | Audit README vs implementazione: identificate discrepanze e risolte |
+| 2025-12-10 | Versioni allineate a v3.9.1, GraphRAG disabilitato (non integrato) |
+| 2025-12-10 | Aggiunto F09 (Selettore Modello LLM Dinamico) |
+
+---
+
+*Prossimo ID disponibile: **F10***

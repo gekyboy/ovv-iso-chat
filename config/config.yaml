@@ -1,0 +1,437 @@
+# ============================================================================
+# OVV ISO Chat - Configurazione v3.9.1
+# ============================================================================
+# Stack Modelli:
+#   - Embedding: BAAI/bge-m3 (1024 dim, multilingual, CUDA batch=16)
+#   - Reranker: FlashRank + Qwen3 GGUF (CPU)
+#   - LLM: llama3.1:8b-instruct-q4_K_M (Ollama, gpu_layers=35)
+# Ottimizzato per RTX 3060 6GB VRAM
+# ============================================================================
+
+project:
+  name: "OVV ISO Chat"
+  version: "3.9.1"
+  description: "Sistema RAG locale per documenti ISO-SGI"
+
+# ============================================================================
+# PATHS - Percorsi file e cartelle
+# ============================================================================
+paths:
+  input_docs: "data/input_docs"     # Cartella documenti PDF (default)
+  output_dir: "data/output"
+  persist_dir: "data/persist"
+  archive_dir: "data/archive"       # Archivio versioni precedenti
+
+# ============================================================================
+# DOCUMENT PATH SETTINGS - Opzioni selezione cartella (F10)
+# ============================================================================
+document_path:
+  allow_ui_selection: true          # Permettere cambio cartella da UI
+  show_startup_selector: false      # Mostrare popup selezione all'avvio (Opzione B)
+  allow_command: true               # Permettere comando /documenti (Opzione C)
+  persist_user_preference: true     # Salvare preferenza utente
+  max_recent_paths: 10              # Max path recenti da ricordare
+
+# ============================================================================
+# INGESTION - Chunking gerarchico parent-child
+# ============================================================================
+ingestion:
+  chunking:
+    strategy: "hierarchical"   # hierarchical | flat
+    parent_size: 1200          # Caratteri per chunk parent
+    child_size: 400            # Caratteri per chunk child  
+    parent_overlap: 200
+    child_overlap: 100
+    
+  # Strategie per tipo documento
+  dense_types: ["PS", "IL"]    # Parent + Child chunks
+  light_types: ["MR", "TOOLS", "WO"]  # Solo Parent chunks
+    
+  strategies:
+    dense: ["PS", "IL"]
+    light: ["MR", "WO", "TOOLS"]
+
+  priorities:
+    PS: 1.0
+    IL: 0.9
+    TOOLS: 0.85
+    MR: 0.85  # Aumentato da 0.5 - ora hanno chunk sintetici ricchi
+  
+  # Tipi documento per cui usare chunk SINTETICI (da metadata invece che PDF)
+  # Questi documenti sono form/tabelle vuote, il contenuto PDF non è utile
+  synthetic_chunk_types: ["MR", "TOOLS"]
+  
+  # Path ai file di metadata per chunk sintetici
+  synthetic_metadata:
+    semantic: "config/semantic_metadata.json"
+    document: "config/document_metadata.json"
+    tools: "config/tools_mapping.json"
+
+  filename_patterns:
+    doc_type: "^(PS|IL|MR|TOOLS)"
+    chapter: "-(\\d{2})_"
+    revision: "Rev\\.?(\\d+)"
+  
+  # Sezioni ISO da estrarre via regex
+  iso_sections:
+    - "SCOPO"
+    - "CAMPO DI APPLICAZIONE"
+    - "RESPONSABILITÀ"
+    - "DEFINIZIONI"
+    - "MODALITÀ OPERATIVE"
+    - "RIFERIMENTI"
+
+# ============================================================================
+# HYDE - Hypothetical Document Embeddings (R23)
+# ============================================================================
+hyde:
+  enabled: true
+  skip_for_definition_queries: true  # Skip per "cosa significa X?"
+  
+  generation:
+    max_length: 150        # Max parole documento ipotetico
+    temperature: 0.3       # Bassa per coerenza
+  
+  embedding:
+    combine_method: "weighted_average"
+    weights:
+      query_original: 0.25     # Query utente originale
+      query_expanded: 0.35     # Query espansa con glossario
+      hyde_document: 0.40      # Documento ipotetico HyDE
+  
+  cache:
+    enabled: true
+    max_entries: 500
+    ttl_seconds: 3600          # 1 ora
+
+# ============================================================================
+# DUAL EMBEDDING - Glossario come Collezione (R22)
+# ============================================================================
+dual_embedding:
+  enabled: true
+  glossary_collection: "glossary_terms"
+  
+  # Parametri ricerca glossario
+  glossary_top_k: 5              # Max risultati da glossario
+  glossary_score_threshold: 0.5  # Soglia minima score (0-1)
+  
+  # RRF merge (Reciprocal Rank Fusion)
+  rrf_k: 60                      # Costante RRF (standard = 60)
+  definition_query_boost: 1.5    # Boost glossario per query definitorie
+
+# ============================================================================
+# GLOSSARY LLM ENRICHMENT - Risposte discorsive per definizioni (R26)
+# ============================================================================
+glossary_enrichment:
+  enabled: true                    # false per tornare a risposte meccaniche
+  max_response_sentences: 5        # Max frasi nella risposta
+  include_practical_example: true  # Suggerisci esempio pratico
+  suggest_followup: true           # "Vuoi approfondire?"
+  fallback_on_error: true          # Se LLM fallisce, usa risposta meccanica
+
+# ============================================================================
+# ENRICHMENT - Arricchimento Chunks (R21)
+# ============================================================================
+enrichment:
+  enabled: true
+  version: "R21_v1"
+  
+  # Livelli di arricchimento
+  include_header: true        # [DOC: id | Sezione: x]
+  include_glossary: true      # [Glossario: ACR = def]
+  include_scope: true         # [Scopo: ...] (solo PS/IL)
+  
+  # Limiti
+  max_glossary_definitions: 5  # Max acronimi per chunk
+  max_scope_chars: 200         # Max caratteri scopo
+  
+  # Tipi documento per scopo
+  scope_for_doc_types:
+    - "PS"
+    - "IL"
+
+# ============================================================================
+# EMBEDDING - BGE-M3 (CUDA, batch=16)
+# ============================================================================
+embedding:
+  model: "BAAI/bge-m3"
+  device: "cuda"
+  batch_size: 16             # batch=16 per VRAM <6GB
+  batch_size_low_vram: 8     # Fallback se VRAM scarsa
+  normalize: true
+  max_seq_length: 8192
+  vector_size: 1024
+  
+  hybrid:
+    enabled: true
+    use_sparse: true
+    alpha: 0.7               # dense_weight: 0.7, sparse: 0.3
+
+# ============================================================================
+# RETRIEVAL - Reranking CPU
+# ============================================================================
+retrieval:
+  hybrid:
+    enabled: true
+    dense_weight: 0.6
+    sparse_weight: 0.4
+    rrf_k: 60
+
+  top_k: 30              # Retrieval iniziale: più chunk per avere più contesto
+  final_k: 8              # Chunk finali al LLM: aumentato per Chain of Thought
+  score_threshold: 0.4
+
+  reranking:
+    enabled: true
+    
+    # Livello 1: FlashRank (CPU, veloce)
+    flash_rank:
+      enabled: true
+      model: "ms-marco-MiniLM-L-12-v2"
+      top_k: 15
+    
+    # Livello 2: Qwen3 GGUF (CPU, preciso)
+    qwen_reranker:
+      enabled: true
+      model: "Qwen/Qwen3-Reranker-0.6B-GGUF"  # Versione GGUF leggera
+      runtime: "llama_cpp"
+      device: "cpu"
+      top_k: 8              # Aumentato per Chain of Thought: più contesto al LLM
+
+# ============================================================================
+# LLM - Llama 3.1:8b via Ollama (GPU layers=35)
+# ============================================================================
+llm:
+  provider: "ollama"
+  base_url: "http://localhost:11434"
+  timeout: 300  # 5 minuti - aumentato per query complesse (RO vs RI ~134s)
+
+  generation:
+    model: "llama3.1:8b-instruct-q4_K_M"
+    temperature: 0.3
+    top_p: 0.9
+    num_ctx: 4096
+    num_gpu_layers: 35       # Ottimizzato per 6GB VRAM
+    repeat_penalty: 1.1
+    num_predict: 512         # Limita lunghezza risposta per velocità
+
+  memory:
+    model: "llama3.1:8b-instruct-q4_K_M"
+    temperature: 0.1
+    num_ctx: 2048
+
+  system_prompt: |
+    Sei l'esperto ISO dell'azienda OVV. Rispondi in italiano.
+    
+    REGOLE TASSATIVE:
+    - Vai DRITTO al punto, niente preamboli o saluti
+    - NO frasi come "Ciao!", "Spero ti sia utile!", "Se hai altre domande..."
+    - NO asterischi (*) per liste - usa trattini (-) o numeri
+    - NO grassetti (**) o markdown
+    - NO sezioni con titoli
+    - Scrivi un discorso fluido e diretto
+    - Cita le fonti naturalmente (es: "secondo la PS-06_01...")
+    - Suggerisci documenti correlati solo se realmente utili
+    - Se non trovi info, dillo e basta
+    - CITA SOLO documenti che hai effettivamente nel contesto
+
+# ============================================================================
+# MEMORY - PostgreSQL (LangGraph)
+# ============================================================================
+memory:
+  store_type: "postgres"
+  connection_string: "postgresql://localhost:5432/ovv_memory"
+  namespace: "user_iso_v31"
+  max_memories: 200
+  
+  feedback:
+    enabled: true
+    min_boost: 0.8
+    max_boost: 1.2
+
+  persist_path: "data/persist/memory_store_v31.json"
+  glossary_path: "config/glossary.json"
+
+# ============================================================================
+# QDRANT - Vector Database
+# ============================================================================
+qdrant:
+  url: "http://localhost:6333"
+  api_key: null
+  
+  collection: "iso_sgi_docs_v31"
+  vector_size: 1024
+  distance: "Cosine"
+
+# ============================================================================
+# UI - Gradio
+# ============================================================================
+ui:
+  gradio:
+    port: 7860
+    host: "0.0.0.0"
+    share: false
+    title: "OVV ISO Chat v3.1"
+
+# ============================================================================
+# VRAM OPTIMIZATION - RTX 3060 6GB
+# ============================================================================
+vram:
+  warning_mb: 5000
+  critical_mb: 5500
+  
+  reduced_batch_size: 8
+  reduced_gpu_layers: 28
+  
+  strategy:
+    lazy_load_llm: true
+    unload_embedding_after_index: true
+    cpu_reranker: true
+
+# ============================================================================
+# PATHS
+# ============================================================================
+paths:
+  input_docs: "data/input_docs"
+  output_dir: "data/output"
+  persist_dir: "data/persist"
+  logs_dir: "data/logs"
+  cache_dir: "data/cache"
+
+# ============================================================================
+# LOGGING
+# ============================================================================
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  file:
+    enabled: true
+    path: "data/logs/ovv_chat_v31.log"
+    max_size_mb: 10
+
+# ============================================================================
+# MULTI-AGENT PIPELINE (R24)
+# ============================================================================
+multi_agent:
+  enabled: true   # Abilitato per ValidatorAgent R26 anti-hallucination
+  fallback_to_monolithic: true    # Se errore, usa RAGPipeline classica
+  
+  # Agenti attivi
+  agents:
+    glossary: true
+    analyzer: true
+    retriever: true
+    context: true
+    generator: true
+    validator: true  # R26: ValidatorAgent anti-hallucination
+  
+  # Routing condizionale
+  routing:
+    # Skip retrieval per query definizionali semplici
+    direct_glossary_enabled: true
+    # Intent che richiedono sempre retrieval
+    always_retrieve: ["procedural", "teach", "comparison"]
+  
+  # Token budget per context compression
+  context:
+    max_total_tokens: 2000
+    max_docs_tokens: 1500
+    max_memory_tokens: 300
+    max_glossary_tokens: 200
+    max_doc_chars: 800
+
+# ============================================================================
+# VALIDATOR - Anti-Hallucination (R26)
+# ============================================================================
+validator:
+  enabled: true               # Abilita/disabilita validazione
+  max_retries: 2              # Max tentativi rigenerazione (consigliato 2)
+  log_validations: true       # Log dettagliato validazioni
+  
+  # Citation Check (veloce, regex-based)
+  citation_check:
+    enabled: true             # Sempre attivo se validator enabled
+    strict_match: true        # Richiede match esatto doc_id
+  
+  # Grounding Check (opzionale, CPU-only)
+  grounding_check:
+    enabled: true             # ABILITATO per anti-allucinazione
+    threshold: 0.6            # Score minimo 0-1 (abbassato per evitare falsi positivi)
+
+# ============================================================================
+# GRAPHRAG - Knowledge Graph RAG (R25)
+# ============================================================================
+# NOTA: Feature sperimentale, non ancora integrata nella pipeline.
+# Il codice esiste in src/graph/ ma non è connesso all'orchestrator.
+# Vedi progetto F05 nella roadmap per integrazione futura.
+graphrag:
+  enabled: false  # Disabilitato - vedi F05
+  
+  # Storage paths
+  storage:
+    graph_path: "data/persist/knowledge_graph.json"
+    summaries_path: "data/persist/community_summaries.json"
+    community_path: "data/persist/communities.json"
+    entity_index_path: "data/persist/entity_index.json"
+  
+  # Entity Extraction
+  entity_extraction:
+    use_llm: false          # true = usa LLM, false = solo pattern
+    batch_size: 10          # Chunk da processare insieme per LLM
+    
+  # Relation Extraction
+  relation_extraction:
+    cooccurrence_window: 100  # Caratteri per co-occurrence
+    min_confidence: 0.5
+  
+  # Community Detection
+  community:
+    algorithm: "louvain"    # louvain | networkx
+    resolution: 1.0         # Higher = more communities
+    min_community_size: 2
+  
+  # Summarization
+  summarization:
+    max_entities_per_summary: 20
+    max_tokens_per_summary: 300
+    temperature: 0.3
+    batch_size: 5           # Comunità da riassumere in batch (VRAM)
+  
+  # Retrieval
+  retrieval:
+    default_mode: "hybrid"  # local | global | hybrid
+    local_hops: 2           # BFS expansion depth
+    global_top_k: 3         # Community summaries to retrieve
+    
+    # Merge with vector results
+    merge:
+      method: "rrf"         # rrf | weighted
+      graph_weight: 0.3     # Se weighted
+      rrf_k: 60
+
+# ============================================================================
+# CONVERSATION LOGGING (R28)
+# ============================================================================
+conversation_logging:
+  enabled: true
+  persist_dir: "data/persist/conversations"
+  index_dir: "data/persist/conversations/index"
+  
+  # Retention
+  retention_days: 90
+  inactive_session_timeout_min: 60
+  
+  # Export
+  export_dir: "data/exports"
+  max_export_rows: 10000
+
+# ============================================================================
+# RIEPILOGO MODELLI v3.1
+# ============================================================================
+# EMBEDDING:     BAAI/bge-m3                    (~2GB VRAM, batch=16)
+# RERANKER L1:   ms-marco-MiniLM-L-12-v2        (CPU, FlashRank)
+# RERANKER L2:   Qwen3-Reranker-0.6B-GGUF       (CPU, llama.cpp)
+# LLM:           llama3.1:8b-instruct-q4_K_M    (~3.5GB VRAM, gpu_layers=35)
+# ============================================================================
+

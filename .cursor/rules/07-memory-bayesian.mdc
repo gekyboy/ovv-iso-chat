@@ -1,0 +1,72 @@
+---
+description: Regole per modulo memory con Bayesian feedback
+globs:
+  - "ovv-iso-chat/src/memory/**"
+alwaysApply: false
+---
+
+# 🧠 Memory Module - Bayesian Feedback Rules
+
+## Bayesian Feedback Boost
+
+Il sistema memory usa boost Bayesiano per aggiustare la confidenza delle memorie basandosi sul feedback utente.
+
+### Range Boost
+- **Minimo**: 0.8x (feedback molto negativo)
+- **Neutro**: 1.0x (nessun feedback o bilanciato)
+- **Massimo**: 1.2x (feedback molto positivo)
+
+### Formula
+```
+boost = 1.0 + (positive_ratio - 0.5) * 0.4 * confidence
+confidence = min(feedback_count / 10, 1.0)
+```
+
+## Regole Update Memoria
+
+### NO Overwrite
+- **MAI sovrascrivere** memorie esistenti
+- Se memoria esiste (stesso hash contenuto), AGGIORNA:
+  - Incrementa `access_count`
+  - Aggiorna `updated_at`
+  - Merge `related_docs`
+  - Prendi max `confidence`
+
+### Test Updates
+Quando modifichi il modulo memory:
+```bash
+# Test add
+python -m src.main memory-test --add "fact: Test memoria"
+
+# Test duplicate (deve aggiornare, non creare)
+python -m src.main memory-test --add "fact: Test memoria"
+
+# Verifica access_count > 1
+python -m src.main memory-test
+```
+
+## Tipi Memoria
+
+| Tipo | Confidence Default | Uso |
+|------|-------------------|-----|
+| preference | 0.85 | Preferenze utente |
+| fact | 0.75 | Fatti appresi |
+| correction | 0.95 | Correzioni (alta!) |
+| procedure | 0.80 | Procedure specifiche |
+
+## Feedback HITL
+
+Human-In-The-Loop feedback tramite:
+- 👍 `+1` → boost aumenta
+- 👎 `-1` → boost diminuisce
+
+### Demotion
+Se `positive_ratio < 0.2` con almeno 5 feedback:
+- `base_confidence *= 0.5`
+- Memoria demotata ma non eliminata
+
+## Persistenza
+
+- File: `data/persist/memory_store_v31.json`
+- Auto-save dopo ogni operazione
+- Load automatico all'avvio

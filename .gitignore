@@ -1,0 +1,127 @@
+# ============================================================================
+# OVV ISO Chat v3.9.1 - .gitignore
+# ============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Cursor (IDE settings - ma mantieni regole se le copio)
+# .cursor/
+
+# Chainlit cache/uploads
+.files/
+
+# File di sessione/debug (temporanei)
+SESSION_CONTEXT.md
+FUSION_LOG.md
+ANALISI_TEST_RISPOSTE.md
+
+# Script di debug/analisi (non core)
+analyze_*.py
+debug_*.py
+check_*.py
+show_*.py
+test_r26_benchmark.py
+test_ui.py
+report_extraction.py
+
+# ============================================================================
+# DATA - Escludi contenuti runtime, mantieni struttura
+# ============================================================================
+
+# PDF originali (pesanti, proprietari)
+data/input_docs/**/*.pdf
+
+# Dati runtime - TUTTO in persist/
+data/persist/**/*.json
+data/persist/**/*.log
+
+# Log e cache (ma mantieni .gitkeep)
+data/logs/*
+!data/logs/.gitkeep
+data/qdrant/
+data/cache/*
+!data/cache/.gitkeep
+data/exports/*
+!data/exports/.gitkeep
+
+# Mantieni struttura directory
+!data/**/.gitkeep
+
+# ============================================================================
+# CONFIG - Escludi SOLO file sensibili e backup
+# ============================================================================
+
+# Backup e file temporanei
+config/*.bak
+config/*_backup_*.json
+config/tools_mapping_extended.json
+
+# Proposte acronimi pending (runtime)
+config/acronym_proposals.json
+
+# ============================================================================
+# TEST & BUILD
+# ============================================================================
+
+# Benchmark results
+benchmarks/results/
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ============================================================================
+# ENVIRONMENT & OS
+# ============================================================================
+
+# Environment
+.env
+.env.local
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models cache (scaricati da HuggingFace)
+models/
+.cache/

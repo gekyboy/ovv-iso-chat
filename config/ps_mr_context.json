@@ -1,0 +1,1265 @@
+{
+  "metadata": {
+    "ps_count": 18,
+    "mr_unique_count": 31,
+    "source": "procedure sistema"
+  },
+  "procedure": {
+    "PS-06_01": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 6\\Procedure Sistema_06\\PS-06_01_Rev.04_Gestione della sicurezza negli ambienti di lavoro.pdf",
+      "titolo": "Revisione Data emiss:",
+      "scopo": "OVV è consapevole che i processi aziendali possono essere gestiti in modo efficace ed efficiente mediante\nl’assicurazione della sicurezza e salubrità degli ambienti di lavoro.\nLo scopo della presente istruzione è descrivere le modalità predisposte da OVV per la gestione dei rischi e\ndelle opportunità al fine di prevenire lesioni e malattie dei lavoratori correlate al lavoro predisponendo e\ngarantendo luoghi di lavoro sicuri e salubri\nAttraverso l’applicazione di quanto disposto dalla presente procedura OVV si propone di coinvolgere il proprio\npersonale affinché, essendo motivato, contribuisca al miglioramento degli obiettivi aziendali riducendo e\nprevenendo i pericoli e i rischi per la SSL.",
+      "keywords_scopo": [
+        "consapevole",
+        "processi",
+        "aziendali",
+        "gestiti",
+        "efficace",
+        "efficiente",
+        "assicurazione",
+        "sicurezza",
+        "salubrità",
+        "degli",
+        "ambienti",
+        "lavoro",
+        "scopo",
+        "istruzione",
+        "descrivere",
+        "pianificazione",
+        "implementazione",
+        "controllo",
+        "verifica",
+        "standardizzazione",
+        "crescita"
+      ],
+      "mr_citati": {
+        "MR-07-05": {
+          "nome": "cartellino anomalia",
+          "contesto": "ne, segnalando ogni disfunzione o carenza a chi di competenza attraverso la modulistica predisposta MR-07_05_cartellino anomalia. In seguito alla segnalazione l’organizzazione provvederà intervenendo in modo da ristabilire le co",
+          "keywords_contesto": [
+            "segnalando",
+            "disfunzione",
+            "carenza",
+            "competenza",
+            "modulistica",
+            "predisposta",
+            "07_05_cartellino",
+            "anomalia",
+            "richiamati",
+            "docum",
+            "titolo",
+            "06_01",
+            "safety",
+            "06_02",
+            "modulo",
+            "indagine"
+          ],
+          "occorrenze": 2
+        },
+        "MR-06-02": {
+          "nome": "",
+          "contesto": "te a garantire la sicurezza. Ogni qualvolta si dovesse identificare un caso di condizione insicura (MR-06_02_u.r.), quasi incidente (MR- 06_02_u.r.), medicazione, infortunio minore o grave o casi di emergenza sicu",
+          "keywords_contesto": [
+            "garantire",
+            "sicurezza",
+            "qualvolta",
+            "dovesse",
+            "identificare",
+            "condizione",
+            "insicura",
+            "06_02_u"
+          ],
+          "occorrenze": 1
+        },
+        "MR-06-01": {
+          "nome": "MR-",
+          "contesto": "mergenza sicurezza o ambiente, l’evento deve essere gestito mediante la documentazione di supporto (MR-06_01_u.r., MR-06_02_u.r.). 3/5 Procedura Sistema PS-06_01 Titolo procedura: Revisione Data emiss: Gestione della s",
+          "keywords_contesto": [
+            "mergenza",
+            "sicurezza",
+            "ambiente",
+            "evento",
+            "gestito",
+            "documentazione",
+            "supporto",
+            "06_01_u",
+            "sistema",
+            "06_03",
+            "gestione",
+            "infortunio",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum"
+          ],
+          "occorrenze": 2
+        },
+        "MR-09-02": {
+          "nome": "",
+          "contesto": "rezione in uso (kaizen, formazione ecc.). Inoltre, mediante specifiche attività di verifica, Audit (MR-09_02_u.r.), SMAT audit (MR-09_06_u.r.) o ispezioni, le aree di lavoro vengono monitorate permettendo il contr",
+          "keywords_contesto": [
+            "rezione",
+            "kaizen",
+            "formazione",
+            "specifiche",
+            "attività",
+            "verifica",
+            "audit",
+            "09_02_u",
+            "rarchia",
+            "misure",
+            "prevenzione",
+            "protezione",
+            "eliminare",
+            "pericoli",
+            "applicando",
+            "check"
+          ],
+          "occorrenze": 2
+        },
+        "MR-09-06": {
+          "nome": "",
+          "contesto": "azione ecc.). Inoltre, mediante specifiche attività di verifica, Audit (MR-09_02_u.r.), SMAT audit (MR-09_06_u.r.) o ispezioni, le aree di lavoro vengono monitorate permettendo il controllo dei rischi connessi ed",
+          "keywords_contesto": [
+            "azione",
+            "specifiche",
+            "attività",
+            "verifica",
+            "audit",
+            "09_02_u",
+            "smat",
+            "09_06_u"
+          ],
+          "occorrenze": 1
+        },
+        "MR-09-04": {
+          "nome": "S-Matrix\nMR-",
+          "contesto": "dardizzazione e miglioramento Tutti i dati sopra raccolti vengono raccolti per mezzo della SMatrix (MR-09_04_u.r.) che rende possibile analisi più approfondite delle cause e delle azioni possibili da implementare",
+          "keywords_contesto": [
+            "dardizzazione",
+            "miglioramento",
+            "dati",
+            "sopra",
+            "raccolti",
+            "mezzo",
+            "smatrix",
+            "09_04_u",
+            "modulo",
+            "indagine",
+            "07_02",
+            "07_03",
+            "07_05",
+            "cartellino",
+            "anomalia",
+            "09_02"
+          ],
+          "occorrenze": 2
+        },
+        "MR-07-02": {
+          "nome": "MR-",
+          "contesto": "riorganizzare le aree di lavoro • Utilizzare misure di tipo amministrativo, compresa la formazione (MR-07_02_u.r., MR-07_03_u.r.) Le modifiche che devono essere apportate al fine d’eliminare i rischi individuati, devon",
+          "keywords_contesto": [
+            "riorganizzare",
+            "aree",
+            "lavoro",
+            "utilizzare",
+            "misure",
+            "tipo",
+            "amministrativo",
+            "compresa",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "06_01",
+            "safety",
+            "06_02"
+          ],
+          "occorrenze": 2
+        },
+        "MR-10-01": {
+          "nome": "Major Kaizen\nMR-",
+          "contesto": "3 OPL MR-07_05 Cartellino anomalia MR-09_02 Safety Check-list MR-09_04 S-Matrix MR-09_06 Smat Audit MR-10_01 Major Kaizen MR-10_02 Standard Kaizen MR-10_03 Quick Kaizen Risk assestment Risk prediction 5/5",
+          "keywords_contesto": [
+            "07_05",
+            "cartellino",
+            "anomalia",
+            "09_02",
+            "safety",
+            "check",
+            "list",
+            "09_04"
+          ],
+          "occorrenze": 1
+        },
+        "MR-10-03": {
+          "nome": "Quick Kaizen\nRisk assestment\nRisk prediction",
+          "contesto": "ety Check-list MR-09_04 S-Matrix MR-09_06 Smat Audit MR-10_01 Major Kaizen MR-10_02 Standard Kaizen MR-10_03 Quick Kaizen Risk assestment Risk prediction 5/5",
+          "keywords_contesto": [
+            "check",
+            "list",
+            "09_04",
+            "matrix",
+            "09_06",
+            "smat",
+            "audit",
+            "10_01"
+          ],
+          "occorrenze": 1
+        }
+      }
+    },
+    "PS-06_02": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 6\\Procedure Sistema_06\\PS-06_02_Rev.01_Processo di gestione ambientale .pdf",
+      "titolo": "Revisione Data emiss:",
+      "scopo": "Lo scopo della presente istruzione è descrivere le modalità predisposte da OVV, in conformità alle prescrizioni\nlegali, alla politica di gestione e agli strumenti del WCM, per la gestione del processo produttivo e delle attività\naffidate in outsourcing al fine di controllare le prestazioni ambientali e minimizzarne gli impatti.\nAttraverso l’applicazione di quanto disposto dalla presente procedura OVV si propone di coinvolgere il proprio\npersonale affinché, essendo motivato, contribuisca al miglioramento degli obiettivi aziendali riducendo e\nprevenendo gli impatti ambientali generati dalle proprie attività.",
+      "keywords_scopo": [
+        "scopo",
+        "istruzione",
+        "descrivere",
+        "modalità",
+        "predisposte",
+        "conformità",
+        "prescrizioni",
+        "legali",
+        "politica",
+        "gestione",
+        "agli",
+        "strumenti",
+        "processo",
+        "produttivo",
+        "attività",
+        "pianificazione",
+        "implementazione",
+        "controllo",
+        "verifica",
+        "standardizzazione",
+        "crescita"
+      ],
+      "mr_citati": {
+        "MR-04-01": {
+          "nome": "Politiche di gestione\nMR-",
+          "contesto": "01 3300//0141//1998 Partendo dai principi che la Direzione ha enunciato nella Politica di gestione (MR-04_01_u.r.), si procede alla pianificazione del sistema di gestione. Gli step di pianificazione del sistema di",
+          "keywords_contesto": [
+            "partendo",
+            "principi",
+            "direzione",
+            "enunciato",
+            "politica",
+            "gestione",
+            "04_01_u",
+            "procede",
+            "rifiuti",
+            "06_02",
+            "emissioni",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum"
+          ],
+          "occorrenze": 2
+        },
+        "MR-07-05": {
+          "nome": "cartellino anomalia",
+          "contesto": "ne, segnalando ogni disfunzione o carenza a chi di competenza attraverso la modulistica predisposta MR-07_05_cartellino anomalia. In seguito alla segnalazione l’organizzazione provvederà intervenendo in modo da ristabilire le co",
+          "keywords_contesto": [
+            "segnalando",
+            "disfunzione",
+            "carenza",
+            "competenza",
+            "modulistica",
+            "predisposta",
+            "07_05_cartellino",
+            "anomalia"
+          ],
+          "occorrenze": 1
+        },
+        "MR-06-03": {
+          "nome": "",
+          "contesto": "di emergenza, l’evento deve essere gestito mediante la documentazione di supporto (Enviromental EWO MR06_03_ u.r.). Tale documento permette di identificare le cause radice che hanno generato la condizione; tali ca",
+          "keywords_contesto": [
+            "emergenza",
+            "evento",
+            "gestito",
+            "documentazione",
+            "supporto",
+            "enviromental",
+            "mr06_03_",
+            "tale"
+          ],
+          "occorrenze": 1
+        },
+        "MR-06-04": {
+          "nome": "Unenviromental condition - Near Emergency\nMR-",
+          "contesto": "DI REGISTRAZIONE RICHIAMATI Docum. Titolo MR-04_01 Politiche di gestione MR-06_03 Enviromental EWO MR-06_04 Unenviromental condition - Near Emergency MR-07_05 Cartellino anomalia MR-10_01 Major Kaizen MR-10_02 Standard Kaizen MR-10_03 Quick Kaizen Valut",
+          "keywords_contesto": [
+            "registrazione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "04_01",
+            "politiche",
+            "gestione",
+            "06_03"
+          ],
+          "occorrenze": 1
+        },
+        "MR-10-01": {
+          "nome": "Major Kaizen\nMR-",
+          "contesto": "03 Enviromental EWO MR-06_04 Unenviromental condition - Near Emergency MR-07_05 Cartellino anomalia MR-10_01 Major Kaizen MR-10_02 Standard Kaizen MR-10_03 Quick Kaizen Valutazione Aspetti ed Impatti Ambientali 5/5",
+          "keywords_contesto": [
+            "enviromental",
+            "06_04",
+            "unenviromental",
+            "condition",
+            "near",
+            "emergency",
+            "07_05",
+            "cartellino"
+          ],
+          "occorrenze": 1
+        },
+        "MR-10-03": {
+          "nome": "Quick Kaizen\nValutazione Aspetti ed Impatti Ambientali",
+          "contesto": "dition - Near Emergency MR-07_05 Cartellino anomalia MR-10_01 Major Kaizen MR-10_02 Standard Kaizen MR-10_03 Quick Kaizen Valutazione Aspetti ed Impatti Ambientali 5/5",
+          "keywords_contesto": [
+            "dition",
+            "near",
+            "emergency",
+            "07_05",
+            "cartellino",
+            "anomalia",
+            "10_01",
+            "major"
+          ],
+          "occorrenze": 1
+        }
+      }
+    },
+    "PS-07_01": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 7\\Procedure Sistema_07\\PS-07_01_Rev02_Gestione delle risorse.pdf",
+      "titolo": "Gestione delle risorse",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti"
+      ],
+      "mr_citati": {
+        "MR-07-02": {
+          "nome": "SOP",
+          "contesto": "Personale. Il materiale consiste in: ▪ manuale dei Sistemi di gestione; ▪ procedure ed istruzioni (MR-07_02_SOP, MR-07_03_OPL) ▪ documentazione tecnica eventualmente necessaria. ▪ dispense 4.6) Registrazioni Il",
+          "keywords_contesto": [
+            "personale",
+            "materiale",
+            "consiste",
+            "manuale",
+            "sistemi",
+            "gestione",
+            "procedure",
+            "istruzioni"
+          ],
+          "occorrenze": 1
+        },
+        "MR-07-03": {
+          "nome": "OPL",
+          "contesto": "materiale consiste in: ▪ manuale dei Sistemi di gestione; ▪ procedure ed istruzioni (MR-07_02_SOP, MR-07_03_OPL) ▪ documentazione tecnica eventualmente necessaria. ▪ dispense 4.6) Registrazioni Il Responsabile d",
+          "keywords_contesto": [
+            "materiale",
+            "consiste",
+            "manuale",
+            "sistemi",
+            "gestione",
+            "procedure",
+            "istruzioni",
+            "07_02_sop",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "07_01",
+            "rapporto",
+            "addestramento"
+          ],
+          "occorrenze": 2
+        },
+        "MR-07-01": {
+          "nome": "a conferma della loro partecipazione all",
+          "contesto": "Responsabile del Personale definisce il calendario del corso e compila la prima parte dell'allegato MR-07_01 (Rapporto di addestramento); tale modulo deve essere notificato ai Responsabili di Servizio. I parte",
+          "keywords_contesto": [
+            "responsabile",
+            "personale",
+            "definisce",
+            "calendario",
+            "corso",
+            "compila",
+            "prima",
+            "dell",
+            "tale",
+            "modulo",
+            "notificato",
+            "responsabili",
+            "servizio",
+            "partecipanti",
+            "firmano",
+            "07_01",
+            "titolo",
+            "gestione",
+            "manutenzioni",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum"
+          ],
+          "occorrenze": 3
+        },
+        "MR-07-05": {
+          "nome": "cartellino anomalia",
+          "contesto": "enza (Responsabile Manutenzione, Responsabile Sicurezza ecc.) attraverso la modulistica predisposta MR-07_05_cartellino anomalia. In seguito alla segnalazione l’organizzazione provvederà intervenendo in modo da ristabilire le co",
+          "keywords_contesto": [
+            "enza",
+            "responsabile",
+            "manutenzione",
+            "sicurezza",
+            "modulistica",
+            "predisposta",
+            "07_05_cartellino",
+            "anomalia"
+          ],
+          "occorrenze": 2
+        },
+        "MR-07-09": {
+          "nome": "Check list",
+          "contesto": "onese” 5S) sono messe a disposizione dei singoli addetti per l’autovalutazione delle aree di lavoro MR-07-09_Check list 5S Attraverso comunicazioni interne o, per i casi specifici, attraverso la modulistica predisposta,",
+          "keywords_contesto": [
+            "onese",
+            "messe",
+            "disposizione",
+            "singoli",
+            "addetti",
+            "autovalutazione",
+            "aree",
+            "lavoro",
+            "07_05",
+            "cartellino",
+            "anomalia",
+            "07_06",
+            "cartellini",
+            "quarantena",
+            "07_07",
+            "programma"
+          ],
+          "occorrenze": 2
+        },
+        "MR-07-06": {
+          "nome": "Cartellini quarantena\nMR-",
+          "contesto": "m. Titolo MR-07_01 Rapporto di Addestramento MR-07_02 SOP MR-07_03 OPL MR-07_05 Cartellino anomalia MR-07_06 Cartellini quarantena MR-07_07 Programma Annuale Manutenzioni MR-07_09 Check list 5S MR-07_10 Bolla per intervento a guasto e",
+          "keywords_contesto": [
+            "titolo",
+            "07_01",
+            "rapporto",
+            "addestramento",
+            "07_02",
+            "07_03",
+            "07_05",
+            "cartellino"
+          ],
+          "occorrenze": 1
+        },
+        "MR-07-10": {
+          "nome": "Bolla per intervento a guasto e analisi guasto EWO",
+          "contesto": "malia MR-07_06 Cartellini quarantena MR-07_07 Programma Annuale Manutenzioni MR-07_09 Check list 5S MR-07_10 Bolla per intervento a guasto e analisi guasto EWO 6/6",
+          "keywords_contesto": [
+            "malia",
+            "07_06",
+            "cartellini",
+            "quarantena",
+            "07_07",
+            "programma",
+            "annuale",
+            "manutenzioni"
+          ],
+          "occorrenze": 1
+        }
+      }
+    },
+    "PS-07_02": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 7\\Procedure Sistema_07\\PS-07_02_Rev02_Gestione delle apparecchiature di misura e prova.pdf",
+      "titolo": "Gestione delle apparecchiature di misurazione e prova",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "scelta",
+        "immatricolazione",
+        "strumenti",
+        "classificazione",
+        "degli",
+        "misura",
+        "identificazione",
+        "utilizzabili",
+        "documentazione",
+        "utilizzata"
+      ],
+      "mr_citati": {
+        "MR-08-76": {
+          "nome": "Rapporto di Non Conformit",
+          "contesto": "ottamazione), dandone la necessaria evidenza oggettiva attraverso la gestione di una non conformità MR_08_76 (Rapporto di Non Conformità). 5.4.1) Gestione strumenti “fuori taratura” Nel caso in cui siano stati",
+          "keywords_contesto": [
+            "ottamazione",
+            "dandone",
+            "necessaria",
+            "evidenza",
+            "oggettiva",
+            "gestione",
+            "conformità",
+            "mr_08_76",
+            "08_07",
+            "controllo",
+            "prodotto",
+            "acquistato",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum"
+          ],
+          "occorrenze": 2
+        }
+      }
+    },
+    "PS-07_03": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 7\\Procedure Sistema_07\\PS-07_03_Rev02_Gestione dei documenti.pdf",
+      "titolo": "Revisione Data emiss:",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "formato",
+        "struttura",
+        "documenti",
+        "gestione",
+        "origine",
+        "interna",
+        "identificazione",
+        "codifica",
+        "modalità",
+        "emissione"
+      ],
+      "mr_citati": {}
+    },
+    "PS-07_04": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 7\\Procedure Sistema_07\\PS-07_04_Rev02_Gestione dei documenti di registrazione.pdf",
+      "titolo": "Revisione Data emiss:",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "formato",
+        "documenti",
+        "registrazione",
+        "identificazione",
+        "codifica",
+        "distribuzione",
+        "compilazione",
+        "archiviazione",
+        "conservazione",
+        "elenco"
+      ],
+      "mr_citati": {}
+    },
+    "PS-08_01": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 8\\Procedure Sistema_08\\PS-08_01_Rev02_Pianificazione dei processi.pdf",
+      "titolo": "Pianificazione e controlli operativi",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "sviluppo",
+        "prodotto",
+        "processi",
+        "realizzazione",
+        "supporto",
+        "produzione"
+      ],
+      "mr_citati": {}
+    },
+    "PS-08_02": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 8\\Procedure Sistema_08\\PS-08_02_Rev03_Riesame dei requisiti del cliente.pdf",
+      "titolo": "Riesame dei requisiti del cliente",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "ricevimento",
+        "richiesta",
+        "offerta",
+        "analisi",
+        "documenti",
+        "invio",
+        "accettazione",
+        "dell",
+        "cliente",
+        "riesame"
+      ],
+      "mr_citati": {
+        "MR-08-02": {
+          "nome": "Introduzione",
+          "contesto": "fabbricati in passato); ▪ trasmettere agli enti aziendali gli ordini ricevuti attraverso la scheda MR-08_02 (introduzione/modifica particolari); 4.1) Al fine di supportare il riesame del contratto/ordine, nel",
+          "keywords_contesto": [
+            "fabbricati",
+            "passato",
+            "trasmettere",
+            "agli",
+            "enti",
+            "aziendali",
+            "ordini",
+            "ricevuti",
+            "archiviazione",
+            "degli",
+            "apposito",
+            "dossier",
+            "ente",
+            "tecnico",
+            "commerciale",
+            "dell",
+            "acquisizione",
+            "nuovi",
+            "prodotti",
+            "modifica",
+            "esistenti",
+            "mezzo",
+            "modulo",
+            "cedentemente",
+            "disposto",
+            "anch",
+            "esse",
+            "gestite",
+            "dall",
+            "08_01",
+            "scheda",
+            "fattibilità",
+            "prodotto",
+            "archiviato",
+            "stema",
+            "ps08_02",
+            "revisione",
+            "data",
+            "emiss",
+            "titolo",
+            "procedura",
+            "riesame"
+          ],
+          "occorrenze": 6
+        },
+        "MR-08-01": {
+          "nome": "Scheda fattibilit",
+          "contesto": "i tecnici richiesti dal cliente, eseguendo un’accurata analisi dei documenti e compilando la scheda MR-08_01 (scheda di fattibilità prodotto) per la parte di sua competenza (2° parte del documento). Ricevuta l",
+          "keywords_contesto": [
+            "tecnici",
+            "richiesti",
+            "cliente",
+            "eseguendo",
+            "accurata",
+            "analisi",
+            "documenti",
+            "compilando",
+            "iari",
+            "possano",
+            "dare",
+            "origine",
+            "contestazioni",
+            "contenziosi",
+            "completa",
+            "compilazione",
+            "ente",
+            "tecnico",
+            "commerciale",
+            "informare",
+            "servizi",
+            "aziendali",
+            "stesso",
+            "ricompila",
+            "archiviate",
+            "apposito",
+            "dossier",
+            "ordinate",
+            "numero",
+            "dell",
+            "ordine",
+            "riferimento",
+            "prodotto",
+            "08_15",
+            "nesting",
+            "preventivi",
+            "registrazione",
+            "richiamati",
+            "docum"
+          ],
+          "occorrenze": 5
+        }
+      }
+    },
+    "PS-08_03": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 8\\Procedure Sistema_08\\PS-08_03_Rev03_Processo di industrializzazione del prodotto.pdf",
+      "titolo": "Processo di industrializzazione prodotto",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti"
+      ],
+      "mr_citati": {}
+    },
+    "PS-08_04": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 8\\Procedure Sistema_08\\PS-08_04_Rev02_Gestione dell'approvvigionamento.pdf",
+      "titolo": "Gestione dell’approvvigionamento",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "valutazione",
+        "fornitori",
+        "dati",
+        "acquisto"
+      ],
+      "mr_citati": {
+        "MR-08-15": {
+          "nome": "Anagrafica Fornitori\nMR-",
+          "contesto": "on i requisiti di prodotto e di servizio richiesti, definendo di conseguenza l’anagrafica fornitori MR-08_15. Nell’ambito di una politica mirata a valutare le prestazioni complessive dei propri fornitori e co",
+          "keywords_contesto": [
+            "requisiti",
+            "prodotto",
+            "servizio",
+            "richiesti",
+            "definendo",
+            "conseguenza",
+            "anagrafica",
+            "fornitori",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "08_02",
+            "introduzione",
+            "modifica"
+          ],
+          "occorrenze": 2
+        },
+        "MR-08-17": {
+          "nome": "Vendor rating",
+          "contesto": "complessive di fornitura relative ai singoli fornitori rispetto ai requisiti di qualità e servizio (MR-08_17 Vendor rating) ▪ monitorare e rendere disponibile periodicamente gli aggiornamenti delle eventuali Azioni Corrett",
+          "keywords_contesto": [
+            "complessive",
+            "fornitura",
+            "relative",
+            "singoli",
+            "fornitori",
+            "rispetto",
+            "requisiti",
+            "qualità"
+          ],
+          "occorrenze": 1
+        },
+        "MR-08-02": {
+          "nome": "Introduzione",
+          "contesto": "5.2) DATI DI ACQUISTO Sulla base delle informazioni ricevute dall’ente Tecnico attraverso il modulo MR-08_02 (introduzione/ modifica particolari), l’ente Acquisti provvede alla formalizzazione della richiesta",
+          "keywords_contesto": [
+            "dati",
+            "acquisto",
+            "informazioni",
+            "ricevute",
+            "dall",
+            "ente",
+            "tecnico",
+            "modulo",
+            "uistato",
+            "specifiche",
+            "approvvigionamento",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum",
+            "titolo"
+          ],
+          "occorrenze": 2
+        }
+      }
+    },
+    "PS-08_05": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 8\\Procedure Sistema_08\\PS-08_05_Rev02_Produzione ed erogazione dei servizi.pdf",
+      "titolo": "Produzione ed erogazione dei servizi",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "richiesta",
+        "benestare",
+        "cliente",
+        "prima",
+        "campionatura",
+        "isir",
+        "ordini",
+        "programmazione",
+        "produzione",
+        "esecuzione"
+      ],
+      "mr_citati": {}
+    },
+    "PS-08_06": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 8\\Procedure Sistema_08\\PS-08_06_Rev02_Identificazione e rintracciabilità.pdf",
+      "titolo": "Identificazione e rintracciabilità del prodotto",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "identificazione",
+        "materiali",
+        "ricevimento",
+        "accettazione",
+        "produzione",
+        "finale",
+        "spedizione",
+        "cliente"
+      ],
+      "mr_citati": {}
+    },
+    "PS-08_07": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 8\\Procedure Sistema_08\\PS-08_07_Rev03_Protezione e gestione dei materiali e dei prodotti.pdf",
+      "titolo": "Protezione e gestione dei materiali e dei prodotti",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "movimentazione",
+        "immagazzinamento",
+        "imballaggio",
+        "conservazione",
+        "consegna"
+      ],
+      "mr_citati": {
+        "MR-08-47": {
+          "nome": "e MR-",
+          "contesto": "durante la movimentazione. Tali specifiche relative all’imballaggio vengono formalizzate nel modulo MR-08_47 e MR-08_48 (Scheda definizione imballo). L’imballaggio eseguito di norma da OVV prevede l’utilizzo di con",
+          "keywords_contesto": [
+            "movimentazione",
+            "tali",
+            "specifiche",
+            "relative",
+            "imballaggio",
+            "formalizzate",
+            "modulo",
+            "08_47",
+            "conformi",
+            "06_01",
+            "gestione",
+            "rifiuti",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum"
+          ],
+          "occorrenze": 2
+        },
+        "MR-08-76": {
+          "nome": "Rapporto di non conformit",
+          "contesto": "li addetti Enti Logistica/RSPP I reclami vengono formalizzati al fornitore per mezzo di un rapporto MR-08_76 (Rapporto di Non Conformità) in accordo a quanto indicato dalla Procedura PS-08_08 u.r.(Gestione deg",
+          "keywords_contesto": [
+            "addetti",
+            "enti",
+            "logistica",
+            "rspp",
+            "reclami",
+            "formalizzati",
+            "fornitore",
+            "mezzo",
+            "egistrazione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "08_47",
+            "scheda",
+            "interna"
+          ],
+          "occorrenze": 2
+        }
+      }
+    },
+    "PS-08_08": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 8\\Procedure Sistema_08\\PS-08_08_Rev02_Controllo degli output non conformi.pdf",
+      "titolo": "Revisione Data emiss:",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "prodotti",
+        "sicurezza"
+      ],
+      "mr_citati": {
+        "MR-08-76": {
+          "nome": "Rapporto di non conformit",
+          "contesto": "41//1998 5.2) È responsabilità dell’ente Qualità ▪ redigere e gestire i rapporti di non conformità (MR-08_76) ▪ stabilire la classe di importanza delle non conformità (vedere punto 4 della presente procedura)",
+          "keywords_contesto": [
+            "responsabilità",
+            "dell",
+            "ente",
+            "qualità",
+            "redigere",
+            "gestire",
+            "rapporti",
+            "conformità",
+            "quistato",
+            "qualora",
+            "venisse",
+            "riscontrata",
+            "provvede",
+            "compilazione",
+            "modulo",
+            "lisi",
+            "prodotto",
+            "gestione",
+            "formalizzata",
+            "08_76",
+            "ione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "08_09",
+            "deviation",
+            "permit",
+            "08_75"
+          ],
+          "occorrenze": 4
+        },
+        "MR-08-75": {
+          "nome": "",
+          "contesto": "ipale dell’anomalia. La descrizione delle principali cause di difettosità sono riportati sul modulo MR-08_75 (Raggruppamenti delle principali NC). 6.1.2) Esame della non conformità La responsabilità dell’esame",
+          "keywords_contesto": [
+            "ipale",
+            "dell",
+            "anomalia",
+            "descrizione",
+            "principali",
+            "cause",
+            "difettosità",
+            "riportati"
+          ],
+          "occorrenze": 1
+        },
+        "MR-08-09": {
+          "nome": "Deviation Permit\nMR-",
+          "contesto": "Cliente la non conformità per richiedere una concessione o deroga. A tal fine utilizzerà il modulo MR-08_09 (Deviation Permit). Le decisioni prese dal cliente verranno registrate ed indicate sul rapporto di n",
+          "keywords_contesto": [
+            "cliente",
+            "conformità",
+            "richiedere",
+            "concessione",
+            "deroga",
+            "utilizzerà",
+            "modulo",
+            "08_09",
+            "08_07",
+            "controllo",
+            "prodotto",
+            "acquistato",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum"
+          ],
+          "occorrenze": 2
+        }
+      }
+    },
+    "PS-09_01": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 9\\Procedure Sistema_09\\PS-09_01_Rev02_Monitoraggio e misurazione del sistema.pdf",
+      "titolo": "Monitoraggio e misurazione del sistema",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti"
+      ],
+      "mr_citati": {
+        "MR-09-01": {
+          "nome": "",
+          "contesto": "tica di miglioramento continuo del processo) che vengono riportati nel modulo obiettivi di processo MR-09_01. 6.2) Frequenza del monitoraggio degli indicatori Gli indicatori devono essere costantemente aggior",
+          "keywords_contesto": [
+            "tica",
+            "miglioramento",
+            "continuo",
+            "processo",
+            "riportati",
+            "modulo",
+            "obiettivi",
+            "09_01",
+            "ioramento",
+            "frequenze",
+            "riesame",
+            "degli",
+            "indicatori",
+            "indicate",
+            "definiti",
+            "direzione",
+            "rispettivi"
+          ],
+          "occorrenze": 3
+        },
+        "MR-08-62": {
+          "nome": "Control Plan\nMR-",
+          "contesto": "so, ritenuti chiave, per stabilire che i requisiti di prodotto siano soddisfatti. Nel control plan (MR-08_62) devono essere indicate le seguenti informazioni: • Caratteristica da controllare • Piani di campio",
+          "keywords_contesto": [
+            "ritenuti",
+            "chiave",
+            "stabilire",
+            "requisiti",
+            "prodotto",
+            "siano",
+            "soddisfatti",
+            "control",
+            "09_01",
+            "revisione",
+            "data",
+            "emiss",
+            "titolo",
+            "procedura",
+            "monitoraggio",
+            "misurazione"
+          ],
+          "occorrenze": 2
+        },
+        "MR-09-04": {
+          "nome": "Safety Matrix\nMR-",
+          "contesto": "o e misurazione del sistema 02 30/04/19 MR-08_62 Control Plan MR-09_01 Modulo obiettivi di processo MR-09_04 Safety Matrix MR-09_05 Matrice A-B-C-D-E-F-G MR-09_07 QA MAtrix Scadenzario adempimenti normativi ambiente e sicurezz",
+          "keywords_contesto": [
+            "misurazione",
+            "sistema",
+            "08_62",
+            "control",
+            "plan",
+            "09_01",
+            "modulo",
+            "obiettivi"
+          ],
+          "occorrenze": 1
+        },
+        "MR-09-07": {
+          "nome": "QA MAtrix\nScadenzario adempimenti normativi ambiente e\nsicurezza",
+          "contesto": "ol Plan MR-09_01 Modulo obiettivi di processo MR-09_04 Safety Matrix MR-09_05 Matrice A-B-C-D-E-F-G MR-09_07 QA MAtrix Scadenzario adempimenti normativi ambiente e sicurezza 5/5",
+          "keywords_contesto": [
+            "plan",
+            "09_01",
+            "modulo",
+            "obiettivi",
+            "processo",
+            "09_04",
+            "safety",
+            "matrix"
+          ],
+          "occorrenze": 1
+        }
+      }
+    },
+    "PS-09_02": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 9\\Procedure Sistema_09\\PS-09_02_Rev02_Verifiche ispettive interne.pdf",
+      "titolo": "Revisione Data emiss:",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti",
+        "pianificazione",
+        "conduzione",
+        "verifiche",
+        "ispettive",
+        "interne"
+      ],
+      "mr_citati": {
+        "MR-09-02": {
+          "nome": "Check-list di verifica\nMR-",
+          "contesto": "cifiche tecniche, autorizzazioni, registrazioni varie); ▪ Redazione delle “Check-list di verifica” (MR-09_02) o Smat Audit (MR-09_05) o altra reportistica ▪ Attuazione audit; ▪ Calcolo della classificazione d",
+          "keywords_contesto": [
+            "cifiche",
+            "tecniche",
+            "autorizzazioni",
+            "registrazioni",
+            "varie",
+            "redazione",
+            "check",
+            "list",
+            "zione",
+            "necessaria",
+            "elabora",
+            "apposite",
+            "liste",
+            "riscontro",
+            "denominate",
+            "ifiche",
+            "ispettive",
+            "interne",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum",
+            "titolo"
+          ],
+          "occorrenze": 3
+        },
+        "MR-09-05": {
+          "nome": "",
+          "contesto": "zzazioni, registrazioni varie); ▪ Redazione delle “Check-list di verifica” (MR-09_02) o Smat Audit (MR-09_05) o altra reportistica ▪ Attuazione audit; ▪ Calcolo della classificazione dell’area; ▪ Discussione",
+          "keywords_contesto": [
+            "zzazioni",
+            "registrazioni",
+            "varie",
+            "redazione",
+            "check",
+            "list",
+            "verifica",
+            "09_02"
+          ],
+          "occorrenze": 1
+        },
+        "MR-09-03": {
+          "nome": "",
+          "contesto": "i alla metodologia di cui al punto 5.2.4. AUDIT di Processo e Prodotto Le “Check-list di verifica” (MR-09_03), nel caso degli AUDIT di processo e di prodotto, sono documenti “statici” che vengono modificati s",
+          "keywords_contesto": [
+            "metodologia",
+            "audit",
+            "processo",
+            "prodotto",
+            "check",
+            "list",
+            "verifica",
+            "09_03"
+          ],
+          "occorrenze": 1
+        },
+        "MR-09-06": {
+          "nome": "Smat Audit",
+          "contesto": "ISTRAZIONE RICHIAMATI Docum. Titolo MR-09_02 Check-list di verifica MR-09_03 Check-list di verifica MR-09_06 Smat Audit 7/7",
+          "keywords_contesto": [
+            "istrazione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "09_02",
+            "check",
+            "list",
+            "verifica"
+          ],
+          "occorrenze": 1
+        }
+      }
+    },
+    "PS-09_03": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap. 9\\Procedure Sistema_09\\PS-09_03_Rev02_Riesame di Direzione.pdf",
+      "titolo": "Riesame di Direzione",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti"
+      ],
+      "mr_citati": {
+        "MR-04-01": {
+          "nome": "Politiche di gestione",
+          "contesto": "7_04 Gestione dei documenti di registrazione 7) DOCUMENTI DI REGISTRAZIONE RICHIAMATI Docum. Titolo MR-04_01 Politiche di gestione 4/4",
+          "keywords_contesto": [
+            "7_04",
+            "gestione",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "04_01"
+          ],
+          "occorrenze": 1
+        }
+      }
+    },
+    "PS-10_01": {
+      "filepath": "D:\\.ISO_OVV\\procedure sistema\\Cap.10\\Procedure Sistema_10\\PS-10_01_Rev02_Miglioramento.pdf",
+      "titolo": "Revisione Data emiss:",
+      "scopo": "2) RIFERIMENTI",
+      "keywords_scopo": [
+        "riferimenti"
+      ],
+      "mr_citati": {
+        "MR-08-76": {
+          "nome": "Rapporto di non conformit",
+          "contesto": "di future produzioni o economicità del prodotto, si provvede alla opportuna compilazione del modulo MR-08_76 (Rapporto di non conformità). Il modulo compilato viene inviato al reparto o fornitore che ha genera",
+          "keywords_contesto": [
+            "future",
+            "produzioni",
+            "economicità",
+            "prodotto",
+            "provvede",
+            "opportuna",
+            "compilazione",
+            "modulo",
+            "sier",
+            "cura",
+            "responsabili",
+            "dell",
+            "area",
+            "oggetto",
+            "azione",
+            "documentazione",
+            "emiss",
+            "miglioramento",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "08_76"
+          ],
+          "occorrenze": 3
+        },
+        "MR-10-01": {
+          "nome": "Major Kaizen\nMR-",
+          "contesto": "ziendali attraverso l’utilizzo integrato di: ▪ Attività/processi aziendali ▪ Attività Major Kaizen (MR-10_01_u.r.), Standard Kaizen (MR-10_02_u.r.), Quick Kaizen (MR-10_03_u.r.) 4/6 Procedura Sistema PS-10_01 Tito",
+          "keywords_contesto": [
+            "ziendali",
+            "utilizzo",
+            "integrato",
+            "attività",
+            "processi",
+            "aziendali",
+            "major",
+            "kaizen",
+            "documenti",
+            "registrazione",
+            "richiamati",
+            "docum",
+            "titolo",
+            "08_76",
+            "rapporto",
+            "conformità"
+          ],
+          "occorrenze": 2
+        },
+        "MR-10-02": {
+          "nome": "",
+          "contesto": "tegrato di: ▪ Attività/processi aziendali ▪ Attività Major Kaizen (MR-10_01_u.r.), Standard Kaizen (MR-10_02_u.r.), Quick Kaizen (MR-10_03_u.r.) 4/6 Procedura Sistema PS-10_01 Titolo procedura: Revisione Data emis",
+          "keywords_contesto": [
+            "tegrato",
+            "attività",
+            "processi",
+            "aziendali",
+            "major",
+            "kaizen",
+            "10_01_u",
+            "standard"
+          ],
+          "occorrenze": 1
+        },
+        "MR-10-03": {
+          "nome": "Quick Kaizen",
+          "contesto": "i aziendali ▪ Attività Major Kaizen (MR-10_01_u.r.), Standard Kaizen (MR-10_02_u.r.), Quick Kaizen (MR-10_03_u.r.) 4/6 Procedura Sistema PS-10_01 Titolo procedura: Revisione Data emiss: Miglioramento 02 3300//0141",
+          "keywords_contesto": [
+            "aziendali",
+            "attività",
+            "major",
+            "kaizen",
+            "10_01_u",
+            "standard",
+            "10_02_u",
+            "quick",
+            "docum",
+            "titolo",
+            "08_76",
+            "rapporto",
+            "conformità",
+            "10_01"
+          ],
+          "occorrenze": 2
+        }
+      }
+    }
+  }
+}

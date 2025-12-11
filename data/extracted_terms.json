@@ -1,0 +1,1470 @@
+{
+  "acronyms": [
+    [
+      "DI",
+      441
+    ],
+    [
+      "IL",
+      418
+    ],
+    [
+      "NO",
+      374
+    ],
+    [
+      "MR",
+      350
+    ],
+    [
+      "PS",
+      346
+    ],
+    [
+      "OVV",
+      288
+    ],
+    [
+      "DIV",
+      240
+    ],
+    [
+      "ISO",
+      239
+    ],
+    [
+      "UNI",
+      200
+    ],
+    [
+      "EN",
+      147
+    ],
+    [
+      "SI",
+      138
+    ],
+    [
+      "SCOPO",
+      110
+    ],
+    [
+      "COPIA",
+      110
+    ],
+    [
+      "CAMPO",
+      66
+    ],
+    [
+      "DEL",
+      55
+    ],
+    [
+      "INDICE",
+      55
+    ],
+    [
+      "NUMERO",
+      55
+    ],
+    [
+      "XX",
+      50
+    ],
+    [
+      "IN",
+      42
+    ],
+    [
+      "PER",
+      38
+    ],
+    [
+      "DA",
+      38
+    ],
+    [
+      "DEI",
+      37
+    ],
+    [
+      "NON",
+      34
+    ],
+    [
+      "SS",
+      34
+    ],
+    [
+      "FMEA",
+      34
+    ],
+    [
+      "DATA",
+      32
+    ],
+    [
+      "IE",
+      31
+    ],
+    [
+      "SSL",
+      29
+    ],
+    [
+      "NOTE",
+      28
+    ],
+    [
+      "TO",
+      27
+    ],
+    [
+      "XXXX",
+      27
+    ],
+    [
+      "IO",
+      26
+    ],
+    [
+      "ISIR",
+      25
+    ],
+    [
+      "MQ",
+      25
+    ],
+    [
+      "AM",
+      23
+    ],
+    [
+      "IS",
+      22
+    ],
+    [
+      "OK",
+      22
+    ],
+    [
+      "IC",
+      22
+    ],
+    [
+      "IMBAL",
+      22
+    ],
+    [
+      "DELLA",
+      21
+    ],
+    [
+      "LIMITI",
+      21
+    ],
+    [
+      "HRC",
+      18
+    ],
+    [
+      "FILET",
+      18
+    ],
+    [
+      "TR",
+      17
+    ],
+    [
+      "SC",
+      17
+    ],
+    [
+      "BI",
+      17
+    ],
+    [
+      "SOP",
+      16
+    ],
+    [
+      "DELLE",
+      16
+    ],
+    [
+      "VERDE",
+      16
+    ],
+    [
+      "CODICE",
+      16
+    ],
+    [
+      "DXF",
+      16
+    ],
+    [
+      "LI",
+      15
+    ],
+    [
+      "AUDIT",
+      15
+    ],
+    [
+      "LASER",
+      14
+    ],
+    [
+      "NC",
+      14
+    ],
+    [
+      "OPL",
+      14
+    ],
+    [
+      "QUOTA",
+      14
+    ],
+    [
+      "CHECK",
+      13
+    ],
+    [
+      "AREA",
+      13
+    ],
+    [
+      "AMB",
+      13
+    ],
+    [
+      "AD",
+      13
+    ],
+    [
+      "EWO",
+      13
+    ],
+    [
+      "STAMPO",
+      13
+    ],
+    [
+      "MODULI",
+      13
+    ],
+    [
+      "SGQ",
+      13
+    ],
+    [
+      "TOTALE",
+      12
+    ],
+    [
+      "AZIONI",
+      12
+    ],
+    [
+      "DPI",
+      12
+    ],
+    [
+      "FIRMA",
+      12
+    ],
+    [
+      "FOORP",
+      12
+    ],
+    [
+      "MODULO",
+      12
+    ],
+    [
+      "LIST",
+      11
+    ],
+    [
+      "TEST",
+      11
+    ],
+    [
+      "IT",
+      11
+    ],
+    [
+      "RO",
+      11
+    ],
+    [
+      "CNC",
+      11
+    ],
+    [
+      "DATI",
+      11
+    ],
+    [
+      "RSPP",
+      11
+    ],
+    [
+      "AA",
+      11
+    ],
+    [
+      "PIANO",
+      11
+    ],
+    [
+      "BAVE",
+      11
+    ],
+    [
+      "LAVORO",
+      10
+    ],
+    [
+      "PRIMA",
+      10
+    ],
+    [
+      "LE",
+      10
+    ],
+    [
+      "DELL",
+      10
+    ],
+    [
+      "LA",
+      10
+    ],
+    [
+      "ALLA",
+      10
+    ],
+    [
+      "AC",
+      10
+    ],
+    [
+      "NERO",
+      10
+    ],
+    [
+      "PQ",
+      10
+    ],
+    [
+      "TAGLIO",
+      10
+    ],
+    [
+      "TWTTP",
+      10
+    ],
+    [
+      "ESTLA",
+      10
+    ],
+    [
+      "NVA",
+      10
+    ],
+    [
+      "WCM",
+      9
+    ],
+    [
+      "SONO",
+      9
+    ],
+    [
+      "CER",
+      9
+    ],
+    [
+      "PROVA",
+      9
+    ],
+    [
+      "FIAT",
+      9
+    ],
+    [
+      "ID",
+      9
+    ],
+    [
+      "NA",
+      9
+    ],
+    [
+      "NH",
+      9
+    ],
+    [
+      "T0",
+      9
+    ],
+    [
+      "CAUSE",
+      8
+    ],
+    [
+      "AL",
+      8
+    ],
+    [
+      "WO",
+      8
+    ],
+    [
+      "FASE",
+      8
+    ],
+    [
+      "RAL",
+      8
+    ],
+    [
+      "NOK",
+      8
+    ],
+    [
+      "HCRC",
+      8
+    ],
+    [
+      "KPI",
+      8
+    ],
+    [
+      "CAUSA",
+      7
+    ],
+    [
+      "STATO",
+      7
+    ],
+    [
+      "GIALLO",
+      7
+    ],
+    [
+      "IM",
+      7
+    ],
+    [
+      "SA",
+      7
+    ],
+    [
+      "OGNI",
+      7
+    ],
+    [
+      "PZ",
+      7
+    ],
+    [
+      "AS",
+      7
+    ],
+    [
+      "DIMA",
+      7
+    ],
+    [
+      "SE",
+      7
+    ],
+    [
+      "AP",
+      7
+    ],
+    [
+      "CNH",
+      7
+    ],
+    [
+      "CLASSE",
+      7
+    ],
+    [
+      "IPR",
+      7
+    ],
+    [
+      "CQC",
+      7
+    ],
+    [
+      "CHE",
+      7
+    ],
+    [
+      "SCHEDA",
+      7
+    ],
+    [
+      "CDL",
+      7
+    ],
+    [
+      "ACT",
+      7
+    ],
+    [
+      "HERCA",
+      7
+    ],
+    [
+      "POS",
+      7
+    ],
+    [
+      "LPO",
+      7
+    ],
+    [
+      "LUS",
+      7
+    ],
+    [
+      "OTSOP",
+      7
+    ],
+    [
+      "OROVAL",
+      7
+    ],
+    [
+      "ATSIV",
+      7
+    ],
+    [
+      "PM",
+      7
+    ],
+    [
+      "ZN",
+      7
+    ],
+    [
+      "OF",
+      7
+    ],
+    [
+      "DVR",
+      7
+    ],
+    [
+      "NVAA",
+      6
+    ],
+    [
+      "DOPO",
+      6
+    ],
+    [
+      "BLU",
+      6
+    ],
+    [
+      "ROBOT",
+      6
+    ],
+    [
+      "COMP",
+      6
+    ],
+    [
+      "OSE",
+      6
+    ],
+    [
+      "BG",
+      6
+    ],
+    [
+      "PIEGA",
+      6
+    ],
+    [
+      "INVIO",
+      6
+    ]
+  ],
+  "doc_codes": [
+    [
+      "PS-08_08",
+      43
+    ],
+    [
+      "PS-08_05",
+      27
+    ],
+    [
+      "PS-08_01",
+      26
+    ],
+    [
+      "IL-08_01",
+      24
+    ],
+    [
+      "IL-08_20",
+      22
+    ],
+    [
+      "MR-08_02",
+      21
+    ],
+    [
+      "PS-08_06",
+      20
+    ],
+    [
+      "IL-08_03",
+      19
+    ],
+    [
+      "IL-08_17",
+      18
+    ],
+    [
+      "PS-10_01",
+      17
+    ],
+    [
+      "PS-07_01",
+      17
+    ],
+    [
+      "MR-08_66",
+      16
+    ],
+    [
+      "PS-08_07",
+      16
+    ],
+    [
+      "PS-07_04",
+      16
+    ],
+    [
+      "IL-08_07",
+      16
+    ],
+    [
+      "PS-08_03",
+      16
+    ],
+    [
+      "IL-07_01",
+      15
+    ],
+    [
+      "PS-09_02",
+      15
+    ],
+    [
+      "IL-08_13",
+      14
+    ],
+    [
+      "IL-08_05",
+      13
+    ],
+    [
+      "IL-08_06",
+      13
+    ],
+    [
+      "MR-08_65",
+      13
+    ],
+    [
+      "IL-08_12",
+      13
+    ],
+    [
+      "IL-08_15",
+      13
+    ],
+    [
+      "IL-08_16",
+      13
+    ],
+    [
+      "MR-08_76",
+      12
+    ],
+    [
+      "PS-06_01",
+      11
+    ],
+    [
+      "PS-08_02",
+      11
+    ],
+    [
+      "IL-08_14",
+      11
+    ],
+    [
+      "MR-08_62",
+      11
+    ],
+    [
+      "IL-08_10",
+      11
+    ],
+    [
+      "IL-06_02",
+      10
+    ],
+    [
+      "MR-08_03",
+      10
+    ],
+    [
+      "PS-08_04",
+      10
+    ],
+    [
+      "PS-09_01",
+      10
+    ],
+    [
+      "PS-07_02",
+      10
+    ],
+    [
+      "IL-06_01",
+      9
+    ],
+    [
+      "IL-08_02",
+      8
+    ],
+    [
+      "MR-08_08",
+      8
+    ],
+    [
+      "MR-08_16",
+      8
+    ],
+    [
+      "MR-08_45",
+      8
+    ],
+    [
+      "PS-09_03",
+      8
+    ],
+    [
+      "PS-07_03",
+      8
+    ],
+    [
+      "IL-07_14",
+      7
+    ],
+    [
+      "IL-08_22",
+      7
+    ],
+    [
+      "MR-08_07",
+      7
+    ],
+    [
+      "IL-08_04",
+      7
+    ],
+    [
+      "MR-08_15",
+      7
+    ],
+    [
+      "MR-08_47",
+      7
+    ],
+    [
+      "IL-08_08",
+      7
+    ]
+  ],
+  "dotted_acronyms": [
+    [
+      "C.O.T",
+      5
+    ],
+    [
+      "D.P.I",
+      4
+    ],
+    [
+      "S.P.P",
+      2
+    ],
+    [
+      "S.P.A",
+      2
+    ],
+    [
+      "Z.T.A",
+      2
+    ],
+    [
+      "I.C.S",
+      1
+    ],
+    [
+      "R.S.P.P",
+      1
+    ],
+    [
+      "F.M.E.A",
+      1
+    ],
+    [
+      "I.S.I.R",
+      1
+    ],
+    [
+      "P.A.P",
+      1
+    ],
+    [
+      "O.V.V",
+      1
+    ],
+    [
+      "P.O.",
+      1
+    ],
+    [
+      "S.I.T",
+      1
+    ]
+  ],
+  "capitalized_terms": [
+    [
+      "Revisione Data",
+      353
+    ],
+    [
+      "Istruzione Di Lavoro",
+      240
+    ],
+    [
+      "Procedura Sistema",
+      104
+    ],
+    [
+      "Ente Firma\nEmesso",
+      49
+    ],
+    [
+      "Funzione Nominativo\nDestinatario",
+      28
+    ],
+    [
+      "Funzione Nominativo\nDestinatario\nMotivo",
+      27
+    ],
+    [
+      "Ente Tecnico",
+      25
+    ],
+    [
+      "Imballaggio Attributi",
+      23
+    ],
+    [
+      "Gestione Sistemi\nApprovato",
+      18
+    ],
+    [
+      "Filettature Attributi",
+      18
+    ],
+    [
+      "Il Responsabile",
+      17
+    ],
+    [
+      "Questa Istruzione",
+      15
+    ],
+    [
+      "Gestione Sistemi",
+      13
+    ],
+    [
+      "Azioni Correttive",
+      13
+    ],
+    [
+      "La Direzione",
+      12
+    ],
+    [
+      "Control Plan",
+      11
+    ],
+    [
+      "Standard Accettabile",
+      11
+    ],
+    [
+      "Verifiche Ispettive Interne",
+      9
+    ],
+    [
+      "Azione Correttiva",
+      7
+    ],
+    [
+      "Responsabile Sicurezza",
+      6
+    ],
+    [
+      "Flat View",
+      6
+    ],
+    [
+      "Note Responsabile",
+      6
+    ],
+    [
+      "Tipologia Selezione Descrizione",
+      6
+    ],
+    [
+      "Data Compilazione Note Revisioni Visto Tecnico Visto",
+      6
+    ],
+    [
+      "Visto Produzione\nRedatta",
+      6
+    ],
+    [
+      "Liquidi Penetranti",
+      5
+    ],
+    [
+      "Ente Acquisti",
+      5
+    ],
+    [
+      "Vendor Rating",
+      5
+    ],
+    [
+      "Amministratore Delegato",
+      5
+    ],
+    [
+      "Servizio Tecnico",
+      5
+    ],
+    [
+      "Part Number",
+      5
+    ],
+    [
+      "Data Compilazione Note Revisioni",
+      5
+    ],
+    [
+      "Identificazione Modulo",
+      5
+    ],
+    [
+      "Verificato Gestione Sistemi\nApprovato Amm",
+      4
+    ],
+    [
+      "Responsabile Ambientale",
+      4
+    ],
+    [
+      "Caratteristiche Cicli",
+      4
+    ],
+    [
+      "Ente Logistica",
+      4
+    ],
+    [
+      "Team Leader",
+      4
+    ],
+    [
+      "Peso Parziale",
+      4
+    ],
+    [
+      "Totale Area\nNote",
+      4
+    ],
+    [
+      "Scheda Codice Prodotto Fase Descrizione Pagina",
+      4
+    ],
+    [
+      "Prodotto Descrizione Pagina",
+      4
+    ],
+    [
+      "Visto Produzione\nPagina",
+      4
+    ],
+    [
+      "Da Sp",
+      4
+    ],
+    [
+      "Major Kaizen",
+      4
+    ],
+    [
+      "Standard Kaizen",
+      4
+    ],
+    [
+      "La Procedura",
+      4
+    ],
+    [
+      "Process Flow",
+      4
+    ],
+    [
+      "Verifica Ispettiva",
+      4
+    ],
+    [
+      "Il Responsabile Ambientale",
+      3
+    ]
+  ],
+  "bigrams": [
+    [
+      "revisione emiss",
+      353
+    ],
+    [
+      "istruzione lavoro",
+      331
+    ],
+    [
+      "titolo revisione",
+      282
+    ],
+    [
+      "lavoro titolo",
+      241
+    ],
+    [
+      "div div",
+      239
+    ],
+    [
+      "uni iso",
+      197
+    ],
+    [
+      "ente tecnico",
+      136
+    ],
+    [
+      "iso uni",
+      116
+    ],
+    [
+      "modalità operative",
+      114
+    ],
+    [
+      "sistema gestione",
+      103
+    ],
+    [
+      "ente qualità",
+      103
+    ],
+    [
+      "sistema richiamati",
+      96
+    ],
+    [
+      "docum titolo",
+      84
+    ],
+    [
+      "registrazione richiamati",
+      77
+    ],
+    [
+      "verifica taratura",
+      74
+    ],
+    [
+      "dell ente",
+      70
+    ],
+    [
+      "emiss titolo",
+      70
+    ],
+    [
+      "emiss gestione",
+      68
+    ],
+    [
+      "campo applicazione",
+      66
+    ],
+    [
+      "sistema informatico",
+      66
+    ],
+    [
+      "processo produttivo",
+      63
+    ],
+    [
+      "sistema revisione",
+      62
+    ],
+    [
+      "riferimento uni",
+      58
+    ],
+    [
+      "all interno",
+      58
+    ],
+    [
+      "copia controllata",
+      56
+    ],
+    [
+      "controllata livello",
+      56
+    ],
+    [
+      "livello protezione",
+      56
+    ],
+    [
+      "protezione interno",
+      56
+    ],
+    [
+      "indice scopo",
+      55
+    ],
+    [
+      "numero copia",
+      55
+    ],
+    [
+      "copia copia",
+      55
+    ],
+    [
+      "interno divulgativo",
+      55
+    ],
+    [
+      "divulgativo società",
+      55
+    ],
+    [
+      "società funzione",
+      55
+    ],
+    [
+      "funzione nominativo",
+      55
+    ],
+    [
+      "nominativo destinatario",
+      55
+    ],
+    [
+      "destinatario motivo",
+      55
+    ],
+    [
+      "motivo revisione",
+      55
+    ],
+    [
+      "paragrafi modificati",
+      55
+    ],
+    [
+      "caso cui",
+      54
+    ],
+    [
+      "ident mod",
+      54
+    ],
+    [
+      "approvato amm",
+      53
+    ],
+    [
+      "amm delegato",
+      53
+    ],
+    [
+      "delegato numero",
+      53
+    ],
+    [
+      "riferimenti riferimento",
+      53
+    ],
+    [
+      "scopo generalità",
+      53
+    ],
+    [
+      "output conformi",
+      53
+    ],
+    [
+      "introduzione modifica",
+      53
+    ],
+    [
+      "ente emesso",
+      51
+    ],
+    [
+      "richiamati docum",
+      51
+    ],
+    [
+      "controllo output",
+      51
+    ],
+    [
+      "check list",
+      50
+    ],
+    [
+      "azioni correttive",
+      50
+    ],
+    [
+      "dall ente",
+      49
+    ],
+    [
+      "caratteristiche prodotto",
+      48
+    ],
+    [
+      "sistemi approvato",
+      47
+    ],
+    [
+      "limiti accettabilità",
+      46
+    ],
+    [
+      "ente logistica",
+      46
+    ],
+    [
+      "richiamati nome",
+      45
+    ],
+    [
+      "nome ente",
+      45
+    ]
+  ],
+  "trigrams": [
+    [
+      "titolo revisione emiss",
+      282
+    ],
+    [
+      "istruzione lavoro titolo",
+      241
+    ],
+    [
+      "lavoro titolo revisione",
+      241
+    ],
+    [
+      "div div div",
+      238
+    ],
+    [
+      "uni iso uni",
+      115
+    ],
+    [
+      "iso uni iso",
+      115
+    ],
+    [
+      "revisione emiss titolo",
+      70
+    ],
+    [
+      "revisione emiss gestione",
+      68
+    ],
+    [
+      "sistema revisione emiss",
+      62
+    ],
+    [
+      "riferimento uni iso",
+      57
+    ],
+    [
+      "controllata livello protezione",
+      56
+    ],
+    [
+      "numero copia copia",
+      55
+    ],
+    [
+      "copia copia controllata",
+      55
+    ],
+    [
+      "copia controllata livello",
+      55
+    ],
+    [
+      "livello protezione interno",
+      55
+    ],
+    [
+      "protezione interno divulgativo",
+      55
+    ],
+    [
+      "interno divulgativo società",
+      55
+    ],
+    [
+      "divulgativo società funzione",
+      55
+    ],
+    [
+      "società funzione nominativo",
+      55
+    ],
+    [
+      "funzione nominativo destinatario",
+      55
+    ],
+    [
+      "nominativo destinatario motivo",
+      55
+    ],
+    [
+      "destinatario motivo revisione",
+      55
+    ],
+    [
+      "approvato amm delegato",
+      53
+    ],
+    [
+      "amm delegato numero",
+      53
+    ],
+    [
+      "delegato numero copia",
+      53
+    ],
+    [
+      "riferimenti riferimento uni",
+      52
+    ],
+    [
+      "richiamati docum titolo",
+      51
+    ],
+    [
+      "controllo output conformi",
+      49
+    ],
+    [
+      "sistemi approvato amm",
+      45
+    ],
+    [
+      "richiamati nome ente",
+      45
+    ],
+    [
+      "nome ente emesso",
+      44
+    ],
+    [
+      "sistema titolo revisione",
+      41
+    ],
+    [
+      "ente emesso verificato",
+      40
+    ],
+    [
+      "ente tecnico commerciale",
+      39
+    ],
+    [
+      "gestione sistemi approvato",
+      35
+    ],
+    [
+      "sistema richiamati registrazione",
+      35
+    ],
+    [
+      "richiamati registrazione richiamati",
+      35
+    ],
+    [
+      "registrazione richiamati nome",
+      35
+    ],
+    [
+      "registrazione richiamati docum",
+      35
+    ],
+    [
+      "verificato gestione sistemi",
+      34
+    ]
+  ],
+  "stats": {
+    "total_pdfs": 150,
+    "total_chars": 775650
+  }
+}

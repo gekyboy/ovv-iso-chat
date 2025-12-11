@@ -1,0 +1,55 @@
+---
+description: Regole specifiche per OVV ISO Chat v3.1
+globs: 
+  - "ovv-iso-chat/**"
+alwaysApply: true
+---
+
+# 📋 Regole OVV ISO Chat v3.1
+
+## ⚠️ Backup Prima di Merge
+- **SEMPRE** backup prima di operazioni di merge
+- Comando: `Copy-Item -Recurse "ovv-iso-chat" "ovv-iso-chat-backup-$(Get-Date -Format 'yyyyMMdd-HHmm')"`
+- Verifica backup esista prima di procedere
+
+## 🧪 Test Post-Step
+- **DOPO ogni modifica significativa**: esegui `pytest tests/ -v`
+- **DOPO ogni merge**: verifica con test specifici
+- **Prima di commit**: `git status` pulito + test passati
+
+## 📝 Documentazione in FUSION_LOG.md
+- **OGNI decisione architettturale** → sezione Decisioni
+- **OGNI merge** → nuova entry con Piano/Risultato
+- **OGNI problema** → documentare soluzione
+
+## ⏱️ Sessioni <45min
+- Sessioni max 45 minuti
+- Checkpoint ogni 30 min in SESSION_CONTEXT.md
+- Fine sessione: aggiorna stato in SESSION_CONTEXT.md
+
+## 🎯 Vincoli VRAM
+- RTX 3060 6GB
+- Max VRAM: 5.5GB
+- Embedding batch: 32 (fallback 8)
+- LLM gpu_layers: 35 (fallback 28)
+- Reranker: SEMPRE CPU
+
+## 🔧 Stack Modelli
+- Embedding: BAAI/bge-m3 (CUDA)
+- Reranker L1: FlashRank (CPU)
+- Reranker L2: Qwen3 GGUF (CPU)
+- LLM: qwen3:8b-instruct-q4_K_M (CUDA)
+
+## 📁 Struttura File
+```
+src/
+├── ingestion/   # PDF → chunks
+├── memory/      # LangGraph memory
+└── integration/ # RAG pipeline
+```
+
+## 🚫 Non Fare
+- MAI merge big-bang (tutto insieme)
+- MAI saltare test
+- MAI modificare config senza documentare
+- MAI aumentare VRAM oltre 5.5GB

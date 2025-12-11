@@ -1,0 +1,73 @@
+---
+description: Regole per ingestion con metadata ISO
+globs:
+  - "ovv-iso-chat/src/ingestion/**"
+alwaysApply: false
+---
+
+# 📄 Ingestion ISO Rules
+
+## Metadata Extraction
+
+### Da Filename
+```
+PS-06_01_Rev04_Titolo.pdf
+ │  │  │    │     └── title
+ │  │  │    └── revision
+ │  │  └── doc_number
+ │  └── chapter
+ └── doc_type (PS|IL|MR|TOOLS)
+```
+
+### Da Contenuto (regex)
+Sezioni ISO estratte:
+- `SCOPO\s*:?\s*(.{20,500}?)` → contenuto scopo
+- `CAMPO DI APPLICAZIONE\s*:?\s*(.*)` → applicazione
+- `RESPONSABILITÀ\s*:?\s*(.*)` → responsabili
+- `MODALITÀ OPERATIVE\s*:?\s*(.*)` → procedure
+
+## Chunking Strategy
+
+| Tipo | Strategy | Chunks |
+|------|----------|--------|
+| PS, IL | dense | parent + child |
+| MR, TOOLS | light | solo parent |
+
+### Dimensioni
+- **Parent**: 1200 char, overlap 200
+- **Child**: 400 char, overlap 100
+
+## Test Ingestion
+
+Prima di commit:
+```bash
+# Test base
+python -m src.main ingest --limit 10
+
+# Verifica collection
+python -m src.main status
+
+# Verifica VRAM < 5GB
+nvidia-smi
+```
+
+## Validazione Metadata
+
+Ogni chunk deve avere:
+```python
+{
+    "doc_id": "PS-06_01",
+    "doc_type": "PS",
+    "chapter": "06",
+    "revision": "04",
+    "chunk_type": "parent|child|light",
+    "sections_found": ["SCOPO", "RESPONSABILITÀ", ...],
+    "sections_content": {"SCOPO": "contenuto..."}  # Solo PS/IL
+}
+```
+
+## VRAM Management
+
+- Batch embedding: 16 (max 32)
+- FP16: sempre abilitato
+- Target: < 5GB durante ingestion

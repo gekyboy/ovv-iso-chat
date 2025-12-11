@@ -1,0 +1,446 @@
+---
+description: Archivio progetti completati OVV ISO Chat - Documentazione storica
+globs: ["ovv-iso-chat/**"]
+alwaysApply: false
+---
+
+# 📁 ARCHIVIO PROGETTI COMPLETATI
+
+> Questo file contiene la documentazione dettagliata dei progetti GIÀ IMPLEMENTATI.
+> Per i progetti DA FARE, consulta `11-roadmap-features.mdc`
+> 
+> **Ultimo aggiornamento:** 8 Dicembre 2025
+
+---
+
+## 📊 RIEPILOGO COMPLETAMENTI (24 Progetti + 1 Obsoleto)
+
+| ID | Progetto | Data | File Principali | Status |
+|----|----------|------|-----------------|--------|
+| R01 | Glossario acronimi ambigui | 8 Dic | `glossary.json`, `glossary.py` | ✅ |
+| R02-R03 | Sistema approvazione memoria | 8 Dic | `app_chainlit.py`, `store.py` | ✅ |
+| R04 | Pannello Admin Streamlit | 8 Dic | `admin_panel.py`, `admin/` | ✅ |
+| R05 | Estrazione automatica acronimi | 8 Dic | `acronym_extractor.py` | ✅ |
+| R06 | Disambiguazione Contestuale | 8 Dic | `glossary.py`, `app_chainlit.py` | ✅ |
+| R07-R11 | Analytics + Report + Dashboard | 8 Dic | `src/analytics/` | ✅ |
+| R08-R10 | Apprendimento Implicito + Consenso | 8 Dic | `src/learning/` | ✅ |
+| **R12** | **Knowledge Graph automatico** | **8 Dic** | **-** | **🚫 OBSOLETO** |
+| R13 | Apprendimento semi-auto | 8 Dic | `learning_detector.py` | ✅ |
+| R14 | Fonti intelligenti | 8 Dic | `citation_extractor.py` |
+| R15 | Suggerimento Tool pratici | 8 Dic | `tool_suggester.py` |
+| R16 | Assistenza compilazione Tool | 8 Dic | `teach_assistant.py` |
+| R17 | Deduplicazione Chunks | 8 Dic | `rag_pipeline.py` |
+| R18 | Fix Citazioni Fantasma | 8 Dic | `config.yaml` |
+| R19 | Segnalazione Lacune Intelligente | 8 Dic | `gap_detector.py`, `gap_store.py` |
+| R20 | Glossary Context Injection | 8 Dic | `glossary.py`, `llm_agent.py` |
+| R21 | Prepending Context | 8 Dic | `enricher.py`, `chunker.py` |
+| R22 | Dual Embedding Glossario | 8 Dic | `glossary_indexer.py` |
+| R23 | HyDE (Hypothetical Document) | 8 Dic | `hyde.py` |
+| R24 | Multi-Agent Pipeline | 8 Dic | `src/agents/` |
+| R25 | GraphRAG / Knowledge Graph | 8 Dic | `src/graph/` |
+
+---
+
+## ✅ R01: GLOSSARIO ACRONIMI AMBIGUI
+
+### Problema Risolto
+Il glossario supportava solo UN significato per acronimo. CDL poteva significare "Centro Di Lavoro" o "Ciclo Di Lavoro".
+
+### Soluzione
+Modificato `glossary.json` per supportare più significati con `ambiguous: true` e array `definitions`.
+
+### File: `config/glossary.json`, `src/integration/glossary.py`
+
+---
+
+## ✅ R02-R03: SISTEMA APPROVAZIONE MEMORIA
+
+### Comandi Implementati
+| Comando | Chi | Cosa fa |
+|---------|-----|---------|
+| `/propose` | Tutti | Propone memoria |
+| `/pending` | Admin, Engineer | Lista proposte |
+| `/approve <id>` | Admin | Approva |
+| `/reject <id>` | Admin, Engineer | Rifiuta |
+
+### File: `app_chainlit.py`, `src/memory/store.py`
+
+---
+
+## ✅ R04: PANNELLO ADMIN STREAMLIT
+
+### Funzionalità
+- Dashboard con KPI + grafici Plotly
+- Gestione proposte pending_global
+- CRUD glossario con paginazione
+- Browser memorie per namespace
+- Gestione utenti
+
+### File: `admin_panel.py`, `admin/views/*.py`
+
+---
+
+## ✅ R05: ESTRAZIONE AUTOMATICA ACRONIMI
+
+### Pattern Riconosciuti (5)
+1. `WCM (World Class Manufacturing)` → parentesi dopo
+2. `(World Class Manufacturing) WCM` → parentesi prima
+3. `WCM significa World Class...` → connettivo
+4. `WCM = World Class` → uguale
+5. `WCM, ovvero World Class...` → ovvero/cioè
+
+### Comandi Admin
+```
+/acronyms              → Lista proposte
+/acronyms approve WCM  → Approva → glossario
+/acronyms reject XYZ   → Rifiuta
+```
+
+### File: `src/analytics/acronym_extractor.py`
+### Test: 40/40 ✅
+
+---
+
+## ✅ R07-R11: ANALYTICS + REPORT + DASHBOARD
+
+### Componenti
+- **Collectors**: Query, Glossary, Memory, Pipeline
+- **Analyzers**: Usage, Quality
+- **Reporter**: Markdown + HTML
+- **Scheduler**: APScheduler (02:00 nightly)
+
+### Comandi
+```
+/analizza glossario
+/analizza memoria
+/analizza pipeline
+/analizza report
+```
+
+### File: `src/analytics/collectors/`, `src/analytics/analyzers/`
+### Admin Panel: Tab "📈 Analytics" con 6 sottotab
+
+---
+
+## ✅ R13: APPRENDIMENTO SEMI-AUTOMATICO
+
+### Pattern Rilevati
+- `"X significa Y"`
+- `"X vuol dire Y"`
+- `"con X intendo Y"`
+- `"X = Y"`
+- `"no, X è Y"` (correzione)
+
+### Flow
+1. Sistema rileva pattern
+2. Popup conferma utente
+3. Salva in pending_global
+4. Admin approva
+
+### File: `src/memory/learning_detector.py`
+
+---
+
+## ✅ R14: FONTI INTELLIGENTI
+
+### Problema Risolto
+Le fonti venivano sempre mostrate (5 fisso) anche se fuori contesto.
+
+### Soluzione
+1. Regex estrae doc_id citati nella risposta
+2. Mostra SOLO fonti citate
+3. Elementi cliccabili con `cl.Text`
+4. Warning per citazioni fantasma
+
+### File: `src/integration/citation_extractor.py`
+
+---
+
+## ✅ R15: SUGGERIMENTO TOOL PRATICI
+
+### Sistema Multi-Livello
+1. **Intent Detection**: Query azionabili vs informative
+2. **Mapping JSON**: Match keywords/concepts
+3. **Semantico**: Fallback embedding
+4. **UI**: Bottoni cliccabili → `/teach`
+
+### Tool Mappati (9)
+5W1H, Ishikawa 4M, 5 Perché, Cartellino Anomalia, FMEA, 8D, Major/Quick/Standard Kaizen
+
+### File: `src/integration/tool_suggester.py`, `config/tools_mapping.json`
+### Test: 32/32 ✅
+
+---
+
+## ✅ R16: ASSISTENZA COMPILAZIONE TOOL
+
+### Funzionalità
+- Contesto sessione (10 min timeout)
+- Field detection: "non capisco il campo X"
+- 68 campi mappati per 9 tool
+- Feedback tracker per Admin
+
+### Azioni UI
+```
+[📋 Mostra tutti i campi]
+[⚠️ Errori comuni]
+[📄 Esempio compilato]
+```
+
+### File: `src/integration/teach_assistant.py`
+### Test: 34/34 ✅
+
+---
+
+## ✅ R17: DEDUPLICAZIONE CHUNKS
+
+### Problema Risolto
+4 dei 5 risultati erano lo STESSO documento con chunk quasi identici.
+
+### Soluzione
+Deduplicazione post-retrieval in `rag_pipeline.py`
+
+---
+
+## ✅ R18: FIX CITAZIONI FANTASMA
+
+### Problema Risolto
+L'LLM citava documenti non nei risultati retrieval.
+
+### Soluzione
+Modificato prompt in `config.yaml`:
+```
+Cita SOLO i documenti effettivamente presenti nel CONTESTO fornito.
+```
+
+---
+
+## ✅ R19: SEGNALAZIONE LACUNE INTELLIGENTE
+
+### Segnali Rilevati (5)
+1. Nessun documento recuperato
+2. Score retrieval basso (<0.4)
+3. LLM esprime incertezza (14 pattern)
+4. Termine non nel glossario
+5. Termine citato ma non definito
+
+### UI
+```
+📍 Possibile lacuna rilevata
+Non ho trovato definizione di "WCM"
+[✅ Sì, segnala] [❌ No, non serve]
+```
+
+### Comandi Admin
+```
+/gaps  → Mostra statistiche e pending
+```
+
+### File: `src/analytics/gap_detector.py`, `src/analytics/gap_store.py`
+### Test: 45/45 ✅
+
+---
+
+## ✅ R20: GLOSSARY CONTEXT INJECTION
+
+### Problema Risolto
+L'LLM ignorava definizioni nascoste tra parentesi.
+
+### Soluzione
+Iniettare definizioni ESPLICITAMENTE nel prompt:
+```
+📚 DEFINIZIONI ACRONIMI:
+• WCM = World Class Manufacturing
+• PDCA = Plan-Do-Check-Act
+```
+
+### File: `src/integration/glossary.py`, `src/memory/llm_agent.py`
+### Test: 10/10 ✅
+
+---
+
+## ✅ R21: PREPENDING CONTEXT
+
+### Problema Risolto
+Gli embedding non catturavano definizioni acronimi.
+
+### Soluzione
+Arricchire chunks PRIMA dell'embedding:
+```
+[DOC: PS-06_01 | Sezione: 4.2 | Titolo: Gestione Rifiuti]
+[Glossario: CER = Catalogo Europeo Rifiuti]
+
+La gestione dei rifiuti pericolosi richiede...
+```
+
+### File: `src/ingestion/enricher.py`
+### Test: 26/26 ✅
+
+---
+
+## ✅ R22: DUAL EMBEDDING GLOSSARIO
+
+### Problema Risolto
+Query "cosa significa WCM?" non trovavano definizioni semanticamente.
+
+### Soluzione
+Collezione Qdrant separata `glossary_terms`:
+- Dual search parallela (docs + glossary)
+- RRF merge con boost per query definitorie (+50%)
+
+### File: `src/ingestion/glossary_indexer.py`
+### Test: 22/22 ✅
+
+---
+
+## ✅ R23: HyDE (HYPOTHETICAL DOCUMENT)
+
+### Problema Risolto
+Query complesse non trovavano documenti rilevanti.
+
+### Soluzione
+1. LLM genera documento ipotetico (150 parole)
+2. Embedding combinato: query 25% + expanded 35% + HyDE 40%
+3. Template specifici per tipo documento (PS/IL/MR/TOOL)
+4. Cache documenti ipotetici (TTL 1h)
+
+### File: `src/integration/hyde.py`
+### Test: 32/32 ✅
+
+---
+
+## ✅ R24: MULTI-AGENT PIPELINE
+
+### Sciame di 5 Agenti
+1. **GlossaryAgent**: Espande acronimi
+2. **AnalyzerAgent**: Classifica intent, decompone query
+3. **RetrieverAgent**: Hybrid retrieval + reranking
+4. **ContextAgent**: Comprime contesto, inietta memoria
+5. **GeneratorAgent**: Genera risposta con citazioni
+
+### Routing Intelligente
+- Query definitional → DirectGlossaryAnswer (~2s)
+- Query complesse → Full pipeline (~10-15s)
+
+### File: `src/agents/`, `src/agents/orchestrator.py`
+### Test: 23/23 ✅
+
+---
+
+## ✅ R25: GraphRAG / KNOWLEDGE GRAPH
+
+### Modulo `src/graph/` (7 componenti)
+| File | Funzione |
+|------|----------|
+| `types.py` | Entity, Relation, GraphResult |
+| `entity_extractor.py` | Pattern + glossary matching |
+| `relation_extractor.py` | Pattern + co-occurrence |
+| `builder.py` | NetworkX DiGraph |
+| `community.py` | Louvain detection |
+| `summarizer.py` | LLM + fallback summaries |
+| `retriever.py` | Local/Global/Hybrid + RRF |
+
+### Tipi Entità
+DOCUMENT, ROLE, PROCESS, CONCEPT, EQUIPMENT, LOCATION, STANDARD
+
+### Tipi Relazioni
+REFERENCES, RESPONSIBLE_FOR, DEPENDS_ON, DEFINES, USES, COMPLIES_WITH
+
+### File: `src/graph/`, `src/agents/agent_graph.py`
+### Test: 13/13 ✅
+
+---
+
+## ✅ R08-R10: APPRENDIMENTO IMPLICITO + CONSENSO MULTI-UTENTE
+
+### Problema Risolto
+Il sistema non imparava dal comportamento degli utenti e non c'era modo di promuovere conoscenza da utente a globale con consenso.
+
+### Soluzione: Sistema di Apprendimento Implicito
+
+**Modulo `src/learning/` con 5 componenti:**
+
+| Componente | Funzione |
+|------------|----------|
+| `signals/` | SignalCollector: click_source, copy_text, dwell_time, scroll_depth, re_ask, follow_up |
+| `analyzers/` | BehaviorAnalyzer: rileva pattern (preferenze, interessi, frustrazioni, expertise) |
+| `consensus/` | VotingTracker: traccia voti utenti per contenuti |
+| `learners/` | ImplicitLearner: orchestratore principale |
+| `scheduler.py` | Job notturni: analysis@03:00, consensus@04:00, cleanup@05:00 |
+
+**Segnali Tracciati (10):**
+- click_source, copy_text, dwell_time, scroll_depth
+- re_ask, follow_up
+- teach_complete, teach_abort
+- memory_used, memory_confirmed, memory_rejected
+
+**Consenso Multi-Utente:**
+- Promozione user→global quando 3+ utenti votano stesso contenuto
+- Score minimo: 0.7
+- Admin panel: Tab "🤝 Consenso" con 5 sottotab
+
+### Admin Panel
+- Dashboard metriche comportamento
+- Lista candidati per approvazione/rifiuto
+- Storico promozioni
+- Monitoraggio segnali
+- Configurazione consenso
+
+### File: `src/learning/`, Admin Panel tab "Consenso"
+
+---
+
+## ✅ R06: DISAMBIGUAZIONE CONTESTUALE ACRONIMI
+
+### Problema Risolto
+Acronimi ambigui (es. NC = Non Conformità o Nota di Credito) non venivano disambiguati automaticamente.
+
+### Soluzione: Sistema Contestuale Intelligente
+
+**3 Livelli di Disambiguazione:**
+1. **Contesto Documento**: Se la query cita un doc_id, usa il contesto di quel documento
+2. **Contesto Conversazione**: Analizza la cronologia della chat per inferire il dominio
+3. **Preferenze Utente**: Salva le scelte dell'utente per sessioni future
+
+**UI Interattiva:**
+```
+Sistema rileva "NC" ambiguo
+              │
+              ▼
+📋 NC può significare:
+  1. Non Conformità (qualità)
+  2. Nota di Credito (amministrazione)
+              │
+              ▼
+Quale intendi? [1] [2]
+              │
+              ▼
+Salva preferenza → prossima volta usa automaticamente
+```
+
+### File Modificati
+- `src/integration/glossary.py`: +200 righe (disambiguator, context analyzer)
+- `app_chainlit.py`: +80 righe (UI buttons, preference saving)
+- `config/glossary.json`: Flag `ambiguous` per acronimi multi-significato
+
+### Test: 28/28 ✅
+
+---
+
+## 🚫 R12: KNOWLEDGE GRAPH AUTOMATICO (OBSOLETO)
+
+### Stato: SUPERATO DA R25
+
+Questo progetto prevedeva la costruzione automatica di un Knowledge Graph durante l'ingestion.
+
+**Motivo Obsolescenza:**
+- R25 (GraphRAG) implementa già un Knowledge Graph completo
+- Include: entity extraction, relation extraction, community detection, summarization
+- Più avanzato di quanto previsto originariamente per R12
+
+**Riferimento:** Vedi sezione R25 per l'implementazione effettiva.
+
+---
+
+*Archivio aggiornato: 8 Dicembre 2025*
+*24 progetti completati + 1 obsoleto su 25 totali*

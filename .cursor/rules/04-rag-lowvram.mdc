@@ -1,0 +1,203 @@
+---
+description: Regole ottimizzazione RAG per VRAM limitata (<6GB)
+globs: ["**/*.py", "**/*.yaml"]
+---
+
+# 🎮 RAG Low-VRAM Optimization
+
+> Target: VRAM <5.5GB con GPU consumer (RTX 3060/4060 12GB, RTX 3070 8GB)
+
+## 📊 Budget VRAM
+
+| Componente | VRAM Stimata | Note |
+|------------|--------------|------|
+| Embedding Model | ~500MB | MiniLM-L12 fp16 |
+| LLM (Q4_K_M) | ~4-5GB | Qwen2.5:7b quantizzato |
+| Overhead | ~500MB | CUDA context, buffers |
+| **TOTALE** | **~5.5GB** | Margine sicurezza |
+
+## 🔧 Configurazioni Obbligatorie
+
+### Embedding
+```yaml
+embedding:
+  model: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  device: "cuda"
+  batch_size: 16        # MAX 32, preferire 16
+  normalize: true
+  max_seq_length: 384   # Non superare 512
+```
+
+### LLM Ollama
+```yaml
+llm:
+  model: "qwen2.5:7b-instruct"  # O qwen3:8b-q4_K_M
+  fallback_model: "llama3.2:3b"  # Per emergenze VRAM
+  temperature: 0.3
+  num_ctx: 2048          # MAX 4096
+  num_gpu_layers: 28     # Parziale offload
+  repeat_penalty: 1.1
+```
+
+### Retrieval
+```yaml
+rag:
+  retrieval:
+    top_k: 5             # Non superare 10
+    score_threshold: 0.5
+    rerank: false        # Se true, usa CPU
+```
+
+## ⚠️ Cose da EVITARE
+
+### Mai Fare
+- ❌ `batch_size > 32` per embedding
+- ❌ `num_ctx > 4096` senza verificare VRAM
+- ❌ Modelli non quantizzati (fp16/fp32)
+- ❌ Reranking su GPU
+- ❌ Multiple models in memoria simultaneamente
+- ❌ BGE-M3 full (usa versione light o sparse disabilitato)
+
+### Pattern Anti-VRAM
+```python
+# ❌ MALE: Carica tutto in memoria
+embeddings = model.encode(all_documents)  # OOM se molti docs
+
+# ✅ BENE: Batch processing
+for batch in chunks(documents, batch_size=16):
+    embeddings = model.encode(batch)
+    save_to_index(embeddings)
+    del embeddings
+    torch.cuda.empty_cache()
+```
+
+## ✅ Pattern Consigliati
+
+### Lazy Loading
+```python
+class LazyEmbedder:
+    def __init__(self):
+        self._model = None
+    
+    @property
+    def model(self):
+        if self._model is None:
+            self._model = SentenceTransformer(...)
+        return self._model
+```
+
+### Memory Cleanup
+```python
+import gc
+import torch
+
+def cleanup_vram():
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        torch.cuda.synchronize()
+```
+
+### Fallback CPU
+```python
+def get_device():
+    if torch.cuda.is_available():
+        vram_free = torch.cuda.get_device_properties(0).total_memory
+        vram_used = torch.cuda.memory_allocated()
+        if (vram_free - vram_used) < 1e9:  # <1GB libero
+            return "cpu"
+        return "cuda"
+    return "cpu"
+```
+
+## 📈 Monitoring
+
+### Comando Rapido
+```powershell
+nvidia-smi --query-gpu=memory.used,memory.total --format=csv
+```
+
+### Script Monitor
+```powershell
+# monitor_vram.ps1
+while ($true) {
+    $vram = nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits
+    $timestamp = Get-Date -Format "HH:mm:ss"
+    Write-Host "$timestamp - VRAM: ${vram}MB"
+    if ([int]$vram -gt 5500) {
+        Write-Host "⚠️ WARNING: VRAM > 5.5GB!" -ForegroundColor Red
+    }
+    Start-Sleep -Seconds 5
+}
+```
+
+### Log in Python
+```python
+import logging
+
+def log_vram(context=""):
+    if torch.cuda.is_available():
+        allocated = torch.cuda.memory_allocated() / 1e9
+        reserved = torch.cuda.memory_reserved() / 1e9
+        logging.info(f"VRAM [{context}]: {allocated:.2f}GB allocated, {reserved:.2f}GB reserved")
+```
+
+## 🔄 Ottimizzazioni Chunking
+
+### Per VRAM Limitata
+```yaml
+ingestion:
+  chunk_sizes:
+    parent: 1200    # Ridotto da 1500
+    child: 400      # Ridotto da 500
+  overlap:
+    parent: 150     # Ridotto da 200
+    child: 75       # Ridotto da 100
+  batch_size: 16    # Per embedding
+```
+
+### Context Window Management
+```python
+def truncate_context(chunks, max_tokens=1500):
+    """Limita context per non superare num_ctx LLM"""
+    total = 0
+    selected = []
+    for chunk in chunks:
+        chunk_tokens = len(chunk.split()) * 1.3  # stima
+        if total + chunk_tokens > max_tokens:
+            break
+        selected.append(chunk)
+        total += chunk_tokens
+    return selected
+```
+
+## 🎯 Benchmark VRAM
+
+### Test Standard
+```python
+def benchmark_vram():
+    """Esegui dopo setup per verificare budget"""
+    import torch
+    
+    # Baseline
+    log_vram("baseline")
+    
+    # Load embedding
+    from sentence_transformers import SentenceTransformer
+    embedder = SentenceTransformer("...")
+    log_vram("after_embedding")
+    
+    # Test batch
+    test_texts = ["test"] * 32
+    _ = embedder.encode(test_texts)
+    log_vram("after_batch_32")
+    
+    # Cleanup
+    del embedder
+    cleanup_vram()
+    log_vram("after_cleanup")
+```
+
+---
+
+*VRAM è preziosa. Ogni MB conta.*

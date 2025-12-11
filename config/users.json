@@ -1,0 +1,25 @@
+{
+  "users": {
+    "admin": {
+      "id": "92c82647",
+      "username": "admin",
+      "password_hash": "$2b$12$Ss0nGDBNaZtjhHurBgUQpOnQVeLeLsdNvXKs2rrw8iJL42H9QuP/G",
+      "role": "admin",
+      "display_name": "Amministratore"
+    },
+    "engineer": {
+      "id": "d85fc644",
+      "username": "engineer",
+      "password_hash": "$2b$12$pqrzvaktLyFwyIo/tRPbueogp6wv.GU/b/8CAN4UiVaU./KoqRDFe",
+      "role": "engineer",
+      "display_name": "Ingegnere"
+    },
+    "user": {
+      "id": "c5da5ce0",
+      "username": "user",
+      "password_hash": "$2b$12$bSk6ZolYGnNi4ezfiA11w.r5PAwbmxQiDOghpb7wtXdXWzv39g7j6",
+      "role": "user",
+      "display_name": "Utente"
+    }
+  }
+}

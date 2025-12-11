@@ -1,0 +1,97 @@
+---
+description: Standard struttura README con progressive disclosure
+globs: 
+  - "**/README.md"
+  - "**/readme.md"
+alwaysApply: false
+---
+
+# 📄 Standard README - Progressive Disclosure
+
+> Struttura README a 3 livelli: dal fare al capire.
+
+## 🎯 Principio
+
+**"Prima funziona, poi capisci, poi approfondisci"**
+
+L'utente deve poter:
+1. **Usare in 2 minuti** (Quick Start)
+2. **Capire cosa può fare** (Guida Utente)  
+3. **Approfondire se vuole** (Deep Dive)
+
+## 📐 Struttura Obbligatoria
+
+### Livello 1: 🚀 QUICK START
+- **SEMPRE primo** dopo header
+- Max 1 schermata
+- Contenuti:
+  - Prerequisiti (1-2 righe)
+  - Avvio (comando singolo o doppio click)
+  - Login/accesso (se richiesto)
+  - 3 comandi/azioni da provare subito
+- **Copia-incolla ready**: tutti i comandi pronti
+
+### Livello 2: 📖 GUIDA UTENTE
+- Target: utente che usa attivamente
+- Contenuti:
+  - Cos'è (spiegazione NON tecnica)
+  - Cosa puoi fare (per ruolo se RBAC)
+  - Comandi/funzionalità complete
+  - Esempi input → output
+- **Diagrammi semplici**: dove aiutano a capire
+
+### Livello 3: 🔬 DEEP DIVE
+- **Separatore visivo** prima (es. `---`)
+- Target: admin/dev/curiosi
+- Contenuti:
+  - Come funziona (diagrammi, analogie)
+  - Architettura tecnica
+  - Pipeline/processi dettagliati
+  - Configurazione avanzata
+  - Struttura progetto
+- **Diagrammi tecnici**: ASCII art, flussi
+
+### Footer: 📜 APPENDICI
+- Changelog
+- Contribuire
+- Licenza
+- Ringraziamenti
+
+## ✅ Checklist README
+
+```markdown
+- [ ] Header con titolo + tagline chiara?
+- [ ] Indice cliccabile se >3 schermate?
+- [ ] Quick Start primo dopo header?
+- [ ] Quick Start max 1 schermata?
+- [ ] Comandi copia-incollabili?
+- [ ] Guida Utente con esempi pratici?
+- [ ] Separatore visivo prima di Deep Dive?
+- [ ] Diagrammi dove servono (non ovunque)?
+- [ ] Appendici in fondo?
+```
+
+## 🚫 Antipattern
+
+- ❌ Quick Start dopo spiegazioni tecniche
+- ❌ "Cos'è" prima di "Come si usa"
+- ❌ Comandi non copia-incollabili
+- ❌ Diagrammi ovunque senza criterio
+- ❌ Ripetizioni (stesse info in più punti)
+- ❌ Mix livelli (tecnico + utente insieme)
+
+## 📝 Template Header
+
+```markdown
+# 🏷️ Nome Progetto vX.Y
+
+> Tagline: cosa fa in una frase.
+
+## Indice
+- [🚀 Quick Start](#-quick-start)
+- [📖 Guida Utente](#-guida-utente)
+- [🔬 Deep Dive](#-deep-dive)
+- [📜 Appendici](#-appendici)
+
+---
+```

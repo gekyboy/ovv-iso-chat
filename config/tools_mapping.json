@@ -1,0 +1,2711 @@
+{
+  "_metadata": {
+    "version": "2.0",
+    "created": "2025-12-08",
+    "updated": "2025-12-08",
+    "description": "Mapping tool OVV → keywords/concepts/fields per suggerimenti intelligenti (R15+R16)",
+    "author": "Cursor Agent"
+  },
+  "tool_suggestions": {
+    "5W1H": {
+      "doc_id": "TOOLS-10_01",
+      "name": "5W1H - Analisi Strutturata",
+      "concepts": [
+        "analisi problema",
+        "incidente",
+        "non conformità",
+        "analisi causa",
+        "investigazione",
+        "evento"
+      ],
+      "keywords": [
+        "cosa è successo",
+        "quando",
+        "dove",
+        "chi",
+        "come",
+        "perché",
+        "cosa",
+        "5w1h",
+        "what",
+        "when",
+        "where",
+        "who",
+        "how",
+        "why"
+      ],
+      "suggest_when": "Analisi strutturata di un evento o problema",
+      "priority": 1,
+      "fields": [
+        {
+          "name": "What (Cosa)",
+          "description": "Cosa è successo? Descrizione dell'evento/problema",
+          "tips": "Essere specifici e oggettivi, evitare giudizi"
+        },
+        {
+          "name": "When (Quando)",
+          "description": "Quando è successo? Data, ora, turno",
+          "tips": "Indicare data e ora precisa se possibile"
+        },
+        {
+          "name": "Where (Dove)",
+          "description": "Dove è successo? Luogo, linea, macchina",
+          "tips": "Specificare reparto, linea, postazione esatta"
+        },
+        {
+          "name": "Who (Chi)",
+          "description": "Chi era coinvolto? Operatori, turno",
+          "tips": "Nomi o ruoli delle persone coinvolte"
+        },
+        {
+          "name": "How (Come)",
+          "description": "Come è successo? Dinamica dell'evento",
+          "tips": "Descrivere la sequenza di eventi"
+        },
+        {
+          "name": "Why (Perché)",
+          "description": "Perché è successo? Cause immediate",
+          "tips": "Questo campo si approfondisce con i 5 Perché"
+        }
+      ]
+    },
+    "4M_Ishikawa": {
+      "doc_id": "TOOLS-10_02",
+      "name": "4M Ishikawa - Diagramma Causa-Effetto",
+      "concepts": [
+        "causa",
+        "effetto",
+        "root cause",
+        "problem solving",
+        "4M",
+        "fishbone",
+        "spina di pesce",
+        "causa radice"
+      ],
+      "keywords": [
+        "cause",
+        "perché",
+        "origine",
+        "uomo",
+        "macchina",
+        "materiale",
+        "metodo",
+        "ishikawa",
+        "fishbone",
+        "diagramma"
+      ],
+      "suggest_when": "Identificazione cause radice con diagramma a lisca di pesce",
+      "priority": 2,
+      "fields": [
+        {
+          "name": "Problema (Effetto)",
+          "description": "Il problema da analizzare (testa del pesce)",
+          "tips": "Definire il problema in modo chiaro e misurabile"
+        },
+        {
+          "name": "Man (Uomo)",
+          "description": "Cause legate al fattore umano",
+          "tips": "Formazione, esperienza, errori, turnover"
+        },
+        {
+          "name": "Machine (Macchina)",
+          "description": "Cause legate a macchinari/attrezzature",
+          "tips": "Guasti, usura, manutenzione, settaggio"
+        },
+        {
+          "name": "Material (Materiale)",
+          "description": "Cause legate a materiali/componenti",
+          "tips": "Qualità materia prima, fornitori, specifiche"
+        },
+        {
+          "name": "Method (Metodo)",
+          "description": "Cause legate a processi/procedure",
+          "tips": "Procedure obsolete, mancanza standard, variabilità"
+        }
+      ]
+    },
+    "5_Perche": {
+      "doc_id": "TOOLS-10_03",
+      "name": "5 Perché - Root Cause Analysis",
+      "concepts": [
+        "root cause",
+        "causa radice",
+        "5 perché",
+        "why analysis",
+        "drill-down",
+        "analisi approfondita"
+      ],
+      "keywords": [
+        "perché",
+        "causa principale",
+        "origine problema",
+        "5 why",
+        "cinque perché",
+        "root cause"
+      ],
+      "suggest_when": "Drill-down iterativo per trovare la causa radice",
+      "priority": 3,
+      "fields": [
+        {
+          "name": "Problema iniziale",
+          "description": "Il problema di partenza da analizzare",
+          "tips": "Partire dal problema concreto e osservabile"
+        },
+        {
+          "name": "Perché 1",
+          "description": "Prima causa: perché è successo?",
+          "tips": "Risposta basata su fatti, non supposizioni"
+        },
+        {
+          "name": "Perché 2",
+          "description": "Seconda causa: perché è successo il Perché 1?",
+          "tips": "Continuare a scavare, evitare risposte superficiali"
+        },
+        {
+          "name": "Perché 3",
+          "description": "Terza causa: perché è successo il Perché 2?",
+          "tips": "A questo punto si inizia ad avvicinarsi alla causa radice"
+        },
+        {
+          "name": "Perché 4",
+          "description": "Quarta causa: perché è successo il Perché 3?",
+          "tips": "Verificare se la causa è sistemica o puntuale"
+        },
+        {
+          "name": "Perché 5",
+          "description": "Quinta causa: la causa radice",
+          "tips": "Se la risposta è 'perché manca un sistema/controllo', è la causa radice"
+        },
+        {
+          "name": "Azione correttiva",
+          "description": "Azione per eliminare la causa radice",
+          "tips": "L'azione deve agire sulla causa radice, non sui sintomi"
+        }
+      ]
+    },
+    "MR_07_05_Cartellino_Anomalia": {
+      "doc_id": "MR-07_05",
+      "name": "Cartellino Anomalia",
+      "concepts": [
+        "anomalia",
+        "difetto",
+        "non conformità",
+        "quarantena",
+        "segnalazione",
+        "NC",
+        "blocco materiale"
+      ],
+      "keywords": [
+        "anomalia",
+        "difetto",
+        "segnalare",
+        "registrare NC",
+        "cartellino",
+        "bloccare",
+        "segregare",
+        "quarantena"
+      ],
+      "suggest_when": "Registrazione e segnalazione di anomalie/difetti rilevati",
+      "priority": 1,
+      "fields": [
+        {
+          "name": "Data rilevamento",
+          "description": "Data in cui è stata rilevata l'anomalia",
+          "tips": "Inserire data effettiva del rilevamento, non della compilazione"
+        },
+        {
+          "name": "Reparto/Linea",
+          "description": "Area di produzione dove è stato rilevato il problema",
+          "tips": "Usare codici standard aziendali (es. L01, L02, Montaggio)"
+        },
+        {
+          "name": "Codice articolo",
+          "description": "Codice del prodotto/componente non conforme",
+          "tips": "Verificare il codice corretto dal sistema gestionale"
+        },
+        {
+          "name": "Descrizione anomalia",
+          "description": "Descrizione dettagliata del difetto/problema",
+          "tips": "Essere specifici: cosa, dove sul pezzo, quanto visibile"
+        },
+        {
+          "name": "Quantità",
+          "description": "Numero pezzi non conformi",
+          "tips": "Se sconosciuto, indicare 'da verificare' e stimare"
+        },
+        {
+          "name": "Rilevato da",
+          "description": "Chi ha rilevato l'anomalia",
+          "tips": "Nome e cognome o matricola dell'operatore"
+        },
+        {
+          "name": "Decisione",
+          "description": "Azione decisa: scarto, rilavorazione, deroga, accettazione",
+          "tips": "Selezionare una delle opzioni previste dalla procedura"
+        }
+      ]
+    },
+    "MR_08_07_FMEA": {
+      "doc_id": "MR-08_07",
+      "name": "FMEA - Analisi Modi di Guasto",
+      "concepts": [
+        "rischio",
+        "failure mode",
+        "analisi rischi",
+        "prevenzione",
+        "severity",
+        "occurrence",
+        "detection",
+        "RPN"
+      ],
+      "keywords": [
+        "rischio",
+        "failure",
+        "prevenzione",
+        "severity",
+        "occurrence",
+        "fmea",
+        "guasto",
+        "modo di guasto",
+        "RPN"
+      ],
+      "suggest_when": "Analisi preventiva dei modi di guasto e loro effetti",
+      "priority": 2,
+      "fields": [
+        {
+          "name": "Funzione/Processo",
+          "description": "Fase del processo o funzione del prodotto analizzata",
+          "tips": "Descrivere cosa fa il processo/componente"
+        },
+        {
+          "name": "Modo di guasto",
+          "description": "Come può fallire il processo/prodotto",
+          "tips": "Descrivere il fallimento dal punto di vista del cliente/utilizzatore"
+        },
+        {
+          "name": "Effetto",
+          "description": "Conseguenza del modo di guasto",
+          "tips": "Impatto su sicurezza, funzionalità, soddisfazione cliente"
+        },
+        {
+          "name": "Severity (S)",
+          "description": "Gravità dell'effetto su scala 1-10",
+          "tips": "10=pericolo senza preavviso, 9=pericolo con preavviso, 1=nessun effetto"
+        },
+        {
+          "name": "Cause potenziali",
+          "description": "Cause che possono generare il modo di guasto",
+          "tips": "Elencare tutte le cause possibili, usare Ishikawa se necessario"
+        },
+        {
+          "name": "Occurrence (O)",
+          "description": "Probabilità che il guasto si verifichi su scala 1-10",
+          "tips": "10=quasi certo (>100 ppm), 1=estremamente improbabile (<0.01 ppm)"
+        },
+        {
+          "name": "Controlli attuali",
+          "description": "Controlli esistenti per prevenire o rilevare il guasto",
+          "tips": "Distinguere controlli di prevenzione da controlli di rilevazione"
+        },
+        {
+          "name": "Detection (D)",
+          "description": "Capacità di rilevare il guasto prima del cliente su scala 1-10",
+          "tips": "10=nessuna rilevazione possibile, 1=rilevazione automatica certa"
+        },
+        {
+          "name": "RPN",
+          "description": "Risk Priority Number = S × O × D",
+          "tips": "Se RPN > 100 o S >= 9, azione correttiva obbligatoria"
+        },
+        {
+          "name": "Azioni raccomandate",
+          "description": "Azioni per ridurre S, O o D",
+          "tips": "Priorità: ridurre Severity, poi Occurrence, poi Detection"
+        }
+      ]
+    },
+    "MR_10_01_Major_Kaizen": {
+      "doc_id": "MR-10_01",
+      "name": "Major Kaizen",
+      "concepts": [
+        "miglioramento",
+        "kaizen",
+        "progetto",
+        "ottimizzazione",
+        "improvement",
+        "A3",
+        "miglioramento continuo"
+      ],
+      "keywords": [
+        "migliorare",
+        "ottimizzare",
+        "progetto miglioramento",
+        "kaizen grande",
+        "A3",
+        "major kaizen",
+        "improvement"
+      ],
+      "suggest_when": "Progetti di miglioramento strutturati (durata > 3 mesi)",
+      "priority": 3,
+      "fields": [
+        {
+          "name": "Titolo progetto",
+          "description": "Nome identificativo del progetto Kaizen",
+          "tips": "Usare nome descrittivo che identifichi area e obiettivo"
+        },
+        {
+          "name": "Background",
+          "description": "Contesto e motivazioni del progetto",
+          "tips": "Spiegare perché questo progetto è importante ora"
+        },
+        {
+          "name": "Situazione attuale",
+          "description": "Stato AS-IS con dati e misure",
+          "tips": "Usare dati quantitativi: tempi, costi, difetti, OEE"
+        },
+        {
+          "name": "Target",
+          "description": "Obiettivo SMART del progetto",
+          "tips": "Specifico, Misurabile, Achievable, Relevant, Time-bound"
+        },
+        {
+          "name": "Analisi cause",
+          "description": "Root cause analysis del problema",
+          "tips": "Usare 5 Perché, Ishikawa, Pareto"
+        },
+        {
+          "name": "Contromisure",
+          "description": "Azioni correttive pianificate",
+          "tips": "Per ogni causa radice, almeno una contromisura"
+        },
+        {
+          "name": "Piano implementazione",
+          "description": "Gantt con responsabili e scadenze",
+          "tips": "Includere milestones di verifica intermedi"
+        },
+        {
+          "name": "Risultati",
+          "description": "Risultati ottenuti vs target",
+          "tips": "Confrontare Before/After con stessi KPI"
+        },
+        {
+          "name": "Standardizzazione",
+          "description": "Come mantenere i risultati nel tempo",
+          "tips": "Aggiornare procedure, training, visual management"
+        }
+      ]
+    },
+    "MR_10_03_Quick_Kaizen": {
+      "doc_id": "MR-10_03",
+      "name": "Quick Kaizen",
+      "concepts": [
+        "miglioramento rapido",
+        "quick kaizen",
+        "fix immediato",
+        "quick fix",
+        "QK",
+        "miglioramento veloce"
+      ],
+      "keywords": [
+        "quick fix",
+        "miglioramento veloce",
+        "soluzione rapida",
+        "QK",
+        "quick kaizen",
+        "fix rapido"
+      ],
+      "suggest_when": "Fix immediati e low-cost (durata < 1 mese)",
+      "priority": 2,
+      "fields": [
+        {
+          "name": "Problema",
+          "description": "Descrizione breve del problema",
+          "tips": "Una frase che descriva il problema concreto"
+        },
+        {
+          "name": "Area",
+          "description": "Reparto/linea/postazione interessata",
+          "tips": "Specificare dove si applica il miglioramento"
+        },
+        {
+          "name": "Prima (Before)",
+          "description": "Situazione prima del miglioramento",
+          "tips": "Foto o descrizione dello stato iniziale"
+        },
+        {
+          "name": "Dopo (After)",
+          "description": "Situazione dopo il miglioramento",
+          "tips": "Foto o descrizione dello stato finale"
+        },
+        {
+          "name": "Beneficio",
+          "description": "Beneficio ottenuto (tempo, costi, sicurezza)",
+          "tips": "Quantificare: minuti risparmiati, € risparmiati, rischi eliminati"
+        },
+        {
+          "name": "Responsabile",
+          "description": "Chi ha proposto/realizzato il miglioramento",
+          "tips": "Nome dell'autore del Quick Kaizen"
+        }
+      ]
+    },
+    "MR_08_14_8D_Report": {
+      "doc_id": "MR-08_14",
+      "name": "8D Report",
+      "concepts": [
+        "8D",
+        "problem solving",
+        "reclamo cliente",
+        "azione correttiva",
+        "team",
+        "otto discipline"
+      ],
+      "keywords": [
+        "8D",
+        "otto discipline",
+        "reclamo",
+        "cliente",
+        "problem solving strutturato",
+        "team problem solving"
+      ],
+      "suggest_when": "Problem solving strutturato per reclami cliente o problemi complessi",
+      "priority": 1,
+      "fields": [
+        {
+          "name": "D0 - Preparazione",
+          "description": "Raccolta informazioni preliminari",
+          "tips": "Verificare se il problema richiede effettivamente un 8D"
+        },
+        {
+          "name": "D1 - Team",
+          "description": "Composizione del team di problem solving",
+          "tips": "Includere competenze diverse: qualità, produzione, tecnico"
+        },
+        {
+          "name": "D2 - Descrizione problema",
+          "description": "Descrizione dettagliata del problema (5W2H)",
+          "tips": "Usare Is/Is Not per definire confini del problema"
+        },
+        {
+          "name": "D3 - Contenimento",
+          "description": "Azioni immediate per contenere il problema",
+          "tips": "Proteggere il cliente mentre si cerca la soluzione definitiva"
+        },
+        {
+          "name": "D4 - Root Cause",
+          "description": "Identificazione causa radice",
+          "tips": "Usare 5 Perché, Ishikawa, verificare con dati"
+        },
+        {
+          "name": "D5 - Azioni correttive",
+          "description": "Azioni per eliminare la causa radice",
+          "tips": "Verificare che le azioni siano efficaci prima di implementare"
+        },
+        {
+          "name": "D6 - Implementazione",
+          "description": "Piano di implementazione delle azioni",
+          "tips": "Definire chi, cosa, quando per ogni azione"
+        },
+        {
+          "name": "D7 - Prevenzione",
+          "description": "Azioni per prevenire ricorrenza",
+          "tips": "Aggiornare FMEA, procedure, controlli"
+        },
+        {
+          "name": "D8 - Chiusura",
+          "description": "Chiusura formale e riconoscimento team",
+          "tips": "Comunicare risultati, celebrare successo del team"
+        }
+      ]
+    },
+    "MR_08_08_Azione_Correttiva": {
+      "doc_id": "MR-08_08",
+      "name": "Modulo Azione Correttiva",
+      "concepts": [
+        "azione correttiva",
+        "AC",
+        "correzione",
+        "CAPA",
+        "preventiva",
+        "non conformità"
+      ],
+      "keywords": [
+        "azione correttiva",
+        "AC",
+        "correggere",
+        "CAPA",
+        "prevenire recidiva",
+        "correttiva"
+      ],
+      "suggest_when": "Definizione e tracciamento di azioni correttive",
+      "priority": 1,
+      "fields": [
+        {
+          "name": "Numero AC",
+          "description": "Numero progressivo dell'azione correttiva",
+          "tips": "Formato: AC-ANNO-NUMERO (es. AC-2025-001)"
+        },
+        {
+          "name": "Data apertura",
+          "description": "Data di apertura dell'azione correttiva",
+          "tips": "Data in cui si è deciso di aprire l'AC"
+        },
+        {
+          "name": "Origine",
+          "description": "Fonte della non conformità (audit, reclamo, interno)",
+          "tips": "Specificare: audit interno, audit cliente, reclamo, NC interna"
+        },
+        {
+          "name": "Descrizione NC",
+          "description": "Descrizione della non conformità",
+          "tips": "Riferimento alla NC originale se esiste"
+        },
+        {
+          "name": "Analisi cause",
+          "description": "Analisi delle cause radice",
+          "tips": "Usare 5 Perché o Ishikawa, documentare l'analisi"
+        },
+        {
+          "name": "Azione correttiva",
+          "description": "Descrizione dell'azione correttiva pianificata",
+          "tips": "Azione che elimina la causa radice, non solo il sintomo"
+        },
+        {
+          "name": "Responsabile",
+          "description": "Responsabile dell'implementazione",
+          "tips": "Nome della persona che deve completare l'azione"
+        },
+        {
+          "name": "Data prevista",
+          "description": "Scadenza per completamento",
+          "tips": "Data realistica considerando risorse disponibili"
+        },
+        {
+          "name": "Verifica efficacia",
+          "description": "Come si verificherà che l'azione sia efficace",
+          "tips": "Definire criteri oggettivi di verifica (KPI, audit, controlli)"
+        },
+        {
+          "name": "Data chiusura",
+          "description": "Data di chiusura effettiva",
+          "tips": "Compilare solo dopo verifica efficacia positiva"
+        }
+      ]
+    },
+    "MR_04_01_Politiche_di_gestione": {
+      "doc_id": "MR-04_01",
+      "name": "Politiche di gestione",
+      "concepts": [
+        "agli",
+        "strumenti",
+        "processo",
+        "conformità",
+        "pianificazione",
+        "produttivo",
+        "standardizzazione",
+        "istruzione",
+        "politica",
+        "attività"
+      ],
+      "keywords": [
+        "procede",
+        "enunciato",
+        "politiche",
+        "partendo",
+        "politica",
+        "richiamati",
+        "principi",
+        "docum",
+        "documenti",
+        "emissioni",
+        "06_02",
+        "04_01_u"
+      ],
+      "suggest_when": "01 3300//0141//1998 Partendo dai principi che la Direzione ha enunciato nella Politica di gestione (",
+      "priority": 4,
+      "related_ps": "PS-06_02"
+    },
+    "MR_06_01_Safety_EWO": {
+      "doc_id": "MR-06_01",
+      "name": "Safety EWO",
+      "concepts": [
+        "sicurezza",
+        "gestiti",
+        "consapevole",
+        "salubrità",
+        "pianificazione",
+        "processi",
+        "ambienti",
+        "standardizzazione",
+        "istruzione",
+        "assicurazione"
+      ],
+      "keywords": [
+        "06_03",
+        "06_01_u",
+        "ambiente",
+        "infortunio",
+        "mergenza",
+        "richiamati",
+        "safety",
+        "evento",
+        "docum",
+        "sicurezza",
+        "documenti",
+        "gestito"
+      ],
+      "suggest_when": "mergenza sicurezza o ambiente, l’evento deve essere gestito mediante la documentazione di supporto (",
+      "priority": 1,
+      "related_ps": "PS-06_01"
+    },
+    "MR_06_02_Near_Misses_UnsafeConditi": {
+      "doc_id": "MR-06_02",
+      "name": "Near Misses-UnsafeConditions",
+      "concepts": [
+        "sicurezza",
+        "gestiti",
+        "consapevole",
+        "salubrità",
+        "pianificazione",
+        "processi",
+        "ambienti",
+        "standardizzazione",
+        "istruzione",
+        "assicurazione"
+      ],
+      "keywords": [
+        "06_02_u",
+        "dovesse",
+        "insicura",
+        "qualvolta",
+        "sicurezza",
+        "near",
+        "misses",
+        "garantire",
+        "identificare",
+        "condizione",
+        "unsafeconditions"
+      ],
+      "suggest_when": "te a garantire la sicurezza",
+      "priority": 1,
+      "related_ps": "PS-06_01"
+    },
+    "MR_06_03_Enviromental_EWO": {
+      "doc_id": "MR-06_03",
+      "name": "Enviromental EWO",
+      "concepts": [
+        "agli",
+        "strumenti",
+        "processo",
+        "conformità",
+        "pianificazione",
+        "produttivo",
+        "standardizzazione",
+        "istruzione",
+        "politica",
+        "attività"
+      ],
+      "keywords": [
+        "emergenza",
+        "evento",
+        "enviromental",
+        "gestito",
+        "mr06_03_",
+        "tale",
+        "documentazione",
+        "supporto"
+      ],
+      "suggest_when": "di emergenza, l’evento deve essere gestito mediante la documentazione di supporto (Enviromental EWO ",
+      "priority": 1,
+      "related_ps": "PS-06_01"
+    },
+    "MR_06_04_Unenviromental_condition_": {
+      "doc_id": "MR-06_04",
+      "name": "Unenviromental condition - Near Emergency",
+      "concepts": [
+        "agli",
+        "strumenti",
+        "processo",
+        "conformità",
+        "pianificazione",
+        "produttivo",
+        "standardizzazione",
+        "istruzione",
+        "politica",
+        "attività"
+      ],
+      "keywords": [
+        "06_03",
+        "04_01",
+        "politiche",
+        "richiamati",
+        "unenviromental",
+        "docum",
+        "near",
+        "condition",
+        "gestione",
+        "emergency",
+        "titolo",
+        "registrazione"
+      ],
+      "suggest_when": "DI REGISTRAZIONE RICHIAMATI Docum",
+      "priority": 1,
+      "related_ps": "PS-06_01"
+    },
+    "MR_07_13_MR_07_13_Idee_suggeriment": {
+      "doc_id": "MR-07_13",
+      "name": "MR-07-13 Idee suggerimento",
+      "concepts": [
+        "manutenzione",
+        "taratura",
+        "documenti",
+        "addestramento",
+        "risorse",
+        "formazione"
+      ],
+      "keywords": [
+        "manutenzione",
+        "strumenti",
+        "guasto",
+        "taratura",
+        "5S",
+        "idee",
+        "suggerimento",
+        "formazione"
+      ],
+      "suggest_when": "Tabella per MR-07-13 Idee suggerimento - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_07_02_SOP": {
+      "doc_id": "MR-07_02",
+      "name": "SOP",
+      "concepts": [
+        "sicurezza",
+        "gestiti",
+        "consapevole",
+        "salubrità",
+        "pianificazione",
+        "processi",
+        "ambienti",
+        "standardizzazione",
+        "istruzione",
+        "assicurazione"
+      ],
+      "keywords": [
+        "riorganizzare",
+        "lavoro",
+        "amministrativo",
+        "compresa",
+        "richiamati",
+        "registrazione",
+        "docum",
+        "documenti",
+        "06_01",
+        "aree",
+        "misure",
+        "06_02"
+      ],
+      "suggest_when": "riorganizzare le aree di lavoro • Utilizzare misure di tipo amministrativo, compresa la formazione (",
+      "priority": 2,
+      "related_ps": "PS-06_01"
+    },
+    "MR_07_03_OPL": {
+      "doc_id": "MR-07_03",
+      "name": "OPL",
+      "concepts": [
+        "riferimenti"
+      ],
+      "keywords": [
+        "manuale",
+        "titolo",
+        "materiale",
+        "consiste",
+        "richiamati",
+        "rapporto",
+        "sistemi",
+        "docum",
+        "documenti",
+        "07_01",
+        "addestramento",
+        "gestione"
+      ],
+      "suggest_when": "materiale consiste in: ▪ manuale dei Sistemi di gestione; ▪ procedure ed istruzioni (MR-07_02_SOP, M",
+      "priority": 2,
+      "related_ps": "PS-07_01"
+    },
+    "MR_07_04_TWTTP+HERCA": {
+      "doc_id": "MR-07_04",
+      "name": "TWTTP+HERCA",
+      "concepts": [
+        "manutenzione",
+        "taratura",
+        "documenti",
+        "addestramento",
+        "risorse",
+        "formazione"
+      ],
+      "keywords": [
+        "manutenzione",
+        "strumenti",
+        "guasto",
+        "taratura",
+        "5S",
+        "twttp+herca",
+        "idee",
+        "suggerimento",
+        "formazione"
+      ],
+      "suggest_when": "Tabella per TWTTP+HERCA - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_07_06_Cartellini_quarantena": {
+      "doc_id": "MR-07_06",
+      "name": "Cartellini quarantena",
+      "concepts": [
+        "riferimenti"
+      ],
+      "keywords": [
+        "quarantena",
+        "07_02",
+        "rapporto",
+        "cartellino",
+        "07_05",
+        "07_03",
+        "addestramento",
+        "07_01",
+        "titolo",
+        "cartellini"
+      ],
+      "suggest_when": "Titolo MR-07_01 Rapporto di Addestramento MR-07_02 SOP MR-07_03 OPL MR-07_05 Cartellino anomalia MR-",
+      "priority": 2,
+      "related_ps": "PS-07_01"
+    },
+    "MR_07_07_Programma_annuale_manuten": {
+      "doc_id": "MR-07_07",
+      "name": "Programma annuale manutenzione",
+      "concepts": [
+        "manutenzione",
+        "taratura",
+        "documenti",
+        "addestramento",
+        "risorse",
+        "formazione"
+      ],
+      "keywords": [
+        "manutenzione",
+        "strumenti",
+        "guasto",
+        "taratura",
+        "5S",
+        "twttp+herca",
+        "idee",
+        "annuale",
+        "suggerimento",
+        "programma",
+        "formazione"
+      ],
+      "suggest_when": "Tabella per Programma annuale manutenzione - Riferimento: PS-07_01",
+      "priority": 2,
+      "related_ps": "PS-07_01"
+    },
+    "MR_07_08_Standard_Maintenance_Proc": {
+      "doc_id": "MR-07_08",
+      "name": "Standard Maintenance Procedure",
+      "concepts": [
+        "manutenzione",
+        "taratura",
+        "documenti",
+        "addestramento",
+        "risorse",
+        "formazione"
+      ],
+      "keywords": [
+        "manutenzione",
+        "strumenti",
+        "guasto",
+        "taratura",
+        "5S",
+        "twttp+herca",
+        "standard",
+        "maintenance",
+        "idee",
+        "annuale",
+        "procedure",
+        "suggerimento"
+      ],
+      "suggest_when": "Tabella per Standard Maintenance Procedure - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_07_09_Check_list_5S": {
+      "doc_id": "MR-07_09",
+      "name": "Check list 5S",
+      "concepts": [
+        "riferimenti"
+      ],
+      "keywords": [
+        "07_06",
+        "anomalia",
+        "lavoro",
+        "singoli",
+        "addetti",
+        "onese",
+        "disposizione",
+        "07_05",
+        "cartellino",
+        "messe",
+        "check",
+        "list"
+      ],
+      "suggest_when": "Tabella per Check list 5S - Riferimento: Gestione delle risorse",
+      "priority": 2,
+      "related_ps": "PS-07_01"
+    },
+    "MR_07_10_Bolla_per_intervento_a_gu": {
+      "doc_id": "MR-07_10",
+      "name": "Bolla per intervento a guasto e analisi guasto EWO",
+      "concepts": [
+        "riferimenti"
+      ],
+      "keywords": [
+        "07_06",
+        "guasto",
+        "analisi",
+        "bolla",
+        "manutenzioni",
+        "malia",
+        "annuale",
+        "quarantena",
+        "07_07",
+        "intervento",
+        "programma",
+        "cartellini"
+      ],
+      "suggest_when": "Tabella per Bolla per intervento a guasto e analisi guasto EWO - Riferimento: Gestione delle risorse",
+      "priority": 2,
+      "related_ps": "PS-07_01"
+    },
+    "MR_07_14_Autonomous_Standard_maint": {
+      "doc_id": "MR-07_14",
+      "name": "Autonomous Standard maintenance Procedure",
+      "concepts": [
+        "manutenzione",
+        "taratura",
+        "documenti",
+        "addestramento",
+        "risorse",
+        "formazione"
+      ],
+      "keywords": [
+        "autonomous",
+        "manutenzione",
+        "strumenti",
+        "guasto",
+        "taratura",
+        "5S",
+        "twttp+herca",
+        "standard",
+        "maintenance",
+        "idee",
+        "annuale",
+        "procedure"
+      ],
+      "suggest_when": "Tabella per Autonomous Standard maintenance Procedure - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_08_01_Scheda_fattibilità_prodot": {
+      "doc_id": "MR-08_01",
+      "name": "Scheda fattibilità prodotto",
+      "concepts": [
+        "invio",
+        "riesame",
+        "ricevimento",
+        "analisi",
+        "cliente",
+        "offerta",
+        "dell",
+        "documenti",
+        "riferimenti",
+        "accettazione"
+      ],
+      "keywords": [
+        "dell",
+        "ricompila",
+        "dare",
+        "richiesti",
+        "08_15",
+        "accurata",
+        "nesting",
+        "apposito",
+        "registrazione",
+        "servizi",
+        "fattibilità",
+        "analisi"
+      ],
+      "suggest_when": "i tecnici richiesti dal cliente, eseguendo un’accurata analisi dei documenti e compilando la scheda ",
+      "priority": 2,
+      "related_ps": "PS-08_02"
+    },
+    "MR_08_02_Introduzione_Modifica_Par": {
+      "doc_id": "MR-08_02",
+      "name": "Introduzione Modifica Particolari",
+      "concepts": [
+        "invio",
+        "riesame",
+        "ricevimento",
+        "analisi",
+        "cliente",
+        "offerta",
+        "dell",
+        "documenti",
+        "riferimenti",
+        "accettazione"
+      ],
+      "keywords": [
+        "agli",
+        "riesame",
+        "revisione",
+        "introduzione",
+        "data",
+        "dell",
+        "esse",
+        "fabbricati",
+        "particolari",
+        "gestite",
+        "apposito",
+        "archiviazione"
+      ],
+      "suggest_when": "fabbricati in passato); ▪ trasmettere agli enti aziendali gli ordini ricevuti attraverso la scheda M",
+      "priority": 2,
+      "related_ps": "PS-08_02"
+    },
+    "MR_08_03_Richiesta_investimento": {
+      "doc_id": "MR-08_03",
+      "name": "Richiesta investimento",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "FMEA",
+        "controllo",
+        "processo",
+        "richiesta",
+        "qualità",
+        "NC",
+        "investimento",
+        "fornitore",
+        "prodotto"
+      ],
+      "suggest_when": "Tabella per Richiesta investimento - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_08_05_Tabella_descrittiva_rives": {
+      "doc_id": "MR-08_05",
+      "name": "Tabella descrittiva rivestimenti (vrnt)",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "(vrnt)",
+        "FMEA",
+        "controllo",
+        "tabella",
+        "processo",
+        "descrittiva",
+        "rivestimenti",
+        "richiesta",
+        "qualità",
+        "NC",
+        "investimento",
+        "fornitore"
+      ],
+      "suggest_when": "Tabella per Tabella descrittiva rivestimenti (vrnt) - Riferimento: PS-08_02",
+      "priority": 2,
+      "related_ps": "PS-08_02"
+    },
+    "MR_08_06_Indicazioni_rivestimenti_": {
+      "doc_id": "MR-08_06",
+      "name": "Indicazioni rivestimenti galvanici-zincolamellari",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "(vrnt)",
+        "zincolamellari",
+        "FMEA",
+        "controllo",
+        "tabella",
+        "processo",
+        "galvanici",
+        "descrittiva",
+        "rivestimenti",
+        "richiesta",
+        "qualità",
+        "NC"
+      ],
+      "suggest_when": "Tabella per Indicazioni rivestimenti galvanici-zincolamellari - Riferimento: PS-08_02",
+      "priority": 2,
+      "related_ps": "PS-08_02"
+    },
+    "MR_08_09_Deviation_Permit_F": {
+      "doc_id": "MR-08_09",
+      "name": "Deviation Permit F",
+      "concepts": [
+        "riferimenti",
+        "prodotti",
+        "sicurezza"
+      ],
+      "keywords": [
+        "modulo",
+        "deroga",
+        "cliente",
+        "08_07",
+        "acquistato",
+        "richiamati",
+        "controllo",
+        "deviation",
+        "permit",
+        "docum",
+        "documenti",
+        "utilizzerà"
+      ],
+      "suggest_when": "Cliente la non conformità per richiedere una concessione o deroga",
+      "priority": 2,
+      "related_ps": "PS-08_03"
+    },
+    "MR_08_15_Anagrafica_Fornitori": {
+      "doc_id": "MR-08_15",
+      "name": "Anagrafica Fornitori",
+      "concepts": [
+        "valutazione",
+        "dati",
+        "fornitori",
+        "riferimenti",
+        "acquisto"
+      ],
+      "keywords": [
+        "requisiti",
+        "introduzione",
+        "richiamati",
+        "fornitori",
+        "prodotto",
+        "anagrafica",
+        "richiesti",
+        "documenti",
+        "conseguenza",
+        "docum",
+        "modifica",
+        "08_02"
+      ],
+      "suggest_when": "on i requisiti di prodotto e di servizio richiesti, definendo di conseguenza l’anagrafica fornitori ",
+      "priority": 2,
+      "related_ps": "PS-08_04"
+    },
+    "MR_08_16_Rapporto_qualificazione_f": {
+      "doc_id": "MR-08_16",
+      "name": "Rapporto qualificazione fornitori",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "processo",
+        "rivestimenti",
+        "FMEA",
+        "fornitore",
+        "descrittiva",
+        "indicazioni",
+        "NC",
+        "prodotto",
+        "(vrnt)",
+        "zincolamellari"
+      ],
+      "suggest_when": "Tabella per Rapporto qualificazione fornitori - Riferimento: PS-08_04",
+      "priority": 2,
+      "related_ps": "PS-08_04"
+    },
+    "MR_08_17_Rapporto_di_vendor_rating": {
+      "doc_id": "MR-08_17",
+      "name": "Rapporto di vendor rating",
+      "concepts": [
+        "valutazione",
+        "dati",
+        "fornitori",
+        "riferimenti",
+        "acquisto"
+      ],
+      "keywords": [
+        "singoli",
+        "requisiti",
+        "rapporto",
+        "fornitori",
+        "vendor",
+        "rispetto",
+        "fornitura",
+        "qualità",
+        "rating",
+        "relative",
+        "complessive"
+      ],
+      "suggest_when": "Tabella per Rapporto di vendor rating - Riferimento: Gestione dell’approvvigionamento",
+      "priority": 2,
+      "related_ps": "PS-08_04"
+    },
+    "MR_08_20_Scheda__Attrezzaggio_Pres": {
+      "doc_id": "MR-08_20",
+      "name": "Scheda  Attrezzaggio Pressa",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "processo",
+        "rivestimenti",
+        "FMEA",
+        "fornitore",
+        "scheda",
+        "descrittiva",
+        "indicazioni",
+        "NC",
+        "pressa",
+        "prodotto"
+      ],
+      "suggest_when": "Tabella per Scheda  Attrezzaggio Pressa - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_08_21_Scheda_Attrezzaggio_Fresa": {
+      "doc_id": "MR-08_21",
+      "name": "Scheda Attrezzaggio Fresa",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "processo",
+        "rivestimenti",
+        "FMEA",
+        "fornitore",
+        "scheda",
+        "fresa",
+        "descrittiva",
+        "indicazioni",
+        "NC",
+        "pressa"
+      ],
+      "suggest_when": "Tabella per Scheda Attrezzaggio Fresa - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_08_22_Scheda_Attrezzaggio_Seghe": {
+      "doc_id": "MR-08_22",
+      "name": "Scheda Attrezzaggio Seghetto",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "processo",
+        "rivestimenti",
+        "FMEA",
+        "fornitore",
+        "scheda",
+        "fresa",
+        "descrittiva",
+        "indicazioni",
+        "NC",
+        "seghetto"
+      ],
+      "suggest_when": "Tabella per Scheda Attrezzaggio Seghetto - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_08_23_Scheda_lavorazione_lavagg": {
+      "doc_id": "MR-08_23",
+      "name": "Scheda lavorazione lavaggio",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "processo",
+        "rivestimenti",
+        "FMEA",
+        "lavaggio",
+        "fornitore",
+        "scheda",
+        "fresa",
+        "descrittiva",
+        "indicazioni",
+        "NC"
+      ],
+      "suggest_when": "Tabella per Scheda lavorazione lavaggio - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_24_Scheda_parametri_sabbiatu": {
+      "doc_id": "MR-08_24",
+      "name": "Scheda parametri sabbiatura",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "FMEA",
+        "lavaggio",
+        "fornitore",
+        "scheda",
+        "fresa",
+        "parametri",
+        "descrittiva"
+      ],
+      "suggest_when": "Tabella per Scheda parametri sabbiatura - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_25_Scheda_attrezzaggio_piega": {
+      "doc_id": "MR-08_25",
+      "name": "Scheda attrezzaggio piegatrice",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "FMEA",
+        "lavaggio",
+        "fornitore",
+        "scheda",
+        "fresa",
+        "parametri",
+        "descrittiva"
+      ],
+      "suggest_when": "Tabella per Scheda attrezzaggio piegatrice - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_26_Scheda_filettatura": {
+      "doc_id": "MR-08_26",
+      "name": "Scheda filettatura",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "FMEA",
+        "lavaggio",
+        "fornitore",
+        "scheda",
+        "fresa",
+        "parametri"
+      ],
+      "suggest_when": "Tabella per Scheda filettatura - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_27_Scheda_attrezzaggio_robot": {
+      "doc_id": "MR-08_27",
+      "name": "Scheda attrezzaggio robot saldatura",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "FMEA",
+        "saldatura",
+        "lavaggio",
+        "fornitore",
+        "scheda"
+      ],
+      "suggest_when": "Tabella per Scheda attrezzaggio robot saldatura - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_28_Scheda_qualifica_saldatur": {
+      "doc_id": "MR-08_28",
+      "name": "Scheda qualifica saldatura filo",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "filo",
+        "FMEA",
+        "saldatura",
+        "qualifica",
+        "lavaggio"
+      ],
+      "suggest_when": "Tabella per Scheda qualifica saldatura filo - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_08_29_Scheda_parametri_saldatur": {
+      "doc_id": "MR-08_29",
+      "name": "Scheda parametri saldatura proiezione",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "filo",
+        "FMEA",
+        "saldatura",
+        "qualifica",
+        "lavaggio"
+      ],
+      "suggest_when": "Tabella per Scheda parametri saldatura proiezione - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_08_30_Scheda_montaggio": {
+      "doc_id": "MR-08_30",
+      "name": "Scheda montaggio",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "filo",
+        "FMEA",
+        "saldatura",
+        "qualifica"
+      ],
+      "suggest_when": "Tabella per Scheda montaggio - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_31_Cartellino_attrezzo_di_sa": {
+      "doc_id": "MR-08_31",
+      "name": "Cartellino attrezzo di saldatura",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "filo",
+        "FMEA",
+        "cartellino",
+        "saldatura"
+      ],
+      "suggest_when": "Tabella per Cartellino attrezzo di saldatura - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_32_Cartellino_stampo": {
+      "doc_id": "MR-08_32",
+      "name": "Cartellino stampo",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "filo",
+        "FMEA",
+        "cartellino",
+        "saldatura"
+      ],
+      "suggest_when": "Tabella per Cartellino stampo - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_33_Scheda_appensione": {
+      "doc_id": "MR-08_33",
+      "name": "Scheda appensione",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "filo",
+        "FMEA",
+        "cartellino",
+        "saldatura"
+      ],
+      "suggest_when": "Tabella per Scheda appensione - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_34_Scheda_attrezzaggio_Torni": {
+      "doc_id": "MR-08_34",
+      "name": "Scheda attrezzaggio Torni-Fantine",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "filo",
+        "FMEA",
+        "cartellino",
+        "saldatura"
+      ],
+      "suggest_when": "Tabella per Scheda attrezzaggio Torni-Fantine - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_35_Scheda_carteggiatura": {
+      "doc_id": "MR-08_35",
+      "name": "Scheda carteggiatura",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "carteggiatura",
+        "filo",
+        "FMEA",
+        "cartellino"
+      ],
+      "suggest_when": "Tabella per Scheda carteggiatura - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_45_Cartellino_identificativo": {
+      "doc_id": "MR-08_45",
+      "name": "Cartellino identificativo",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "carteggiatura",
+        "identificativo",
+        "filo",
+        "FMEA"
+      ],
+      "suggest_when": "Tabella per Cartellino identificativo - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_08_46_Cartellino_di_Rintracciab": {
+      "doc_id": "MR-08_46",
+      "name": "Cartellino di Rintracciabilità lotto",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "carteggiatura",
+        "identificativo",
+        "filo",
+        "FMEA"
+      ],
+      "suggest_when": "Tabella per Cartellino di Rintracciabilità lotto - Riferimento: ",
+      "priority": 2,
+      "related_ps": ""
+    },
+    "MR_08_47_Scheda_logistica_interna": {
+      "doc_id": "MR-08_47",
+      "name": "Scheda logistica interna",
+      "concepts": [
+        "consegna",
+        "movimentazione",
+        "conservazione",
+        "imballaggio",
+        "riferimenti",
+        "immagazzinamento"
+      ],
+      "keywords": [
+        "formalizzate",
+        "imballaggio",
+        "logistica",
+        "registrazione",
+        "modulo",
+        "conformi",
+        "richiamati",
+        "rifiuti",
+        "scheda",
+        "documenti",
+        "gestione",
+        "06_01"
+      ],
+      "suggest_when": "durante la movimentazione",
+      "priority": 2,
+      "related_ps": "PS-08_07"
+    },
+    "MR_08_48_Scheda_Imballaggio": {
+      "doc_id": "MR-08_48",
+      "name": "Scheda Imballaggio",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "imballaggio",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "carteggiatura",
+        "identificativo",
+        "filo"
+      ],
+      "suggest_when": "Tabella per Scheda Imballaggio - Riferimento: PS-08_07",
+      "priority": 2,
+      "related_ps": "PS-08_07"
+    },
+    "MR_08_49_Colori_di_identificazione": {
+      "doc_id": "MR-08_49",
+      "name": "Colori di identificazione materia prime",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "imballaggio",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "carteggiatura",
+        "materia",
+        "identificativo"
+      ],
+      "suggest_when": "Tabella per Colori di identificazione materia prime - Riferimento: PS-08_06",
+      "priority": 2,
+      "related_ps": "PS-08_06"
+    },
+    "MR_08_60_Piani_di_campionamento": {
+      "doc_id": "MR-08_60",
+      "name": "Piani di campionamento",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "imballaggio",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "carteggiatura",
+        "materia",
+        "identificativo"
+      ],
+      "suggest_when": "Tabella per Piani di campionamento - Riferimento: PS-08_03",
+      "priority": 2,
+      "related_ps": "PS-08_03"
+    },
+    "MR_08_61_Caratteristiche_cicli_di_": {
+      "doc_id": "MR-08_61",
+      "name": "Caratteristiche cicli di controllo",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "caratteristiche",
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "imballaggio",
+        "rivestimenti",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "carteggiatura",
+        "materia"
+      ],
+      "suggest_when": "Tabella per Caratteristiche cicli di controllo - Riferimento: PS-08_03",
+      "priority": 2,
+      "related_ps": "PS-08_03"
+    },
+    "MR_08_62_Control_Plan": {
+      "doc_id": "MR-08_62",
+      "name": "Control Plan",
+      "concepts": [
+        "riferimenti"
+      ],
+      "keywords": [
+        "procedura",
+        "soddisfatti",
+        "revisione",
+        "requisiti",
+        "data",
+        "plan",
+        "misurazione",
+        "stabilire",
+        "ritenuti",
+        "control",
+        "emiss",
+        "siano"
+      ],
+      "suggest_when": "so, ritenuti chiave, per stabilire che i requisiti di prodotto siano soddisfatti",
+      "priority": 2,
+      "related_ps": "PS-08_62"
+    },
+    "MR_08_64_Certificato_Qualità_e_Con": {
+      "doc_id": "MR-08_64",
+      "name": "Certificato Qualità e Conformità ISIR",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "caratteristiche",
+        "rapporto",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "imballaggio",
+        "rivestimenti",
+        "conformità",
+        "filettatura",
+        "robot",
+        "montaggio",
+        "carteggiatura"
+      ],
+      "suggest_when": "Tabella per Certificato Qualità e Conformità ISIR - Riferimento: PS-08_03",
+      "priority": 2,
+      "related_ps": "PS-08_03"
+    },
+    "MR_08_65_Standard_Accettabile": {
+      "doc_id": "MR-08_65",
+      "name": "Standard Accettabile",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "caratteristiche",
+        "rapporto",
+        "standard",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "imballaggio",
+        "rivestimenti",
+        "conformità",
+        "filettatura",
+        "robot",
+        "montaggio"
+      ],
+      "suggest_when": "Tabella per Standard Accettabile - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_66_Referto_giunti_ad_arco": {
+      "doc_id": "MR-08_66",
+      "name": "Referto giunti ad arco",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "caratteristiche",
+        "rapporto",
+        "standard",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "imballaggio",
+        "rivestimenti",
+        "conformità",
+        "filettatura",
+        "robot",
+        "montaggio"
+      ],
+      "suggest_when": "Tabella per Referto giunti ad arco - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_67_Limiti_accettabilità_impe": {
+      "doc_id": "MR-08_67",
+      "name": "Limiti accettabilità imperfezioni saldatura",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "caratteristiche",
+        "rapporto",
+        "standard",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "accettabilità",
+        "imballaggio",
+        "rivestimenti",
+        "conformità",
+        "filettatura",
+        "imperfezioni"
+      ],
+      "suggest_when": "Tabella per Limiti accettabilità imperfezioni saldatura - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_68_Referto_analisi_TT": {
+      "doc_id": "MR-08_68",
+      "name": "Referto analisi TT",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "caratteristiche",
+        "rapporto",
+        "standard",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "accettabilità",
+        "imballaggio",
+        "rivestimenti",
+        "conformità",
+        "filettatura",
+        "imperfezioni"
+      ],
+      "suggest_when": "Tabella per Referto analisi TT - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_69_Referto_prove_trattamenti": {
+      "doc_id": "MR-08_69",
+      "name": "Referto prove trattamenti superficiali",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "caratteristiche",
+        "rapporto",
+        "standard",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "accettabilità",
+        "imballaggio",
+        "rivestimenti",
+        "conformità",
+        "filettatura",
+        "imperfezioni"
+      ],
+      "suggest_when": "Tabella per Referto prove trattamenti superficiali - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_70_Check_list": {
+      "doc_id": "MR-08_70",
+      "name": "Check list",
+      "concepts": [
+        "controllo",
+        "processo",
+        "conformità",
+        "qualità",
+        "fornitore",
+        "prodotto"
+      ],
+      "keywords": [
+        "caratteristiche",
+        "rapporto",
+        "standard",
+        "tabella",
+        "sabbiatura",
+        "processo",
+        "accettabilità",
+        "imballaggio",
+        "rivestimenti",
+        "conformità",
+        "filettatura",
+        "imperfezioni"
+      ],
+      "suggest_when": "Tabella per Check list - Riferimento: PS-08_05",
+      "priority": 2,
+      "related_ps": "PS-08_05"
+    },
+    "MR_08_75_Gruppi_nc_e_reclami": {
+      "doc_id": "MR-08_75",
+      "name": "Gruppi nc e reclami",
+      "concepts": [
+        "riferimenti",
+        "prodotti",
+        "sicurezza"
+      ],
+      "keywords": [
+        "anomalia",
+        "riportati",
+        "principali",
+        "dell",
+        "ipale",
+        "descrizione",
+        "reclami",
+        "cause",
+        "gruppi",
+        "difettosità"
+      ],
+      "suggest_when": "La descrizione delle principali cause di difettosità sono riportati sul modulo MR-08_75 (Raggruppame",
+      "priority": 2,
+      "related_ps": "PS-08_08"
+    },
+    "MR_09_01_Modulo_obiettivi_di_proce": {
+      "doc_id": "MR-09_01",
+      "name": "Modulo obiettivi di processo",
+      "concepts": [
+        "riferimenti"
+      ],
+      "keywords": [
+        "miglioramento",
+        "modulo",
+        "riesame",
+        "tica",
+        "indicate",
+        "rispettivi",
+        "riportati",
+        "processo",
+        "obiettivi",
+        "frequenze",
+        "degli",
+        "indicatori"
+      ],
+      "suggest_when": "tica di miglioramento continuo del processo) che vengono riportati nel modulo obiettivi di processo ",
+      "priority": 3,
+      "related_ps": "PS-09_01"
+    },
+    "MR_09_02_Safety_CheckList": {
+      "doc_id": "MR-09_02",
+      "name": "Safety CheckList",
+      "concepts": [
+        "sicurezza",
+        "gestiti",
+        "consapevole",
+        "salubrità",
+        "pianificazione",
+        "processi",
+        "ambienti",
+        "standardizzazione",
+        "istruzione",
+        "assicurazione"
+      ],
+      "keywords": [
+        "protezione",
+        "rarchia",
+        "specifiche",
+        "prevenzione",
+        "verifica",
+        "checklist",
+        "attività",
+        "safety",
+        "check",
+        "eliminare",
+        "09_02_u",
+        "misure"
+      ],
+      "suggest_when": "rezione in uso (kaizen, formazione ecc",
+      "priority": 3,
+      "related_ps": "PS-09_02"
+    },
+    "MR_09_03_Check_list_AUDIT_Processo": {
+      "doc_id": "MR-09_03",
+      "name": "Check list AUDIT Processo",
+      "concepts": [
+        "conduzione",
+        "ispettive",
+        "pianificazione",
+        "interne",
+        "riferimenti",
+        "verifiche"
+      ],
+      "keywords": [
+        "verifica",
+        "metodologia",
+        "check",
+        "processo",
+        "09_03",
+        "list",
+        "audit",
+        "prodotto"
+      ],
+      "suggest_when": "i alla metodologia di cui al punto 5",
+      "priority": 3,
+      "related_ps": "PS-09_02"
+    },
+    "MR_09_04_S_Matrix": {
+      "doc_id": "MR-09_04",
+      "name": "S-Matrix",
+      "concepts": [
+        "sicurezza",
+        "gestiti",
+        "consapevole",
+        "salubrità",
+        "pianificazione",
+        "processi",
+        "ambienti",
+        "standardizzazione",
+        "istruzione",
+        "assicurazione"
+      ],
+      "keywords": [
+        "miglioramento",
+        "modulo",
+        "indagine",
+        "dati",
+        "anomalia",
+        "09_04_u",
+        "07_02",
+        "09_02",
+        "cartellino",
+        "07_05",
+        "dardizzazione",
+        "mezzo"
+      ],
+      "suggest_when": "dardizzazione e miglioramento Tutti i dati sopra raccolti vengono raccolti per mezzo della SMatrix (",
+      "priority": 3,
+      "related_ps": "PS-06_01"
+    },
+    "MR_09_06_Smat_audit": {
+      "doc_id": "MR-09_06",
+      "name": "Smat audit",
+      "concepts": [
+        "sicurezza",
+        "gestiti",
+        "consapevole",
+        "salubrità",
+        "pianificazione",
+        "processi",
+        "ambienti",
+        "standardizzazione",
+        "istruzione",
+        "assicurazione"
+      ],
+      "keywords": [
+        "09_06_u",
+        "specifiche",
+        "verifica",
+        "attività",
+        "azione",
+        "09_02_u",
+        "audit",
+        "smat"
+      ],
+      "suggest_when": "Inoltre, mediante specifiche attività di verifica, Audit (MR-09_02_u",
+      "priority": 3,
+      "related_ps": "PS-09_02"
+    },
+    "MR_10_02_Standard_Kaizen": {
+      "doc_id": "MR-10_02",
+      "name": "Standard Kaizen",
+      "concepts": [
+        "riferimenti"
+      ],
+      "keywords": [
+        "10_01_u",
+        "tegrato",
+        "standard",
+        "processi",
+        "attività",
+        "aziendali",
+        "kaizen",
+        "major"
+      ],
+      "suggest_when": "tegrato di: ▪ Attività/processi aziendali ▪ Attività Major Kaizen (MR-10_01_u",
+      "priority": 1,
+      "related_ps": "PS-10_01"
+    },
+    "TOOLS__WO_ANALISIMUDA_R05__-WO_AnalisiMUDA_R05_": {
+      "doc_id": "-WO_AnalisiMUDA_R05_",
+      "name": "-WO AnalisiMUDA R05 ITA",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "analisimuda"
+      ],
+      "suggest_when": "Tool: -WO AnalisiMUDA R05 ITA",
+      "priority": 2
+    },
+    "TOOLS__WO_ANALISIMURA_R05__-WO_AnalisiMURA_R05_": {
+      "doc_id": "-WO_AnalisiMURA_R05_",
+      "name": "-WO AnalisiMURA R05 ITA",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "analisimura"
+      ],
+      "suggest_when": "Tool: -WO AnalisiMURA R05 ITA",
+      "priority": 2
+    },
+    "TOOLS__WO_CHECKLIST_R05_IT_-WO_CheckList_R05_IT": {
+      "doc_id": "-WO_CheckList_R05_IT",
+      "name": "-WO CheckList R05 ITA",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "checklist"
+      ],
+      "suggest_when": "Tool: -WO CheckList R05 ITA",
+      "priority": 2
+    },
+    "TOOLS__WO_MATRICEPOSTURE_M_-WO_MatricePosture_M": {
+      "doc_id": "-WO_MatricePosture_M",
+      "name": "-WO MatricePosture MURI R05 ITA",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "matriceposture",
+        "muri"
+      ],
+      "suggest_when": "Tool: -WO MatricePosture MURI R05 ITA",
+      "priority": 2
+    },
+    "TOOLS__WO_SPAGHETTICHART_R_-WO_SpaghettiChart_R": {
+      "doc_id": "-WO_SpaghettiChart_R",
+      "name": "-WO SpaghettiChart R05 ITA",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "spaghettichart"
+      ],
+      "suggest_when": "Tool: -WO SpaghettiChart R05 ITA",
+      "priority": 2
+    },
+    "TOOLS_4MISHIKAWA_REV01_4MIshikawa": {
+      "doc_id": "4MIshikawa_Rev01",
+      "name": "4MIshikawa",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "4mishikawa"
+      ],
+      "suggest_when": "Tool: 4MIshikawa",
+      "priority": 2
+    },
+    "TOOLS_5QFZD_4MD_5QFZD-4MD": {
+      "doc_id": "5QFZD-4MD",
+      "name": "5QFZD-4MD",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "5qfzd"
+      ],
+      "suggest_when": "Tool: 5QFZD-4MD",
+      "priority": 2
+    },
+    "TOOLS_5W1H_5W1H": {
+      "doc_id": "5W1H",
+      "name": "5W1H",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "5w1h"
+      ],
+      "suggest_when": "Tool: 5W1H",
+      "priority": 2
+    },
+    "TOOLS_LCS_ANALISI FLUSSO_O_LCS_Analisi_Flusso_O": {
+      "doc_id": "LCS_Analisi Flusso_O",
+      "name": "LCS Analisi Flusso OVV",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "analisi",
+        "flusso"
+      ],
+      "suggest_when": "Tool: LCS Analisi Flusso OVV",
+      "priority": 2
+    },
+    "TOOLS_LCS_CALCOLOFABBISOGN_LCS_CalcoloFabbisogn": {
+      "doc_id": "LCS_CalcoloFabbisogn",
+      "name": "LCS CalcoloFabbisogniContenitoriSpecifici OVV",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "calcolofabbisognicontenitorispecifici"
+      ],
+      "suggest_when": "Tool: LCS CalcoloFabbisogniContenitoriSpecifici OVV",
+      "priority": 2
+    },
+    "TOOLS_LCS_MATRICECLASSIFLU_LCS_MatriceClassiFlu": {
+      "doc_id": "LCS_MatriceClassiFlu",
+      "name": "LCS MatriceClassiFlussiMateriali OVV",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "matriceclassiflussimateriali"
+      ],
+      "suggest_when": "Tool: LCS MatriceClassiFlussiMateriali OVV",
+      "priority": 2
+    },
+    "TOOLS_LCS_PLANFOREVERYPART_LCS_PlanForEveryPart": {
+      "doc_id": "LCS_PlanForEveryPart",
+      "name": "LCS PlanForEveryParts OVV",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "planforeveryparts"
+      ],
+      "suggest_when": "Tool: LCS PlanForEveryParts OVV",
+      "priority": 2
+    },
+    "TOOLS_LCS_STANDARDLINEFEED_LCS_StandardLineFeed": {
+      "doc_id": "LCS_StandardLineFeed",
+      "name": "LCS StandardLineFeeding OVV",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "standardlinefeeding"
+      ],
+      "suggest_when": "Tool: LCS StandardLineFeeding OVV",
+      "priority": 2
+    },
+    "TOOLS_MR_07_01_MR_07-01_Rapporto_d'": {
+      "doc_id": "MR_07-01",
+      "name": "MR 07-01 Rapporto d'addestramento",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "rapporto",
+        "d'addestramento"
+      ],
+      "suggest_when": "Tool: MR 07-01 Rapporto d'addestramento",
+      "priority": 2
+    },
+    "TOOLS_PM_CHECKLISTPM_R05_I_PM_CheckListPM_R05_I": {
+      "doc_id": "PM_CheckListPM_R05_I",
+      "name": "PM CheckListPM R05 ITA",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "checklistpm"
+      ],
+      "suggest_when": "Tool: PM CheckListPM R05 ITA",
+      "priority": 2
+    },
+    "TOOLS_PROCESS FLOW_CHART P_Process_flow-chart_P": {
+      "doc_id": "Process flow-chart P",
+      "name": "Process flow-chart PS-08 01",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "process",
+        "flow",
+        "chart"
+      ],
+      "suggest_when": "Tool: Process flow-chart PS-08 01",
+      "priority": 2
+    },
+    "TOOLS_QMMATRIX_REV01_QMMatrix": {
+      "doc_id": "QMMatrix_Rev01",
+      "name": "QMMatrix",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "qmmatrix"
+      ],
+      "suggest_when": "Tool: QMMatrix",
+      "priority": 2
+    },
+    "TOOLS_TT_REGISTRO_TT_REGISTRO_CARTELLI": {
+      "doc_id": "TT_REGISTRO",
+      "name": "TT REGISTRO CARTELLINI 01",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "registro",
+        "cartellini"
+      ],
+      "suggest_when": "Tool: TT REGISTRO CARTELLINI 01",
+      "priority": 2
+    },
+    "TOOLS_WO_ANALISI NVAA MAN_WO_Analisi_NVAA_man": {
+      "doc_id": "WO_Analisi NVAA man",
+      "name": "WO Analisi NVAA man",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "analisi",
+        "nvaa"
+      ],
+      "suggest_when": "Tool: WO Analisi NVAA man",
+      "priority": 2
+    },
+    "TOOLS_WO_GANTTWO_R01_WO_GanttWO_R01": {
+      "doc_id": "WO_GanttWO_R01",
+      "name": "WO GanttWO R01",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "ganttwo"
+      ],
+      "suggest_when": "Tool: WO GanttWO R01",
+      "priority": 2
+    },
+    "TOOLS_WO_JES_WO_JES_Format_r1.3": {
+      "doc_id": "WO_JES",
+      "name": "WO JES Format r1.3",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "format",
+        "r1.3"
+      ],
+      "suggest_when": "Tool: WO JES Format r1.3",
+      "priority": 2
+    },
+    "TOOLS_XMATRIX_REV01_XMatrix": {
+      "doc_id": "XMatrix_Rev01",
+      "name": "XMatrix",
+      "concepts": [
+        "strumento",
+        "tool",
+        "analisi"
+      ],
+      "keywords": [
+        "xmatrix"
+      ],
+      "suggest_when": "Tool: XMatrix",
+      "priority": 2
+    }
+  },
+  "intent_patterns": {
+    "actionable": [
+      "come\\s+(gestisco|risolvo|analizzo|faccio|registro|compilo)",
+      "devo\\s+(compilare|fare|gestire|registrare|analizzare|aprire)",
+      "c['']?è\\s+(un\\s+)?problem",
+      "(non\\s+conformità|NC|guasto|incidente|reclamo|difetto|anomalia)",
+      "(aiutami|aiuto)\\s+(a|con|per)",
+      "cosa\\s+devo\\s+fare",
+      "quale\\s+(modulo|tool|strumento)\\s+uso",
+      "ho\\s+(un|una)\\s+(problema|NC|anomalia|difetto|guasto|reclamo)",
+      "ho\\s+(avuto|subito)\\s+(un\\s+)?(infortunio|incidente|problema)",
+      "(c['']?è\\s+stato|si\\s+è\\s+verificato)\\s+(un\\s+)?(infortunio|incidente|problema)",
+      "near\\s+miss",
+      "(infortunio|incidente)\\s+(sul\\s+)?lavoro",
+      "si\\s+è\\s+(rott[oai]|guastat[oai]|fermat[oai]|bloccat[oai])",
+      "cliente\\s+(reclama|segnala|lamenta)",
+      "devo\\s+registrare",
+      "come\\s+apro\\s+(una|un)",
+      "voglio\\s+(fare|aprire|registrare|migliorare)",
+      "serve\\s+(un|una)\\s+(azione|analisi)",
+      "(fare|avviare|aprire)\\s+(un\\s+)?kaizen",
+      "(analisi|root\\s+cause|causa\\s+radice)"
+    ],
+    "informational": [
+      "^(cos['']?è|cosa\\s+significa|definizione)",
+      "^(spiegami|parlami|dimmi)\\s+(di|cosa)",
+      "^(quali|quanti|quando)\\s+sono",
+      "^(chi|dove)\\s+(è|sono)",
+      "differenza\\s+tra",
+      "^che\\s+cos['']?è",
+      "^definisci"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_comment": "Esempio file utenti. Copia in users.json e modifica le password.",
+  "_note": "Le password hash sono generate con bcrypt. Per generare nuovi hash usa:",
+  "_command": "python -c \"import bcrypt; print(bcrypt.hashpw(b'nuova_password', bcrypt.gensalt()).decode())\"",
+  
+  "users": {
+    "admin": {
+      "id": "admin_001",
+      "username": "admin",
+      "password_hash": "SOSTITUIRE_CON_HASH_BCRYPT",
+      "role": "admin",
+      "display_name": "Amministratore"
+    },
+    "engineer": {
+      "id": "eng_001",
+      "username": "engineer",
+      "password_hash": "SOSTITUIRE_CON_HASH_BCRYPT",
+      "role": "engineer",
+      "display_name": "Ingegnere"
+    },
+    "user": {
+      "id": "user_001",
+      "username": "user",
+      "password_hash": "SOSTITUIRE_CON_HASH_BCRYPT",
+      "role": "user",
+      "display_name": "Utente"
+    }
+  }
+}
+

@@ -1,0 +1,31 @@
+---
+description: Ottimizza VRAM, benchmark >0.85
+globs:
+  - "ovv-iso-chat/benchmarks/**"
+  - "ovv-iso-chat/app.py"
+alwaysApply: false
+---
+
+# 📊 Benchmark & VRAM Rules
+
+## Target Metriche
+- **F1 Score**: >= 0.85
+- **VRAM**: < 5.5GB
+- **Latenza**: < 30s per query
+
+## VRAM Cleanup
+Se VRAM > 5GB, chiamare:
+```python
+from src.integration.rag_pipeline import cleanup_vram
+cleanup_vram()
+```
+
+## Test Benchmark
+```bash
+python benchmarks/benchmark_models.py --limit 5
+```
+
+## UI Gradio
+```bash
+python app.py  # http://localhost:7860
+```

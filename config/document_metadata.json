@@ -1,0 +1,3969 @@
+{
+  "version": "1.0",
+  "moduli_registrazione": {
+    "MR-04_01": {
+      "doc_id": "MR-04_01",
+      "filename": "MR-04_01_Politiche di gestione_Rev04",
+      "titolo": "Politiche di gestione",
+      "scopo": "Politiche di gestione",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Politiche di gestione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "MR-04_01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-06_01": {
+      "doc_id": "MR-06_01",
+      "filename": "MR-06_01_Rev01_Safety EWO",
+      "titolo": "Safety EWO",
+      "scopo": "evento) PARTE DEL CORPO SCHIZZO (Opzionale) DESCRIZ. INTERVENTO IMMEDIATO CHE COSA (natura e sede della lesione)",
+      "correlazioni": {
+        "procedura_padre": "PS-06_01",
+        "istruzioni": [],
+        "tools_correlati": [
+          "Kaizen",
+          "OPL"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "SAFETY EWO - ANALISI CAUSA RADICE -\nINFORTUNIO / D",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Procedura rif.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PS-06_01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "STABILIMENTO\nOFFICINE V. VILLA SPA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Reparto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Area",
+          "tipo": "testo"
+        },
+        {
+          "nome": "TURNO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LUOGO dell'evento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Incidenti (Near Misses)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "UUNNSSAAFFEE AACCTT",
+          "tipo": "testo"
+        },
+        {
+          "nome": "UUNNSSAAFFEE CCOONNDDIITTIIOONN",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CCoommppeetteennzzaa\n11\nCCoonnoosscceennzzaa",
+          "tipo": "testo"
+        },
+        {
+          "nome": "AAtttteeggggiiaammeennttoo\n22\nCCoommppoorrttaammee",
+          "tipo": "testo"
+        },
+        {
+          "nome": "33 GGeessttiioonnee",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PPrreeccaauuzziioonnii\n44\nAAtttteennzziioonnee",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CCoonnddiizziioonnii\n55\nppeerrssoonnaallii",
+          "tipo": "testo"
+        },
+        {
+          "nome": "IImmppiiaannttii\n66\nAAttttrreezzzzaattuurree",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PPrroocceedduurree\n77\nSSiisstteemmii",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Training -OPL/SOP",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Contestazione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "D\nO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PIANO DI RIPRISTINO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "RESPONSABILE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DATA PREVISTA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DATA CHIUSURA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "NOTE",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 2
+    },
+    "MR-06_02": {
+      "doc_id": "MR-06_02",
+      "filename": "MR-06_02_Rev01_Near Misses-UnsafeConditions",
+      "titolo": "Near Misses-UnsafeConditions",
+      "scopo": "DELL’EVENTO O DEL POTENZIALE RISCHIO",
+      "correlazioni": {
+        "procedura_padre": "PS-06_01",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "AZIONI/CONDIZIONI PERICOLOSE (Unsafe condition) e\n",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di\nriferim.\nPS-06_01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. mod.\nMR-\n06_02",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-06_03": {
+      "doc_id": "MR-06_03",
+      "filename": "MR-06_03_Rev01_Enviromental_EWO",
+      "titolo": "Enviromental EWO",
+      "scopo": "evento) DESCRIZIONE DELL'EVENTO (schizzo) DESCRIZ. INTERVENTO IMMEDIATO CHE COSA (natura e sede dell'evento)",
+      "correlazioni": {
+        "procedura_padre": "PS-06_01",
+        "istruzioni": [],
+        "tools_correlati": [
+          "OPL"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "ENVIROMENTAL EWO - ANALISI CAUSA RADICE -\nEMERGENZ",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Procedura rif.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PS-06_01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "STABILIMENTO\nOVV SPA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Reparto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Area",
+          "tipo": "testo"
+        },
+        {
+          "nome": "TURNO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LUOGO dell'evento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Medicazio\nIncidenti (Near Misses)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "UNENVIROMENTAL ACT",
+          "tipo": "testo"
+        },
+        {
+          "nome": "UNENVIROMENTAL CONDITION",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CCoommppeetteennzzaa\n11\nCCoonnoosscceennzzaa",
+          "tipo": "testo"
+        },
+        {
+          "nome": "AAtttteeggggiiaammeennttoo\n22\nCCoommppoorrttaammee",
+          "tipo": "testo"
+        },
+        {
+          "nome": "33 GGeessttiioonnee",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PPrreeccaauuzziioonnii\n44\nAAtttteennzziioonnee",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CCoonnddiizziioonnii\n55\nppeerrssoonnaallii",
+          "tipo": "testo"
+        },
+        {
+          "nome": "IImmppiiaannttii\n66\nAAttttrreezzzzaattuurree",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PPrroocceedduurree\n77\nSSiisstteemmii",
+          "tipo": "testo"
+        },
+        {
+          "nome": "TTrraaiinniinngg//OOPPLL",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CCoollllooqquuiioo ffuunnzziioonnii aazziieennddaa",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CCoollllooqquuiioo ffuunnzziioonnii\naazziieennddaa",
+          "tipo": "testo"
+        },
+        {
+          "nome": "MMaannuutteennzziioonnee",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FFII,, KKaaiizzeenn,, aattttiivviittàà\nmmiigglliio",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 2
+    },
+    "MR-06_04": {
+      "doc_id": "MR-06_04",
+      "filename": "MR-06_04_Rev01_Unenviromental condition - Near Emergency",
+      "titolo": "Unenviromental condition - Near Emergency",
+      "scopo": "DELL’EVENTO O DEL POTENZIALE RISCHIO",
+      "correlazioni": {
+        "procedura_padre": "PS-06_01",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "AZIONI/CONDIZIONI PERICOLOSE (Unenviromental condi",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di\nriferim.\nPS-06_01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. mod.\nMR-\n06_04",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 2
+    },
+    "MR-07-13": {
+      "doc_id": "MR-07-13",
+      "filename": "MR-07-13_Rev02_Idee suggerimento",
+      "titolo": "MR-07-13 Idee suggerimento",
+      "scopo": "Ident. Mod. Revisione",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": [
+          "MR-07_13"
+        ]
+      },
+      "campi_compilazione": [
+        {
+          "nome": "IDEE MIGLIORAMENTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di\nriferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Mod.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Revisione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PROPONENTE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PERIMETRO IDEA",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-07_02": {
+      "doc_id": "MR-07_02",
+      "filename": "MR-07_02_Rev01_SOP",
+      "titolo": "SOP",
+      "scopo": "STANDARD OPERATING PROCEDURE (SOP) P ri r f o e c ri . m d . i Ident. Mod. Revisione",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "STANDARD OPERATING PROCEDURE (SOP)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di\nriferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Mod.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Revisione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Compilato da:",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data:",
+          "tipo": "testo"
+        },
+        {
+          "nome": "REPARTO",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-07_03": {
+      "doc_id": "MR-07_03",
+      "filename": "MR-07_03_Rev02_OPL",
+      "titolo": "OPL",
+      "scopo": "Proc. di riferim. Ident. Mod. Revisione",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [
+          "OPL"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "LEZIONE SU UN PUNTO\n(OPL)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Mod.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Revisione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-07_04": {
+      "doc_id": "MR-07_04",
+      "filename": "MR-07_04_Rev02_TWTTP+HERCA",
+      "titolo": "TWTTP+HERCA",
+      "scopo": "Proc. di riferim. Ident. Mod. Revisione",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [
+          "OPL"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Proc. di riferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Mod.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Revisione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-07_05": {
+      "doc_id": "MR-07_05",
+      "filename": "MR-07_05_Rev03_Cartellino Anomalia",
+      "titolo": "Cartellino Anomalia",
+      "scopo": "Proc. di riferim. Ident. Mod. Rev.",
+      "correlazioni": {
+        "procedura_padre": "PS-07_01",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [],
+      "n_pagine": 1
+    },
+    "MR-07_06": {
+      "doc_id": "MR-07_06",
+      "filename": "MR-07_06_Rev01_Cartellini quarantena",
+      "titolo": "Cartellini quarantena",
+      "scopo": "CARTELLINO “AREA DI Ident. Mod.",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "N° CARTELLINO:",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-07_07": {
+      "doc_id": "MR-07_07",
+      "filename": "MR-07_07_Rev01_Programma annuale manutenzione",
+      "titolo": "Programma annuale manutenzione",
+      "scopo": "PROGRAMMA MANUTENZIONE ANNUALE Procedura Identificazione",
+      "correlazioni": {
+        "procedura_padre": "PS-07_01",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "PROGRAMMA MANUTENZIONE ANNUALE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Procedura\nidentificazione\nPS-07_01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Identificazione\nmodulo MR\n– 07 07",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° revisione 01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-07_08": {
+      "doc_id": "MR-07_08",
+      "filename": "MR-07_08_Rev02_Standard Maintenance Procedure",
+      "titolo": "Standard Maintenance Procedure",
+      "scopo": "inteventi DPI previsti nr Gruppo Descrizione attivita da realizzare Materiale/Tool ICONA SI/NO",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Standard Maintenance Procedure",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PS-07-01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CICLO\nSTANDARD",
+          "tipo": "testo"
+        },
+        {
+          "nome": "SAFETY\nTipo intervento Descrizione inteventi\nDPI p",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipo intervento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione inteventi",
+          "tipo": "testo"
+        },
+        {
+          "nome": "SAFETY",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Gruppo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "ferma",
+          "tipo": "testo"
+        },
+        {
+          "nome": "funzionante",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-07_09": {
+      "doc_id": "MR-07_09",
+      "filename": "MR-07_09_Rev01_Check list 5S",
+      "titolo": "Check list 5S",
+      "scopo": "Proc. di riferim. Ident. Mod. Rev.",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "CHECK LIST \"SEIRI\"",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Mod.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Rev.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Nome:",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Funzione:",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-07_10": {
+      "doc_id": "MR-07_10",
+      "filename": "MR-07_10_Rev04_Bolla per intervento a guasto e analisi guasto EWO",
+      "titolo": "Bolla per intervento a guasto e analisi guasto EWO",
+      "scopo": "del guasto Descrizione intervento",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Bolla mappatura e analisi guasto (EWO)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Mod.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Rev.",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-07_14": {
+      "doc_id": "MR-07_14",
+      "filename": "MR-07_14_Rev01_Autonomous Standard maintenance Procedure",
+      "titolo": "Autonomous Standard maintenance Procedure",
+      "scopo": "delle attività da realizzare Tempo (') num. Disegno GUANTI OCCHIALI MASCHERA Attrezzature",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "SAFETY",
+          "tipo": "testo"
+        },
+        {
+          "nome": "ENV",
+          "tipo": "testo"
+        },
+        {
+          "nome": "stracci\nsporchi di\npolvere",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipo Intervento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "lavora",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_01": {
+      "doc_id": "MR-08_01",
+      "filename": "MR-08_01_Rev06_Scheda fattibilità prodotto",
+      "titolo": "Scheda fattibilità prodotto",
+      "scopo": "Q.tà annua richiesta ATTREZZATURA PROTOTIPALE PRESERIE DEFINITIVA",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "SCHEDA FATTIBILITÀ PRODOTTO\n(UNI EN ISO 9001)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS 08_02",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n ° r e v is . 0 6",
+          "tipo": "testo"
+        },
+        {
+          "nome": "RICHIESTA N°",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PRODOTTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "nuovo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "modificato",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CLIENTE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE/ DISEGNO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DESCRIZIONE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Q.tà annua richiesta",
+          "tipo": "testo"
+        },
+        {
+          "nome": "ATTREZZATURA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PROTOTIPALE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Si richiede al Cliente la seguente documentazione ",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FATTIBILE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "NON FATTIBILE",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_02": {
+      "doc_id": "MR-08_02",
+      "filename": "MR-08_02_Rev03_Introduzione Modifica Particolari",
+      "titolo": "Introduzione Modifica Particolari",
+      "scopo": "TP DISEGNO P S E U.M F U A N B IT B . . STATO P C R L O A M G S . R S A E M F C U L N A Z S IO SE N V C A L L A O S R SE E GE C S L T A E I S O S N E A L C F O T O N E R S R N I Z G IT IS L O I T A R A T E O PESO L R O O I B N T B T T L R O . . .R .I.E ** ** ** ** ** ** ** ** ** **",
+      "correlazioni": {
+        "procedura_padre": "PS-08_02",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "DOCUMENTO DI MODIFICA / INTRODUZIONE NUOVI PRODOTT",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. Di rif PS-08_02",
+          "tipo": "testo"
+        },
+        {
+          "nome": "NUOVO PRODOTTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° MODIFICA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PAG",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE\nATTUALE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DESCRIZIONE\nATTUALE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE\nNUOVO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "NUOVA\nDESCRIZIONE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FABB\nANNUO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LOTTO\nINDICATO IN\nOFFERTA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CLASSE\nGESTIONALE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "O\nLLEVIL",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DESCRIZIONE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DISEGNO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "P\nS\nE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "U.M",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FABB.\nUNIT.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "STATO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CLASSE\nPROGRAM\nM.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CLASSE\nFUNZION",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CLASSE\nVALORE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CLASSE\nGESTIONAL\nE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FORNITORE\nTERZISTA\nCONSIGLIATO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PESO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "OBBL.\nRINTR.\nLOTTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": ".R\n.I.E",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_03": {
+      "doc_id": "MR-08_03",
+      "filename": "MR-08_03_Rev01_Richiesta investimento",
+      "titolo": "Richiesta investimento",
+      "scopo": "ATTREZZO COSTO ATT. CODICE CODICE PREZZO DA FABB. CODICE CODICE CODICE",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "RICHIESTA D'INVESTIMENTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. Di rif.\nPS-08-03",
+          "tipo": "testo"
+        },
+        {
+          "nome": "COSTRUZIONE STAMPI",
+          "tipo": "testo"
+        },
+        {
+          "nome": "RIFERIMENTO MODIFICA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "RICHIESTA\nD'INVESTIMENTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PAG",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DESCRIZIONE ATTREZZO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE\nATTREZZO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FORNITORE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "COSTO ATT.\nPREVENTIV\nO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PREZZO DA\nFATTURARE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FABB.\nANNUO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE\nOVV",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE\nCLIENTE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DESCRIZIONE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE\nFINITO\nOVV",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° ORDINE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DATA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PREZZO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CONSEGNA PREVISTA PER IL:",
+          "tipo": "testo"
+        },
+        {
+          "nome": "ALLEGO OFFERTA DEL FORNITORE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FATTURARE A :",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_05": {
+      "doc_id": "MR-08_05",
+      "filename": "MR-08_05_Rev14_Tabella descrittiva rivestimenti (vrnt)",
+      "titolo": "Tabella descrittiva rivestimenti (vrnt)",
+      "scopo": "Proc. di rifer. I d e n t. Mod.",
+      "correlazioni": {
+        "procedura_padre": "PS-08_02",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "TABELLA DESCRITTIVA RIVESTIMENTI -Allegato alla SA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_02",
+          "tipo": "testo"
+        },
+        {
+          "nome": "I d e n t. Mod.\nMR-08_05",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_06": {
+      "doc_id": "MR-08_06",
+      "filename": "MR-08_06_Rev03_Indicazioni rivestimenti galvanici-zincolamellari",
+      "titolo": "Indicazioni rivestimenti galvanici-zincolamellari",
+      "scopo": "rivestimento UNI EN ISO UNI EN ISO FIAT CNH CNH IVECO18- IVECO18- IVECO18- IVECO18- Nebbia Salina Corr. Nebbia Salina Corr.",
+      "correlazioni": {
+        "procedura_padre": "PS-08_02",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "INDICAZIONI DEI CICLI PER I RIVESTIMENTI ELETTROGA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_02",
+          "tipo": "testo"
+        },
+        {
+          "nome": "I d e n t . M od. MR-\n08_06",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_07": {
+      "doc_id": "MR-08_07",
+      "filename": "MR-08_07_Rev01_FMEA",
+      "titolo": "FMEA",
+      "scopo": "ANALISI F.M.E.A. (Failure Mode Effect Analysis) -analisi PS-08_03",
+      "correlazioni": {
+        "procedura_padre": "PS-08_03",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "ANALISI F.M.E.A. (Failure Mode Effect Analysis) -a",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_03",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n° Revisione Doc.",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_08": {
+      "doc_id": "MR-08_08",
+      "filename": "MR-08_08_Rev03_Scheda requisiti attrezzatura",
+      "titolo": "Scheda requisiti attrezzatura",
+      "scopo": "del componente da realizzare fabbisogno annuo",
+      "correlazioni": {
+        "procedura_padre": "PS-08_03",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Proc. di riferim.\nPS-08_03",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N°revis.\n03",
+          "tipo": "testo"
+        },
+        {
+          "nome": "ANAGRAFICA ATTREZZO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "ANAGRAFICA PARTICOLARE DA REALIZZARE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CARATTERISTICHE TECNICHE PER ATTREZZATURE DESTINAT",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CARATTERISTICHE TECNICHE PER ATTREZZATURE DI SALDA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CARATTERISTICHE DI SUPPORTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DISPOSITIVI DI SICUREZZA: Dispositivi anti-infortu",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DOCUMENTI TECNICI DI RIFERIMENTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CRITICITA' E PARTICOLARI ATTENZIONI",
+          "tipo": "testo"
+        },
+        {
+          "nome": "NOTE TECNICHE AGGIUNTIVE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "NOTE GENERALI",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DATA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FIRMA",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_09": {
+      "doc_id": "MR-08_09",
+      "filename": "MR-08_09_Rev01_Deviation Permit_F",
+      "titolo": "Deviation Permit F",
+      "scopo": "prodotto Tempo deviation Quantità in deviation p i t a D",
+      "correlazioni": {
+        "procedura_padre": "PS-08_03",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "DEVIATION PERMIT",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di\nriferim.\nPS-08_03",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° revis.\n01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N°documento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Fornitore:",
+          "tipo": "testo"
+        },
+        {
+          "nome": "OVV (Officine Vittorio Villa)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "o\nt\nt\no\nd\no\nr\np\ni\nt\na\nD",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Part Number (Cliente)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Part Number (V.Villa)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Si è disposto di aggiungere un riferimento alla at",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_15": {
+      "doc_id": "MR-08_15",
+      "filename": "MR-08_15_ Rev01_Anagrafica Fornitori",
+      "titolo": "Anagrafica Fornitori",
+      "scopo": "ANAGRAFICA FORNITORI PS-08_04",
+      "correlazioni": {
+        "procedura_padre": "PS-08_04",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "ANAGRAFICA FORNITORI",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di\nriferim.\nPS-08_04",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° revis.\n01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ragione Sociale",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Famiglia Prodotto/\nTipologia di\nLavorazione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice\nArticolo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Fatturato\nAnnuo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Resa",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Vendor Rating",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Bid list",
+          "tipo": "testo"
+        },
+        {
+          "nome": "NOTE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Famiglia Prodotto/",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data ultimo aggiornamento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Responsabile Acquisti",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Foglio N°…di……",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_16": {
+      "doc_id": "MR-08_16",
+      "filename": "MR-08_16_Rev01_Rapporto qualificazione fornitori",
+      "titolo": "Rapporto qualificazione fornitori",
+      "scopo": "parco macchinari produttivi e di controllo (allegare elenco) Se Azienda presente su Mercato con di prodotti propri, indicare tipologia prodotto",
+      "correlazioni": {
+        "procedura_padre": "PS-08_04",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "MODULO DI QUALIFICAZIONE\nFORNITORI",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferim.\nPS-08_04",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° revis.\n01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "1) DATI ANAGRAFICI\nRagione sociale\nIndirizzo\nLocal",
+          "tipo": "testo"
+        },
+        {
+          "nome": "5) PORTAFOGLIO PRODOTTI\n❑ Produttore ❑ Rivenditore",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Punt.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Peso",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Parziale",
+          "tipo": "testo"
+        },
+        {
+          "nome": "8) FORNITORI\nPunt. Peso Parziale\n8.1 L’Azienda app",
+          "tipo": "testo"
+        },
+        {
+          "nome": "9.9 SI ❑ NO ❑ 2\nL’Azienda avverte in modo document",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Totale Area",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CONSIDERAZIONI FINALI\n(Punteggio totale ottenuto*1",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 5
+    },
+    "MR-08_17": {
+      "doc_id": "MR-08_17",
+      "filename": "MR-08_17_Rev02_Rapporto di vendor rating",
+      "titolo": "Rapporto di vendor rating",
+      "scopo": "Proc. di riferim. N° revis.",
+      "correlazioni": {
+        "procedura_padre": "PS-08_04",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "MODULO VENDOR-RATING",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferim.\nPS-08_04",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° revis.\n02",
+          "tipo": "testo"
+        },
+        {
+          "nome": "FORNITORE :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "STABILIMENTO :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Osservazioni e considerazioni generali :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "VALUTAZIONE ATTUALE :\nClasse A Classe B Classe C C",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Classe B",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Classe C",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Classe D",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Firma Responsabile Acquisti",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_20": {
+      "doc_id": "MR-08_20",
+      "filename": "MR-08_20_Rev01_Scheda  Attrezzaggio Pressa",
+      "titolo": "Scheda  Attrezzaggio Pressa",
+      "scopo": "Operazione Matricola macchina Corsa Macchina Luce Macchina",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda Attrezzaggio Pressa",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS 08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n° revis. 01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° Scheda",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Dimensioni stampo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "QUOTA \" B \"",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data Compilazione\nRedatta da :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note Revisioni",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Tecnico",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Qualità",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Produzione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_21": {
+      "doc_id": "MR-08_21",
+      "filename": "MR-08_21_Rev02_Scheda Attrezzaggio Fresa",
+      "titolo": "Scheda Attrezzaggio Fresa",
+      "scopo": "Pagina 010AT 010 1 / 1 Macchina AT Note macchina :",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda Attrezzaggio Fresa Cn",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPQ 07_02",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n ° r e v i s .\n02",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° Scheda\n010AT",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice Prodotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Fase\n010",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Pagina\n1 / 1",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Macchina AT",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note macchina :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data Compilazione\nRedatta da :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note Revisioni",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Tecnico\nMatteo Butti",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Qualità\nAndrea Motta",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Produzione\nGianmarco Ronchi",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_22": {
+      "doc_id": "MR-08_22",
+      "filename": "MR-08_22_Rev01_Scheda Attrezzaggio Seghetto",
+      "titolo": "Scheda Attrezzaggio Seghetto",
+      "scopo": "Prodotto Pagina 1 / 1 Macchina: AT65 Tipologia Lama:",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda Attrezzaggio\nSeghetto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS 08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n ° r e v i s .\n01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° Scheda",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice Prodotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione Prodotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Pagina\n1 / 1",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Macchina: AT65",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipologia Lama:",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data Compilazione\nRedatta da :\nXX 10-nov-14",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note Revisioni",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Mete\nFabio Soncini",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Qualità\nAndrea Motta",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Produzione\nMarco Ronchi",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_23": {
+      "doc_id": "MR-08_23",
+      "filename": "MR-08_23_Rev01_Scheda lavorazione lavaggio",
+      "titolo": "Scheda lavorazione lavaggio",
+      "scopo": "Operazione Codice prodotto N° Fase",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda parametri lavorazione\nlavaggio",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n° revis.\n01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_24": {
+      "doc_id": "MR-08_24",
+      "filename": "MR-08_24_Rev01_Scheda parametri sabbiatura",
+      "titolo": "Scheda parametri sabbiatura",
+      "scopo": "Operazione Codice prodotto N° Fase Sp.",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda parametri lavorazione\nsabbiatura",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n° revis.\n01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_25": {
+      "doc_id": "MR-08_25",
+      "filename": "MR-08_25_Rev01_Scheda attrezzaggio piegatrice",
+      "titolo": "Scheda attrezzaggio piegatrice",
+      "scopo": "Operazione Codice prodotto N° Fase Sp.",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda Attrezzaggio Piegatrice",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n° revis.\n01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_26": {
+      "doc_id": "MR-08_26",
+      "filename": "MR-08_26_Rev01_Scheda filettatura",
+      "titolo": "Scheda filettatura",
+      "scopo": "Pagina AA010FO01 1/1 Rif Codice Descrizione Q.tà Descrizione Operazione 1 N o t e :",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "S C H E D A D I L A V O R A Z I O N E FILETTATURA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer. PS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Rif",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Q.tà",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione Operazione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_27": {
+      "doc_id": "MR-08_27",
+      "filename": "MR-08_27_Rev02_Scheda attrezzaggio robot saldatura",
+      "titolo": "Scheda attrezzaggio robot saldatura",
+      "scopo": "Pagina 010SR0132 10 1 / 1 Macchina R132 Note macchina :",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda Attrezzaggio Robot",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n ° r e v i s .\n02",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° Scheda",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice Prodotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Fase",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Pagina",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Macchina R132",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note macchina :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data Compilazione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note Revisioni",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Tecnico",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Qualità",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Produzione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_28": {
+      "doc_id": "MR-08_28",
+      "filename": "MR-08_28_Rev01_Scheda qualifica saldatura filo",
+      "titolo": "Scheda qualifica saldatura filo",
+      "scopo": "Pagina 1 / 1 Robotizzata Manuale Tavola Rotante",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda Qualifica Parametri\nSaldatura a Filo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "P r oc . d i rif er .",
+          "tipo": "testo"
+        },
+        {
+          "nome": "P S -0 8_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N°Scheda",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice Prodotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Fase",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Pagina\n1 / 1",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipologia",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Robotizzata",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Manuale",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tavola Rotante",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Caratteristiche GAS",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipo :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Pressione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Portata ( l/min )",
+          "tipo": "testo"
+        },
+        {
+          "nome": "G Amp Volt Velocità Anticipo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Laboratorio",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Referto N°",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data Compilazione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note Revisioni",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Laboratorio",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Qualità",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Produzione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_29": {
+      "doc_id": "MR-08_29",
+      "filename": "MR-08_29_Rev01_Scheda parametri saldatura proiezione",
+      "titolo": "Scheda parametri saldatura proiezione",
+      "scopo": "Parametro Valore N° Tipo Descrizione Parametro Valore",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda Saldatura a Proiezione\nSaldatura Dadi",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Pr oc . di ri fe r.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "P S-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Numero Scheda",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Macchina",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Programma di lavoro",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N°\nParam.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione Parametro",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Valore",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Elenco codici dadi utilizzati",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data Compilazione\nRedatta da :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note Revisioni",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Qualità",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Mete",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Produzione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_30": {
+      "doc_id": "MR-08_30",
+      "filename": "MR-08_30_Rev01_Scheda montaggio",
+      "titolo": "Scheda montaggio",
+      "scopo": "Pagina 1 / 1 Rif Codice Descrizione Q.tà Descrizione Operazione 1 2 3 4 5 6 7 8 1 2 3 4 5 6 N o t e :",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "S C H E D A D I M O N T A G G I O",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer. PS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Scheda N°",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice del Prodotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Pagina\n1 / 1",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Rif",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Q.tà",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione Operazione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "1 2 3 4 5 6",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_31": {
+      "doc_id": "MR-08_31",
+      "filename": "MR-08_31_Rev01_Cartellino attrezzo di saldatura",
+      "titolo": "Cartellino attrezzo di saldatura",
+      "scopo": "CARTELLINO ATTREZZO DI Proc. di riferim. Ident. Mod. Revisione",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "CARTELLINO ATTREZZO DI\nSALDATURA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Mod.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Revisione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_32": {
+      "doc_id": "MR-08_32",
+      "filename": "MR-08_32_Rev01_Cartellino stampo",
+      "titolo": "Cartellino stampo",
+      "scopo": "Proc. di riferim. Ident. Mod. Revisione",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "CARTELLINO STAMPO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Mod.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Revisione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Punzone rotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Viti a collare\nrotta",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Matrice\nscheggiata",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Bava su fori",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Estrattore\ngrippato",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Difficoltà evacuazione\nsfridi",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Intervento eseguito:",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Firma:",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_33": {
+      "doc_id": "MR-08_33",
+      "filename": "MR-08_33_Rev01_Scheda appensione",
+      "titolo": "Scheda appensione",
+      "scopo": "Fase Pagina 00000AASV01 00000AA SCALETTA UN GRADINO 010 1/1",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "S C H E D A A P P E N S I O N E",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N o t e :",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_34": {
+      "doc_id": "MR-08_34",
+      "filename": "MR-08_34_Rev01_Scheda attrezzaggio Torni-Fantine",
+      "titolo": "Scheda attrezzaggio Torni-Fantine",
+      "scopo": "Pagina PS-08_05 01 Torni e Fantine Ident. Mod. MR08_34 1 / 1 R E P A R T O CNC",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Scheda Attrezzaggio\nTorni e Fantine",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n ° r e v i s .\n01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N ° S c h e d a",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice Prodotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Fase",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Pagina\n1 / 1",
+          "tipo": "testo"
+        },
+        {
+          "nome": "MATERIALE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "TONDO D.17H9 L3000 FE510C",
+          "tipo": "testo"
+        },
+        {
+          "nome": "POSIZIONE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DESCRIZIONE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE INSERTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "COMPONENTI",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DIAMETRO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CODICE / NOTE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note di\nproduzione:",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data Compilazione\nRedatta da :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note Revisioni",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Tecnico",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Qualità",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Produzione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_35": {
+      "doc_id": "MR-08_35",
+      "filename": "MR-08_35_Rev01_Scheda carteggiatura",
+      "titolo": "Scheda carteggiatura",
+      "scopo": "Pagina 1/1 ZONA - A (controllo estetico) : Rimozione e pulizia di residui di saldatura mediante carteggiatura",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "SCHEDA DI CARTEGGIATURA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer. PS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N o t e :",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_45": {
+      "doc_id": "MR-08_45",
+      "filename": "MR-08_45_Rev01_Cartellino identificativo",
+      "titolo": "Cartellino identificativo",
+      "scopo": "14/05/2007 Richiesta Proc. di Rif.: PQ-07_05",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Proc. di Rif.: PQ-07_05",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_46": {
+      "doc_id": "MR-08_46",
+      "filename": "MR-08_46_Rev01_Cartellino di Rintracciabilità lotto",
+      "titolo": "Cartellino di Rintracciabilità lotto",
+      "scopo": "CANNOTTO SALD. (Z3T7) SS/X72148AA Qta GAUSS (max) 500 Ord.Prod.Rif. 348811 Rif.Ord. 348811 Qta Finale",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Proc. di Rif.: PQ-07_05",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_47": {
+      "doc_id": "MR-08_47",
+      "filename": "MR-08_47_Rev02_Scheda logistica interna",
+      "titolo": "Scheda logistica interna",
+      "scopo": "Pagina Schema Layout Stoccaggio Materiali",
+      "correlazioni": {
+        "procedura_padre": "PS-08_07",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "S C H E D A L O G I S T I C A I N T E R N A",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_07",
+          "tipo": "testo"
+        },
+        {
+          "nome": "n° revis.\n02",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data Compilazione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Note Revisioni",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Tecnico",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Logistica",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Produzione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Visto Qualità",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_48": {
+      "doc_id": "MR-08_48",
+      "filename": "MR-08_48_Rev01_Scheda Imballaggio",
+      "titolo": "Scheda Imballaggio",
+      "scopo": "Peso Totale Quantità Pezzi P e s o U n itario P a g i n a",
+      "correlazioni": {
+        "procedura_padre": "PS-08_07",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "S C H E D A D I I M B A L L A G G I O",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer. PS-08_07",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Scheda N°",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice del Prodotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Peso Totale\nImballo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Quantità Pezzi\nImballo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "P e s o U n itario\nProdotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "P a g i n a\n1 / 1",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipologia di Imballo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipologia Separatori",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Qtà\nUtilizzata",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N o t e :",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_49": {
+      "doc_id": "MR-08_49",
+      "filename": "MR-08_49_Rev01_Colori di identificazione materia prime",
+      "titolo": "Colori di identificazione materia prime",
+      "scopo": "Colori identificativi dei materiali PS-08_06",
+      "correlazioni": {
+        "procedura_padre": "PS-08_06",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Proc. di rifer.\nColori identificativi dei material",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Colori identificativi dei materiali\nin ingresso (l",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_06",
+          "tipo": "testo"
+        },
+        {
+          "nome": "J2G3",
+          "tipo": "testo"
+        },
+        {
+          "nome": "J2G4",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_60": {
+      "doc_id": "MR-08_60",
+      "filename": "MR-08_60_Rev01_Piani di campionamento",
+      "titolo": "Piani di campionamento",
+      "scopo": "Identificazione Modulo",
+      "correlazioni": {
+        "procedura_padre": "PS-08_03",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "PIANO DI CAMPIONAMENTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Identificazione Modulo\nMR-08_60",
+          "tipo": "testo"
+        },
+        {
+          "nome": "NUMEROSITA' DEL\nLOTTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LQA = 2,5",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LQA = 1",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LQA = 0,4",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LQA = 0,25",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LQA = 0,1",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Compilatore :",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Resp. Qualità :",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_61": {
+      "doc_id": "MR-08_61",
+      "filename": "MR-08_61_Rev02_Caratteristiche cicli di controllo",
+      "titolo": "Caratteristiche cicli di controllo",
+      "scopo": "CARATTERISTICA MISURA CARATTERISTIC",
+      "correlazioni": {
+        "procedura_padre": "PS-08_03",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "CARATTERISTICHE STANDARD PER LA\nREDAZIONE DEI CICL",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_03",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Id e nt. Mod.\nMR-08_61",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 3
+    },
+    "MR-08_62": {
+      "doc_id": "MR-08_62",
+      "filename": "MR-08_62_Rev01_Control Plan",
+      "titolo": "Control Plan",
+      "scopo": "Eseguito da: Data Approvato da: Validità",
+      "correlazioni": {
+        "procedura_padre": "PS-08_62",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "CONTROL PLAN",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_62",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N ° revis.\n01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_64": {
+      "doc_id": "MR-08_64",
+      "filename": "MR-08_64_Rev02_Certificato Qualità e Conformità ISIR",
+      "titolo": "Certificato Qualità e Conformità ISIR",
+      "scopo": "Proc. Rif. Ident. Modulo Rev.",
+      "correlazioni": {
+        "procedura_padre": "PS-08_03",
+        "istruzioni": [],
+        "tools_correlati": [
+          "FMEA"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Proc. Rif. Ident. Modulo Rev.\nI.S.I.R. (P.A.P.)\nPS",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. Rif.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Modulo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Rev.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "0363-380411",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Via Dante Alighieri, 67",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_65": {
+      "doc_id": "MR-08_65",
+      "filename": "MR-08_65_Rev01_Standard Accettabile",
+      "titolo": "Standard Accettabile",
+      "scopo": "Pagina 1 / 1 1 2 N o t e : Data Compilazione Note Revisioni : Visto Logistica Visto Qualità Visto Produzione",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "S C H E D A A C C E T T A B I L I T A ' P R O D O ",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer. PS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Scheda N°",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice del Prodotto",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Descrizione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Pagina\n1 / 1",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N o t e :",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_66": {
+      "doc_id": "MR-08_66",
+      "filename": "MR-08_66_Rev01_ Referto giunti ad arco",
+      "titolo": "Referto giunti ad arco",
+      "scopo": "Referto di analisi giunti ad arco elettrico PS-08_05",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Referto di analisi giunti ad arco elettrico",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di\nriferim.\nPS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° revis.\n01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Complessivo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° bolla",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Benestare",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Punto di\nprova",
+          "tipo": "testo"
+        },
+        {
+          "nome": "RICHIESTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "RILEVATO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Fotografia:",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Osservazioni:\nEsito della prova:\n Approvato  Res",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Cordone\n1\n4 2 3 5",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Firma Laboratorio",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Codice complessivo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Denominazione",
+          "tipo": "testo"
+        },
+        {
+          "nome": "P.TO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CARATTERISTICHE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LIMITI DI ACCETTABILITA’",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LIMITI\nRILEVATI",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 2
+    },
+    "MR-08_67": {
+      "doc_id": "MR-08_67",
+      "filename": "MR-08_67 _Rev01_Limiti accettabilità imperfezioni saldatura",
+      "titolo": "Limiti accettabilità imperfezioni saldatura",
+      "scopo": "Identificazione Modulo",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "LIMITI ACCETTABILITA' DIFETTOSITA' SALDATURA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Identificazione Modulo\nMR-08_67",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_68": {
+      "doc_id": "MR-08_68",
+      "filename": "MR-08_68_Rev01_ Referto analisi TT",
+      "titolo": "Referto analisi TT",
+      "scopo": "Referto di analisi Trattamenti Termici PS-08_05",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Referto di analisi Trattamenti Termici\n(durezza e ",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di\nriferim.\nPS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° revis.\n01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Complessivo",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° bolla",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Benestare",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Punto di\nprova\n(mm)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Media\ndiagon.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "RILEVATO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "RICHIESTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Osservazioni:\nEsito della Prova:\n Approvato  Res",
+          "tipo": "testo"
+        },
+        {
+          "nome": "HV\n750\n700\n650\n600\n550\n500\n450\n400\n350\n300\n0,05 0,",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Firma Laboratorio",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_69": {
+      "doc_id": "MR-08_69",
+      "filename": "MR-08_69_Rev02_ Referto prove trattamenti superficiali",
+      "titolo": "Referto prove trattamenti superficiali",
+      "scopo": "Result of Corrosion Test",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": [
+          "MR-08_06",
+          "MR-08_05"
+        ]
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Result of Corrosion Test",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di rifer.\nPS-08_05",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Photo of the part at the end of the test",
+          "tipo": "testo"
+        },
+        {
+          "nome": "TEST PARAMETERS ACCORDING TO\nUNI EN ISO 9227 (ASTM",
+          "tipo": "testo"
+        },
+        {
+          "nome": "AGGRESSIVE MEDIUM",
+          "tipo": "testo"
+        },
+        {
+          "nome": "NACL 5%",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_70": {
+      "doc_id": "MR-08_70",
+      "filename": "MR-08_70_Rev01_Check list",
+      "titolo": "Check list",
+      "scopo": "Identificazione Modulo",
+      "correlazioni": {
+        "procedura_padre": "PS-08_05",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "CHECK LIST",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Identificazione Modulo\nMR-08_70",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-08_75": {
+      "doc_id": "MR-08_75",
+      "filename": "MR-08_75_Rev03_Gruppi nc e reclami",
+      "titolo": "Gruppi nc e reclami",
+      "scopo": "identificazione modulo",
+      "correlazioni": {
+        "procedura_padre": "PS-08_08",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "MODULO DI REGISTRAZIONE\nGRUPPI DELLE CAUSE PRINCIP",
+          "tipo": "testo"
+        },
+        {
+          "nome": "identificazione modulo\nMR-08_75",
+          "tipo": "testo"
+        },
+        {
+          "nome": "TL2",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Aspetto/Qualità Taglio laser Nc",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Difettosità materiale",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 3
+    },
+    "MR-09_01": {
+      "doc_id": "MR-09_01",
+      "filename": "MR-09_01_Rev01_Modulo obiettivi di processo",
+      "titolo": "Modulo obiettivi di processo",
+      "scopo": "Processo/Area: Team Leader/Responsabile",
+      "correlazioni": {
+        "procedura_padre": "PS-09_01",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Identificazione Modulo\nMR-09_01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Firma Responsabile",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Data",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-09_02": {
+      "doc_id": "MR-09_02",
+      "filename": "MR-09_02_Rev01_Safety CheckList",
+      "titolo": "Safety CheckList",
+      "scopo": "CHECK LIST DI VERIFICA Riferimento Modulo",
+      "correlazioni": {
+        "procedura_padre": "PS-09_02",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "CHECK LIST DI VERIFICA\nSTEP 0",
+          "tipo": "testo"
+        },
+        {
+          "nome": "STABILIMENTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Riferimento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Modulo",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-09_03": {
+      "doc_id": "MR-09_03",
+      "filename": "MR-09_03_Rev01_Check list AUDIT Processo",
+      "titolo": "Check list AUDIT Processo",
+      "scopo": "AUDIT DI PROCESSO Proc. di riferimento Ident. Mod. N° Revisione",
+      "correlazioni": {
+        "procedura_padre": "PS-09_02",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "AUDIT DI PROCESSO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferimento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Ident. Mod.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° Revisione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-09_04": {
+      "doc_id": "MR-09_04",
+      "filename": "MR-09_04_Rev01_S-Matrix",
+      "titolo": "S-Matrix",
+      "scopo": "SEDE LESIONE ANNO 2018",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "ANNO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Stampaggio",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LASER E PIEGA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CNC",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Saldatura",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Montaggio",
+          "tipo": "testo"
+        },
+        {
+          "nome": "UFFICI",
+          "tipo": "testo"
+        },
+        {
+          "nome": "LOGISTICA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "H\nC\nIR\nN\nIE\nH",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Infortunio fatale",
+          "tipo": "testo"
+        },
+        {
+          "nome": "E\nN\nO\nIS\nE\nL\nA\nR\nU\nT\nA\nN",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Contusione - Trauma",
+          "tipo": "testo"
+        },
+        {
+          "nome": "E\nC\nID\nA\nR\nA\nS\nU\nA\nC",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Competenza - Conoscenza",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-09_06": {
+      "doc_id": "MR-09_06",
+      "filename": "MR-09_06_Rev02_Smat audit",
+      "titolo": "Smat audit",
+      "scopo": "SAFETY MANAGEMENT AUDIT TRAINING -",
+      "correlazioni": {
+        "procedura_padre": "PS-09_02",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "SAFETY MANAGEMENT AUDIT TRAINING -\nCATEGORIE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Riferimento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Modulo",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-10_01": {
+      "doc_id": "MR-10_01",
+      "filename": "MR-10_01_Rev03_Major Kaizen",
+      "titolo": "Major Kaizen",
+      "scopo": "del fenomeno 5 Azioni e contromisure",
+      "correlazioni": {
+        "procedura_padre": "PS-10_01",
+        "istruzioni": [],
+        "tools_correlati": [
+          "5 Perché",
+          "Kaizen",
+          "Poka Yoke",
+          "OPL"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "MAJOR\n1 2 3 4 5 6 7",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Reparto/CDL",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Procedura rif.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PS-10_01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-10_02": {
+      "doc_id": "MR-10_02",
+      "filename": "MR-10_02_Rev03_Standard Kaizen",
+      "titolo": "Standard Kaizen",
+      "scopo": "azioni correttive implementate: DO Fare",
+      "correlazioni": {
+        "procedura_padre": "PS-10_01",
+        "istruzioni": [],
+        "tools_correlati": [
+          "5 Perché",
+          "PDCA",
+          "Kaizen",
+          "Standard Kaizen",
+          "Poka Yoke",
+          "OPL"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "STANDARD KAIZEN - PDCA\n(Problemi Cronici)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipologia\nSistematico\nFocalizzato",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Origine\nMatrice\nTAG\nSUGGERIMENTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tag N°\nSugg N°",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° KAIZEN",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Procedura riferimento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PS-10_01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR-10_03": {
+      "doc_id": "MR-10_03",
+      "filename": "MR-10_03_Rev03_Quick Kaizen",
+      "titolo": "Quick Kaizen",
+      "scopo": "azioni correttive implementate: DO Fare",
+      "correlazioni": {
+        "procedura_padre": "PS-10_01",
+        "istruzioni": [],
+        "tools_correlati": [
+          "5 Perché",
+          "PDCA",
+          "Kaizen",
+          "Quick Kaizen",
+          "Poka Yoke",
+          "OPL"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "QUICK KAIZEN - PDCA\n(Problemi Sporadici)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipologia\nSistematico\nFocalizzato",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Origine\nMatrice\nTAG\nSUGGERIMENTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tag N°\nSugg N°",
+          "tipo": "testo"
+        },
+        {
+          "nome": "N° KAIZEN",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Procedura riferimento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PS-10_01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    }
+  },
+  "tools": {
+    "-WO_AnalisiMUDA_R05_": {
+      "doc_id": "-WO_AnalisiMUDA_R05_",
+      "filename": "-WO_AnalisiMUDA_R05_ITA",
+      "titolo": "-WO AnalisiMUDA R05 ITA",
+      "scopo": "Waste Elimination (MUDA) Observation Sheet",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Comments During Observaion/\nSuggestions For Improv",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "-WO_AnalisiMURA_R05_": {
+      "doc_id": "-WO_AnalisiMURA_R05_",
+      "filename": "-WO_AnalisiMURA_R05_ITA",
+      "titolo": "-WO AnalisiMURA R05 ITA",
+      "scopo": "Sec/Min Intervallo Modello:",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "MURA ANALYSIS\n1 2\nDividere i\nPostazione:\nTempo sec",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "-WO_CheckList_R05_IT": {
+      "doc_id": "-WO_CheckList_R05_IT",
+      "filename": "-WO_CheckList_R05_ITA",
+      "titolo": "-WO CheckList R05 ITA",
+      "scopo": "CHECK LIST DI VERIFICA",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "WO\nWorkplace\nOrganization",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CHECK LIST DI VERIFICA\nSTEP 4",
+          "tipo": "testo"
+        },
+        {
+          "nome": "STABILIMENTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "####",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 2
+    },
+    "-WO_MatricePosture_M": {
+      "doc_id": "-WO_MatricePosture_M",
+      "filename": "-WO_MatricePosture_MURI_R05_ITA",
+      "titolo": "-WO MatricePosture MURI R05 ITA",
+      "scopo": "ATTIVITA' °03 naht erom °03 - °51 °51 - °0 °54 naht erom °54 - °51 °51 - °0 redluohs naht rehgih",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "ANALISI ERGONOMIA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "-WO_SpaghettiChart_R": {
+      "doc_id": "-WO_SpaghettiChart_R",
+      "filename": "-WO_SpaghettiChart_R05_ITA",
+      "titolo": "-WO SpaghettiChart R05 ITA",
+      "scopo": "REPARTO Gruppo progetto:",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Spaghetti Chart",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Scheda Numero:",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "4MIshikawa_Rev01": {
+      "doc_id": "4MIshikawa_Rev01",
+      "filename": "4MIshikawa_Rev01",
+      "titolo": "4MIshikawa",
+      "scopo": "4M - ISHIKAWA DIAGRAM",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [
+          "Ishikawa"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [],
+      "n_pagine": 1
+    },
+    "5": {
+      "doc_id": "5",
+      "filename": "5 perchè_Rev01",
+      "titolo": "5 perchè",
+      "scopo": "Procedura riferimento Revisione Modulo",
+      "correlazioni": {
+        "procedura_padre": "PS-10_01",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "ANALISI DEI 5 PERCHE'",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Procedura riferimento",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Revisione Modulo",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "5QFZD-4MD": {
+      "doc_id": "5QFZD-4MD",
+      "filename": "5QFZD-4MD_Rev01",
+      "titolo": "5QFZD-4MD",
+      "scopo": "Procedura rif. PS-10_01",
+      "correlazioni": {
+        "procedura_padre": "PS-10_01",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "5QFZD (5 DOMANDE PER ZERO DIFETTI)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Procedura rif.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PS-10_01",
+          "tipo": "testo"
+        },
+        {
+          "nome": "RISPOSTE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "VALUTAZIONE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PRIMA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DOPO",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "5W1H": {
+      "doc_id": "5W1H",
+      "filename": "5W1H_Rev01",
+      "titolo": "5W1H",
+      "scopo": "del problema: Compilata da: Data : n°: t a a In cosa consiste il difetto? Dove sul s h W o prodotto si trova il difetto? C",
+      "correlazioni": {
+        "procedura_padre": "PS-10_01",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "5W +1H",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Proc. di riferim.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Revisione Modulo",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "LCS_Analisi Flusso_O": {
+      "doc_id": "LCS_Analisi Flusso_O",
+      "filename": "LCS_Analisi Flusso_OVV",
+      "titolo": "LCS Analisi Flusso OVV",
+      "scopo": "(AS IS) (min) (casi/turno) (m) (m2)",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Note",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 2
+    },
+    "LCS_CalcoloFabbisogn": {
+      "doc_id": "LCS_CalcoloFabbisogn",
+      "filename": "LCS_CalcoloFabbisogniContenitoriSpecifici_OVV",
+      "titolo": "LCS CalcoloFabbisogniContenitoriSpecifici OVV",
+      "scopo": "Calcolo fabbisogni contenitori specifici",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Calcolo fabbisogni contenito",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DISTANZE",
+          "tipo": "testo"
+        },
+        {
+          "nome": "ri specifici",
+          "tipo": "testo"
+        },
+        {
+          "nome": "GIORNI GIRO",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 2
+    },
+    "LCS_MatriceClassiFlu": {
+      "doc_id": "LCS_MatriceClassiFlu",
+      "filename": "LCS_MatriceClassiFlussiMateriali_OVV",
+      "titolo": "LCS MatriceClassiFlussiMateriali OVV",
+      "scopo": "Matrice di abbinamento Classe - Tipo Flusso",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Matrice di abbinamento Classe - Tipo Flusso\nstanda",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Livello Stock raccomandato",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Tipologia di Flusso raccomandato",
+          "tipo": "testo"
+        },
+        {
+          "nome": "L'implementazione di un\nflusso o l'evoluzione vers",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "LCS_PlanForEveryPart": {
+      "doc_id": "LCS_PlanForEveryPart",
+      "filename": "LCS_PlanForEveryParts_OVV",
+      "titolo": "LCS PlanForEveryParts OVV",
+      "scopo": "FORM CLASSIFICAZIONE MATERIALI STANDARD",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "FORM CLASSIFICAZIONE MATERIALI STANDARD",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "LCS_StandardLineFeed": {
+      "doc_id": "LCS_StandardLineFeed",
+      "filename": "LCS_StandardLineFeeding_OVV",
+      "titolo": "LCS StandardLineFeeding OVV",
+      "scopo": "SCHEDA XXXXXXXXXXXXXXXXXXXXXX",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "SCHEDA XXXXXXXXXXXXXXXXXXXXXX",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "MR_07-01": {
+      "doc_id": "MR_07-01",
+      "filename": "MR_07-01_Rev01_Rapporto d'addestramento",
+      "titolo": "MR 07-01 Rapporto d'addestramento",
+      "scopo": "MODULO PER LA VALUTAZIONE DEL PERSONALE IN INGRESSO Ident. Modulo: MR-07_01",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": [
+          "MR-07_01"
+        ]
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Compilazione a cura del CAPOREPARTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CAMPO NOTE dove segnalare eventuali criticità (es.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "VALUTAZIONE CAPO REPARTO",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "PM_CheckListPM_R05_I": {
+      "doc_id": "PM_CheckListPM_R05_I",
+      "filename": "PM_CheckListPM_R05_ITA",
+      "titolo": "PM CheckListPM R05 ITA",
+      "scopo": "Professional CHECK LIST DI VERIFICA STEP 0",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "PM\nProfessional\nMaintenance",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CHECK LIST DI VERIFICA STEP 0",
+          "tipo": "testo"
+        },
+        {
+          "nome": "STABILIMENTO",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "Process flow-chart P": {
+      "doc_id": "Process flow-chart P",
+      "filename": "Process flow-chart PS-08_01",
+      "titolo": "Process flow-chart PS-08 01",
+      "scopo": "Pianificazione dei processi PS-08_01",
+      "correlazioni": {
+        "procedura_padre": "PS-08_01",
+        "istruzioni": [],
+        "tools_correlati": [
+          "FMEA"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [],
+      "n_pagine": 3
+    },
+    "QMMatrix_Rev01": {
+      "doc_id": "QMMatrix_Rev01",
+      "filename": "QMMatrix_Rev01",
+      "titolo": "QMMatrix",
+      "scopo": "Procedura rif. PS-10_01",
+      "correlazioni": {
+        "procedura_padre": "PS-10_01",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "QM MATRIX",
+          "tipo": "testo"
+        },
+        {
+          "nome": "Procedura rif.",
+          "tipo": "testo"
+        },
+        {
+          "nome": "PS-10_01",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "TT_REGISTRO": {
+      "doc_id": "TT_REGISTRO",
+      "filename": "TT_REGISTRO CARTELLINI_01",
+      "titolo": "TT REGISTRO CARTELLINI 01",
+      "scopo": "MODULO RACCOLTA CARTELLINI",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [
+          "Kaizen"
+        ],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "REPARTO",
+          "tipo": "testo"
+        },
+        {
+          "nome": "SALDATURA A ROBOT",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CAMPI RELATIVI SOLO A\nFONTI DI SPORCO",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "WO_Analisi NVAA man": {
+      "doc_id": "WO_Analisi NVAA man",
+      "filename": "WO_Analisi NVAA man",
+      "titolo": "WO Analisi NVAA man",
+      "scopo": "3037-010 LH D BELT & SCAN & STOCK B&C BELTS & RR MID BELT",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "STARTING\nPOINT (sec)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "ENDING\nPOINT (sec)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "DURATION\n(sec)",
+          "tipo": "testo"
+        },
+        {
+          "nome": "ACTIVITY",
+          "tipo": "testo"
+        },
+        {
+          "nome": "CLASSIFICATION",
+          "tipo": "testo"
+        },
+        {
+          "nome": "MURI",
+          "tipo": "testo"
+        },
+        {
+          "nome": "MURA",
+          "tipo": "testo"
+        },
+        {
+          "nome": "MUDA",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "WO_GanttWO_R01": {
+      "doc_id": "WO_GanttWO_R01",
+      "filename": "WO_GanttWO_R01",
+      "titolo": "WO GanttWO R01",
+      "scopo": "WO - Workplace Organization",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "S10",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S11",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S12",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S13",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S14",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S15",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S16",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S17",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S18",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S19",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S20",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S21",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S22",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S23",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S24",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S25",
+          "tipo": "testo"
+        },
+        {
+          "nome": "S26",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "WO_JES": {
+      "doc_id": "WO_JES",
+      "filename": "WO_JES Format r1.3",
+      "titolo": "WO JES Format r1.3",
+      "scopo": "Job Element Sheet U.O.: Assembly shop",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Job Element Sheet\nIstruzioni elementari di lavoro",
+          "tipo": "testo"
+        },
+        {
+          "nome": "U.O.: Assembly shop",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    },
+    "XMatrix_Rev01": {
+      "doc_id": "XMatrix_Rev01",
+      "filename": "XMatrix_Rev01",
+      "titolo": "XMatrix",
+      "scopo": "ATTREZZATURE/COMPONENTI",
+      "correlazioni": {
+        "procedura_padre": "",
+        "istruzioni": [],
+        "tools_correlati": [],
+        "moduli_correlati": []
+      },
+      "campi_compilazione": [
+        {
+          "nome": "Revisione",
+          "tipo": "testo"
+        }
+      ],
+      "n_pagine": 1
+    }
+  }
+}

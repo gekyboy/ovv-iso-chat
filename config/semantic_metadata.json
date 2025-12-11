@@ -1,0 +1,1835 @@
+{
+  "version": "1.0",
+  "description": "Metadata semantici per discriminazione documenti simili nel retrieval",
+  "created": "2025-12-10",
+  
+  "categories": {
+    "real_injury": {
+      "description": "Infortuni reali con lesioni",
+      "priority": 1
+    },
+    "near_miss": {
+      "description": "Mancati infortuni senza lesioni",
+      "priority": 2
+    },
+    "unsafe_condition": {
+      "description": "Condizioni pericolose",
+      "priority": 3
+    },
+    "non_conformity": {
+      "description": "Non conformità e reclami",
+      "priority": 1
+    },
+    "kaizen": {
+      "description": "Miglioramento continuo",
+      "priority": 2
+    },
+    "environmental": {
+      "description": "Ambiente ed emissioni",
+      "priority": 2
+    },
+    "quality_control": {
+      "description": "Controllo qualità prodotto",
+      "priority": 1
+    },
+    "general": {
+      "description": "Documenti generici",
+      "priority": 3
+    }
+  },
+  
+  "documents": {
+    "MR-04_01": {
+      "doc_id": "MR-04_01",
+      "title": "Politiche di Gestione Aziendale",
+      "semantic_type": "policy_document",
+      "incident_category": "general",
+      "applies_when": [
+        "politica aziendale",
+        "politica qualità",
+        "politica ambiente",
+        "politica sicurezza",
+        "policy",
+        "visione aziendale",
+        "impegni direzione",
+        "mission",
+        "valori aziendali"
+      ],
+      "not_for": [
+        "operazioni quotidiane",
+        "modulo operativo"
+      ],
+      "related_keywords": ["politica", "direzione", "impegno", "vision", "mission", "ISO", "certificazione"],
+      "parent_ps": "PS-09_03",
+      "usage_context": "Documento fondamentale che definisce le POLITICHE AZIENDALI di gestione (qualità, ambiente, sicurezza). Firmato dalla direzione."
+    },
+    
+    "MR-06_01": {
+      "doc_id": "MR-06_01",
+      "title": "Safety EWO - Analisi Causa Radice Infortunio",
+      "semantic_type": "injury_registration",
+      "incident_category": "real_injury",
+      "severity_levels": ["letale", "grave", "lieve", "medicazione"],
+      "applies_when": [
+        "ho avuto un infortunio",
+        "mi sono fatto male",
+        "lesione sul lavoro",
+        "ferito",
+        "infortunio grave",
+        "infortunio lieve",
+        "incidente con lesione",
+        "ospedale",
+        "pronto soccorso",
+        "medicazione"
+      ],
+      "not_for": [
+        "near miss",
+        "mancato infortunio",
+        "quasi incidente",
+        "senza lesioni",
+        "poteva andare male"
+      ],
+      "related_keywords": ["5W1H", "causa radice", "Safety EWO", "unsafe act", "unsafe condition"],
+      "parent_ps": "PS-06_01",
+      "parent_il": "IL-06_03",
+      "usage_context": "Registrazione e analisi di INFORTUNI REALI con lesioni. Include analisi 5W1H e causa radice."
+    },
+    
+    "MR-06_02": {
+      "doc_id": "MR-06_02",
+      "title": "Near Misses - Unsafe Conditions",
+      "semantic_type": "incident_prevention",
+      "incident_category": "near_miss",
+      "applies_when": [
+        "near miss",
+        "mancato infortunio",
+        "quasi incidente",
+        "condizione pericolosa",
+        "unsafe condition",
+        "unsafe act",
+        "per poco",
+        "poteva andare male",
+        "rischio evitato",
+        "senza lesioni"
+      ],
+      "not_for": [
+        "infortunio",
+        "lesione",
+        "ferito",
+        "ospedale",
+        "mi sono fatto male"
+      ],
+      "related_keywords": ["prevenzione", "segnalazione", "condizione insicura", "azione pericolosa"],
+      "parent_ps": "PS-06_01",
+      "usage_context": "Segnalazione di MANCATI INFORTUNI (near miss) e condizioni pericolose SENZA lesioni."
+    },
+    
+    "MR-06_03": {
+      "doc_id": "MR-06_03",
+      "title": "Environmental EWO",
+      "semantic_type": "environmental_incident",
+      "incident_category": "environmental",
+      "applies_when": [
+        "incidente ambientale",
+        "sversamento",
+        "inquinamento",
+        "emissioni",
+        "rifiuti pericolosi",
+        "emergenza ambientale"
+      ],
+      "not_for": [
+        "infortunio",
+        "lesione personale"
+      ],
+      "related_keywords": ["ambiente", "EWO", "emergenza"],
+      "parent_ps": "PS-06_02",
+      "usage_context": "Registrazione incidenti AMBIENTALI (sversamenti, emissioni anomale)."
+    },
+    
+    "MR-06_04": {
+      "doc_id": "MR-06_04",
+      "title": "Unenviromental Condition - Near Emergency",
+      "semantic_type": "environmental_prevention",
+      "incident_category": "environmental",
+      "applies_when": [
+        "quasi emergenza ambientale",
+        "condizione ambientale pericolosa",
+        "near emergency",
+        "rischio ambientale"
+      ],
+      "not_for": [
+        "infortunio personale"
+      ],
+      "related_keywords": ["ambiente", "prevenzione", "near emergency"],
+      "parent_ps": "PS-06_02",
+      "usage_context": "Segnalazione condizioni ambientali pericolose (quasi emergenze)."
+    },
+    
+    "MR-08_01": {
+      "doc_id": "MR-08_01",
+      "title": "Scheda Fattibilità Prodotto",
+      "semantic_type": "product_development",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "fattibilità prodotto",
+        "nuovo prodotto",
+        "analisi fattibilità",
+        "valutazione tecnica",
+        "richiesta offerta",
+        "preventivo cliente",
+        "studio fattibilità"
+      ],
+      "not_for": [
+        "prodotto esistente",
+        "produzione standard"
+      ],
+      "related_keywords": ["fattibilità", "nuovo prodotto", "requisiti", "cliente", "prototipo"],
+      "parent_ps": "PS-08_02",
+      "usage_context": "Modulo per valutare FATTIBILITÀ di un nuovo prodotto. Analisi tecnica ed economica prima dell'industrializzazione."
+    },
+    
+    "MR-08_02": {
+      "doc_id": "MR-08_02",
+      "title": "Introduzione/Modifica Particolari",
+      "semantic_type": "change_management",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "nuovo particolare",
+        "modifica prodotto",
+        "introduzione componente",
+        "ECN",
+        "change management",
+        "modifica disegno",
+        "variante prodotto"
+      ],
+      "not_for": [
+        "produzione standard senza modifiche"
+      ],
+      "related_keywords": ["ECN", "modifica", "introduzione", "gestione cambiamenti", "nuovo codice"],
+      "parent_ps": "PS-08_02",
+      "usage_context": "Modulo per gestire INTRODUZIONE o MODIFICA di particolari/prodotti. Traccia variazioni codici e disegni."
+    },
+    
+    "MR-08_03": {
+      "doc_id": "MR-08_03",
+      "title": "Richiesta Investimento",
+      "semantic_type": "investment_request",
+      "incident_category": "general",
+      "applies_when": [
+        "richiesta investimento",
+        "acquisto stampo",
+        "costruzione attrezzo",
+        "nuovo macchinario",
+        "capex",
+        "investimento attrezzatura"
+      ],
+      "not_for": [
+        "acquisto materiali",
+        "ordine standard"
+      ],
+      "related_keywords": ["investimento", "stampo", "attrezzo", "capex", "budget"],
+      "parent_ps": "PS-08_03",
+      "usage_context": "Modulo per richiedere INVESTIMENTI in attrezzature, stampi, macchinari. Approvazione costi capital."
+    },
+    
+    "MR-08_05": {
+      "doc_id": "MR-08_05",
+      "title": "Tabella Descrittiva Rivestimenti",
+      "semantic_type": "technical_specification",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "rivestimento",
+        "trattamento superficiale",
+        "zincatura",
+        "verniciatura",
+        "protezione corrosione",
+        "specifiche rivestimento"
+      ],
+      "not_for": [
+        "lavorazioni meccaniche"
+      ],
+      "related_keywords": ["rivestimento", "zincatura", "verniciatura", "corrosione", "protezione"],
+      "parent_ps": "PS-08_02",
+      "usage_context": "Tabella tecnica per definizione RIVESTIMENTI superficiali. Specifiche zincature, verniciature, protezioni."
+    },
+    
+    "MR-08_06": {
+      "doc_id": "MR-08_06",
+      "title": "Indicazioni Rivestimenti Galvanici-Zincolamellari",
+      "semantic_type": "technical_specification",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "galvanico",
+        "zincolamellare",
+        "elettrozincatura",
+        "dacromet",
+        "geomet",
+        "nebbia salina",
+        "resistenza corrosione"
+      ],
+      "not_for": [
+        "verniciatura a polvere"
+      ],
+      "related_keywords": ["galvanico", "zincolamellare", "corrosione", "nebbia salina", "UNI EN ISO"],
+      "parent_ps": "PS-08_02",
+      "usage_context": "Indicazioni tecniche per RIVESTIMENTI GALVANICI e zincolamellari. Cicli e specifiche per resistenza corrosione."
+    },
+    
+    "MR-08_07": {
+      "doc_id": "MR-08_07",
+      "title": "FMEA - Failure Mode Effect Analysis",
+      "semantic_type": "risk_analysis",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "FMEA",
+        "analisi rischi",
+        "failure mode",
+        "analisi guasti",
+        "prevenzione difetti",
+        "RPN",
+        "severità occorrenza"
+      ],
+      "not_for": [
+        "NC già avvenuta",
+        "reclamo in corso"
+      ],
+      "related_keywords": ["FMEA", "RPN", "severità", "occorrenza", "rilevabilità", "PFMEA", "DFMEA"],
+      "parent_ps": "PS-08_03",
+      "usage_context": "Modulo per ANALISI FMEA (Failure Mode Effect Analysis). Valutazione preventiva rischi processo/prodotto."
+    },
+    
+    "MR-08_08": {
+      "doc_id": "MR-08_08",
+      "title": "Scheda Requisiti Attrezzatura",
+      "semantic_type": "equipment_specification",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "requisiti attrezzatura",
+        "specifica stampo",
+        "caratteristiche attrezzo",
+        "requisiti tecnici",
+        "capitolato attrezzo"
+      ],
+      "not_for": [
+        "manutenzione"
+      ],
+      "related_keywords": ["attrezzatura", "stampo", "requisiti", "specifica tecnica", "sicurezza"],
+      "parent_ps": "PS-08_03",
+      "usage_context": "Modulo per definire REQUISITI TECNICI di attrezzature/stampi. Specifiche costruttive e sicurezza."
+    },
+    
+    "MR-08_09": {
+      "doc_id": "MR-08_09",
+      "title": "Deviation Permit - Richiesta Deroga",
+      "semantic_type": "quality_deviation",
+      "incident_category": "non_conformity",
+      "applies_when": [
+        "deviation permit",
+        "richiesta deroga",
+        "concessione cliente",
+        "derogare specifica",
+        "accettazione condizionata",
+        "utilizzo con deroga"
+      ],
+      "not_for": [
+        "NC interna",
+        "scarto definitivo"
+      ],
+      "related_keywords": ["deroga", "concessione", "cliente", "approvazione", "deviation"],
+      "parent_ps": "PS-08_08",
+      "usage_context": "Modulo per richiedere DEROGA/CONCESSIONE al cliente per prodotto non conforme alle specifiche."
+    },
+    
+    "MR-08_15": {
+      "doc_id": "MR-08_15",
+      "title": "Anagrafica Fornitori",
+      "semantic_type": "supplier_management",
+      "incident_category": "general",
+      "applies_when": [
+        "anagrafica fornitori",
+        "lista fornitori",
+        "fornitori qualificati",
+        "albo fornitori",
+        "bid list"
+      ],
+      "not_for": [
+        "valutazione fornitore"
+      ],
+      "related_keywords": ["fornitori", "anagrafica", "qualificazione", "vendor list"],
+      "parent_ps": "PS-08_04",
+      "usage_context": "Modulo per gestire ANAGRAFICA FORNITORI qualificati. Lista e categorie fornitori approvati."
+    },
+    
+    "MR-08_16": {
+      "doc_id": "MR-08_16",
+      "title": "Rapporto Qualificazione Fornitori",
+      "semantic_type": "supplier_qualification",
+      "incident_category": "general",
+      "applies_when": [
+        "qualificazione fornitore",
+        "audit fornitore",
+        "valutazione iniziale fornitore",
+        "nuovo fornitore",
+        "omologazione fornitore"
+      ],
+      "not_for": [
+        "vendor rating periodico"
+      ],
+      "related_keywords": ["qualificazione", "audit", "fornitore", "omologazione", "valutazione iniziale"],
+      "parent_ps": "PS-08_04",
+      "usage_context": "Modulo per QUALIFICAZIONE INIZIALE di nuovi fornitori. Audit e valutazione capacità."
+    },
+    
+    "MR-08_17": {
+      "doc_id": "MR-08_17",
+      "title": "Vendor Rating - Valutazione Prestazioni Fornitore",
+      "semantic_type": "supplier_evaluation",
+      "incident_category": "general",
+      "applies_when": [
+        "vendor rating",
+        "valutazione fornitore",
+        "performance fornitore",
+        "classificazione fornitore",
+        "rating fornitori"
+      ],
+      "not_for": [
+        "qualificazione iniziale"
+      ],
+      "related_keywords": ["vendor rating", "valutazione", "prestazioni", "classe A B C D"],
+      "parent_ps": "PS-08_04",
+      "usage_context": "Modulo per VALUTAZIONE PERIODICA prestazioni fornitori. Classificazione A/B/C/D."
+    },
+    
+    "MR-08_20": {
+      "doc_id": "MR-08_20",
+      "title": "Scheda Attrezzaggio Pressa",
+      "semantic_type": "setup_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "attrezzaggio pressa",
+        "setup pressa",
+        "scheda pressa",
+        "parametri pressa",
+        "stampaggio"
+      ],
+      "not_for": [],
+      "related_keywords": ["pressa", "stampo", "attrezzaggio", "setup", "corsa", "luce"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per ATTREZZAGGIO PRESSA. Parametri macchina, dimensioni stampo, setup."
+    },
+    
+    "MR-08_21": {
+      "doc_id": "MR-08_21",
+      "title": "Scheda Attrezzaggio Fresa CNC",
+      "semantic_type": "setup_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "attrezzaggio fresa",
+        "setup fresa",
+        "scheda fresa",
+        "fresatura CNC",
+        "parametri fresa"
+      ],
+      "not_for": [],
+      "related_keywords": ["fresa", "CNC", "attrezzaggio", "setup", "utensili"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per ATTREZZAGGIO FRESA CNC. Parametri, utensili, setup lavorazione."
+    },
+    
+    "MR-08_22": {
+      "doc_id": "MR-08_22",
+      "title": "Scheda Attrezzaggio Seghetto",
+      "semantic_type": "setup_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "attrezzaggio seghetto",
+        "setup seghetto",
+        "taglio barre",
+        "lama seghetto"
+      ],
+      "not_for": [],
+      "related_keywords": ["seghetto", "taglio", "lama", "barre"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per ATTREZZAGGIO SEGHETTO. Parametri taglio, tipo lama."
+    },
+    
+    "MR-08_23": {
+      "doc_id": "MR-08_23",
+      "title": "Scheda Parametri Lavaggio",
+      "semantic_type": "process_parameters",
+      "incident_category": "general",
+      "applies_when": [
+        "parametri lavaggio",
+        "lavaggio pezzi",
+        "sgrassaggio",
+        "pulizia componenti"
+      ],
+      "not_for": [],
+      "related_keywords": ["lavaggio", "sgrassaggio", "pulizia", "detergente"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per PARAMETRI LAVAGGIO. Ciclo lavaggio, temperature, detergenti."
+    },
+    
+    "MR-08_24": {
+      "doc_id": "MR-08_24",
+      "title": "Scheda Parametri Sabbiatura",
+      "semantic_type": "process_parameters",
+      "incident_category": "general",
+      "applies_when": [
+        "parametri sabbiatura",
+        "sabbiatura",
+        "granigliatura",
+        "preparazione superfici"
+      ],
+      "not_for": [],
+      "related_keywords": ["sabbiatura", "granigliatura", "abrasivo", "rugosità"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per PARAMETRI SABBIATURA. Tipo abrasivo, pressione, tempo ciclo."
+    },
+    
+    "MR-08_25": {
+      "doc_id": "MR-08_25",
+      "title": "Scheda Attrezzaggio Piegatrice",
+      "semantic_type": "setup_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "attrezzaggio piegatrice",
+        "setup piegatrice",
+        "piegatura lamiera",
+        "piega"
+      ],
+      "not_for": [],
+      "related_keywords": ["piegatrice", "piega", "lamiera", "punzone", "matrice"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per ATTREZZAGGIO PIEGATRICE. Utensili, angoli, sequenza pieghe."
+    },
+    
+    "MR-08_26": {
+      "doc_id": "MR-08_26",
+      "title": "Scheda Lavorazione Filettatura",
+      "semantic_type": "setup_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "filettatura",
+        "scheda filettatura",
+        "maschiatura",
+        "filetto"
+      ],
+      "not_for": [],
+      "related_keywords": ["filettatura", "maschiatura", "filetto", "passo"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per LAVORAZIONE FILETTATURA. Tipo filetto, utensile, parametri."
+    },
+    
+    "MR-08_27": {
+      "doc_id": "MR-08_27",
+      "title": "Scheda Attrezzaggio Robot Saldatura",
+      "semantic_type": "setup_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "attrezzaggio robot",
+        "setup robot saldatura",
+        "saldatura robotizzata",
+        "robot saldatura"
+      ],
+      "not_for": [],
+      "related_keywords": ["robot", "saldatura", "attrezzaggio", "programma"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per ATTREZZAGGIO ROBOT SALDATURA. Setup, programmi, parametri."
+    },
+    
+    "MR-08_28": {
+      "doc_id": "MR-08_28",
+      "title": "Scheda Qualifica Saldatura a Filo",
+      "semantic_type": "welding_qualification",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "qualifica saldatura",
+        "saldatura filo",
+        "MIG MAG",
+        "parametri saldatura filo",
+        "WPS"
+      ],
+      "not_for": [
+        "saldatura a punti"
+      ],
+      "related_keywords": ["saldatura", "filo", "MIG", "MAG", "WPS", "qualifica"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per QUALIFICA SALDATURA A FILO. Parametri, gas, velocità, qualifica WPS."
+    },
+    
+    "MR-08_29": {
+      "doc_id": "MR-08_29",
+      "title": "Scheda Parametri Saldatura a Proiezione",
+      "semantic_type": "welding_parameters",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "saldatura proiezione",
+        "saldatura dadi",
+        "saldatura resistenza",
+        "parametri proiezione"
+      ],
+      "not_for": [
+        "saldatura filo"
+      ],
+      "related_keywords": ["saldatura", "proiezione", "dadi", "resistenza", "ampere"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per SALDATURA A PROIEZIONE (dadi). Parametri elettrici, pressione."
+    },
+    
+    "MR-08_30": {
+      "doc_id": "MR-08_30",
+      "title": "Scheda Montaggio",
+      "semantic_type": "assembly_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "scheda montaggio",
+        "istruzione montaggio",
+        "assemblaggio",
+        "sequenza montaggio"
+      ],
+      "not_for": [],
+      "related_keywords": ["montaggio", "assemblaggio", "componenti", "sequenza"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per ISTRUZIONI MONTAGGIO. Sequenza operazioni, componenti, note."
+    },
+    
+    "MR-08_31": {
+      "doc_id": "MR-08_31",
+      "title": "Cartellino Attrezzo Saldatura",
+      "semantic_type": "equipment_tag",
+      "incident_category": "general",
+      "applies_when": [
+        "cartellino attrezzo",
+        "attrezzo saldatura",
+        "dima saldatura",
+        "identificazione attrezzo"
+      ],
+      "not_for": [],
+      "related_keywords": ["attrezzo", "saldatura", "dima", "identificazione"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Cartellino per IDENTIFICAZIONE ATTREZZI SALDATURA. Dime e posizionatori."
+    },
+    
+    "MR-08_32": {
+      "doc_id": "MR-08_32",
+      "title": "Cartellino Stampo",
+      "semantic_type": "equipment_tag",
+      "incident_category": "general",
+      "applies_when": [
+        "cartellino stampo",
+        "identificazione stampo",
+        "anagrafica stampo",
+        "stato stampo"
+      ],
+      "not_for": [],
+      "related_keywords": ["stampo", "cartellino", "manutenzione stampo", "punzone", "matrice"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Cartellino per IDENTIFICAZIONE STAMPI. Stato, manutenzioni, problemi tipici."
+    },
+    
+    "MR-08_33": {
+      "doc_id": "MR-08_33",
+      "title": "Scheda Appensione",
+      "semantic_type": "process_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "appensione",
+        "scheda appensione",
+        "ganci verniciatura",
+        "appendere pezzi"
+      ],
+      "not_for": [],
+      "related_keywords": ["appensione", "ganci", "verniciatura", "telai"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per APPENSIONE pezzi. Posizionamento su ganci/telai per trattamenti."
+    },
+    
+    "MR-08_34": {
+      "doc_id": "MR-08_34",
+      "title": "Scheda Attrezzaggio Torni e Fantine",
+      "semantic_type": "setup_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "attrezzaggio tornio",
+        "setup tornio",
+        "fantina",
+        "tornitura CNC"
+      ],
+      "not_for": [],
+      "related_keywords": ["tornio", "fantina", "CNC", "utensili", "mandrino"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per ATTREZZAGGIO TORNI E FANTINE. Utensili, inserti, parametri."
+    },
+    
+    "MR-08_35": {
+      "doc_id": "MR-08_35",
+      "title": "Scheda Carteggiatura",
+      "semantic_type": "process_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "carteggiatura",
+        "sbavatura",
+        "finitura saldatura",
+        "pulizia cordone"
+      ],
+      "not_for": [],
+      "related_keywords": ["carteggiatura", "sbavatura", "mola", "finitura"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda per CARTEGGIATURA. Rimozione residui saldatura, finitura estetica."
+    },
+    
+    "MR-08_45": {
+      "doc_id": "MR-08_45",
+      "title": "Cartellino Identificativo",
+      "semantic_type": "identification_tag",
+      "incident_category": "general",
+      "applies_when": [
+        "cartellino identificativo",
+        "etichetta prodotto",
+        "identificazione lotto"
+      ],
+      "not_for": [],
+      "related_keywords": ["cartellino", "etichetta", "identificazione", "codice"],
+      "parent_ps": "PS-08_06",
+      "usage_context": "Cartellino per IDENTIFICAZIONE PRODOTTI in produzione/magazzino."
+    },
+    
+    "MR-08_46": {
+      "doc_id": "MR-08_46",
+      "title": "Cartellino Rintracciabilità Lotto",
+      "semantic_type": "traceability_tag",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "rintracciabilità",
+        "tracciabilità lotto",
+        "cartellino lotto",
+        "numero lotto"
+      ],
+      "not_for": [],
+      "related_keywords": ["rintracciabilità", "lotto", "tracciabilità", "ordine produzione"],
+      "parent_ps": "PS-08_06",
+      "usage_context": "Cartellino per RINTRACCIABILITÀ LOTTO. Collega prodotto a ordine e materie prime."
+    },
+    
+    "MR-08_47": {
+      "doc_id": "MR-08_47",
+      "title": "Scheda Logistica Interna",
+      "semantic_type": "logistics_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "logistica interna",
+        "layout stoccaggio",
+        "movimentazione",
+        "flusso materiali"
+      ],
+      "not_for": [],
+      "related_keywords": ["logistica", "stoccaggio", "layout", "flusso", "magazzino"],
+      "parent_ps": "PS-08_07",
+      "usage_context": "Scheda per LOGISTICA INTERNA. Layout stoccaggio, flusso materiali in produzione."
+    },
+    
+    "MR-08_48": {
+      "doc_id": "MR-08_48",
+      "title": "Scheda Imballaggio",
+      "semantic_type": "packaging_sheet",
+      "incident_category": "general",
+      "applies_when": [
+        "scheda imballaggio",
+        "imballo",
+        "packaging",
+        "confezionamento"
+      ],
+      "not_for": [],
+      "related_keywords": ["imballaggio", "imballo", "packaging", "separatori", "pallet"],
+      "parent_ps": "PS-08_07",
+      "usage_context": "Scheda per DEFINIZIONE IMBALLO. Tipo contenitore, quantità, separatori."
+    },
+    
+    "MR-08_49": {
+      "doc_id": "MR-08_49",
+      "title": "Colori Identificazione Materie Prime",
+      "semantic_type": "identification_standard",
+      "incident_category": "general",
+      "applies_when": [
+        "colori materiali",
+        "identificazione materia prima",
+        "codice colore",
+        "materiale ingresso"
+      ],
+      "not_for": [],
+      "related_keywords": ["colori", "materiali", "identificazione", "acciaio", "materia prima"],
+      "parent_ps": "PS-08_06",
+      "usage_context": "Tabella CODICI COLORE per identificazione materie prime in ingresso."
+    },
+    
+    "MR-08_60": {
+      "doc_id": "MR-08_60",
+      "title": "Piani di Campionamento",
+      "semantic_type": "quality_standard",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "piano campionamento",
+        "campionamento statistico",
+        "LQA",
+        "AQL",
+        "ispezione lotto"
+      ],
+      "not_for": [],
+      "related_keywords": ["campionamento", "LQA", "AQL", "statistico", "ispezione"],
+      "parent_ps": "PS-08_03",
+      "usage_context": "Tabella PIANI CAMPIONAMENTO statistico. Numerosità lotto vs campione per diversi LQA."
+    },
+    
+    "MR-08_61": {
+      "doc_id": "MR-08_61",
+      "title": "Caratteristiche Cicli di Controllo",
+      "semantic_type": "quality_standard",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "ciclo controllo",
+        "caratteristiche controllo",
+        "piano controllo",
+        "frequenza controllo"
+      ],
+      "not_for": [],
+      "related_keywords": ["controllo", "ciclo", "caratteristiche", "misura", "frequenza"],
+      "parent_ps": "PS-08_03",
+      "usage_context": "Standard per DEFINIZIONE CICLI CONTROLLO. Caratteristiche da controllare e frequenze."
+    },
+    
+    "MR-08_62": {
+      "doc_id": "MR-08_62",
+      "title": "Control Plan",
+      "semantic_type": "quality_planning",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "control plan",
+        "piano controllo",
+        "controlli produzione",
+        "APQP"
+      ],
+      "not_for": [],
+      "related_keywords": ["control plan", "controllo", "processo", "APQP", "caratteristiche"],
+      "parent_ps": "PS-09_01",
+      "usage_context": "Modulo CONTROL PLAN. Piano controlli processo/prodotto per ogni fase."
+    },
+    
+    "MR-08_64": {
+      "doc_id": "MR-08_64",
+      "title": "Certificato Qualità ISIR/PAP",
+      "semantic_type": "quality_certification",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "ISIR",
+        "PAP",
+        "prima campionatura",
+        "certificato qualità",
+        "PPAP"
+      ],
+      "not_for": [
+        "produzione serie"
+      ],
+      "related_keywords": ["ISIR", "PAP", "PPAP", "campionatura", "omologazione", "SOP"],
+      "parent_ps": "PS-08_03",
+      "usage_context": "Certificato ISIR/PAP per PRIMA CAMPIONATURA. Documentazione omologazione prodotto."
+    },
+    
+    "MR-08_65": {
+      "doc_id": "MR-08_65",
+      "title": "Scheda Standard Accettabile - Criteri Accettabilità Prodotto",
+      "semantic_type": "quality_standard",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "standard accettabile",
+        "criteri accettabilità",
+        "difetti accettabili",
+        "limiti estetici",
+        "campione limite"
+      ],
+      "not_for": [],
+      "related_keywords": ["accettabilità", "standard", "difetti", "estetica", "campione"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Scheda CRITERI ACCETTABILITÀ prodotto. Definisce difetti accettabili e campioni limite."
+    },
+    
+    "MR-08_66": {
+      "doc_id": "MR-08_66",
+      "title": "Referto Analisi Giunti ad Arco",
+      "semantic_type": "welding_report",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "referto saldatura",
+        "analisi giunti",
+        "saldatura arco",
+        "controllo saldature",
+        "macrografia"
+      ],
+      "not_for": [
+        "saldatura a resistenza"
+      ],
+      "related_keywords": ["saldatura", "arco", "referto", "laboratorio", "macrografia", "cordone"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Referto ANALISI GIUNTI SALDATI ad arco. Controlli laboratorio, macrografie, esito prove."
+    },
+    
+    "MR-08_67": {
+      "doc_id": "MR-08_67",
+      "title": "Limiti Accettabilità Imperfezioni Saldatura",
+      "semantic_type": "quality_standard",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "limiti saldatura",
+        "imperfezioni saldatura",
+        "difetti saldatura accettabili",
+        "criteri saldatura"
+      ],
+      "not_for": [],
+      "related_keywords": ["saldatura", "imperfezioni", "limiti", "difetti", "accettabilità"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Tabella LIMITI ACCETTABILITÀ per imperfezioni saldatura. Criteri per ok/scarto."
+    },
+    
+    "MR-08_68": {
+      "doc_id": "MR-08_68",
+      "title": "Referto Analisi Trattamenti Termici",
+      "semantic_type": "test_report",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "referto trattamento termico",
+        "analisi TT",
+        "durezza",
+        "tempra",
+        "profilo durezza"
+      ],
+      "not_for": [
+        "trattamenti superficiali"
+      ],
+      "related_keywords": ["trattamento termico", "durezza", "HV", "tempra", "rinvenimento", "referto"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Referto ANALISI TRATTAMENTI TERMICI. Prove durezza, profili, esito laboratorio."
+    },
+    
+    "MR-08_69": {
+      "doc_id": "MR-08_69",
+      "title": "Referto Prove Trattamenti Superficiali - Corrosion Test",
+      "semantic_type": "test_report",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "prova corrosione",
+        "nebbia salina",
+        "salt spray",
+        "trattamenti superficiali",
+        "test corrosione"
+      ],
+      "not_for": [
+        "trattamenti termici"
+      ],
+      "related_keywords": ["corrosione", "nebbia salina", "salt spray", "rivestimento", "ore resistenza"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Referto PROVE CORROSIONE (salt spray). Test resistenza rivestimenti superficiali."
+    },
+    
+    "MR-08_70": {
+      "doc_id": "MR-08_70",
+      "title": "Check List Controllo Produzione",
+      "semantic_type": "quality_checklist",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "check list controllo",
+        "lista controlli",
+        "verifica produzione"
+      ],
+      "not_for": [],
+      "related_keywords": ["check list", "controllo", "verifica", "produzione"],
+      "parent_ps": "PS-08_05",
+      "usage_context": "Check list generica per CONTROLLI IN PRODUZIONE."
+    },
+    
+    "MR-08_75": {
+      "doc_id": "MR-08_75",
+      "title": "Gruppi NC e Reclami - Categorie Difetti",
+      "semantic_type": "quality_analysis",
+      "incident_category": "non_conformity",
+      "applies_when": [
+        "gruppi NC",
+        "categorie difetti",
+        "cause NC",
+        "pareto difetti",
+        "raggruppamento NC"
+      ],
+      "not_for": [
+        "singola NC"
+      ],
+      "related_keywords": ["NC", "gruppi", "categorie", "difetti", "pareto", "cause principali"],
+      "parent_ps": "PS-08_08",
+      "usage_context": "Tabella CATEGORIE DIFETTI per raggruppamento NC. Usata per analisi pareto."
+    },
+    
+    "MR-08_76": {
+      "doc_id": "MR-08_76",
+      "title": "Rapporto Non Conformità",
+      "semantic_type": "quality_issue",
+      "incident_category": "non_conformity",
+      "applies_when": [
+        "non conformità",
+        "NC",
+        "difetto",
+        "prodotto non conforme",
+        "reclamo cliente",
+        "scarto",
+        "problema qualità"
+      ],
+      "not_for": [
+        "infortunio",
+        "near miss",
+        "ambiente"
+      ],
+      "related_keywords": ["8D", "azione correttiva", "AC", "root cause"],
+      "parent_ps": "PS-08_08",
+      "usage_context": "Registrazione NON CONFORMITÀ di prodotto/processo."
+    },
+    
+    "MR-10_01": {
+      "doc_id": "MR-10_01",
+      "title": "Major Kaizen",
+      "semantic_type": "improvement",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "kaizen",
+        "miglioramento",
+        "major kaizen",
+        "progetto miglioramento",
+        "ottimizzazione processo",
+        "riduzione sprechi"
+      ],
+      "not_for": [
+        "infortunio",
+        "non conformità urgente"
+      ],
+      "related_keywords": ["WCM", "miglioramento continuo", "PDCA", "5W1H"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Progetti di miglioramento MAJOR (impatto significativo, team dedicato)."
+    },
+    
+    "MR-10_02": {
+      "doc_id": "MR-10_02",
+      "title": "Standard Kaizen",
+      "semantic_type": "improvement",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "standard kaizen",
+        "miglioramento standard",
+        "kaizen reparto"
+      ],
+      "not_for": [],
+      "related_keywords": ["WCM", "miglioramento"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Progetti kaizen di medio impatto (livello reparto)."
+    },
+    
+    "MR-10_03": {
+      "doc_id": "MR-10_03",
+      "title": "Quick Kaizen",
+      "semantic_type": "improvement",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "quick kaizen",
+        "kaizen veloce",
+        "miglioramento rapido",
+        "suggerimento"
+      ],
+      "not_for": [],
+      "related_keywords": ["WCM", "quick win"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Miglioramenti rapidi (singola persona, breve termine)."
+    },
+    
+    "MR-09_01": {
+      "doc_id": "MR-09_01",
+      "title": "Modulo Obiettivi di Processo",
+      "semantic_type": "performance_management",
+      "incident_category": "general",
+      "applies_when": [
+        "obiettivi processo",
+        "KPI",
+        "target",
+        "indicatori performance",
+        "obiettivi annuali",
+        "scheda obiettivi"
+      ],
+      "not_for": [],
+      "related_keywords": ["obiettivi", "KPI", "performance", "target", "processo", "responsabile"],
+      "parent_ps": "PS-09_01",
+      "usage_context": "Modulo per definizione OBIETTIVI DI PROCESSO. KPI, target annuali, responsabili."
+    },
+    
+    "MR-09_02": {
+      "doc_id": "MR-09_02",
+      "title": "Safety CheckList - Verifica Step 0",
+      "semantic_type": "safety_audit",
+      "incident_category": "general",
+      "applies_when": [
+        "safety check list",
+        "verifica sicurezza",
+        "audit sicurezza",
+        "check list safety",
+        "step 0"
+      ],
+      "not_for": [
+        "audit qualità"
+      ],
+      "related_keywords": ["sicurezza", "check list", "verifica", "Step 0", "stabilimento"],
+      "parent_ps": "PS-09_02",
+      "usage_context": "Check list VERIFICA SICUREZZA (Step 0). Audit base stabilimento."
+    },
+    
+    "MR-09_03": {
+      "doc_id": "MR-09_03",
+      "title": "Check List AUDIT Processo",
+      "semantic_type": "process_audit",
+      "incident_category": "general",
+      "applies_when": [
+        "audit processo",
+        "check list audit",
+        "verifica processo",
+        "audit interno"
+      ],
+      "not_for": [
+        "audit fornitore"
+      ],
+      "related_keywords": ["audit", "processo", "check list", "verifica", "interno"],
+      "parent_ps": "PS-09_02",
+      "usage_context": "Check list per AUDIT DI PROCESSO interni. Verifica conformità processi."
+    },
+    
+    "MR-09_04": {
+      "doc_id": "MR-09_04",
+      "title": "S-Matrix - Matrice Sicurezza Infortuni",
+      "semantic_type": "safety_analysis",
+      "incident_category": "real_injury",
+      "applies_when": [
+        "S-Matrix",
+        "matrice sicurezza",
+        "analisi infortuni",
+        "statistiche infortuni",
+        "tipologie infortuni",
+        "sedi lesione"
+      ],
+      "not_for": [
+        "near miss"
+      ],
+      "related_keywords": ["infortuni", "matrice", "statistica", "sede lesione", "causa radice", "reparto"],
+      "parent_ps": "PS-09_02",
+      "usage_context": "MATRICE S-MATRIX per analisi statistica INFORTUNI. Sede lesione, natura, causa per reparto."
+    },
+    
+    "MR-09_06": {
+      "doc_id": "MR-09_06",
+      "title": "SMAT Audit - Safety Management Audit Training",
+      "semantic_type": "safety_audit",
+      "incident_category": "general",
+      "applies_when": [
+        "SMAT audit",
+        "safety management audit",
+        "audit comportamentale",
+        "osservazione comportamento",
+        "BBS"
+      ],
+      "not_for": [],
+      "related_keywords": ["SMAT", "audit", "comportamento", "sicurezza", "BBS", "osservazione"],
+      "parent_ps": "PS-09_02",
+      "usage_context": "Modulo SMAT per AUDIT COMPORTAMENTALE sicurezza. Osservazione comportamenti sicuri/insicuri."
+    },
+    
+    "MR-07_02": {
+      "doc_id": "MR-07_02",
+      "title": "SOP - Standard Operating Procedure",
+      "semantic_type": "training_document",
+      "incident_category": "general",
+      "applies_when": [
+        "procedura operativa",
+        "SOP",
+        "istruzione lavoro",
+        "come fare",
+        "procedura standard",
+        "istruzione operativa",
+        "standardizzare processo",
+        "documentare attività"
+      ],
+      "not_for": [
+        "formazione breve",
+        "lezione singola"
+      ],
+      "related_keywords": ["procedura", "standardizzazione", "istruzioni", "step operativi"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per creare PROCEDURE OPERATIVE STANDARD. Istruzioni dettagliate step-by-step per attività ripetitive."
+    },
+    
+    "MR-07_03": {
+      "doc_id": "MR-07_03",
+      "title": "OPL - One Point Lesson",
+      "semantic_type": "training_document",
+      "incident_category": "general",
+      "applies_when": [
+        "OPL",
+        "one point lesson",
+        "lezione su un punto",
+        "formazione rapida",
+        "formazione visiva",
+        "training breve",
+        "istruzione singola"
+      ],
+      "not_for": [
+        "procedura completa",
+        "SOP dettagliata"
+      ],
+      "related_keywords": ["formazione", "visuale", "rapida", "addestramento", "training"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per LEZIONI SU UN PUNTO. Formazione visuale rapida su singolo argomento/operazione."
+    },
+    
+    "MR-07_04": {
+      "doc_id": "MR-07_04",
+      "title": "TWTTP + HERCA",
+      "semantic_type": "analysis_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "TWTTP",
+        "HERCA",
+        "analisi errore umano",
+        "formazione causa errore",
+        "errore operatore",
+        "root cause umano",
+        "human error"
+      ],
+      "not_for": [
+        "errore macchina",
+        "guasto tecnico"
+      ],
+      "related_keywords": ["errore umano", "formazione", "analisi causa", "human error root cause"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per analisi TWTTP (The Way To Teach People) e HERCA (Human Error Root Cause Analysis). Analisi errori umani."
+    },
+    
+    "MR-07_05": {
+      "doc_id": "MR-07_05",
+      "title": "Cartellino Anomalia",
+      "semantic_type": "maintenance_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "anomalia",
+        "segnalazione anomalia",
+        "problema macchina",
+        "disfunzione",
+        "malfunzionamento",
+        "richiesta manutenzione",
+        "segnalare problema"
+      ],
+      "not_for": [
+        "infortunio",
+        "near miss sicurezza"
+      ],
+      "related_keywords": ["manutenzione", "segnalazione", "TPM", "anomalia"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per segnalare ANOMALIE su macchine, attrezzature, impianti. Richiesta intervento manutenzione."
+    },
+    
+    "MR-07_06": {
+      "doc_id": "MR-07_06",
+      "title": "Cartellini Quarantena",
+      "semantic_type": "quality_tool",
+      "incident_category": "quality_control",
+      "applies_when": [
+        "quarantena",
+        "materiale sospeso",
+        "blocco materiale",
+        "materiale bloccato",
+        "in attesa decisione",
+        "prodotto sospeso"
+      ],
+      "not_for": [
+        "materiale conforme",
+        "prodotto ok"
+      ],
+      "related_keywords": ["blocco", "sospensione", "identificazione", "segregazione"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo/etichetta per identificare materiale in QUARANTENA (sospeso in attesa di decisione qualità)."
+    },
+    
+    "MR-07_07": {
+      "doc_id": "MR-07_07",
+      "title": "Programma Annuale Manutenzione",
+      "semantic_type": "maintenance_planning",
+      "incident_category": "general",
+      "applies_when": [
+        "piano manutenzione",
+        "manutenzione programmata",
+        "manutenzione preventiva",
+        "calendario manutenzioni",
+        "programma manutenzione annuale",
+        "TPM plan"
+      ],
+      "not_for": [
+        "guasto urgente",
+        "manutenzione a guasto"
+      ],
+      "related_keywords": ["TPM", "preventiva", "pianificazione", "manutenzione programmata"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per pianificare MANUTENZIONE PROGRAMMATA annuale su impianti/attrezzature."
+    },
+    
+    "MR-07_08": {
+      "doc_id": "MR-07_08",
+      "title": "Standard Maintenance Procedure - SMP",
+      "semantic_type": "maintenance_procedure",
+      "incident_category": "general",
+      "applies_when": [
+        "procedura manutenzione",
+        "SMP",
+        "standard maintenance",
+        "ciclo manutenzione",
+        "istruzione manutenzione"
+      ],
+      "not_for": [
+        "manutenzione autonoma"
+      ],
+      "related_keywords": ["TPM", "manutenzione", "ciclo standard", "DPI", "safety"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per definire PROCEDURE STANDARD DI MANUTENZIONE. Include DPI, attrezzature, step operativi."
+    },
+    
+    "MR-07_09": {
+      "doc_id": "MR-07_09",
+      "title": "Check List 5S",
+      "semantic_type": "audit_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "5S",
+        "audit 5S",
+        "verifica ordine",
+        "pulizia posto lavoro",
+        "seiri",
+        "seiton",
+        "seiso",
+        "ordine reparto"
+      ],
+      "not_for": [
+        "audit sicurezza",
+        "audit qualità"
+      ],
+      "related_keywords": ["5S", "ordine", "pulizia", "standardizzazione", "workplace organization"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per audit 5S (Seiri, Seiton, Seiso, Seiketsu, Shitsuke). Verifica ordine e pulizia area lavoro."
+    },
+    
+    "MR-07_10": {
+      "doc_id": "MR-07_10",
+      "title": "Bolla Intervento Guasto e Analisi EWO",
+      "semantic_type": "maintenance_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "guasto",
+        "fermo macchina",
+        "breakdown",
+        "intervento urgente",
+        "riparazione guasto",
+        "analisi guasto",
+        "EWO manutenzione"
+      ],
+      "not_for": [
+        "manutenzione programmata",
+        "anomalia lieve"
+      ],
+      "related_keywords": ["EWO", "guasto", "causa radice", "MTBF", "MTTR", "breakdown"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per documentare INTERVENTI A GUASTO e analisi causa radice guasti (Maintenance EWO)."
+    },
+    
+    "MR-07-13": {
+      "doc_id": "MR-07-13",
+      "title": "Idee Suggerimento",
+      "semantic_type": "improvement_suggestion",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "idea miglioramento",
+        "suggerimento",
+        "proposta",
+        "innovazione",
+        "ho un'idea",
+        "vorrei proporre"
+      ],
+      "not_for": [
+        "kaizen strutturato",
+        "progetto formale"
+      ],
+      "related_keywords": ["coinvolgimento", "bottom-up", "suggerimenti", "idee"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per proporre IDEE DI MIGLIORAMENTO. Suggerimenti dal personale per innovazioni e ottimizzazioni."
+    },
+    
+    "MR-07_14": {
+      "doc_id": "MR-07_14",
+      "title": "Autonomous Standard Maintenance Procedure - ASMP",
+      "semantic_type": "maintenance_procedure",
+      "incident_category": "general",
+      "applies_when": [
+        "manutenzione autonoma",
+        "ASMP",
+        "autonomous maintenance",
+        "manutenzione operatore",
+        "TPM autonoma"
+      ],
+      "not_for": [
+        "manutenzione specialistica"
+      ],
+      "related_keywords": ["TPM", "manutenzione autonoma", "operatore", "ASMP", "self-maintenance"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Modulo per MANUTENZIONE AUTONOMA eseguita dagli operatori. Include DPI, attrezzature, attività periodiche."
+    },
+    
+    "TOOLS-4M_Ishikawa": {
+      "doc_id": "4MIshikawa_Rev01",
+      "title": "Diagramma Ishikawa 4M - Causa-Effetto",
+      "semantic_type": "analysis_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "ishikawa",
+        "4M",
+        "diagramma causa effetto",
+        "fishbone",
+        "spina di pesce",
+        "analisi cause",
+        "root cause"
+      ],
+      "not_for": [],
+      "related_keywords": ["man", "machine", "method", "material", "causa radice", "problem solving"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Strumento ISHIKAWA 4M per analisi causa-effetto. Categorizza cause in Man, Machine, Method, Material."
+    },
+    
+    "TOOLS-5_Perche": {
+      "doc_id": "5",
+      "title": "5 Perché - Analisi Causa Radice",
+      "semantic_type": "analysis_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "5 perché",
+        "5 why",
+        "perché perché",
+        "causa radice",
+        "root cause",
+        "analisi profonda"
+      ],
+      "not_for": [],
+      "related_keywords": ["causa radice", "problem solving", "analisi", "Kaizen"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Strumento 5 PERCHÉ per scavare fino alla causa radice. Chiedere 'perché' 5 volte."
+    },
+    
+    "TOOLS-5QFZD": {
+      "doc_id": "5QFZD-4MD",
+      "title": "5QFZD-4MD - 5 Domande per Zero Difetti",
+      "semantic_type": "quality_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "5QFZD",
+        "zero difetti",
+        "qualità zero difetti",
+        "4MD",
+        "prevenzione difetti"
+      ],
+      "not_for": [],
+      "related_keywords": ["qualità", "zero difetti", "prevenzione", "Kaizen", "poka yoke"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Strumento 5QFZD per raggiungere ZERO DIFETTI. 5 domande chiave + 4M analisi."
+    },
+    
+    "TOOLS-5W1H": {
+      "doc_id": "5W1H",
+      "title": "5W1H - Definizione Problema",
+      "semantic_type": "analysis_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "5W1H",
+        "what when where who why how",
+        "cosa quando dove chi perché come",
+        "definizione problema",
+        "descrizione problema"
+      ],
+      "not_for": [],
+      "related_keywords": ["problem solving", "definizione", "analisi", "Kaizen", "contesto"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Strumento 5W1H per DEFINIRE il problema: What, When, Where, Who, Why, How."
+    },
+    
+    "TOOLS-QM_Matrix": {
+      "doc_id": "QMMatrix_Rev01",
+      "title": "QM Matrix - Quality Maintenance Matrix",
+      "semantic_type": "quality_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "QM matrix",
+        "quality maintenance",
+        "matrice qualità",
+        "correlazione difetti macchina"
+      ],
+      "not_for": [],
+      "related_keywords": ["qualità", "manutenzione", "correlazione", "difetti", "macchina"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Matrice QM per correlare DIFETTI a componenti MACCHINA. Supporta manutenzione preventiva."
+    },
+    
+    "TOOLS-X_Matrix": {
+      "doc_id": "XMatrix_Rev01",
+      "title": "X-Matrix - Correlazione Attrezzature/Componenti",
+      "semantic_type": "analysis_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "X matrix",
+        "correlazione componenti",
+        "attrezzature componenti",
+        "matrice X"
+      ],
+      "not_for": [],
+      "related_keywords": ["correlazione", "attrezzature", "componenti", "analisi"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Matrice X per correlare ATTREZZATURE e COMPONENTI. Identifica relazioni critiche."
+    },
+    
+    "TOOLS-Registro_Cartellini": {
+      "doc_id": "TT_REGISTRO",
+      "title": "Registro Cartellini - Raccolta Segnalazioni",
+      "semantic_type": "tracking_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "registro cartellini",
+        "raccolta cartellini",
+        "tracking segnalazioni",
+        "fonti sporco"
+      ],
+      "not_for": [],
+      "related_keywords": ["cartellini", "segnalazioni", "tracking", "5S", "Kaizen"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Registro per RACCOLTA CARTELLINI di segnalazione. Include fonti sporco, anomalie."
+    },
+    
+    "TOOLS-WO_MUDA": {
+      "doc_id": "-WO_AnalisiMUDA_R05_",
+      "title": "WO Analisi MUDA - Eliminazione Sprechi",
+      "semantic_type": "lean_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "MUDA",
+        "sprechi",
+        "waste",
+        "7 sprechi",
+        "eliminazione sprechi",
+        "attesa",
+        "trasporto inutile",
+        "sovrapproduzione"
+      ],
+      "not_for": [],
+      "related_keywords": ["lean", "WCM", "sprechi", "waste elimination", "WO"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Scheda osservazione MUDA per identificare 7 SPRECHI: attesa, trasporto, movimento, sovrapproduzione, scorte, difetti, sovraprocesso."
+    },
+    
+    "TOOLS-WO_MURA": {
+      "doc_id": "-WO_AnalisiMURA_R05_",
+      "title": "WO Analisi MURA - Variabilità Processo",
+      "semantic_type": "lean_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "MURA",
+        "variabilità",
+        "irregolarità",
+        "fluttuazioni",
+        "bilanciamento"
+      ],
+      "not_for": [],
+      "related_keywords": ["lean", "WCM", "variabilità", "bilanciamento", "WO"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Scheda analisi MURA per identificare VARIABILITÀ nel processo. Tempi ciclo, carichi irregolari."
+    },
+    
+    "TOOLS-WO_MURI": {
+      "doc_id": "-WO_MatricePosture_M",
+      "title": "WO Matrice Posture MURI - Ergonomia",
+      "semantic_type": "ergonomic_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "MURI",
+        "ergonomia",
+        "posture",
+        "sovraccarico",
+        "sforzo fisico",
+        "analisi ergonomica"
+      ],
+      "not_for": [],
+      "related_keywords": ["ergonomia", "posture", "sicurezza", "sforzo", "WO"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Matrice per analisi ERGONOMICA (MURI). Valuta posture, sforzi, sovraccarichi lavorativi."
+    },
+    
+    "TOOLS-WO_CheckList": {
+      "doc_id": "-WO_CheckList_R05_IT",
+      "title": "WO Check List - Verifica Step 4",
+      "semantic_type": "audit_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "check list WO",
+        "verifica workplace",
+        "audit WO",
+        "step 4"
+      ],
+      "not_for": [],
+      "related_keywords": ["WO", "audit", "verifica", "workplace organization"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Check list per VERIFICA WO Step 4. Audit stato workplace organization."
+    },
+    
+    "TOOLS-WO_SpaghettiChart": {
+      "doc_id": "-WO_SpaghettiChart_R",
+      "title": "WO Spaghetti Chart - Analisi Movimenti",
+      "semantic_type": "lean_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "spaghetti chart",
+        "analisi movimenti",
+        "percorsi operatore",
+        "layout",
+        "flusso movimenti"
+      ],
+      "not_for": [],
+      "related_keywords": ["movimenti", "layout", "percorsi", "lean", "WO"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Spaghetti Chart per mappare MOVIMENTI operatore. Identifica percorsi inefficienti."
+    },
+    
+    "TOOLS-WO_NVAA": {
+      "doc_id": "WO_Analisi NVAA man",
+      "title": "WO Analisi NVAA - Attività Non a Valore",
+      "semantic_type": "lean_tool",
+      "incident_category": "kaizen",
+      "applies_when": [
+        "NVAA",
+        "non value added",
+        "attività non a valore",
+        "analisi attività",
+        "tempo ciclo"
+      ],
+      "not_for": [],
+      "related_keywords": ["NVAA", "valore aggiunto", "tempo ciclo", "lean", "WO"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Analisi NVAA per classificare attività: Valore Aggiunto vs Non Valore. Include MUDA/MURA/MURI."
+    },
+    
+    "TOOLS-WO_Gantt": {
+      "doc_id": "WO_GanttWO_R01",
+      "title": "WO Gantt - Pianificazione WO",
+      "semantic_type": "planning_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "gantt WO",
+        "pianificazione WO",
+        "scheduling workplace",
+        "piano attività WO"
+      ],
+      "not_for": [],
+      "related_keywords": ["gantt", "pianificazione", "scheduling", "WO"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Diagramma GANTT per pianificazione attività WO. Scheduling per settimane."
+    },
+    
+    "TOOLS-WO_JES": {
+      "doc_id": "WO_JES",
+      "title": "WO JES - Job Element Sheet",
+      "semantic_type": "training_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "JES",
+        "job element sheet",
+        "istruzioni elementari",
+        "scheda lavoro",
+        "work instruction"
+      ],
+      "not_for": [],
+      "related_keywords": ["istruzioni", "lavoro", "training", "standardizzazione", "WO"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Job Element Sheet per ISTRUZIONI ELEMENTARI di lavoro. Standardizzazione operazioni."
+    },
+    
+    "TOOLS-LCS_AnalisiFlusso": {
+      "doc_id": "LCS_Analisi Flusso_O",
+      "title": "LCS Analisi Flusso - Logistica",
+      "semantic_type": "logistics_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "analisi flusso",
+        "flusso materiali",
+        "logistica",
+        "LCS",
+        "material flow"
+      ],
+      "not_for": [],
+      "related_keywords": ["logistica", "flusso", "materiali", "LCS", "supply chain"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Analisi FLUSSO MATERIALI (AS-IS). Tempi, frequenze, distanze, aree."
+    },
+    
+    "TOOLS-LCS_Contenitori": {
+      "doc_id": "LCS_CalcoloFabbisogn",
+      "title": "LCS Calcolo Fabbisogni Contenitori",
+      "semantic_type": "logistics_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "fabbisogni contenitori",
+        "calcolo contenitori",
+        "packaging",
+        "logistica contenitori"
+      ],
+      "not_for": [],
+      "related_keywords": ["contenitori", "packaging", "logistica", "LCS", "fabbisogni"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Calcolo FABBISOGNI CONTENITORI specifici. Distanze, giorni giro."
+    },
+    
+    "TOOLS-LCS_MatriceFlussi": {
+      "doc_id": "LCS_MatriceClassiFlu",
+      "title": "LCS Matrice Classi Flussi Materiali",
+      "semantic_type": "logistics_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "matrice flussi",
+        "classi materiali",
+        "ABC logistica",
+        "tipologia flusso"
+      ],
+      "not_for": [],
+      "related_keywords": ["ABC", "flussi", "classi", "materiali", "LCS"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Matrice CLASSE-FLUSSO per classificazione materiali (ABC) e tipo flusso raccomandato."
+    },
+    
+    "TOOLS-LCS_PFEP": {
+      "doc_id": "LCS_PlanForEveryPart",
+      "title": "LCS PFEP - Plan For Every Part",
+      "semantic_type": "logistics_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "PFEP",
+        "plan for every part",
+        "classificazione materiali",
+        "scheda materiale"
+      ],
+      "not_for": [],
+      "related_keywords": ["PFEP", "materiali", "classificazione", "logistica", "LCS"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Form PFEP per CLASSIFICAZIONE MATERIALI standard. Piano per ogni codice."
+    },
+    
+    "TOOLS-LCS_LineFeeding": {
+      "doc_id": "LCS_StandardLineFeed",
+      "title": "LCS Standard Line Feeding",
+      "semantic_type": "logistics_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "line feeding",
+        "alimentazione linea",
+        "rifornimento bordo linea",
+        "logistica interna"
+      ],
+      "not_for": [],
+      "related_keywords": ["line feeding", "bordo linea", "rifornimento", "logistica", "LCS"],
+      "parent_ps": "PS-10_01",
+      "usage_context": "Scheda STANDARD LINE FEEDING per rifornimento bordo linea."
+    },
+    
+    "TOOLS-PM_CheckList": {
+      "doc_id": "PM_CheckListPM_R05_I",
+      "title": "PM Check List - Professional Maintenance Step 0",
+      "semantic_type": "maintenance_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "PM check list",
+        "professional maintenance",
+        "manutenzione professionale",
+        "audit manutenzione"
+      ],
+      "not_for": [
+        "manutenzione autonoma"
+      ],
+      "related_keywords": ["PM", "manutenzione", "audit", "Step 0", "professionale"],
+      "parent_ps": "PS-07_01",
+      "usage_context": "Check list MANUTENZIONE PROFESSIONALE Step 0. Verifica stabilimento."
+    },
+    
+    "TOOLS-ProcessFlowChart": {
+      "doc_id": "Process flow-chart P",
+      "title": "Process Flow Chart - Flusso Processo PS-08_01",
+      "semantic_type": "process_tool",
+      "incident_category": "general",
+      "applies_when": [
+        "flow chart",
+        "flusso processo",
+        "diagramma flusso",
+        "process flow"
+      ],
+      "not_for": [],
+      "related_keywords": ["flusso", "processo", "diagramma", "FMEA", "pianificazione"],
+      "parent_ps": "PS-08_01",
+      "usage_context": "FLOW CHART del processo PS-08_01 (Pianificazione). Diagramma flusso attività."
+    }
+  },
+  
+  "intent_patterns": {
+    "real_injury": [
+      "ho avuto un infortunio",
+      "mi sono fatto male",
+      "infortunio sul lavoro",
+      "lesione",
+      "ferito",
+      "incidente con lesione",
+      "sono stato ferito",
+      "infortunio grave",
+      "infortunio lieve",
+      "medicazione"
+    ],
+    "near_miss": [
+      "near miss",
+      "mancato infortunio", 
+      "quasi incidente",
+      "per poco",
+      "poteva andare male",
+      "senza lesioni",
+      "condizione pericolosa",
+      "unsafe condition",
+      "azione pericolosa",
+      "unsafe act"
+    ],
+    "non_conformity": [
+      "non conformità",
+      "NC",
+      "prodotto difettoso",
+      "scarto",
+      "reclamo",
+      "problema qualità"
+    ],
+    "kaizen": [
+      "kaizen",
+      "miglioramento",
+      "ottimizzazione",
+      "riduzione sprechi",
+      "proposta miglioramento"
+    ],
+    "environmental": [
+      "ambiente",
+      "sversamento",
+      "emissioni",
+      "rifiuti",
+      "inquinamento"
+    ]
+  }
+}
+

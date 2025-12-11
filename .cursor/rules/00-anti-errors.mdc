@@ -1,0 +1,137 @@
+---
+description: Regole anti-errori comuni - LEGGERE SEMPRE PRIMA DI INIZIARE
+globs: ["**/*"]
+alwaysApply: true
+priority: 1
+---
+
+# 🚨 REGOLE ANTI-ERRORI - Fusione Progetti
+
+> Queste regole prevengono gli errori più comuni nella fusione di repository.
+> Sono applicate SEMPRE automaticamente.
+
+## ❌ ERRORE 1: Non fare backup
+### Prevenzione
+- **PRIMA** di ogni merge, verifica backup esistente
+- Chiedi conferma: "Hai fatto backup? Dove si trova?"
+- Se non c'è backup, **FERMATI** e suggerisci:
+  ```powershell
+  # Backup rapido
+  Copy-Item -Recurse "D:\.iso" "D:\.iso-backup-$(Get-Date -Format 'yyyyMMdd-HHmm')"
+  ```
+
+## ❌ ERRORE 2: Sessioni troppo lunghe
+### Prevenzione
+- Sessioni max **45 minuti** di lavoro continuo
+- Ogni 30 minuti: "Vuoi salvare il contesto in SESSION_CONTEXT.md?"
+- Prima di task complessi: "Questo task richiede ~X minuti. Procedo?"
+- **SEMPRE** aggiorna SESSION_CONTEXT.md a fine sessione
+
+### File di Contesto
+- `SESSION_CONTEXT.md` - Stato corrente, decisioni, prossimi step
+- `FUSION_LOG.md` - Log dettagliato di ogni operazione
+
+## ❌ ERRORE 3: Prompt vaghi
+### Prevenzione
+Se l'utente dà un prompt vago, chiedi chiarimenti:
+- "Quali file specifici vuoi modificare?"
+- "Quali vincoli devo rispettare? (VRAM, performance, compatibilità)"
+- "Qual è il risultato atteso?"
+- "Ci sono test che devo far passare?"
+
+### Template Prompt Efficace
+```
+TASK: [cosa fare]
+FILE: [quali file]
+VINCOLI: [VRAM <6GB, no breaking changes, etc.]
+OUTPUT: [cosa aspettarsi]
+TEST: [come verificare]
+```
+
+## ❌ ERRORE 4: Saltare i test
+### Prevenzione
+- **DOPO ogni merge**: esegui test
+- **DOPO ogni modifica significativa**: verifica funzionamento
+- Suggerisci sempre:
+  ```powershell
+  # Test base
+  pytest tests/ -v
+  
+  # Verifica VRAM
+  nvidia-smi
+  
+  # Verifica git
+  git status
+  git log --graph --oneline -5
+  ```
+
+## ❌ ERRORE 5: Non documentare
+### Prevenzione
+- **OGNI decisione** → FUSION_LOG.md
+- **OGNI merge** → Commit message descrittivo
+- **FINE sessione** → Aggiorna SESSION_CONTEXT.md
+- Template decisione:
+  ```markdown
+  ### Decisione: [TITOLO]
+  - **Data**: YYYY-MM-DD
+  - **Contesto**: Perché questa decisione
+  - **Scelta**: Cosa abbiamo scelto
+  - **Alternative**: Cosa abbiamo scartato
+  - **Conseguenze**: Impatti futuri
+  ```
+
+## ❌ ERRORE 6: Merge big-bang
+### Prevenzione
+- **MAI** merge di tutto insieme
+- Segui ordine incrementale:
+  1. ✅ Setup struttura base
+  2. ⏳ Merge repo 1 (rag-ingest)
+  3. ⏳ Merge repo 2 (langgraph-memory)
+  4. ⏳ Adatta modulo 1 (ingestion)
+  5. ⏳ Adatta modulo 2 (memory)
+  6. ⏳ Integra pipeline
+  7. ⏳ Test completi
+  8. ⏳ Ottimizzazioni
+
+- **OGNI step**: test + commit + documentazione
+- Se un merge fallisce: **FERMATI**, analizza, risolvi prima di procedere
+
+---
+
+## ✅ Checklist Pre-Operazione
+
+Prima di QUALSIASI operazione significativa:
+
+```markdown
+- [ ] Backup fatto? Dove: ___________
+- [ ] SESSION_CONTEXT.md letto?
+- [ ] FUSION_LOG.md aggiornato con piano?
+- [ ] Vincoli chiari? (VRAM, tempo, dipendenze)
+- [ ] Test pronti per verifica?
+- [ ] Commit precedente pulito? (git status)
+```
+
+---
+
+## 🔄 Workflow Sessione Sicura
+
+### Inizio Sessione
+1. Leggi SESSION_CONTEXT.md
+2. Verifica stato git: `git status`
+3. Identifica task specifico
+4. Stima tempo necessario
+
+### Durante Sessione
+- Commit frequenti (ogni 15-20 min di lavoro)
+- Messaggi commit descrittivi
+- Test dopo ogni modifica significativa
+
+### Fine Sessione
+1. `git status` - verifica stato pulito
+2. Aggiorna SESSION_CONTEXT.md
+3. Aggiorna FUSION_LOG.md se decisioni prese
+4. Commit finale con summary
+
+---
+
+*Queste regole sono sempre attive. Ignorarle porta a problemi.*
