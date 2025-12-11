@@ -1,5 +1,5 @@
 """
-SQLite Data Layer per Chainlit - OVV ISO Chat v3.9.1
+SQLite Data Layer per Chainlit - OVV ISO Chat v3.9.2
 
 Implementa BaseDataLayer per persistenza dati:
 - Thread/Conversazioni

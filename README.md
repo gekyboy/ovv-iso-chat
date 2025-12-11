@@ -1,10 +1,10 @@
-# 🏭 OVV ISO Chat v3.9.1
+# 🏭 OVV ISO Chat v3.9.2
 
 > Il tuo assistente **discorsivo e proattivo** per i documenti ISO aziendali. Chiedi quello che ti serve, lui trova la risposta nei documenti, te la spiega in dettaglio e ti suggerisce **moduli e strumenti correlati**.
 
-> 🆕 **v3.9.1**: **PDF Consultabili & Citazioni Leggibili** - I PDF si aprono in sidebar, le citazioni mostrano titoli italiani tra virgolette, fonti separate da glossario!
+> 🆕 **v3.9.2**: **Feedback Buttons 👍👎 + SQLite Data Layer** - Ora puoi valutare ogni risposta con pollice su/giù! I feedback vengono salvati in database per analytics e miglioramento continuo.
 
-> 📂 **Nuovo in v3.9.1**: Comando `/documenti` per gestire la cartella documenti con **pulsanti cliccabili** (F10)!
+> 📂 **Nuovo in v3.9.1**: Comando `/documenti` per gestire la cartella documenti con **pulsanti cliccabili**!
 
 ## Indice
 
@@ -1200,6 +1200,8 @@ ovv-iso-chat/
 │   │   ├── learners/         # Orchestrazione
 │   │   ├── hooks.py          # Integrazione Chainlit
 │   │   └── scheduler.py      # Job notturni
+│   ├── data/                 # Data Layer Chainlit (v3.9.2)
+│   │   └── chainlit_data_layer.py  # SQLite persistenza feedback 👍👎
 │   └── main.py               # CLI principale
 ├── data/
 │   ├── input_docs/           # PDF da indicizzare
@@ -1675,6 +1677,22 @@ Permettere all'utente di scegliere il modello LLM direttamente dalla UI:
 # 📜 Appendici
 
 ## 📜 Storico Versioni
+
+### v3.9.2 (Dicembre 2025) - "Feedback Buttons & Data Layer"
+- 👍👎 **Pulsanti Feedback su ogni risposta** - Valuta le risposte con pollice su/giù
+  - I pulsanti appaiono automaticamente dopo ogni risposta RAG
+  - Feedback salvato in SQLite per analytics
+  - Integrato con Bayesian boost per miglioramento retrieval
+- 🗄️ **SQLite Data Layer per Chainlit** - Persistenza nativa
+  - Implementa `BaseDataLayer` completo per Chainlit 2.9.3
+  - Tabelle: `threads`, `steps`, `elements`, `feedbacks`, `users`
+  - Analytics: `get_feedback_stats()`, `get_recent_feedbacks()`
+  - Database: `data/persist/chainlit.db`
+- 📁 **File creati**:
+  - `src/data/chainlit_data_layer.py` (NUOVO - ~600 righe)
+  - `src/data/__init__.py` (NUOVO)
+- 📝 **File modificati**:
+  - `app_chainlit.py` - Registrazione data layer + pulsanti feedback
 
 ### v3.9.1 (Dicembre 2025) - "PDF Consultabili & Citazioni Leggibili"
 - 📖 **PDF Consultabili in Sidebar** - I PDF si aprono direttamente nella sidebar (non download)

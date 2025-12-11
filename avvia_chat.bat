@@ -1,9 +1,9 @@
 @echo off
 chcp 65001 >nul
-title OVV ISO Chat v3.9.1
+title OVV ISO Chat v3.9.2
 
 echo ============================================
-echo    OVV ISO Chat v3.9.1 - Avvio Rapido
+echo    OVV ISO Chat v3.9.2 - Avvio Rapido
 echo ============================================
 echo.
 
