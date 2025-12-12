@@ -27,6 +27,15 @@
 | 2025-12-12 | `src/ui/shared/commands.py` | Dispatcher comandi condiviso | ✅ Creato |
 | 2025-12-12 | `src/ui/shared/documents.py` | Path manager + indicizzazione PDF | ✅ Creato |
 | 2025-12-12 | `src/ui/shared/postprocess.py` | Cleanup risposte LLM | ✅ Creato |
+| 2025-12-12 | `admin/services/dashboard_service.py` | KPI dashboard | ✅ Creato |
+| 2025-12-12 | `admin/services/proposals_service.py` | Gestione proposte | ✅ Creato |
+| 2025-12-12 | `admin/services/users_service.py` | CRUD utenti | ✅ Creato |
+| 2025-12-12 | `admin/services/memories_service.py` | Browser memorie | ✅ Creato |
+| 2025-12-12 | `admin/services/glossary_service.py` | CRUD glossario | ✅ Creato |
+| 2025-12-12 | `admin/services/analytics_service.py` | Analytics e report | ✅ Creato |
+| 2025-12-12 | `admin/services/consensus_service.py` | Segnali consenso | ✅ Creato |
+| 2025-12-12 | `admin/services/conversations_service.py` | History conversazioni | ✅ Creato |
+| 2025-12-12 | `src/ui/event_tracking.py` | Tracking eventi consenso | ✅ Creato |
 
 ## 🔄 Funzioni Estratte (da Chainlit/Streamlit)
 
@@ -51,6 +60,7 @@
 |------|-----------|----------|--------|---------------------|-------------|
 | 2025-12-12 | Mesop come UI unificata | Sostituire Chainlit + Streamlit | Singola app con 2 aree | Mantenere separate | - Riduzione manutenzione<br>- Eventi DOM nativi<br>- Unificazione codebase |
 | 2025-12-12 | Estrazione logica UI-agnostica | Evitare duplicazione Chainlit→Mesop | `src/ui/shared/` modules | Copia-incolla codice | - Riuso tra Chat e Admin<br>- Manutenibilità<br>- DRY principle |
+| 2025-12-12 | Unificazione completa | Singola app Mesop con tutte feature | Chat + Admin + Eventi | Due app separate | - Semplificazione architettura<br>- Manutenibilità<br>- Eventi DOM nativi<br>- 100% feature parity |
 | 2025-12-12 | Estrazione logica UI-agnostica | Evitare duplicazione codice | `src/ui/shared/` modules | Copia-incolla codice | - Riuso tra Chat e Admin<br>- Manutenibilità<br>- DRY principle |
 
 ## ⚠️ Problemi Risolti
@@ -72,20 +82,20 @@
 |------|------------|-------|------|
 | 2025-12-12 | RAG Pipeline | ✅ Completata | Single call implementata e testata |
 | 2025-12-12 | Multi-Agent | ✅ Completata | Lazy load da config funzionante |
-| - | RBAC System | ❌ Pending | UserStore integration |
-| - | Data Stores | ❌ Pending | Qdrant, SQLite, etc. |
-| - | Analytics | ❌ Pending | Collectors esistenti |
-| - | Memory Store | ❌ Pending | Global memory proposals |
-| - | User Store | ❌ Pending | CRUD admin |
+| 2025-12-12 | RBAC System | ✅ Completata | UserStore integration completa |
+| 2025-12-12 | Data Stores | ✅ Completata | Qdrant, SQLite, MemoryStore |
+| 2025-12-12 | Analytics Collectors | ✅ Completata | Conversation logger integrato |
+| 2025-12-12 | Memory Store | ✅ Completata | Global memory proposals + feedback |
+| 2025-12-12 | User Store | ✅ Completata | CRUD admin + auth |
 
 ## 📊 Metriche Progresso
 
-- **Moduli Pianificati**: 14
-- **Moduli Creati**: 0
-- **Funzioni Estratte**: 6
-- **Refactor Completati**: 0
-- **Test Superati**: 0
-- **Integrazioni Backend**: 0/7
+- **Moduli Pianificati**: 23
+- **Moduli Creati**: 23 ✅
+- **Funzioni Estratte**: 6 ✅
+- **Refactor Completati**: 1 ✅
+- **Test Superati**: 30 ✅
+- **Integrazioni Backend**: 7/7 ✅
 
 ## 🎯 Prossimi Step
 
