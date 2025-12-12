@@ -23,29 +23,34 @@
 | 2025-12-12 | `admin/services/conversations_service.py` | History conversazioni | - |
 | 2025-12-12 | `app_mesop.py` | Entrypoint Mesop unificato | ✅ Creato |
 | 2025-12-12 | `src/ui/mesop_handlers.py` | Handler POC per pipeline | ✅ Creato |
+| 2025-12-12 | `src/ui/shared/sources.py` | Logica fonti UI-agnostica | ✅ Creato |
+| 2025-12-12 | `src/ui/shared/commands.py` | Dispatcher comandi condiviso | ✅ Creato |
+| 2025-12-12 | `src/ui/shared/documents.py` | Path manager + indicizzazione PDF | ✅ Creato |
+| 2025-12-12 | `src/ui/shared/postprocess.py` | Cleanup risposte LLM | ✅ Creato |
 
 ## 🔄 Funzioni Estratte (da Chainlit/Streamlit)
 
 | Data | Funzione Originale | Nuovo Modulo | Scopo |
 |------|-------------------|--------------|-------|
-| - | `filter_cited_sources()` | `src/ui/shared/sources.py` | Filtro fonti citate |
-| - | `create_source_elements()` | `src/ui/shared/sources.py` | Preparazione preview + PDF |
-| - | PDF resolution logic | `src/ui/shared/documents.py` | Match doc_id → PDF path |
-| - | Commands dispatcher | `src/ui/shared/commands.py` | Parse/dispatch /comandi |
-| - | Path manager logic | `src/ui/shared/documents.py` | waiting_for_path_input + set_path |
-| - | Post-processing risposta | `src/ui/shared/postprocess.py` | Cleanup riferimenti LLM |
+| 2025-12-12 | `filter_cited_sources()` | `src/ui/shared/sources.py` | Filtro fonti citate |
+| 2025-12-12 | `create_source_elements()` | `src/ui/shared/sources.py` | Preparazione preview + PDF |
+| 2025-12-12 | PDF resolution logic | `src/ui/shared/documents.py` | Match doc_id → PDF path |
+| 2025-12-12 | Commands dispatcher | `src/ui/shared/commands.py` | Parse/dispatch /comandi |
+| 2025-12-12 | Path manager logic | `src/ui/shared/documents.py` | waiting_for_path_input + set_path |
+| 2025-12-12 | Post-processing risposta | `src/ui/shared/postprocess.py` | Cleanup riferimenti LLM |
 
 ## 🏗️ Refactor Fatti
 
 | Data | Componente | Cambiamento | Impatto |
 |------|------------|-------------|---------|
-| - | - | - | - |
+| 2025-12-12 | UI Logic | Estratta logica UI-agnostica da Chainlit | - Riuso in Mesop<br>- DRY principle<br>- Manutenibilità |
 
 ## 📋 Decisioni Architetturali
 
 | Data | Decisione | Contesto | Scelta | Alternative Scartate | Conseguenze |
 |------|-----------|----------|--------|---------------------|-------------|
 | 2025-12-12 | Mesop come UI unificata | Sostituire Chainlit + Streamlit | Singola app con 2 aree | Mantenere separate | - Riduzione manutenzione<br>- Eventi DOM nativi<br>- Unificazione codebase |
+| 2025-12-12 | Estrazione logica UI-agnostica | Evitare duplicazione Chainlit→Mesop | `src/ui/shared/` modules | Copia-incolla codice | - Riuso tra Chat e Admin<br>- Manutenibilità<br>- DRY principle |
 | 2025-12-12 | Estrazione logica UI-agnostica | Evitare duplicazione codice | `src/ui/shared/` modules | Copia-incolla codice | - Riuso tra Chat e Admin<br>- Manutenibilità<br>- DRY principle |
 
 ## ⚠️ Problemi Risolti
